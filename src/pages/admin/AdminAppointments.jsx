@@ -302,7 +302,7 @@ export default function AdminAppointments() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <ApptStatCard
           label="Total Bookings"
           value={stats.total}
@@ -378,8 +378,8 @@ export default function AdminAppointments() {
             <p className="text-sm mt-1">Try changing your filters</p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-200">
+            <table className="w-full text-sm min-w-[1000px]">
               <thead className="bg-gray-50 border-b border-gray-100">
                 <tr>
                   {['Booking ID', 'Patient', 'Phone', 'Department', 'Date & Time', 'Status', 'Actions'].map((h) => (
@@ -421,14 +421,14 @@ export default function AdminAppointments() {
                       </div>
                     </td>
                     <td className="px-4 py-3.5 whitespace-nowrap">
-                      <p className="text-gray-700">{appt.date || formatDate(appt.createdAt)}</p>
+                      <p className="text-gray-700 text-sm">{appt.date || formatDate(appt.createdAt)}</p>
                       {appt.timeSlot && (
                         <p className="text-xs text-gray-400 flex items-center gap-1 mt-0.5">
                           <FiClock size={11} /> {appt.timeSlot}
                         </p>
                       )}
                     </td>
-                    <td className="px-4 py-3.5">
+                    <td className="px-4 py-3.5 whitespace-nowrap">
                       <span className={`badge ${getStatusColor(appt.status)}`}>
                         {appt.status}
                       </span>
