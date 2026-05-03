@@ -17,14 +17,14 @@ const COL = 'specialities'
 export async function getSpecialities() {
   const q = query(collection(db, COL), orderBy('order'))
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
 }
 
 // Fetch a single speciality by Firestore document ID
 export async function getSpecialityById(id) {
   const snap = await getDoc(doc(db, COL, id))
   if (!snap.exists()) return null
-  return { id: snap.id, ...snap.data() }
+  return { ...snap.data(), id: snap.id }
 }
 
 // Fetch a single speciality by its URL slug (used in ServiceDetail page)
@@ -32,7 +32,7 @@ export async function getSpecialityBySlug(slug) {
   const q = query(collection(db, COL), where('slug', '==', slug), limit(1))
   const snap = await getDocs(q)
   if (snap.empty) return null
-  return { id: snap.docs[0].id, ...snap.docs[0].data() }
+  return { ...snap.docs[0].data(), id: snap.docs[0].id }
 }
 
 // Add a new speciality/department

@@ -27,7 +27,7 @@ export async function sendMessage(data) {
 export async function getMessages() {
   const q = query(collection(db, COL), orderBy('createdAt', 'desc'))
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
 }
 
 // Mark a single message as read (called when admin opens the message)

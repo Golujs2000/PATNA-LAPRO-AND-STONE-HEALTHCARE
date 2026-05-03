@@ -21,7 +21,7 @@ export async function getBlogs(publishedOnly = true) {
     q = query(collection(db, COL), where('published', '==', true), orderBy('createdAt', 'desc'))
   }
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
 }
 
 // Fetch a single blog by its URL slug and increment the view counter
@@ -32,7 +32,7 @@ export async function getBlogBySlug(slug) {
   const d = snap.docs[0]
   // Increment views atomically — safe for concurrent readers
   await updateDoc(doc(db, COL, d.id), { views: increment(1) })
-  return { id: d.id, ...d.data() }
+  return { ...d.data(), id: d.id }
 }
 
 // Create a new blog post; uploads featured image to Storage if provided

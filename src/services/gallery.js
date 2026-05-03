@@ -22,7 +22,7 @@ const FOLDERS_COL = 'galleryFolders'
 // Fetch all gallery folders sorted by their display order
 export async function getFolders() {
   const snap = await getDocs(query(collection(db, FOLDERS_COL), orderBy('order', 'asc')))
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
 }
 
 // Create a new folder; order is set to current folder count (appended last)
@@ -52,14 +52,14 @@ export async function getGallery(folderId = '') {
     ? query(collection(db, COL), where('folderId', '==', folderId))
     : query(collection(db, COL))
   const snap = await getDocs(q)
-  const docs = snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  const docs = snap.docs.map((d) => ({ ...d.data(), id: d.id }))
   return docs.sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
 }
 
 // Lookup images by folder name instead of folder ID (used by GalleryStrip on homepage)
 export async function getGalleryByFolderName(folderName) {
   const snap = await getDocs(collection(db, FOLDERS_COL))
-  const allFolders = snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  const allFolders = snap.docs.map((d) => ({ ...d.data(), id: d.id }))
   // Case-insensitive match
   const folder = allFolders.find(
     (d) => d.name?.toLowerCase() === folderName.toLowerCase()

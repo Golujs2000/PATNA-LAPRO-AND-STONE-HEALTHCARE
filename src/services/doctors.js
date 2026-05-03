@@ -22,14 +22,14 @@ export async function getDoctors(filters = {}) {
     q = query(collection(db, COL), where('specialty', '==', filters.specialty), orderBy('name'))
   }
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
 }
 
 // Fetch only doctors marked as featured (shown on homepage)
 export async function getFeaturedDoctors() {
   const q = query(collection(db, COL), where('featured', '==', true))
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
 }
 
 // Add a new doctor; uploads profile image to Storage if provided

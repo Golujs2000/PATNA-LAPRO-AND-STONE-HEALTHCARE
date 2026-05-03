@@ -200,7 +200,9 @@ export default function AdminDoctors() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold text-navy-800">Doctors</h1>
-          <p className="text-gray-500 text-sm mt-0.5">{doctors.length} doctor{doctors.length !== 1 ? 's' : ''} registered</p>
+          <p className="text-gray-500 text-sm mt-0.5">
+            {doctors.length} doctor{doctors.length !== 1 ? 's' : ''} registered · {doctors.reduce((sum, d) => sum + (d.linkedTreatments?.length || 0), 0)} total treatments linked
+          </p>
         </div>
         <div className="flex gap-2">
           <button onClick={fetchDoctors} className="btn-secondary text-sm py-2 px-4">
@@ -267,9 +269,12 @@ export default function AdminDoctors() {
                     <div className="min-w-0">
                       <h3 className="font-semibold text-navy-800 text-sm leading-tight truncate">{doc.name}</h3>
                       <div className="flex flex-wrap gap-1 mt-1">
-                        {specialtyList.map((s) => (
+                        {specialtyList.slice(0, 5).map((s) => (
                           <span key={s} className="text-[11px] px-2 py-0.5 rounded-full bg-primary-50 text-primary-700 font-medium">{s}</span>
                         ))}
+                        {specialtyList.length > 5 && (
+                          <span className="text-[11px] px-2 py-0.5 rounded-full bg-gray-50 text-gray-500 font-medium">+{specialtyList.length - 5} more</span>
+                        )}
                         {doc.featured && (
                           <span className="text-[11px] px-2 py-0.5 rounded-full bg-yellow-50 text-yellow-700 font-medium">⭐ Featured</span>
                         )}
@@ -479,6 +484,7 @@ export default function AdminDoctors() {
                             >
                               {spec.icon && <span>{spec.icon}</span>}
                               {spec.name}
+                              <span className="text-[10px] opacity-60 ml-0.5">({spec.treatments?.length || 0})</span>
                               {checked && <FiX size={11} />}
                             </button>
                           )

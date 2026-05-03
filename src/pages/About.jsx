@@ -118,7 +118,7 @@ export default function About() {
                   <div className="relative rounded-3xl bg-gradient-to-br from-primary-50 via-white to-accent-50/60 border-2 border-primary-100/70 shadow-2xl shadow-primary-200/30 pt-6 pb-0 px-4 mb-20">
                     <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-primary-400 rounded-tl-lg"></div>
                     <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-primary-400 rounded-tr-lg"></div>
-                    <img alt="Dr. Rajesh Kumar Ranjan" className="w-full h-auto max-h-[460px] object-contain object-bottom relative z-10" src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1776743194623_Dr.%20Rajesh%20Kumar%20Ranjan03%20copy.webp?alt=media&token=d7b20f39-dd98-4662-aa9e-eea01cd9f124" />
+                    <img alt="Dr. Rajesh Kumar Ranjan" className="w-full h-auto max-h-[460px] object-contain object-bottom relative z-10" src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1777202567401_DR.%20RAJESH%20KUMAR%20RANJAN%2003.webp?alt=media&token=0b8337d3-a4e9-4a41-8078-322dd21892dd" />
                     
                     <div className="absolute -bottom-[4.5rem] left-3 right-3 z-20">
                       <div className="bg-white/90 backdrop-blur-md border border-primary-100 rounded-2xl shadow-xl px-5 py-4">
@@ -191,18 +191,19 @@ export default function About() {
         {/* ── Story ──────────────────────────────────────────────── */}
         <section className="section-padding bg-white">
           <div className="container-max grid lg:grid-cols-2 gap-14 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 gap-3">
-              <div className="overflow-hidden rounded-2xl row-span-2">
-                <img alt="Dr. Rajesh Kumar Ranjan" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1776743472351_Dr.%20Rajesh%20Kumar%20Ranjan%2001.webp?alt=media&token=8600d364-1a08-4a48-bfe0-d4bddf5e3522" style={{ minHeight: '320px' }} />
-              </div>
-              <div className="overflow-hidden rounded-2xl">
-                <img alt="Clinic Desk" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1776742720014_dr-rajesh-kumar-ranjan-at-desk-02.webp?alt=media&token=44596081-dead-4da0-af4c-415e6b62e51d" style={{ minHeight: '150px' }} />
-              </div>
-              <div className="overflow-hidden rounded-2xl">
-                <img alt="Clinic Room" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1776742726467_dr-rajesh-kumar-ranjan-at-desk-05.webp?alt=media&token=329e0c0c-74bd-411c-a092-91206d7388fc" style={{ minHeight: '150px' }} />
-              </div>
-              <div className="overflow-hidden rounded-2xl">
-                <img alt="Clinic Staff" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1776648270276_clinic-staff-04.webp?alt=media&token=1c2fb3d5-81a8-4a14-9b45-f3a761199729" style={{ minHeight: '150px' }} />
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative group">
+              <div className="absolute -inset-4 bg-primary-100/50 rounded-[40px] blur-2xl group-hover:bg-primary-200/50 transition-colors duration-500"></div>
+              <div className="relative overflow-hidden rounded-[32px] border-4 border-white shadow-2xl">
+                <img 
+                  alt="Care Homeopathic Clinic Upcoming Building" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+                  src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1776843139506_care%20homepathic%20clinic%20upcoming%20building.webp?alt=media&token=2299429a-b9fb-41e2-abfe-d66e13703f1e"
+                  style={{ minHeight: '400px' }} 
+                />
+                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl border border-primary-100 shadow-lg">
+                  <p className="text-primary-700 font-bold text-xs uppercase tracking-widest">Future Vision</p>
+                  <h4 className="text-navy-900 font-bold text-sm mt-0.5">Our Upcoming Clinic Building</h4>
+                </div>
               </div>
             </motion.div>
             

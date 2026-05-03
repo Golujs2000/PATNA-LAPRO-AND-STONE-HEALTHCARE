@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   FiCalendar, FiClock, FiMail, FiUsers,
-  FiTrendingUp, FiRefreshCw, FiEye, FiBarChart2,
+  FiTrendingUp, FiRefreshCw, FiEye, FiBarChart2, FiActivity,
 } from 'react-icons/fi'
 import {
   Chart as ChartJS,
@@ -258,7 +258,7 @@ export default function AdminDashboard() {
       </motion.div>
 
       {/* ── Support Stats Strip ── */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <StatCard
           label="Total Appointments"
           value={stats.totalAppointments}
@@ -285,6 +285,15 @@ export default function AdminDashboard() {
           border="border-green-100"
           loading={loading}
           i={8}
+        />
+        <StatCard
+          label="Total Specialities"
+          value={stats.totalSpecialities}
+          icon={FiActivity}
+          iconBg="bg-rose-50 text-rose-600"
+          border="border-rose-100"
+          loading={loading}
+          i={9}
         />
       </div>
 

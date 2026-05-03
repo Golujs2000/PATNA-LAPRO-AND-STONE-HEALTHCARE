@@ -240,11 +240,8 @@ export default function Navbar() {
                 <span className="text-navy-900 font-hindi font-bold text-lg md:text-xl leading-none group-hover:text-primary-600 transition-colors">
                   केयर होम्योपैथिक क्लिनिक
                 </span>
-                <span className="text-primary-500 text-[9px] md:text-[10px] font-semibold italic hidden sm:block leading-none mt-0.5">
-                  Trusted Homeopathic Care, Natural Healing
-                </span>
-                <span className="text-primary-600 text-[9px] font-bold tracking-widest hidden sm:block mt-0.5 uppercase">
-                  Rapid, Gentle & Permanent Restoration of Health
+                <span className="text-primary-500 text-[10px] md:text-[11px] font-semibold italic hidden sm:block leading-tight mt-1">
+                  The highest ideal of cure is <br /> rapid, gentle and permanent restoration of the health
                 </span>
               </div>
             </Link>

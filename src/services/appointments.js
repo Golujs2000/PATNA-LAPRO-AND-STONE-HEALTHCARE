@@ -29,7 +29,7 @@ export async function getAppointments(filters = {}) {
     q = query(collection(db, COL), where('status', '==', filters.status), orderBy('createdAt', 'desc'))
   }
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
 }
 
 // Update the status of an appointment (e.g. 'confirmed', 'cancelled', 'completed')
@@ -51,5 +51,5 @@ export async function deleteAppointment(id) {
 export async function getRecentAppointments(n = 5) {
   const q = query(collection(db, COL), orderBy('createdAt', 'desc'), limit(n))
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
 }
