@@ -152,3 +152,4 @@ Manage:
 ## 📄 License
 
 © 2025 Care Homeopathic Clinic. All rights reserved.
+# PATNA-LAPRO-AND-STONE-HEALTHCARE
