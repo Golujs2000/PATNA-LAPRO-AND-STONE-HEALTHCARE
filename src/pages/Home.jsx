@@ -18,7 +18,6 @@ import Testimonials from '../components/home/Testimonials'
 import BlogPreview from '../components/home/BlogPreview'
 import GalleryStrip from '../components/home/GalleryStrip'
 import TreatmentGallery from '../components/home/TreatmentGallery'
-import AwardsSection from '../components/home/AwardsSection'
 import { siteData } from '../data/siteData'
 
 const hospitalSchema = {
@@ -105,8 +104,7 @@ export default function Home() {
       {/* 5. World Class Facility */}
       <GalleryStrip />
 
-      {/* 6. Awards Section */}
-      <AwardsSection />
+
 
       {/* 6. Featured Doctors */}
       <FeaturedDoctors />
