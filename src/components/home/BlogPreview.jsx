@@ -7,25 +7,25 @@ import { formatDate } from '../../utils/helpers'
 const FALLBACK_POSTS = [
   {
     id: 'b1',
-    title: 'Kidney Stones: Can Homeopathy Dissolve Them Without Surgery?',
-    excerpt: 'Kidney stones are one of the most painful conditions. Discover how homeopathic medicines like Berberis Vulgaris help dissolve stones and prevent recurrence.',
-    category: 'Kidney & Urinary',
-    date: '19 Apr 2026',
+    title: 'Laparoscopic Surgery: What You Need to Know Before Your Procedure',
+    excerpt: 'Dr. Sanjeev Kumar explains how laparoscopic (keyhole) surgery works, its advantages over open surgery, and what patients should expect before, during, and after the procedure.',
+    category: 'Laparoscopic Surgery',
+    date: '1 Jun 2026',
     color: 'from-primary-400 to-accent-600',
   },
   {
     id: 'b2',
-    title: 'PCOS & Menstrual Disorders: A Homeopathic Perspective',
-    excerpt: 'Millions of women suffer from PCOS and irregular periods. Dr. Rajesh Kumar Ranjan shares how homeopathy offers a hormone-free, natural solution.',
-    category: 'Women\'s Health',
-    date: '19 Apr 2026',
+    title: 'Kidney Stones: When Do You Need Surgery?',
+    excerpt: 'Dr. Sanjeev Kumar explains different treatment options for kidney stones — from medical therapy to PCNL and ureteroscopy — and when surgery becomes necessary.',
+    category: 'Kidney & Stone',
+    date: '1 Jun 2026',
   },
   {
     id: 'b3',
-    title: 'Homeopathy for Skin Diseases: Eczema, Psoriasis & Vitiligo',
-    excerpt: 'Dr. Rajesh Kumar Ranjan explains how constitutional homeopathy provides lasting relief for chronic skin conditions without steroids or harsh chemicals.',
-    category: 'Skin Diseases',
-    date: '19 Apr 2026',
+    title: 'Jaundice: When Is It a Surgical Emergency?',
+    excerpt: 'Dr. Sanjeev Kumar explains the difference between medical and surgical jaundice, red-flag symptoms, and when you need emergency surgical evaluation.',
+    category: 'Jaundice & Liver',
+    date: '1 Jun 2026',
   },
 ]
 

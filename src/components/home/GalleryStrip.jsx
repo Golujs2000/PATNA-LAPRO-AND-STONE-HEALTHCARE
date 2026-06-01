@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────
 // components/home/GalleryStrip.jsx
 // Hospital infrastructure gallery section on the homepage.
 // Fetches images from the "home gallery" Firestore folder.
@@ -112,7 +112,7 @@ const cleanTitle = (title = '') =>
     .replace(/[-_\s]+\d+$/, '')
     .replace(/[-_]/g, ' ')
     .trim()
-    .replace(/\b\w/g, (c) => c.toUpperCase()) || 'Care Homeopathic Clinic'
+    .replace(/\b\w/g, (c) => c.toUpperCase()) || 'Patna Lapro and Stone Healthcare'
 
 // ── Tiles ─────────────────────────────────────────────────────────────────────
 function PlaceholderTile({ className = '' }) {
@@ -132,7 +132,7 @@ function ImgTile({ img, className = '', large = false, onClick }) {
     >
       <img
         src={img.image}
-        alt={img.title || 'Care Homeopathic Clinic'}
+        alt={img.title || 'Patna Lapro and Stone Healthcare'}
         className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${large ? 'duration-1000' : ''}`}
         loading="lazy"
       />
@@ -193,7 +193,7 @@ export default function GalleryStrip() {
               Modern Clinic <span className="text-primary-600">Infrastructure</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Care Homeopathic Clinic provides a calm, welcoming environment designed for your comfort. Our infrastructure is optimized for focused consultation and effective homeopathic healing.
+              Patna Lapro and Stone Healthcare provides a calm, welcoming environment designed for your comfort. Our infrastructure is optimized for focused consultation and effective surgical healing.
             </p>
           </motion.div>
 
@@ -247,7 +247,7 @@ export default function GalleryStrip() {
                     <>
                       <img
                         src={img.image}
-                        alt={img.title || 'Care Homeopathic Clinic'}
+                        alt={img.title || 'Patna Lapro and Stone Healthcare'}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />

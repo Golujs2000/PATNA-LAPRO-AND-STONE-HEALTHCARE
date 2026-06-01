@@ -73,8 +73,8 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-5">
               <img
-                src="/care-homeopathic-logo.png"
-                alt="Care Homeopathic Clinic Logo"
+                src="/patna-lapro-logo.png"
+                alt="Patna Lapro and Stone Healthcare Logo"
                 className="w-14 h-14 object-contain shrink-0"
               />
               <div>

@@ -1,10 +1,10 @@
-export const female_health_issues = {
+﻿export const female_health_issues = {
   "name": "\u200d\u2695\ufe0f Female Health Issues",
   "slug": "female-health-issues",
   "icon": "\ud83d\udc69",
   "category": "Women",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various \u200d\u2695\ufe0f Female Health Issues. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for \u200d\u2695\ufe0f Female Health Issues. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Irregular periods (\u0905\u0928\u093f\u092f\u092e\u093f\u0924 \u092e\u093e\u0939\u0935\u093e\u0930\u0940)",
     "Painful periods (\u0926\u0930\u094d\u0926\u0928\u093e\u0915 \u092e\u093e\u0939\u0935\u093e\u0930\u0940)",

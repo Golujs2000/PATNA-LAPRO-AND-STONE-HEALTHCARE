@@ -1,10 +1,10 @@
-export const children_s_conditions = {
+﻿export const children_s_conditions = {
   "name": "Children\u2019s Conditions",
   "slug": "children-s-conditions",
   "icon": "\ud83d\udc76",
   "category": "Children",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Children\u2019s Conditions. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Children\u2019s Conditions. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Teething problems",
     "Bedwetting (\u092c\u093f\u0938\u094d\u0924\u0930 \u0917\u0940\u0932\u093e \u0915\u0930\u0928\u093e)",

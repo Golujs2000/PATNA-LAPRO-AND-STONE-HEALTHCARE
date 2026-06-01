@@ -26,21 +26,21 @@ const hospitalSchema = {
   '@type': 'MedicalClinic',
   name: siteData.name,
   url: siteData.url,
-  logo: `${siteData.url}/care-homeopathic-logo.png`,
+  logo: `${siteData.url}/patna-lapro-logo.png`,
   description: siteData.description,
   telephone: `+91${siteData.contact.phone}`,
   email: siteData.contact.email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Radha Krishna Vatika, Panchwati Chowk, Ward No. 15',
-    addressLocality: 'Saharsa',
+    streetAddress: 'L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri',
+    addressLocality: 'Patna',
     addressRegion: 'Bihar',
-    postalCode: '852201',
+    postalCode: '800001',
     addressCountry: 'IN',
   },
   openingHoursSpecification: [
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '09:00', closes: '18:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Sunday'], opens: '11:00', closes: '14:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Sunday'], opens: '10:00', closes: '14:00' },
   ],
   medicalSpecialty: [],
   availableService: [],
@@ -54,11 +54,11 @@ export default function Home() {
   return (
     <>
       <SEO
-        description="Care Homeopathic Clinic, Panchwati Chowk, Saharsa — authentic homeopathic treatment by Dr. Rajesh Kumar Ranjan (B.H.M.S.). Specialist in skin diseases, women's health, kidney stone, migraine, thyroid, piles, and 216+ conditions. Online & Offline consultation available."
-        keywords={['homeopathic clinic Saharsa', 'Dr Rajesh Kumar Ranjan', 'skin disease homeopathy Saharsa', 'PCOS homeopathy Bihar', 'kidney stone homeopathy', 'migraine treatment Saharsa', 'thyroid homeopathy']}
+        description="Patna Lapro and Stone Healthcare — Advanced Laparoscopic Surgery, Kidney Stone Treatment, Jaundice & Liver Specialist in Patna, Bihar. Dr. Sanjeev Kumar (MBBS, MS, DNB), Sr. Consultant Medimax Hospital, Ex-Surgeon Safdarjung Hospital. Call: 9942282987."
+        keywords={['laparoscopic surgery Patna', 'Dr Sanjeev Kumar', 'kidney stone treatment Patna', 'gallbladder stone Patna', 'jaundice specialist Patna', 'liver specialist Patna', 'stone hospital Patna Bihar']}
         jsonLd={{
           ...hospitalSchema,
-          medicalSpecialty: specNames.length > 0 ? specNames : ['General Homeopathy', 'Dermatology', 'Gynecology', 'Urology'],
+          medicalSpecialty: specNames.length > 0 ? specNames : ['Laparoscopic Surgery', 'Urology', 'General Surgery', 'Gastroenterology'],
           availableService: specNames.length > 0
             ? specNames.map(name => ({ '@type': 'MedicalTherapy', name }))
             : hospitalSchema.availableService
@@ -79,8 +79,8 @@ export default function Home() {
                 <FiVideo className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-heading font-bold text-lg leading-tight tracking-wide">Online Consultation Now Available</h3>
-                <p className="text-primary-100 text-sm mt-0.5">Consult with our homeopathic experts via video or phone call from the comfort of your home.</p>
+        <h3 className="font-heading font-bold text-lg leading-tight tracking-wide">Online Consultation Now Available</h3>
+                <p className="text-primary-100 text-sm mt-0.5">Consult Dr. Sanjeev Kumar via video or phone call for surgical opinion, report review, and treatment planning.</p>
                 <p className="text-yellow-200 text-xs mt-2 font-semibold bg-white/10 inline-block px-3 py-1 rounded-full border border-white/20">
                   Note: Please book your appointment at least 48 hours in advance.
                 </p>
@@ -181,7 +181,7 @@ export default function Home() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Care Homeopathic Clinic Location"
+                title="Patna Lapro & Stone Healthcare Location"
               />
             </motion.div>
 

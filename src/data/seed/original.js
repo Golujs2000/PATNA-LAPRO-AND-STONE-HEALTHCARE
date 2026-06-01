@@ -1,4 +1,4 @@
-// This file holds the original 11 high-quality specialities from seedData.js
+﻿// This file holds the original 11 high-quality specialities from seedData.js
 export const originalSpecialities = [
   // ── 1. Common Acute Conditions ────────────────────────────────
   {
@@ -84,7 +84,7 @@ export const originalSpecialities = [
     icon: '💧',
     category: 'Skin',
     available: 'OPD Hours',
-    description: 'Dr. Rajesh Kumar Ranjan is a specialist in skin and hair diseases. Homeopathy offers deep-acting, side-effect-free treatment for eczema, psoriasis, acne, vitiligo, fungal infections, hair fall, and more.',
+    description: 'Dr. Sanjeev Kumar is a specialist in skin and hair diseases. Homeopathy offers deep-acting, side-effect-free treatment for eczema, psoriasis, acne, vitiligo, fungal infections, hair fall, and more.',
     features: ['Eczema & Psoriasis', 'Acne & Pimples', 'Vitiligo (White Patches)', 'Fungal Infections', 'Hair Fall', 'Urticaria'],
     costEstimate: '₹200 – ₹600',
     recoveryTime: '2 – 6 months',
@@ -333,7 +333,7 @@ export const originalSpecialities = [
     icon: '👩‍⚕️',
     category: 'Women',
     available: 'OPD Hours',
-    description: 'Dr. Rajesh Kumar Ranjan is a specialist in women\'s diseases. Homeopathy offers gentle, hormone-free treatment for menstrual disorders, PCOS, leucorrhoea, fibroids, ovarian cysts, and menopausal complaints.',
+    description: 'Dr. Sanjeev Kumar is a specialist in women\'s diseases. Homeopathy offers gentle, hormone-free treatment for menstrual disorders, PCOS, leucorrhoea, fibroids, ovarian cysts, and menopausal complaints.',
     features: ['Irregular Periods', 'PCOS / PCOD', 'Leucorrhoea', 'Fibroids & Ovarian Cysts', 'Painful Periods', 'Menopause Support'],
     costEstimate: '₹200 – ₹600',
     recoveryTime: '2 – 6 months',

@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────
 // pages/admin/AdminSettings.jsx
 // Site-wide settings editor for the admin panel.
 // Reads/writes the single `settings/siteSettings` Firestore doc.
@@ -18,7 +18,7 @@ import { getSettings, updateSettings } from '../../services/settings'
 import { seedSpecialitiesAndServices, seedFirestore } from '../../data/seedData'
 
 const EMPTY_FORM = {
-  siteName: 'Care Homeopathic Clinic',
+  siteName: 'Patna Lapro and Stone Healthcare',
   tagline: 'Your Health, Our Priority',
   phone: '',
   emergencyPhone: '',
@@ -33,7 +33,7 @@ const FIELD_GROUPS = [
     title: 'Site Identity',
     icon: FiGlobe,
     fields: [
-      { name: 'siteName', label: 'Site Name', placeholder: 'Care Homeopathic Clinic', icon: FiGlobe },
+      { name: 'siteName', label: 'Site Name', placeholder: 'Patna Lapro and Stone Healthcare', icon: FiGlobe },
       { name: 'tagline', label: 'Tagline', placeholder: 'Your Health, Our Priority', icon: FiGlobe },
     ],
   },
@@ -43,7 +43,7 @@ const FIELD_GROUPS = [
     fields: [
       { name: 'phone', label: 'Contact Phone', placeholder: '+91 98765 43210', icon: FiPhone },
       { name: 'emergencyPhone', label: 'Emergency Phone', placeholder: '+91 98765 00000', icon: FiPhone },
-      { name: 'email', label: 'Email Address', placeholder: 'info@carehomeopathicclinic.com', icon: FiMail, type: 'email' },
+      { name: 'email', label: 'Email Address', placeholder: 'info@caresurgicalclinic.com', icon: FiMail, type: 'email' },
       { name: 'address', label: 'Address', placeholder: '123 Health St, City, State', icon: FiMapPin },
     ],
   },
@@ -51,8 +51,8 @@ const FIELD_GROUPS = [
     title: 'Social Media',
     icon: FiGlobe,
     fields: [
-      { name: 'facebookUrl', label: 'Facebook URL', placeholder: 'https://facebook.com/carehomeopathicclinic', icon: FiFacebook },
-      { name: 'instagramUrl', label: 'Instagram URL', placeholder: 'https://instagram.com/carehomeopathicclinic', icon: FiInstagram },
+      { name: 'facebookUrl', label: 'Facebook URL', placeholder: 'https://facebook.com/caresurgicalclinic', icon: FiFacebook },
+      { name: 'instagramUrl', label: 'Instagram URL', placeholder: 'https://instagram.com/caresurgicalclinic', icon: FiInstagram },
     ],
   },
 ]

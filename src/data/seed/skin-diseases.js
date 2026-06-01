@@ -1,10 +1,10 @@
-export const skin_diseases = {
+﻿export const skin_diseases = {
   "name": "Skin Diseases",
   "slug": "skin-diseases",
   "icon": "\ud83d\udca7",
   "category": "Skin",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Skin Diseases. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Skin Diseases. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Acne / Pimples (\u092e\u0941\u0902\u0939\u093e\u0938\u0947)",
     "Eczema (\u090f\u0915\u094d\u091c\u093f\u092e\u093e)",

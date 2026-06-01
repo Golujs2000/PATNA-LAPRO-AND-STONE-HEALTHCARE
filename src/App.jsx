@@ -1,6 +1,6 @@
-// ─────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────
 // App.jsx
-// Root router configuration for Care Homeopathic Clinic.
+// Root router configuration for Patna Lapro and Stone Healthcare.
 // Defines all public and admin routes.
 //
 // Route structure:

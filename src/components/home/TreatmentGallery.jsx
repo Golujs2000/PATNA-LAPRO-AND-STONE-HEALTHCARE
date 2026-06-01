@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+﻿import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiArrowRight, FiX, FiChevronLeft, FiChevronRight, FiImage } from 'react-icons/fi'
@@ -93,7 +93,7 @@ export default function TreatmentGallery() {
             <span className="text-primary-600">Procedures</span>
           </h2>
           <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
-            A glimpse into the healing environment, diagnostics, and treatments at Care Homeopathic Clinic, Panchwati Chowk, Saharsa.
+            A glimpse into the healing environment, diagnostics, and treatments at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna.
           </p>
         </motion.div>
 

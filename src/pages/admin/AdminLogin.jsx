@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────
 // pages/admin/AdminLogin.jsx
 // Admin login page at /admin/login.
 // Authenticates via Firebase Auth and verifies the user exists
@@ -101,7 +101,7 @@ export default function AdminLogin() {
             <h1 className="text-2xl font-bold text-navy-800">
               {resetMode ? 'Reset Password' : 'Admin Login'}
             </h1>
-            <p className="text-gray-500 text-sm mt-1">Care Homeopathic Clinic Admin</p>
+            <p className="text-gray-500 text-sm mt-1">Patna Lapro and Stone Healthcare Admin</p>
           </div>
 
           {/* Error */}
@@ -141,7 +141,7 @@ export default function AdminLogin() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="admin@carehomeopathicclinic.com"
+                    placeholder="admin@caresurgicalclinic.com"
                     className="input-field pl-10"
                     autoComplete="email"
                     required
@@ -219,7 +219,7 @@ export default function AdminLogin() {
         </div>
 
         <p className="text-center text-white/50 text-xs mt-6">
-          © {new Date().getFullYear()} Care Homeopathic Clinic. All rights reserved.
+          © {new Date().getFullYear()} Patna Lapro and Stone Healthcare. All rights reserved.
         </p>
       </motion.div>
     </div>

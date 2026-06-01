@@ -250,7 +250,8 @@ export default function Services() {
     <>
       <SEO
         title="Services, Specialities & Treatments"
-        description="Explore Care Homeopathic Clinic's treatment specialities — skin diseases, women's health, kidney stone, migraine, thyroid, piles, and 200+ conditions treated in Saharsa, Bihar."
+        description="Explore Patna Lapro and Stone Healthcare's surgical specialities — advanced laparoscopy, kidney stones, gallbladder stone surgery, hernia repair, appendix, liver & pancreas care, and general surgical treatments in Patna, Bihar."
+        keywords={['laparoscopic surgery Patna', 'kidney stone treatment Patna', 'gallbladder stone surgery Patna', 'hernia repair Patna', 'appendix surgery Patna', 'general surgeon Patna']}
       />
 
       {/* Hero */}
@@ -261,8 +262,8 @@ export default function Services() {
           </h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
             {specialities.length > 0
-              ? `${specialities.length} specialities · ${totalTreatments}+ treatments — all under one roof in Saharsa`
-              : 'Comprehensive medical care across all major specialities in Saharsa, Bihar'}
+              ? `${specialities.length} specialities · ${totalTreatments}+ treatments — all under one roof in Patna`
+              : 'Comprehensive medical care across all major specialities in Patna, Bihar'}
           </p>
         </motion.div>
       </section>

@@ -62,8 +62,8 @@ export default function Contact() {
     <>
       <SEO
         title={`Contact Us — ${siteData.name}`}
-        description={`Contact Care Homeopathic Clinic, Saharsa at ${siteData.contact.phone}. Located at ${siteData.contact.address}. Book appointments online.`}
-        keywords={['contact Care Homeopathic Clinic', 'clinic address Saharsa', 'Care Homeopathic Clinic phone number', 'book appointment homeopathy Saharsa']}
+        description={`Contact Patna Lapro and Stone Healthcare, Patna at ${siteData.contact.phone}. Located at ${siteData.contact.address}. Book appointments online.`}
+        keywords={['contact Patna Lapro and Stone Healthcare', 'clinic address Patna', 'Patna Lapro and Stone Healthcare phone number', 'book surgery appointment Patna', 'Dr Sanjeev Kumar contact']}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'MedicalClinic',
@@ -73,16 +73,16 @@ export default function Contact() {
           email: siteData.contact.email,
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Radha Krishna Vatika, Panchwati Chowk, Ward No. 15',
-            addressLocality: 'Saharsa',
+            streetAddress: 'Radha Krishna Vatika, Sri Krishna Nagar Kidwaipuri, Ward No. 15',
+            addressLocality: 'Patna',
             addressRegion: 'Bihar',
-            postalCode: '852201',
+            postalCode: '800001',
             addressCountry: 'IN',
           },
           openingHoursSpecification: [
             { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '21:00' },
           ],
-          hasMap: 'https://maps.google.com/?q=Care+Homeopathic+Clinic+Panchvati+Chowk+Saharsa',
+          hasMap: 'https://maps.google.com/?q=Care+surgical+Clinic+Panchvati+Chowk+Patna',
         }}
       />
 
@@ -154,7 +154,7 @@ export default function Contact() {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                title="Care Homeopathic Clinic Map"
+                title="Patna Lapro and Stone Healthcare Map"
               />
             </div>
           </motion.div>

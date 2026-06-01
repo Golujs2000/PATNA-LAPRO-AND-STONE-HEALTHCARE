@@ -5,38 +5,38 @@ import {
 
 const reasons = [
   {
-    icon: FiDroplet,
-    title: 'Pure Homeopathic Treatment',
-    desc: 'Authentic constitutional homeopathy — no steroids, no antibiotics, no harmful side effects. Gentle medicines that heal from within.',
+    icon: FiActivity,
+    title: 'Advanced Laparoscopic Surgery',
+    desc: 'State-of-the-art laparoscopic OT with HD camera and energy devices — minimal incisions, less pain, rapid recovery.',
   },
   {
     icon: FiUsers,
-    title: 'Expert Physician',
-    desc: 'Dr. Rajesh Kumar Ranjan (B.H.M.S., P.G.D.C.P.) — Homoeopathic Consultant with 25+ years experience.',
+    title: 'Expert Surgeon — Dr. Sanjeev Kumar',
+    desc: 'MBBS, MS, DNB — 20+ years experience in laparoscopic surgery & stone treatment. Ex-Surgeon Safdarjung Hospital, New Delhi.',
     color: 'text-primary-600 bg-primary-50 border-primary-100',
   },
   {
     icon: FiShield,
-    title: 'Zero Side Effects',
-    desc: 'Safe for all ages — infants, children, pregnant women, and the elderly. No toxicity, no dependency.',
+    title: 'High Safety Standards',
+    desc: 'Rigorous pre-operative evaluation, evidence-based surgical protocols, and careful post-op monitoring for the safest outcomes.',
     color: 'text-green-600 bg-green-50 border-green-100',
   },
   {
     icon: FiAward,
-    title: 'Trusted Since 2001',
-    desc: 'Thousands of patients across Saharsa & Bihar have found lasting relief at Care Homeopathic Clinic.',
+    title: '5000+ Successful Surgeries',
+    desc: 'Over 5,000 laparoscopic and stone procedures — including PCNL, ureteroscopy, cholecystectomy, hernia, appendectomy and more.',
     color: 'text-amber-600 bg-amber-50 border-amber-100',
   },
   {
-    icon: FiActivity,
-    title: 'Online & Offline Mode',
-    desc: 'Flexible consultation options — visit us at the clinic or consult from home via video/phone call.',
-    color: 'text-purple-600 bg-purple-50 border-purple-100',
+    icon: FiDroplet,
+    title: 'Comprehensive Stone Care',
+    desc: 'Complete stone management — PCNL, ureteroscopy, laser lithotripsy, medical therapy — all under one roof in Patna.',
+    color: 'text-blue-600 bg-blue-50 border-blue-100',
   },
   {
     icon: FiHeart,
-    title: 'Holistic Patient Care',
-    desc: 'We treat the whole person — mind, body, and spirit. Personalised remedy with compassionate follow-up.',
+    title: 'Compassionate Patient Care',
+    desc: 'We treat every patient with empathy, transparency, and respect. Detailed counselling before every surgery — no surprises.',
     color: 'text-rose-600 bg-rose-50 border-rose-100',
   },
 ]
@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-primary-600 font-semibold text-sm tracking-widest uppercase">Why Care Homeopathic Clinic</span>
+          <span className="text-primary-600 font-semibold text-sm tracking-widest uppercase">Why Patna Lapro and Stone Healthcare</span>
           <h2 className="section-title mt-3">
             Healthcare You Can{' '}
             <span className="text-primary-600">Trust</span>
@@ -97,9 +97,9 @@ export default function WhyChooseUs() {
                     <p className="text-white/60 text-sm leading-relaxed max-w-lg">{desc}</p>
                   </div>
                   <div className="relative z-10 flex flex-wrap gap-2 mt-6">
-                    <span className="text-xs font-semibold bg-primary-500/20 text-primary-300 border border-primary-500/30 px-3 py-1 rounded-full">200+ Conditions</span>
-                    <span className="text-xs font-semibold bg-primary-500/20 text-primary-300 border border-primary-500/30 px-3 py-1 rounded-full">No Side Effects</span>
-                    <span className="text-xs font-semibold bg-primary-500/20 text-primary-300 border border-primary-500/30 px-3 py-1 rounded-full">All Ages</span>
+                    <span className="text-xs font-semibold bg-primary-500/20 text-primary-300 border border-primary-500/30 px-3 py-1 rounded-full">PCNL & Laser Stone</span>
+                    <span className="text-xs font-semibold bg-primary-500/20 text-primary-300 border border-primary-500/30 px-3 py-1 rounded-full">Laparoscopic OT</span>
+                    <span className="text-xs font-semibold bg-primary-500/20 text-primary-300 border border-primary-500/30 px-3 py-1 rounded-full">Liver & Pancreas</span>
                   </div>
                 </motion.div>
               )

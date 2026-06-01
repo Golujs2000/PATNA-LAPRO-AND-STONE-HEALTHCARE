@@ -4,38 +4,38 @@ import { FiAward, FiStar, FiUsers, FiHeart, FiShield, FiTrendingUp } from 'react
 const AWARDS = [
   {
     icon: FiAward,
-    title: 'Best Homeopathic Doctor',
-    desc: 'Recognised as the best homeopathic physician in Saharsa district multiple years running.',
+    title: 'Best Laparoscopic Surgeon',
+    desc: 'Recognised as a leading laparoscopic surgeon in Patna for outstanding patient outcomes.',
     color: 'bg-amber-50 border-amber-100 text-amber-500'
   },
   {
     icon: FiStar,
-    title: 'International Excellence Award',
-    desc: 'Awarded internationally for outstanding contribution to holistic and alternative medicine.',
+    title: 'Surgical Excellence Award',
+    desc: 'Awarded for outstanding contributions to minimally invasive and advanced laparoscopic surgery.',
     color: 'bg-primary-50 border-primary-100 text-primary-600'
   },
   {
     icon: FiUsers,
-    title: '1,00,000+ Patients Served',
-    desc: 'Over a lakh patients treated successfully across Saharsa, Madhepura and Bihar.',
+    title: '5,000+ Successful Surgeries',
+    desc: 'Over 5,000 laparoscopic and stone surgeries performed successfully across Patna and Bihar.',
     color: 'bg-blue-50 border-blue-100 text-blue-600'
   },
   {
     icon: FiHeart,
     title: 'Community Health Hero',
-    desc: 'Honoured for 25 years of dedicated service and compassionate patient care since 2001.',
+    desc: 'Honoured for over 20 years of dedicated service and compassionate surgical patient care.',
     color: 'bg-rose-50 border-rose-100 text-rose-500'
   },
   {
     icon: FiShield,
-    title: 'Certified Specialist',
-    desc: "B.H.M.S. & P.G.D.C.P. certified — Homoeopathic Consultant.",
+    title: 'Certified Laparoscopic Specialist',
+    desc: "MBBS, MS, DNB certified — Senior Consultant Surgeon.",
     color: 'bg-teal-50 border-teal-100 text-teal-600'
   },
   {
     icon: FiTrendingUp,
-    title: '220+ Conditions Treated',
-    desc: 'Expertise across 220+ medical conditions with proven homeopathic protocols.',
+    title: 'Advanced Surgical Protocols',
+    desc: 'Expertise in keyhole surgical techniques for rapid post-operative recovery.',
     color: 'bg-purple-50 border-purple-100 text-purple-600'
   }
 ]
@@ -115,7 +115,7 @@ export default function AwardsSection() {
             National &amp; International <span className="text-amber-500">Awards &amp; Achievements</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
-            25 years of excellence in homeopathic medicine — recognised nationally and internationally by patients, peers, and organisations across India and beyond.
+            20+ years of excellence in advanced laparoscopic surgery &amp; stone care — trusted by patients and medical peers across Patna and Bihar.
           </p>
         </motion.div>
 

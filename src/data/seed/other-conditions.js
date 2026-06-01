@@ -1,10 +1,10 @@
-export const other_conditions = {
+﻿export const other_conditions = {
   "name": "Other Conditions",
   "slug": "other-conditions",
   "icon": "\ud83e\udda0",
   "category": "General",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Other Conditions. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Other Conditions. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Dengue \u2013",
     "Malaria \u2013",

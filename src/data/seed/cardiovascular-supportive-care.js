@@ -1,10 +1,10 @@
-export const cardiovascular_supportive_care = {
+﻿export const cardiovascular_supportive_care = {
   "name": "\ufe0f Cardiovascular ( Care)",
   "slug": "cardiovascular-care",
   "icon": "\u2764",
   "category": "Cardio",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various \ufe0f Cardiovascular ( Care). Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for \ufe0f Cardiovascular ( Care). Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Palpitations (\u0926\u093f\u0932 \u0915\u0940 \u0927\u0921\u093c\u0915\u0928 \u0924\u0947\u091c)",
     "Mild hypertension",

@@ -1,10 +1,10 @@
-export const bone_joint_muscle_advanced = {
+﻿export const bone_joint_muscle_advanced = {
   "name": "Bone, Joint & Muscle (Advanced)",
   "slug": "bone-joint-muscle-advanced",
   "icon": "\ud83d\udcaa",
   "category": "Musculo",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Bone, Joint & Muscle (Advanced). Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Bone, Joint & Muscle (Advanced). Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Gout (\u092f\u0942\u0930\u093f\u0915 \u090f\u0938\u093f\u0921 \u092c\u0922\u093c\u0928\u093e)",
     "Ankylosing spondylitis",

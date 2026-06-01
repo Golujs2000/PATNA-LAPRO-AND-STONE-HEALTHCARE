@@ -84,7 +84,7 @@ export default function ServiceDetail() {
       <SEO
         title={speciality.name}
         description={`${speciality.description} Recovery: ${speciality.recoveryTime || 'Varies'}.`}
-        keywords={[speciality.name, `${speciality.name} Saharsa`, `${speciality.name} hospital Bihar`, ...(speciality.features || [])]}
+        keywords={[speciality.name, `${speciality.name} Patna`, `${speciality.name} hospital Bihar`, ...(speciality.features || [])]}
         jsonLd={[
           {
             '@context': 'https://schema.org',
@@ -238,7 +238,7 @@ export default function ServiceDetail() {
                   <FiMapPin className="w-4 h-4 text-primary-600" />
                   <h3 className="font-heading font-semibold text-navy-800">Location</h3>
                 </div>
-                <p className="text-sm text-gray-500">Radha Krishna Vatika, Panchwati Chowk, Ward No. 15, Saharsa, Bihar 852201</p>
+                <p className="text-sm text-gray-500">{siteData.contact.address}</p>
                 <p className={`text-xs mt-2 font-semibold ${AVAIL_COLOR[speciality.available] || 'text-gray-500'} inline-block px-2 py-1 rounded-full`}>
                   {speciality.available || 'By Appointment'}
                 </p>

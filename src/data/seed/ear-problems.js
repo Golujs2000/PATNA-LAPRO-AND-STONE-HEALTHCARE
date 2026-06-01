@@ -1,10 +1,10 @@
-export const ear_problems = {
+﻿export const ear_problems = {
   "name": "Ear Problems",
   "slug": "ear-problems",
   "icon": "\ud83d\udc42",
   "category": "Ear",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Ear Problems. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Ear Problems. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Tinnitus (\u0915\u093e\u0928 \u092e\u0947\u0902 \u0906\u0935\u093e\u091c \u0906\u0928\u093e)",
     "Ear blockage",

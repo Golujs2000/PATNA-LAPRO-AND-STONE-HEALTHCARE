@@ -1,10 +1,10 @@
-export const women_s_health_extended = {
+﻿export const women_s_health_extended = {
   "name": "\u200d\u2695\ufe0f Women\u2019s Health (Extended)",
   "slug": "women-s-health-extended",
   "icon": "\ud83d\udc69",
   "category": "Women",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various \u200d\u2695\ufe0f Women\u2019s Health (Extended). Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for \u200d\u2695\ufe0f Women\u2019s Health (Extended). Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Ovarian cyst (\u0905\u0902\u0921\u093e\u0936\u092f \u0915\u0940 \u0917\u093e\u0902\u0920)",
     "Endometriosis",

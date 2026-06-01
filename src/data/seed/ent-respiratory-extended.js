@@ -1,10 +1,10 @@
-export const ent_respiratory_extended = {
+﻿export const ent_respiratory_extended = {
   "name": "ENT & Respiratory (Extended)",
   "slug": "ent-respiratory-extended",
   "icon": "\ud83e\udec1",
   "category": "Respiratory",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various ENT & Respiratory (Extended). Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for ENT & Respiratory (Extended). Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Nasal polyps",
     "Deviated septum symptoms (DNS support)",

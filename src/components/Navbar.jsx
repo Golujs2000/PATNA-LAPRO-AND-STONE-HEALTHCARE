@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FiPhone, FiMenu, FiX, FiChevronDown, FiArrowRight, FiActivity } from 'react-icons/fi'
 import { siteData } from '../data/siteData'
 import { useSpecialities } from '../hooks/useSpecialities'
-import hospitalLogo from '../assets/care-homeopathic-logo.png'
+import hospitalLogo from '../assets/patna-lapro-logo.png'
 
 
 const mainLinks = [
@@ -230,21 +230,21 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap-3 group shrink-0">
               <motion.img
                 src={hospitalLogo}
-                alt="Care Homeopathic Clinic Logo"
+                alt="Patna Lapro and Stone Healthcare Logo"
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
                 className="h-10 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
               <div className="flex flex-col">
-                <span className="text-navy-900 font-hindi font-bold text-lg md:text-xl leading-none group-hover:text-primary-600 transition-colors">
-                  केयर होम्योपैथिक क्लिनिक
+                <span className="text-navy-900 font-heading font-black text-sm md:text-base leading-tight group-hover:text-primary-600 transition-colors max-w-[200px]">
+                  Patna Lapro & Stone Healthcare
                 </span>
-                <span className="text-navy-800 text-[11px] md:text-[13px] font-bold mt-0.5">
-                  Panchwati Chowk, Saharsa
+                <span className="text-navy-800 text-[10px] md:text-[11px] font-bold mt-0.5">
+                  Sri Krishna Nagar, Patna
                 </span>
-                <span className="text-primary-500 text-[10px] md:text-[11px] font-semibold italic hidden sm:block leading-tight mt-1">
-                  The highest ideal of cure is <br /> rapid, gentle and permanent restoration of the health
+                <span className="text-primary-500 text-[9px] md:text-[10px] font-semibold italic hidden sm:block leading-tight mt-0.5">
+                  Dr. Sanjeev Kumar — MBBS, MS, DNB
                 </span>
               </div>
             </Link>

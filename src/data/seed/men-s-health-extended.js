@@ -1,10 +1,10 @@
-export const men_s_health_extended = {
+﻿export const men_s_health_extended = {
   "name": "\u200d\u2695\ufe0f Men\u2019s Health (Extended)",
   "slug": "men-s-health-extended",
   "icon": "\ud83d\udc68",
   "category": "Men",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various \u200d\u2695\ufe0f Men\u2019s Health (Extended). Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for \u200d\u2695\ufe0f Men\u2019s Health (Extended). Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Testicular pain",
     "Varicocele",

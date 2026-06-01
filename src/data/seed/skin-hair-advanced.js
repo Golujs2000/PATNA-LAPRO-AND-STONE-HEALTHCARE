@@ -1,10 +1,10 @@
-export const skin_hair_advanced = {
+﻿export const skin_hair_advanced = {
   "name": "Skin & Hair (Advanced)",
   "slug": "skin-hair-advanced",
   "icon": "\ud83e\uddf4",
   "category": "Skin",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Skin & Hair (Advanced). Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Skin & Hair (Advanced). Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Melasma (\u091d\u093e\u0907\u092f\u093e\u0902)",
     "Hyperpigmentation",

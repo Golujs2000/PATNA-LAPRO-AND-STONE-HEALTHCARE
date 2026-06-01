@@ -32,11 +32,11 @@ export default function ServicesSection() {
               Quality Service
             </span>
             <h2 className="font-heading font-bold text-navy-800 text-4xl md:text-5xl leading-tight">
-              Homeopathic treatments and healing services
+              Advanced Laparoscopic & Stone Treatment Specialities
             </h2>
           </div>
           <p className="text-gray-500 text-base leading-relaxed md:text-right">
-            At Care Homeopathic Clinic, we offer personalised constitutional treatment for a wide range of acute and chronic conditions — safe, gentle, and free from side effects.
+            At Patna Lapro and Stone Healthcare, we offer advanced laparoscopic surgery and comprehensive stone treatment — from kidney stones and gallbladder to liver, pancreas, and gastrointestinal care by Dr. Sanjeev Kumar (MBBS, MS, DNB).
           </p>
         </motion.div>
 
@@ -82,7 +82,7 @@ export default function ServicesSection() {
                         {spec.name}
                       </h3>
                       <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
-                        {spec.description || 'Personalised homeopathic treatment for lasting relief.'}
+                        {spec.description || 'Expert laparoscopic & surgical treatment for lasting relief.'}
                       </p>
                     </div>
                   </Link>

@@ -1,10 +1,10 @@
-export const hormonal_endocrine = {
+﻿export const hormonal_endocrine = {
   "name": "Hormonal & Endocrine",
   "slug": "hormonal-endocrine",
   "icon": "\ud83e\uddec",
   "category": "Chronic",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Hormonal & Endocrine. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Hormonal & Endocrine. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Hormonal imbalance",
     "Adrenal fatigue (functional concept)",

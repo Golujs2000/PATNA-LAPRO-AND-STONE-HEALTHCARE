@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────
 // pages/DoctorProfile.jsx
 // Individual doctor detail page at /doctors/:id.
 // Fetches the doctor document directly from Firestore by ID.
@@ -77,8 +77,8 @@ export default function DoctorProfile() {
     <>
       <SEO
         title={doctor.name}
-        description={`${doctor.name} – ${doctor.specialty} specialist at Care Homeopathic Clinic, Saharsa. ${doctor.experience} years of experience. ${doctor.qualification}. Book an appointment today.`}
-        keywords={[doctor.name, doctor.specialty, `${doctor.specialty} doctor Saharsa`, `${doctor.specialty} specialist Bihar`]}
+        description={`${doctor.name} – ${doctor.specialty} specialist at Patna Lapro and Stone Healthcare, Patna. ${doctor.experience} years of experience. ${doctor.qualification}. Book an appointment today.`}
+        keywords={[doctor.name, doctor.specialty, `${doctor.specialty} doctor Patna`, `${doctor.specialty} specialist Bihar`]}
         jsonLd={[
           {
             '@context': 'https://schema.org',
@@ -96,7 +96,7 @@ export default function DoctorProfile() {
               url: siteData.url,
               address: {
                 '@type': 'PostalAddress',
-                addressLocality: 'Saharsa',
+                addressLocality: 'Patna',
                 addressRegion: 'Bihar',
                 addressCountry: 'IN',
               },

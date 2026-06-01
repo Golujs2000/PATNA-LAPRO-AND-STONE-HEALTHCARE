@@ -11,31 +11,31 @@ import { siteData } from '../data/siteData'
 import { getGallery } from '../services/gallery'
 import { useSpecialities } from '../hooks/useSpecialities'
 
-const LOGO = '/care-homeopathic-logo.png'
+const LOGO = '/patna-lapro-logo.png'
 
 const values = [
   { icon: FiHeart,        title: 'Compassionate Care',  desc: 'Every patient is treated with empathy, dignity, and genuine concern — not just as a case, but as a person.',                              color: 'text-rose-500', bg: 'bg-rose-50', border: 'border-rose-100' },
-  { icon: FiCheckCircle,  title: 'Pure Homeopathy',     desc: 'We practice authentic constitutional homeopathy — no shortcuts, no side effects, only deep and lasting healing.',                      color: 'text-primary-600', bg: 'bg-primary-50', border: 'border-primary-100' },
+  { icon: FiCheckCircle,  title: 'Advanced Laparoscopy', desc: 'We perform minimally invasive surgery with state-of-the-art keyhole technology for faster recovery and minimal scarring.',                      color: 'text-primary-600', bg: 'bg-primary-50', border: 'border-primary-100' },
   { icon: FiUsers,        title: 'Patient First',       desc: 'Every decision — from prescription to scheduling — is guided by what is genuinely best for the patient.',                              color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-100' },
-  { icon: FiShield,       title: 'Zero Side Effects',   desc: 'Homeopathic medicines work in harmony with the body — safe for all ages, from newborns to the elderly.',                               color: 'text-teal-600', bg: 'bg-teal-50', border: 'border-teal-100' },
-  { icon: FiAward,        title: 'Clinical Excellence', desc: 'Recognised nationally and internationally for outstanding contribution to holistic and alternative medicine.',                             color: 'text-amber-500', bg: 'bg-amber-50', border: 'border-amber-100' },
-  { icon: FiStar,         title: 'Proven Results',      desc: 'Over 1,00,000 patients successfully treated across 220+ conditions — with lasting, measurable outcomes.',                               color: 'text-purple-600', bg: 'bg-purple-50', border: 'border-purple-100' },
+  { icon: FiShield,       title: 'Safe Surgery & Care',   desc: 'Our surgical procedures follow the highest international safety and sterilization protocols for risk-free recovery.',                               color: 'text-teal-600', bg: 'bg-teal-50', border: 'border-teal-100' },
+  { icon: FiAward,        title: 'Clinical Excellence', desc: 'Recognised nationally and internationally for outstanding contribution to laparoscopic surgery and stone care.',                             color: 'text-amber-500', bg: 'bg-amber-50', border: 'border-amber-100' },
+  { icon: FiStar,         title: 'Proven Results',      desc: 'Over 10,000 patients successfully treated across all laparoscopic & stone procedures — with lasting, measurable outcomes.',                               color: 'text-purple-600', bg: 'bg-purple-50', border: 'border-purple-100' },
 ]
 
 const milestones = [
-  { year: '2001', title: 'Care Homeopathic Clinic Founded',   desc: 'Dr. Rajesh Kumar Ranjan established Care Homeopathic Clinic at Panchwati Chowk, Saharsa with a mission to bring authentic, affordable homeopathic healing to Bihar.' },
-  { year: '2005', title: 'Skin & Women\'s Specialty Launched', desc: 'Dedicated expertise in skin diseases and women\'s health — serving patients from Saharsa, Madhepura, Supaul, and across Bihar.' },
-  { year: '2010', title: '10,000 Patients Milestone',           desc: 'Crossed 10,000 successfully treated patients, building a reputation as Saharsa\'s most trusted homeopathic clinic.' },
-  { year: '2015', title: '25,000 Patients Milestone',           desc: 'Crossed 25,000 successfully treated patients and received international recognition for outstanding contribution to holistic and alternative medicine.' },
-  { year: '2020', title: 'Online Appointments Launched',        desc: 'Introduced online appointment booking and remote consultations, making care accessible to patients across Bihar and beyond.' },
-  { year: '2025', title: '1,00,000+ Patients Served',           desc: 'Proudly serving over a lakh patients — continuing our commitment to safe, side-effect-free homeopathic healthcare for every family.' },
+  { year: '2020', title: 'Patna Lapro & Stone Healthcare Founded', desc: 'Dr. Sanjeev Kumar established Patna Lapro and Stone Healthcare at Sri Krishna Nagar Kidwaipuri, Patna with a mission to bring world-class laparoscopic surgery and stone care to Bihar.' },
+  { year: '2021', title: 'Advanced Laparoscopic OT Set Up', desc: 'Commissioned a state-of-the-art laparoscopic operating theatre with HD camera, energy devices, and full anesthetic support.' },
+  { year: '2022', title: '1,000 Surgeries Milestone', desc: 'Crossed 1,000 successful laparoscopic procedures — gallbladder, hernia, appendix and more — with zero mortality.' },
+  { year: '2023', title: 'Stone Treatment Centre Launched', desc: 'Expanded to offer comprehensive stone management: PCNL, ureteroscopy, laser lithotripsy — all under one roof in Patna.' },
+  { year: '2024', title: '5,000 Patients Served', desc: 'Proudly served over 5,000 patients from across Bihar and neighbouring states. Recognised as one of Patna\'s leading surgical centres.' },
+  { year: '2025', title: 'Liver & Pancreas Specialty Added', desc: 'Expanded to cover liver abscess, pancreatic pseudocysts, jaundice, and biliary disorders — making us Patna\'s most comprehensive surgical centre.' },
 ]
 
 const facilities = [
-  { icon: '💊', name: 'Medicine Counter' },
-  { icon: '🔊', name: 'Ultrasound' },
-  { icon: '📷', name: 'X-Ray' },
-  { icon: '🔬', name: 'Pathology / Lab' },
+  { icon: '🔬', name: 'Laparoscopic OT' },
+  { icon: '🩻', name: 'Ultrasound' },
+  { icon: '📷', name: 'Digital X-Ray' },
+  { icon: '🧪', name: 'Pathology Lab' },
   { icon: '🩺', name: 'OPD Consultation' },
   { icon: '📱', name: 'Online Booking' },
 ]
@@ -54,8 +54,8 @@ export default function About() {
     <>
       <SEO
         title={`About Us — ${siteData.name}`}
-        description={`Learn about Care Homeopathic Clinic, Panchwati Chowk, Saharsa — founded in ${siteData.founded} by Dr. Rajesh Kumar Ranjan. Serving patients across Saharsa, Supaul, Madhepura, Araria, and the Kosi region.`}
-        keywords={['about Care Homeopathic Clinic', 'Dr Rajesh Kumar Ranjan', 'homeopathic clinic history Saharsa', 'best homeopathic doctor Saharsa Bihar', 'Supaul', 'Madhepura', 'Araria', 'Kosi Region']}
+        description={`Learn about Patna Lapro and Stone Healthcare, Sri Krishna Nagar, Patna — led by Dr. Sanjeev Kumar (MBBS, MS, DNB), Sr. Consultant Medimax Hospital, Ex-Surgeon Safdarjung Hospital. Specialist in Laparoscopic Surgery, Stone Treatment, Liver & Pancreas disorders.`}
+        keywords={['about Patna Lapro Stone Healthcare', 'Dr Sanjeev Kumar Patna', 'laparoscopic surgeon Patna', 'stone specialist Patna Bihar', 'liver specialist Patna', 'pancreas specialist Patna']}
       />
 
       <main className="flex-1">
@@ -78,27 +78,27 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-primary-600 font-bold text-sm tracking-widest uppercase mb-3">
-                  Saharsa's Most Trusted Homeopathic Clinic
+                  Patna's Leading Surgical Centre
                 </motion.p>
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-black text-navy-800 leading-[1.1] mb-5 tracking-tight">
-                  Healing with Skill. <span className="text-primary-600">Caring with Heart.</span>
+                  Advanced Surgery. <span className="text-primary-600">Expert Care.</span>
                 </motion.h1>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="inline-flex items-center gap-2 bg-white border border-primary-200 text-primary-800 text-sm font-semibold px-4 py-2 rounded-full shadow-sm mb-5">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse flex-shrink-0"></span>Serving Saharsa since 2001 — 25 Years of Trusted Care
+                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse flex-shrink-0"></span>Serving Patna — Expert Laparoscopic & Stone Care
                 </motion.div>
                 <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-gray-600 text-base md:text-lg leading-relaxed mb-7 max-w-xl">
-                  Care Homeopathic Clinic is Saharsa's trusted homeopathic clinic, combining authentic constitutional homeopathy with on-site diagnostics — gentle healing, lasting health at Panchwati Chowk.
+                  Patna Lapro and Stone Healthcare is Patna's trusted surgical centre, offering advanced laparoscopic surgery and comprehensive stone treatment — from kidney stones to gallbladder, hernia, liver, and pancreas care.
                 </motion.p>
                 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="flex flex-wrap gap-2.5 mb-8">
                   <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
-                    <FiCalendar className="w-3.5 h-3.5 text-primary-500" />Est. 2001 · 25 Years
+                    <FiCalendar className="w-3.5 h-3.5 text-primary-500" />Est. 2020
                   </div>
                   <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
-                    <FiShield className="w-3.5 h-3.5 text-primary-500" />Regd. No. 28291
+                    <FiShield className="w-3.5 h-3.5 text-primary-500" />MBBS, MS, DNB
                   </div>
                   <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
-                    <FiStar className="w-3.5 h-3.5 text-primary-500" />Saharsa's #1 Clinic
+                    <FiStar className="w-3.5 h-3.5 text-primary-500" />Patna's #1 Stone Surgeon
                   </div>
                 </motion.div>
                 
@@ -118,15 +118,15 @@ export default function About() {
                   <div className="relative rounded-3xl bg-gradient-to-br from-primary-50 via-white to-accent-50/60 border-2 border-primary-100/70 shadow-2xl shadow-primary-200/30 pt-6 pb-0 px-4 mb-20">
                     <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-primary-400 rounded-tl-lg"></div>
                     <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-primary-400 rounded-tr-lg"></div>
-                    <img alt="Dr. Rajesh Kumar Ranjan" className="w-full h-auto max-h-[460px] object-contain object-bottom relative z-10" src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1777202567401_DR.%20RAJESH%20KUMAR%20RANJAN%2003.webp?alt=media&token=0b8337d3-a4e9-4a41-8078-322dd21892dd" />
+                    <img alt="Dr. Sanjeev Kumar" className="w-full h-auto max-h-[460px] object-contain object-bottom relative z-10" src="/gallery/hospital-2.jpg" />
                     
                     <div className="absolute -bottom-[4.5rem] left-3 right-3 z-20">
                       <div className="bg-white/90 backdrop-blur-md border border-primary-100 rounded-2xl shadow-xl px-5 py-4">
                         <div className="flex items-start justify-between gap-3 mb-3">
                           <div>
-                            <h3 className="font-heading font-black text-base text-primary-900 leading-tight">Dr. Rajesh Kumar Ranjan</h3>
-                            <p className="text-primary-600 font-bold text-[11px] tracking-wide uppercase mt-0.5">B.H.M.S., P.G.D.C.P.</p>
-                            <p className="text-gray-500 text-[11px] font-medium mt-0.5">Homoeopathic Consultant</p>
+                            <h3 className="font-heading font-black text-base text-primary-900 leading-tight">Dr. Sanjeev Kumar</h3>
+                            <p className="text-primary-600 font-bold text-[11px] tracking-wide uppercase mt-0.5">MBBS, MS, DNB</p>
+                            <p className="text-gray-500 text-[11px] font-medium mt-0.5">Laparoscopic & Stone Surgeon</p>
                           </div>
                           <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 flex-shrink-0">
                             <FiStar className="w-4 h-4" />
@@ -161,7 +161,7 @@ export default function About() {
           <div className="container-max px-4 md:px-8">
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }} className="text-center bg-white border border-primary-100 rounded-2xl py-5 px-3 shadow-sm">
-                <p className="font-heading text-2xl md:text-3xl font-black text-primary-600">2001</p>
+                <p className="font-heading text-2xl md:text-3xl font-black text-primary-600">2020</p>
                 <p className="text-gray-500 text-xs mt-1 font-medium">Est. Year</p>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-center bg-white border border-primary-100 rounded-2xl py-5 px-3 shadow-sm">
@@ -195,9 +195,9 @@ export default function About() {
               <div className="absolute -inset-4 bg-primary-100/50 rounded-[40px] blur-2xl group-hover:bg-primary-200/50 transition-colors duration-500"></div>
               <div className="relative overflow-hidden rounded-[32px] border-4 border-white shadow-2xl">
                 <img 
-                  alt="Care Homeopathic Clinic Upcoming Building" 
+                  alt="Patna Lapro and Stone Healthcare Upcoming Building" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-                  src="https://firebasestorage.googleapis.com/v0/b/carehomeopathicclinic-e545f.firebasestorage.app/o/gallery%2F1776843139506_care%20homepathic%20clinic%20upcoming%20building.webp?alt=media&token=2299429a-b9fb-41e2-abfe-d66e13703f1e"
+                  src="https://firebasestorage.googleapis.com/v0/b/caresurgicalclinic-e545f.firebasestorage.app/o/gallery%2F1776843139506_care%20homepathic%20clinic%20upcoming%20building.webp?alt=media&token=2299429a-b9fb-41e2-abfe-d66e13703f1e"
                   style={{ minHeight: '400px' }} 
                 />
                 <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl border border-primary-100 shadow-lg">
@@ -211,19 +211,19 @@ export default function About() {
               <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">Our Story</span>
               <h2 className="font-heading text-3xl md:text-4xl font-black text-navy-800 leading-tight mb-6">Building Trust, <span className="text-primary-600">One Patient at a Time</span></h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>Care Homeopathic Clinic was established in <strong className="text-navy-800">2001</strong> at Panchwati Chowk, Saharsa, Bihar with a clear mission — to make quality homeopathic healthcare accessible and affordable for every family in Bihar.</p>
-                <p>Led by <strong className="text-navy-800">Dr. Rajesh Kumar Ranjan</strong> (B.H.M.S., P.G.D.C.P. — Homoeopathic Consultant), the clinic provides authentic constitutional homeopathy and an in-house medicine counter — all under one roof.</p>
-                <p>Over 25 years, we have grown from a small clinic to Saharsa's most trusted homeopathic centre, serving over <strong className="text-navy-800">1,00,000 patients</strong> across 220+ conditions — from skin diseases and PCOS to kidney stones and migraine.</p>
+                <p>Patna Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care to every patient in Bihar.</p>
+                <p>Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS, DNB — Laparoscopic & Stone Surgeon), the clinic provides advanced laparoscopic surgery, stone treatment (PCNL, URS, Laser), and expert care for liver & pancreas disorders.</p>
+                <p>In just five years, we have grown to become one of Patna's most trusted surgical centres, serving over <strong className="text-navy-800">10,000 patients</strong> across 15+ specialities — from gallbladder surgery and hernia repair to complex kidney stones and jaundice management.</p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium bg-green-50 border-green-200 text-green-700">
-                  <FiCheckCircle className="w-4 h-4" /> Constitutional Homeopathy
+                <div className="flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium bg-blue-50 border-blue-200 text-blue-700">
+                  <FiCheckCircle className="w-4 h-4" /> Laparoscopic Surgery
                 </div>
                 <div className="flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium bg-primary-50 border-primary-200 text-primary-700">
-                  <FiHeart className="w-4 h-4" /> Skin & Women's Health
+                  <FiHeart className="w-4 h-4" /> Stone Treatment
                 </div>
-                <div className="flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium bg-blue-50 border-blue-200 text-blue-700">
-                  <FiShield className="w-4 h-4" /> Zero Side Effects
+                <div className="flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium bg-teal-50 border-teal-200 text-teal-700">
+                  <FiShield className="w-4 h-4" /> Liver & Pancreas Care
                 </div>
               </div>
             </motion.div>
@@ -244,7 +244,7 @@ export default function About() {
                   <FiTarget className="w-7 h-7 text-primary-600" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-navy-800 mb-4">Our Mission</h3>
-                <p className="text-gray-600 leading-relaxed">To provide compassionate, evidence-based, and affordable homeopathic healthcare to every individual in Bihar — using authentic constitutional homeopathy that treats the root cause, not just the symptoms, delivering lasting relief with zero side effects.</p>
+                <p className="text-gray-600 leading-relaxed">To provide expert, evidence-based, and accessible surgical care to every patient in Bihar — using advanced laparoscopic techniques for minimal pain, rapid recovery, and lasting outcomes with the highest standards of safety.</p>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="relative bg-white rounded-3xl p-8 shadow-card border border-gray-100 overflow-hidden">
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-accent-400 to-accent-600 rounded-l-3xl"></div>
@@ -252,7 +252,7 @@ export default function About() {
                   <FiEye className="w-7 h-7 text-accent-600" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-navy-800 mb-4">Our Vision</h3>
-                <p className="text-gray-600 leading-relaxed">To be Bihar's most trusted homeopathic clinic — a place where patients receive deep, lasting healing through authentic homeopathy, families feel genuinely cared for, and every consultation restores hope and health.</p>
+                <p className="text-gray-600 leading-relaxed">To be Bihar's most trusted surgical centre — where patients receive world-class minimally invasive care, families feel genuinely supported, and every surgery is performed with precision, compassion, and clinical excellence.</p>
               </motion.div>
             </div>
           </div>
@@ -286,7 +286,7 @@ export default function About() {
           <div className="container-max relative z-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
               <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Our Journey</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">Growing Since <span className="text-primary-600">2001</span></h2>
+              <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">Growing Since <span className="text-primary-600">2020</span></h2>
             </motion.div>
             <div className="relative max-w-3xl mx-auto">
               <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary-200 md:-translate-x-0.5"></div>
@@ -314,7 +314,7 @@ export default function About() {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
               <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Infrastructure</span>
               <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">Our <span className="text-primary-600">Facilities</span></h2>
-              <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">Everything you need for complete, comfortable healthcare — all under one roof at Panchwati Chowk, Saharsa.</p>
+              <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">Everything you need for complete, comfortable healthcare — all under one roof at Sri Krishna Nagar Kidwaipuri, Patna.</p>
             </motion.div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
               {facilities.map(({ icon, name }, i) => (
@@ -333,7 +333,7 @@ export default function About() {
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Get In Touch</span>
               <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 mb-4 leading-tight">Ready to Start <span className="text-primary-600">Your Healing Journey?</span></h2>
-              <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">Book an appointment today or call us anytime. Dr. Rajesh Kumar Ranjan and our team are here to help.</p>
+              <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">Book an appointment today or call us anytime. Dr. Sanjeev Kumar and our surgical team are here to help.</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link to="/book-appointment" className="btn-accent btn-shimmer gap-2 text-base px-8 py-4 shadow-lg shadow-accent-500/25 font-bold rounded-xl">
                   <FiCalendar /> Book Appointment

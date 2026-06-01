@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────
 // pages/Gallery.jsx
 // Full gallery page with folder-based filtering, lazy-loaded
 // image grid, and a full-screen lightbox with keyboard navigation.
@@ -116,7 +116,7 @@ export default function Gallery() {
     <>
       <SEO
         title="Gallery"
-        description="Explore Care Homeopathic Clinic's welcoming facility, diagnostic equipment, and clinic environment through our photo gallery."
+        description="Explore Patna Lapro and Stone Healthcare's welcoming facility, diagnostic equipment, and clinic environment through our photo gallery."
       />
 
       {/* Hero */}

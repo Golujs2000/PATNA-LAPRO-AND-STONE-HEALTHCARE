@@ -1,10 +1,10 @@
-export const urinary_reproductive = {
+﻿export const urinary_reproductive = {
   "name": "Urinary & Reproductive",
   "slug": "urinary-reproductive",
   "icon": "\ud83d\udca7",
   "category": "Urology",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Urinary & Reproductive. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Urinary & Reproductive. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Bedwetting in teens",
     "Urinary retention",

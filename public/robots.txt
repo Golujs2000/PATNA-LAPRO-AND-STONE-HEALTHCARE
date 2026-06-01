@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /admin
 
-Sitemap: https://carehomeopathicclinic-e545f.web.app/sitemap.xml
+Sitemap: https://patna-lapro-stone-healthcare.web.app/sitemap.xml

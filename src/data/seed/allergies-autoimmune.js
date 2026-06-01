@@ -1,10 +1,10 @@
-export const allergies_autoimmune = {
+﻿export const allergies_autoimmune = {
   "name": "Allergies & Autoimmune",
   "slug": "allergies-autoimmune",
   "icon": "\ud83e\uddec",
   "category": "Allergy",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Allergies & Autoimmune. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Allergies & Autoimmune. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Food allergies",
     "Dust allergy",

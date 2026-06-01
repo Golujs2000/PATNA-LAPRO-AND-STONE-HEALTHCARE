@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────
 // components/FloatingButtons.jsx
 // Two persistent floating action buttons on all public pages:
 //   1. WhatsApp button — opens a pre-filled chat to the hospital
@@ -13,7 +13,7 @@ import { siteData } from '../data/siteData'
 
 const WA_NUMBER = siteData.contact.phone.replace(/\D/g, '')
 const WA_MESSAGE = encodeURIComponent(
-  'Hello! I found Care Homeopathic Clinic online and would like to know more about your treatments / book an appointment.'
+  'Hello! I found Patna Lapro and Stone Healthcare online and would like to know more about your treatments / book an appointment.'
 )
 const WA_URL = `https://wa.me/91${WA_NUMBER}?text=${WA_MESSAGE}`
 

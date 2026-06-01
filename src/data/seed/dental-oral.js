@@ -1,10 +1,10 @@
-export const dental_oral = {
+﻿export const dental_oral = {
   "name": "Dental & Oral",
   "slug": "dental-oral",
   "icon": "\ud83e\uddb7",
   "category": "Dental",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Dental & Oral. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Dental & Oral. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Toothache (\u0926\u093e\u0902\u0924 \u0926\u0930\u094d\u0926)",
     "Gum bleeding (\u092e\u0938\u0942\u0921\u093c\u094b\u0902 \u0938\u0947 \u0916\u0942\u0928)",

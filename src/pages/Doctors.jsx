@@ -25,13 +25,13 @@ export default function Doctors() {
     <>
       <SEO
         title="Our Doctors"
-        description="Meet the Homoeopathic Consultant at Care Homeopathic Clinic, Saharsa — Dr. Rajesh Kumar Ranjan (B.H.M.S.). View profiles and book appointments online."
-        keywords={['doctors in Saharsa', 'best surgeon Saharsa', 'gynaecologist Saharsa', 'specialist doctor Bihar', 'Dr Amit Anand', 'Dr Kumari Sneha']}
+        description="Meet the Laparoscopic & Stone Surgeon at Patna Lapro and Stone Healthcare, Patna — Dr. Sanjeev Kumar (MBBS, MS, DNB). View profiles and book appointments online."
+        keywords={['doctors in Patna', 'best surgeon Patna', 'laparoscopy doctor Bihar', 'kidney stone specialist Patna', 'Dr Sanjeev Kumar Patna']}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
-          name: 'Doctors at Care Homeopathic Clinic',
-          description: 'Meet Dr. Rajesh Kumar Ranjan and the team at Care Homeopathic Clinic, Saharsa, Bihar.',
+          name: 'Doctors at Patna Lapro and Stone Healthcare',
+          description: 'Meet Dr. Sanjeev Kumar and the team at Patna Lapro and Stone Healthcare, Patna, Bihar.',
           url: `${siteData.url}/doctors`,
         }}
       />
@@ -41,7 +41,7 @@ export default function Doctors() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="container-max">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Expert Doctors</h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            80+ highly qualified specialists committed to your health and recovery.
+            Highly qualified surgeons and medical professionals committed to your health and recovery.
           </p>
         </motion.div>
       </section>

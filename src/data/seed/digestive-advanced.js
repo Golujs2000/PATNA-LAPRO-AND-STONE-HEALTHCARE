@@ -1,10 +1,10 @@
-export const digestive_advanced = {
+﻿export const digestive_advanced = {
   "name": "\ufe0f Digestive (Advanced)",
   "slug": "digestive-advanced",
   "icon": "\ud83c\udf7d",
   "category": "Digestive",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various \ufe0f Digestive (Advanced). Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for \ufe0f Digestive (Advanced). Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Food intolerance",
     "Lactose intolerance",

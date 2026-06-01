@@ -1,4 +1,4 @@
-import { consolidatedSpecialities } from './consolidatedData.js';
+import { laproStoneSpecialities } from './laproStoneSpecialities.js'
 
-// Export only the consolidated and translated list
-export const allSpecialities = consolidatedSpecialities;
+// Export the Patna Lapro and Stone Healthcare speciality list
+export const allSpecialities = laproStoneSpecialities

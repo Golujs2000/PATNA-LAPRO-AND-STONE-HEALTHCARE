@@ -1,10 +1,10 @@
-export const musculoskeletal_disorders = {
+﻿export const musculoskeletal_disorders = {
   "name": "Musculoskeletal Disorders",
   "slug": "musculoskeletal-disorders",
   "icon": "\ud83d\udcaa",
   "category": "Musculo",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Musculoskeletal Disorders. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Musculoskeletal Disorders. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Arthritis (\u0917\u0920\u093f\u092f\u093e)",
     "Rheumatoid arthritis",

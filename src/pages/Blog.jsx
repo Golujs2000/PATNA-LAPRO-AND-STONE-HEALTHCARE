@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────
 // pages/Blog.jsx
 // Blog listing page with real-time search and category filtering.
 // Fetches published blogs via useBlogs; client-side filtering
@@ -35,7 +35,7 @@ export default function Blog() {
     <>
       <SEO
         title="Health Blog"
-        description="Read expert health tips, medical guides, and patient stories from Dr. Rajesh Kumar Ranjan at Care Homeopathic Clinic."
+        description="Read expert health tips, medical guides, and patient stories from Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare."
       />
 
       {/* Hero */}

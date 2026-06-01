@@ -1,10 +1,10 @@
-export const male_health_issues = {
+﻿export const male_health_issues = {
   "name": "\u200d\u2695\ufe0f Male Health Issues",
   "slug": "male-health-issues",
   "icon": "\ud83d\udc68",
   "category": "Men",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various \u200d\u2695\ufe0f Male Health Issues. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for \u200d\u2695\ufe0f Male Health Issues. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Erectile dysfunction",
     "Premature ejaculation (\u0936\u0940\u0918\u094d\u0930\u092a\u0924\u0928)",

@@ -1,10 +1,10 @@
-export const behavioral_lifestyle = {
+﻿export const behavioral_lifestyle = {
   "name": "Behavioral & Lifestyle",
   "slug": "behavioral-lifestyle",
   "icon": "\ud83e\udde0",
   "category": "Neuro",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Behavioral & Lifestyle. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Behavioral & Lifestyle. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Addiction recovery support (smoking/alco",
     "Laziness / low motivation",

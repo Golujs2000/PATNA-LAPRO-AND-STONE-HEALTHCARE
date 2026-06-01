@@ -1,10 +1,10 @@
-export const neurological_psychological = {
+﻿export const neurological_psychological = {
   "name": "Neurological & Psychological",
   "slug": "neurological-psychological",
   "icon": "\ud83e\udde0",
   "category": "Neuro",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Neurological & Psychological. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Neurological & Psychological. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Memory weakness (\u092f\u093e\u0926\u0926\u093e\u0936\u094d\u0924 \u0915\u092e\u091c\u093c\u094b\u0930)",
     "Brain fog",

@@ -1,10 +1,10 @@
-export const respiratory_problems = {
+﻿export const respiratory_problems = {
   "name": "Respiratory Problems",
   "slug": "respiratory-problems",
   "icon": "\ud83e\udec1",
   "category": "Respiratory",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various Respiratory Problems. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for Respiratory Problems. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Asthma (\u0926\u092e\u093e)",
     "Bronchitis (\u092c\u094d\u0930\u094b\u0902\u0915\u093e\u0907\u091f\u093f\u0938)",

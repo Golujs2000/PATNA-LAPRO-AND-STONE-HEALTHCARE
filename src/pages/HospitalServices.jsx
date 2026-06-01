@@ -66,7 +66,8 @@ export default function HospitalServices() {
     <>
       <SEO
         title="Clinic Services & Facilities"
-        description={`Explore ${siteData.name}'s range of services — Online/Offline Consultation, Pharmacy, and patient support.`}
+        description="Explore Patna Lapro and Stone Healthcare's medical facilities & services, including advanced laparoscopic OT, diagnostic partnerships, pharmacy, and expert consultations in Patna."
+        keywords={['laparoscopic OT Patna', 'surgery services Patna', 'stone clinic Patna', 'diagnostic services Patna', 'Patna Lapro and Stone Healthcare facilities']}
       />
 
       {/* ── Hero ── */}
@@ -80,7 +81,7 @@ export default function HospitalServices() {
               Clinic Services &amp; Facilities
             </h1>
             <p className="text-white/75 text-lg">
-              Dedicated homeopathic care provided with genuine compassion and clinical excellence — including in-house facilities and external diagnostic support for the Kosi region.
+              Dedicated laparoscopic and surgical care provided with genuine compassion and clinical excellence — including in-house facilities and diagnostic support for Patna and surrounding regions.
             </p>
             <div className="flex flex-wrap gap-4 mt-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 text-center">

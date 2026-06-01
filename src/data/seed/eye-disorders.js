@@ -1,10 +1,10 @@
-export const eye_disorders = {
+﻿export const eye_disorders = {
   "name": "\ufe0f Eye Disorders",
   "slug": "eye-disorders",
   "icon": "\ud83d\udc41",
   "category": "Eye",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various \ufe0f Eye Disorders. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for \ufe0f Eye Disorders. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Dry eyes",
     "Watering eyes (\u0906\u0902\u0916 \u0938\u0947 \u092a\u093e\u0928\u0940 \u0906\u0928\u093e)",

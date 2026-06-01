@@ -1,10 +1,10 @@
-export const general_infectious_conditions = {
+﻿export const general_infectious_conditions = {
   "name": "\ufe0f General & Infectious Conditions",
   "slug": "general-infectious-conditions",
   "icon": "\ud83c\udf21",
   "category": "General",
   "available": "OPD Hours",
-  "description": "Homeopathic care for various \ufe0f General & Infectious Conditions. Dr. Rajesh Kumar Ranjan provides specialized treatment for acute and chronic conditions.",
+  "description": "Expert surgical care for \ufe0f General & Infectious Conditions. Dr. Sanjeev Kumar provides specialized treatment for acute and chronic conditions.",
   "features": [
     "Chikungunya (\u091a\u093f\u0915\u0928\u0917\u0941\u0928\u093f\u092f\u093e \u2013)",
     "Viral arthritis",

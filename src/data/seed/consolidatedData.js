@@ -1,4 +1,4 @@
-export const consolidatedSpecialities = [
+﻿export const consolidatedSpecialities = [
   {
     "id": "acute",
     "name": "Common Acute & Infectious Conditions (सामान्य एवं संक्रामक रोग)",
