@@ -25,7 +25,7 @@ export default function Doctors() {
     <>
       <SEO
         title="Our Doctors"
-        description="Meet the Laparoscopic & Stone Surgeon at Patna Lapro and Stone Healthcare, Patna — Dr. Sanjeev Kumar (MBBS, MS, DNB). View profiles and book appointments online."
+        description="Meet the Laparoscopic & Gastro Specialist at Patna Lapro and Stone Healthcare, Patna — Dr. Sanjeev Kumar (MBBS, MS, DNB). View profiles and book appointments online."
         keywords={['doctors in Patna', 'best surgeon Patna', 'laparoscopy doctor Bihar', 'kidney stone specialist Patna', 'Dr Sanjeev Kumar Patna']}
         jsonLd={{
           '@context': 'https://schema.org',

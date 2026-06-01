@@ -1,4 +1,4 @@
-﻿// ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
 // components/home/GalleryStrip.jsx
 // Hospital infrastructure gallery section on the homepage.
 // Fetches images from the "home gallery" Firestore folder.
@@ -18,10 +18,10 @@ import { FiArrowRight, FiImage, FiX, FiChevronLeft, FiChevronRight } from 'react
 import { getGalleryByFolderName } from '../../services/gallery'
 
 const STATS = [
-  { value: '1,00,000+', label: 'Happy Patients' },
-  { value: '25+',       label: 'Years Experience' },
-  { value: '33+',       label: 'Specialities' },
-  { value: '220+',      label: 'Conditions Treated' },
+  { value: '8,000+',    label: 'Satisfied Patients' },
+  { value: '27+',       label: 'Years Experience' },
+  { value: '350+',      label: 'Successful Operations' },
+  { value: '150+',      label: 'Awards Received' },
 ]
 
 // ── Lightbox ──────────────────────────────────────────────────────────────────

@@ -39,24 +39,22 @@ function Counter({ value, suffix, duration = 2000 }) {
 
 export default function StatsCounter() {
   return (
-    <section className="bg-navy-800 py-14">
-      <div className="container-max">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x divide-white/10 text-center"
-        >
-          {siteData.stats.map(({ label, value, suffix }, i) => (
-            <div key={label} className="px-4">
-              <h3 className="font-heading font-bold text-4xl lg:text-5xl text-white mb-2">
-                <Counter value={value} suffix={suffix} />
-              </h3>
-              <p className="text-primary-300 font-medium text-sm lg:text-base uppercase tracking-wider">{label}</p>
-            </div>
-          ))}
-        </motion.div>
-      </div>
+    <section className="relative z-30 max-w-5xl mx-auto px-4 -mt-12 md:-mt-16">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-navy-800 rounded-3xl py-8 md:py-10 px-6 md:px-10 shadow-2xl shadow-navy-950/45 border border-navy-700/50 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x divide-white/10 text-center"
+      >
+        {siteData.stats.map(({ label, value, suffix }, i) => (
+          <div key={label} className="px-4">
+            <h3 className="font-heading font-bold text-4xl lg:text-5xl text-white mb-2">
+              <Counter value={value} suffix={suffix} />
+            </h3>
+            <p className="text-primary-300 font-semibold text-[10px] lg:text-xs uppercase tracking-wider">{label}</p>
+          </div>
+        ))}
+      </motion.div>
     </section>
   )
 }

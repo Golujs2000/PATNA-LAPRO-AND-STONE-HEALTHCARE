@@ -16,14 +16,14 @@ const AWARDS = [
   },
   {
     icon: FiUsers,
-    title: '5,000+ Successful Surgeries',
-    desc: 'Over 5,000 laparoscopic and stone surgeries performed successfully across Patna and Bihar.',
+    title: '350+ Successful Operations',
+    desc: 'Over 350 successful laparoscopic and stone operations performed successfully across Patna and Bihar.',
     color: 'bg-blue-50 border-blue-100 text-blue-600'
   },
   {
     icon: FiHeart,
     title: 'Community Health Hero',
-    desc: 'Honoured for over 20 years of dedicated service and compassionate surgical patient care.',
+    desc: 'Honoured for over 27 years of dedicated service and compassionate surgical patient care.',
     color: 'bg-rose-50 border-rose-100 text-rose-500'
   },
   {
@@ -114,8 +114,8 @@ export default function AwardsSection() {
           <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">
             National &amp; International <span className="text-amber-500">Awards &amp; Achievements</span>
           </h2>
-          <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
-            20+ years of excellence in advanced laparoscopic surgery &amp; stone care — trusted by patients and medical peers across Patna and Bihar.
+          <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto font-medium">
+            27+ years of excellence in advanced laparoscopic surgery &amp; stone care — trusted by patients and medical peers across Patna and Bihar.
           </p>
         </motion.div>
 

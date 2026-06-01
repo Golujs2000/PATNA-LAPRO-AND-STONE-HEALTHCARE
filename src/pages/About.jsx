@@ -13,7 +13,7 @@ export default function About() {
     <>
       <SEO
         title={`About Us — ${siteData.name}`}
-        description={`Learn about Patna Lapro and Stone Healthcare, Sri Krishna Nagar, Patna — led by Dr. Sanjeev Kumar (MBBS, MS, DNB), Sr. Consultant Medimax Hospital, Ex-Surgeon Safdarjung Hospital. Specialist in Laparoscopic Surgery, Stone Treatment, Liver & Pancreas disorders.`}
+        description={`Learn about Patna Lapro and Stone Healthcare, Sri Krishna Nagar, Patna — led by Dr. Sanjeev Kumar (MBBS, MS, DNB), Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon Safdarjung Hospital. Specialist in Laparoscopic Surgery, Stone Treatment, Liver & Pancreas disorders.`}
         keywords={['about Patna Lapro Stone Healthcare', 'Dr Sanjeev Kumar Patna', 'laparoscopic surgeon Patna', 'stone specialist Patna Bihar', 'liver specialist Patna', 'pancreas specialist Patna']}
       />
 
@@ -69,15 +69,19 @@ export default function About() {
                   <div className="relative rounded-3xl bg-gradient-to-br from-primary-50 via-white to-accent-50/60 border-2 border-primary-100/70 shadow-2xl shadow-primary-200/30 pt-6 pb-0 px-4">
                     <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-primary-400 rounded-tl-lg"></div>
                     <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-primary-400 rounded-tr-lg"></div>
-                    <img alt="Dr. Sanjeev Kumar" className="w-full h-auto max-h-[460px] object-contain object-bottom relative z-10" src="/gallery/hospital-2.jpg" />
+                    <img
+                      alt="Dr. Sanjeev Kumar"
+                      className="w-full h-auto max-h-[460px] object-cover object-top rounded-2xl relative z-10"
+                      src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780307021434_DR.%20SANJEEV%20KUMAR%2002.webp?alt=media&token=e3b03b26-9e61-48d6-b9dd-48faa6646d13"
+                    />
                     
                     <div className="absolute -bottom-16 left-3 right-3 z-20">
                       <div className="bg-white/90 backdrop-blur-md border border-primary-100 rounded-2xl shadow-xl px-5 py-4">
                         <div className="flex items-start justify-between gap-3 mb-3">
                           <div>
                             <h3 className="font-heading font-black text-base text-primary-900 leading-tight">Dr. Sanjeev Kumar</h3>
-                            <p className="text-primary-600 font-bold text-[11px] tracking-wide uppercase mt-0.5">MBBS, MS, DNB</p>
-                            <p className="text-gray-500 text-[11px] font-medium mt-0.5">Laparoscopic & Stone Surgeon</p>
+                            <p className="text-primary-600 font-bold text-[10px] tracking-wide uppercase mt-0.5">MBBS, MS, DNB</p>
+                            <p className="text-gray-500 text-[11px] font-medium mt-0.5">Laparoscopic & Gastro Specialist</p>
                           </div>
                           <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 flex-shrink-0">
                             <FiStar className="w-4 h-4" />
@@ -86,16 +90,16 @@ export default function About() {
                         <div className="h-px bg-gray-100 mb-3"></div>
                         <div className="grid grid-cols-3 divide-x divide-gray-100 text-center">
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">20+</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">27</p>
                             <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Yrs Exp.</p>
                           </div>
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">15+</p>
-                            <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Specialities</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">8K+</p>
+                            <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Patients</p>
                           </div>
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">5K+</p>
-                            <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Surgeries</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">350+</p>
+                            <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Operations</p>
                           </div>
                         </div>
                       </div>
@@ -130,9 +134,9 @@ export default function About() {
               <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">Our Story</span>
               <h2 className="font-heading text-3xl md:text-4xl font-black text-navy-800 leading-tight mb-6">Building Trust, <span className="text-primary-600">One Patient at a Time</span></h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>Patna Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care to every patient in Bihar.</p>
-                <p>Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS, DNB — Laparoscopic & Stone Surgeon), the clinic provides advanced laparoscopic surgery, stone treatment (PCNL, URS, Laser), and expert care for liver & pancreas disorders.</p>
-                <p>In just five years, we have grown to become one of Patna's most trusted surgical centres, serving over <strong className="text-navy-800">5,000 patients</strong> across 15+ specialities — from gallbladder surgery and hernia repair to complex kidney stones and jaundice management.</p>
+                <p>Patna Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care and gastroenterology treatments to Bihar.</p>
+                <p>Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS, DNB), a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.</p>
+                <p>We are proud to have served over <strong className="text-navy-800">8,000 satisfied patients</strong> and performed more than <strong className="text-navy-800">350 successful operations</strong>, backed by prestigious recognitions including over <strong className="text-navy-800">150 awards</strong>.</p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium bg-blue-50 border-blue-200 text-blue-700">

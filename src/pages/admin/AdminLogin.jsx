@@ -1,4 +1,4 @@
-﻿// ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
 // pages/admin/AdminLogin.jsx
 // Admin login page at /admin/login.
 // Authenticates via Firebase Auth and verifies the user exists
@@ -96,7 +96,7 @@ export default function AdminLogin() {
           {/* Logo */}
           <div className="flex flex-col items-center mb-8">
             <div className="w-16 h-16 rounded-2xl bg-primary-600 flex items-center justify-center shadow-lg mb-4">
-              <span className="text-white font-bold text-2xl">MH</span>
+              <span className="text-white font-bold text-2xl">PL</span>
             </div>
             <h1 className="text-2xl font-bold text-navy-800">
               {resetMode ? 'Reset Password' : 'Admin Login'}

@@ -1,4 +1,4 @@
-﻿// ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
 // components/SEO.jsx
 // Reusable head tag manager using react-helmet-async.
 // Place <SEO /> at the top of each page to set:
@@ -73,13 +73,7 @@ export default function SEO({ title, description, image, type = 'website', keywo
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         opens: '09:00',
-        closes: '18:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Sunday',
-        opens: '11:00',
-        closes: '14:00'
+        closes: '17:00'
       }
     ]
   }

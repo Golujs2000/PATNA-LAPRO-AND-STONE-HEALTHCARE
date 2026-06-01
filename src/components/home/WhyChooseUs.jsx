@@ -12,7 +12,7 @@ const reasons = [
   {
     icon: FiUsers,
     title: 'Expert Surgeon — Dr. Sanjeev Kumar',
-    desc: 'MBBS, MS, DNB — 20+ years experience in laparoscopic surgery & stone treatment. Ex-Surgeon Safdarjung Hospital, New Delhi.',
+    desc: 'MBBS, MS, DNB — 27 Years Experience. Sr. Consultant Medimax Hospital, Patna. Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).',
     color: 'text-primary-600 bg-primary-50 border-primary-100',
   },
   {
@@ -23,8 +23,8 @@ const reasons = [
   },
   {
     icon: FiAward,
-    title: '5000+ Successful Surgeries',
-    desc: 'Over 5,000 laparoscopic and stone procedures — including PCNL, ureteroscopy, cholecystectomy, hernia, appendectomy and more.',
+    title: '350+ Successful Operations',
+    desc: 'Over 350 successful laparoscopic and stone operations — including PCNL, ureteroscopy, cholecystectomy, hernia, appendectomy and more.',
     color: 'text-amber-600 bg-amber-50 border-amber-100',
   },
   {
@@ -44,13 +44,13 @@ const reasons = [
 export default function WhyChooseUs() {
 
   return (
-    <section className="section-padding bg-[#f5f2eb] relative overflow-hidden">
+    <section className="section-padding bg-white relative overflow-hidden">
       {/* Subtle dot pattern background */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid-wcu" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="#075d26" />
+              <circle cx="2" cy="2" r="1.5" fill="#0071d9" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid-wcu)" />

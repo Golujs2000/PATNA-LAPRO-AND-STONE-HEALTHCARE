@@ -17,7 +17,7 @@ export default function ServicesSection() {
   const displayed = specialities.slice(0, 9)
 
   return (
-    <section className="section-padding" style={{ backgroundColor: '#f5f1e8' }}>
+    <section className="section-padding bg-slate-50/70 border-b border-primary-50">
       <div className="container-max">
 
         {/* Section header — title left, description right */}
@@ -36,7 +36,7 @@ export default function ServicesSection() {
             </h2>
           </div>
           <p className="text-gray-500 text-base leading-relaxed md:text-right">
-            At Patna Lapro and Stone Healthcare, we offer advanced laparoscopic surgery and comprehensive stone treatment — from kidney stones and gallbladder to liver, pancreas, and gastrointestinal care by Dr. Sanjeev Kumar (MBBS, MS, DNB).
+            We provide investigation, diagnosis, treatment and prevention of all gastrointestinal (stomach and intestines) and hepatological (liver, gallbladder, biliary tree and pancreas) diseases — advanced laparoscopic surgery and comprehensive care by Dr. Sanjeev Kumar (MBBS, MS, DNB), Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).
           </p>
         </motion.div>
 

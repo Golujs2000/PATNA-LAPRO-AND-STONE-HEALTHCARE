@@ -22,9 +22,6 @@ const TIME_SLOTS = [
   { label: '2:00 PM',  period: 'afternoon' },
   { label: '3:00 PM',  period: 'afternoon' },
   { label: '4:00 PM',  period: 'afternoon' },
-  { label: '5:00 PM',  period: 'evening' },
-  { label: '6:00 PM',  period: 'evening' },
-  { label: '7:00 PM',  period: 'evening' },
 ]
 
 const PERIOD_LABELS = { morning: '🌤 Morning', afternoon: '☀️ Afternoon', evening: '🌆 Evening' }
@@ -300,6 +297,7 @@ export default function AppointmentForm() {
                 selected={form.date}
                 onChange={(d) => set('date', d)}
                 minDate={new Date()}
+                filterDate={(date) => date.getDay() !== 0}
                 inline
                 calendarClassName="booking-cal"
               />

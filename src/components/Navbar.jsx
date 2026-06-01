@@ -240,12 +240,6 @@ export default function Navbar() {
                 <span className="text-navy-900 font-heading font-black text-sm md:text-base leading-tight group-hover:text-primary-600 transition-colors max-w-[200px]">
                   Patna Lapro & Stone Healthcare
                 </span>
-                <span className="text-navy-800 text-[10px] md:text-[11px] font-bold mt-0.5">
-                  Sri Krishna Nagar, Patna
-                </span>
-                <span className="text-primary-500 text-[9px] md:text-[10px] font-semibold italic hidden sm:block leading-tight mt-0.5">
-                  Dr. Sanjeev Kumar — MBBS, MS, DNB
-                </span>
               </div>
             </Link>
 

@@ -75,11 +75,11 @@ export default function BookAppointment() {
                 <div className="space-y-1 text-xs text-gray-600">
                   <div className="flex justify-between">
                     <span>Mon – Sat</span>
-                    <span className="font-semibold text-navy-800">9:00 AM – 6:00 PM</span>
+                    <span className="font-semibold text-navy-800">9:00 AM – 5:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday</span>
-                    <span className="font-semibold text-navy-800">11:00 AM – 2:00 PM</span>
+                    <span className="font-semibold text-red-500">Closed</span>
                   </div>
                 </div>
               </div>

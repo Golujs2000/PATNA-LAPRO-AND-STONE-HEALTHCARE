@@ -8,7 +8,7 @@ export default function FeaturedDoctors() {
   const { doctors: featured, loading } = useFeaturedDoctors()
 
   return (
-    <section className="relative section-padding overflow-hidden bg-white">
+    <section className="relative section-padding overflow-hidden bg-slate-50/70 border-t border-b border-gray-100">
       <div className="container-max relative z-10">
 
         <motion.div

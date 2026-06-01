@@ -8,9 +8,9 @@
 export const siteData = {
   name: 'Patna Lapro and Stone Healthcare',
   shortName: 'Patna Lapro & Stone',
-  tagline: 'Advanced Laparoscopic Surgery & Stone Treatment — Expertise You Can Trust',
+  tagline: 'Advanced Laparoscopic Surgery & Surgical Gastroenterology — Expertise You Can Trust',
   description:
-    'Patna Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna – advanced laparoscopic surgery, stone treatment, and liver & pancreas care by Dr. Sanjeev Kumar (MBBS, MS, DNB). Sr. Consultant at Medimax Hospital, Ex-Surgeon VMMC College & Safdarjung Hospital, New Delhi.',
+    'Patna Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna – advanced laparoscopic surgery, stone treatment, and gastroenterology care by Dr. Sanjeev Kumar (MBBS, MS, DNB). Sr. Consultant Medimax Hospital, Patna, Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi) with 27 years of experience.',
   founded: '2020',
   url: 'https://patna-lapro-stone-healthcare.web.app',
   logo: '/favicon.png',
@@ -18,13 +18,13 @@ export const siteData = {
   // ── Contact & Location ───────────────────────────────────────
   contact: {
     address: 'L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna, 800001',
-    phone: '9942282987',
-    phone2: '7091145462',
-    phone3: '6207661707',
-    phone4: '93340979025',
-    phone5: '06124502164',
+    phone: '06124502164',
+    phone2: '9942282987',
+    phone3: '7091145462',
+    phone4: '6207661707',
+    phone5: '9334097925',
     email: 'patnalapro@gmail.com',
-    hours: 'Mon – Sat: 9:00 AM – 6:00 PM | Sun: By Appointment Only',
+    hours: 'Mon – Sat: 9:00 AM – 5:00 PM | Sun: Closed',
   },
 
   // ── Social Media Links ───────────────────────────────────────
@@ -73,10 +73,10 @@ export const siteData = {
 
   // ── Homepage Stats Counter ───────────────────────────────────
   stats: [
-    { label: 'Happy Patients', value: 10000, suffix: '+' },
-    { label: 'Years Experience', value: 20, suffix: '+' },
-    { label: 'Successful Surgeries', value: 5000, suffix: '+' },
-    { label: 'Specialities', value: 15, suffix: '+' },
+    { label: 'Satisfied Patients', value: 8000, suffix: '+' },
+    { label: 'Years Experience', value: 27, suffix: '+' },
+    { label: 'Successful Operations', value: 350, suffix: '+' },
+    { label: 'Awards Received', value: 150, suffix: '+' },
   ],
 
   // ── Google Maps Embed ────────────────────────────────────────
@@ -86,28 +86,32 @@ export const siteData = {
   // ── Departments / Specialties (used in appointment form) ─────
   departments: [
     'Laparoscopic Surgery',
-    'Kidney & Ureteric Stone',
-    'Gallbladder Stone / Cholecystectomy',
-    'Liver Disorders',
-    'Pancreas Disorders',
-    'Jaundice & Bile Duct',
-    'Hernia Surgery',
-    'Appendicitis Surgery',
-    'Gastrointestinal Surgery',
-    'Colorectal Surgery',
-    'General Surgery',
-    'Emergency Surgery',
-    'Pre & Post Operative Care',
+    'Kidney Stone & Kidney Cancer',
+    'Gallbladder Surgery (Cholecystectomy)',
+    'Liver Surgery & Disorders',
+    'Pancreas Surgery & Disorders',
+    'Jaundice & Biliary (ERCP)',
+    'Hernia Surgery by Laparoscopy',
+    'Ovarian Cyst & Uterus (Laparoscopy)',
+    'Gastroesophageal Reflux Disease (GERD)',
+    'Stomach & Large Bowel Cancer Surgery',
+    'Thyroid Surgery',
+    'AV Fistula Surgery (Dialysis)',
+    'Neurology & Neurosurgery',
+    'Bariatric Surgery for Obesity',
+    'Piles, Fistula & Anal Fissure Surgery',
+    'Pediatric Congenital Defect Surgery',
+    'General & Emergency GI Surgery',
   ],
 
   // ── Facilities ───────────────────────────────────────────────
   facilities: [
-    { name: 'Laparoscopic OT', icon: '🔬' },
-    { name: 'Advanced Diagnostics', icon: '🩻' },
-    { name: 'OPD Consultation', icon: '🏥' },
-    { name: 'Online Appointment', icon: '📱' },
-    { name: 'Emergency Care', icon: '🚑' },
-    { name: 'Post-Op Recovery', icon: '💊' },
+    { name: 'I.C.U, Indoor & OPD Care', icon: '🏥' },
+    { name: 'Laparoscopy for Abdominal Surgery', icon: '🔬' },
+    { name: 'ICU Anaesthetic Support (24/7)', icon: '💉' },
+    { name: 'Neurology & Neurosurgery', icon: '🧠' },
+    { name: 'Advanced Stone PCNL/ERCP', icon: '🫘' },
+    { name: 'General & Emergency Surgery', icon: '🚑' },
   ],
 }
 
