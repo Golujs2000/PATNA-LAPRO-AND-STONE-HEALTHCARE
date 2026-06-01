@@ -105,17 +105,36 @@ export default function Contact() {
             <div className="space-y-6 mb-8">
               {[
                 { icon: FiMapPin, label: 'Our Address', value: siteData.contact.address, href: null },
-                { icon: FiPhone, label: 'Phone', value: siteData.contact.phone, href: `tel:${siteData.contact.phone}` },
+                { 
+                  icon: FiPhone, 
+                  label: 'Phone Numbers', 
+                  value: [
+                    siteData.contact.phone,
+                    siteData.contact.phone2,
+                    siteData.contact.phone3,
+                    siteData.contact.phone4,
+                    siteData.contact.phone5
+                  ].filter(Boolean),
+                  isPhones: true 
+                },
                 { icon: FiMail, label: 'Email', value: siteData.contact.email, href: `mailto:${siteData.contact.email}` },
                 { icon: FiClock, label: 'Hours', value: siteData.contact.hours, href: null },
-              ].map(({ icon: Icon, label, value, href, red }) => (
+              ].map(({ icon: Icon, label, value, href, isPhones, red }) => (
                 <div key={label} className="flex gap-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${red ? 'bg-red-50' : 'bg-primary-50'}`}>
                     <Icon className={`w-5 h-5 ${red ? 'text-red-600' : 'text-primary-600'}`} />
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-0.5">{label}</p>
-                    {href ? (
+                    {isPhones ? (
+                      <div className="flex flex-col gap-1">
+                        {value.map((ph) => (
+                          <a key={ph} href={`tel:${ph}`} className="font-medium hover:underline text-navy-800 hover:text-primary-600 block">
+                            {ph}
+                          </a>
+                        ))}
+                      </div>
+                    ) : href ? (
                       <a href={href} className={`font-medium hover:underline ${red ? 'text-red-600' : 'text-navy-800 hover:text-primary-600'}`}>{value}</a>
                     ) : (
                       <p className="font-medium text-navy-800">{value}</p>

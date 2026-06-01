@@ -143,7 +143,13 @@ export default function Footer() {
               <li className="flex gap-3 items-start">
                 <FiPhone className="w-4 h-4 text-primary-400 mt-0.5 shrink-0" />
                 <div className="space-y-1">
-                  {[siteData.contact.phone, siteData.contact.phone2]
+                  {[
+                    siteData.contact.phone,
+                    siteData.contact.phone2,
+                    siteData.contact.phone3,
+                    siteData.contact.phone4,
+                    siteData.contact.phone5
+                  ]
                     .filter(Boolean)
                     .map((ph) => (
                       <a key={ph} href={`tel:${ph}`}

@@ -21,7 +21,7 @@ export const siteData = {
     phone: '9942282987',
     phone2: '7091145462',
     phone3: '6207661707',
-    phone4: '9334097925',
+    phone4: '93340979025',
     phone5: '06124502164',
     email: 'patnalapro@gmail.com',
     hours: 'Mon – Sat: 9:00 AM – 6:00 PM | Sun: By Appointment Only',
