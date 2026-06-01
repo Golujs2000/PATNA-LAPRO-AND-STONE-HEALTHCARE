@@ -1,55 +1,14 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  FiAward, FiHeart, FiUsers, FiTarget, FiEye,
+  FiHeart, FiTarget, FiEye,
   FiCheckCircle, FiPhone, FiCalendar, FiArrowRight,
-  FiShield, FiTruck, FiStar,
+  FiShield, FiStar,
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import { siteData } from '../data/siteData'
-import { getGallery } from '../services/gallery'
-import { useSpecialities } from '../hooks/useSpecialities'
-
-const LOGO = '/patna-lapro-logo.png'
-
-const values = [
-  { icon: FiHeart,        title: 'Compassionate Care',  desc: 'Every patient is treated with empathy, dignity, and genuine concern — not just as a case, but as a person.',                              color: 'text-rose-500', bg: 'bg-rose-50', border: 'border-rose-100' },
-  { icon: FiCheckCircle,  title: 'Advanced Laparoscopy', desc: 'We perform minimally invasive surgery with state-of-the-art keyhole technology for faster recovery and minimal scarring.',                      color: 'text-primary-600', bg: 'bg-primary-50', border: 'border-primary-100' },
-  { icon: FiUsers,        title: 'Patient First',       desc: 'Every decision — from prescription to scheduling — is guided by what is genuinely best for the patient.',                              color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-100' },
-  { icon: FiShield,       title: 'Safe Surgery & Care',   desc: 'Our surgical procedures follow the highest international safety and sterilization protocols for risk-free recovery.',                               color: 'text-teal-600', bg: 'bg-teal-50', border: 'border-teal-100' },
-  { icon: FiAward,        title: 'Clinical Excellence', desc: 'Recognised nationally and internationally for outstanding contribution to laparoscopic surgery and stone care.',                             color: 'text-amber-500', bg: 'bg-amber-50', border: 'border-amber-100' },
-  { icon: FiStar,         title: 'Proven Results',      desc: 'Over 10,000 patients successfully treated across all laparoscopic & stone procedures — with lasting, measurable outcomes.',                               color: 'text-purple-600', bg: 'bg-purple-50', border: 'border-purple-100' },
-]
-
-const milestones = [
-  { year: '2020', title: 'Patna Lapro & Stone Healthcare Founded', desc: 'Dr. Sanjeev Kumar established Patna Lapro and Stone Healthcare at Sri Krishna Nagar Kidwaipuri, Patna with a mission to bring world-class laparoscopic surgery and stone care to Bihar.' },
-  { year: '2021', title: 'Advanced Laparoscopic OT Set Up', desc: 'Commissioned a state-of-the-art laparoscopic operating theatre with HD camera, energy devices, and full anesthetic support.' },
-  { year: '2022', title: '1,000 Surgeries Milestone', desc: 'Crossed 1,000 successful laparoscopic procedures — gallbladder, hernia, appendix and more — with zero mortality.' },
-  { year: '2023', title: 'Stone Treatment Centre Launched', desc: 'Expanded to offer comprehensive stone management: PCNL, ureteroscopy, laser lithotripsy — all under one roof in Patna.' },
-  { year: '2024', title: '5,000 Patients Served', desc: 'Proudly served over 5,000 patients from across Bihar and neighbouring states. Recognised as one of Patna\'s leading surgical centres.' },
-  { year: '2025', title: 'Liver & Pancreas Specialty Added', desc: 'Expanded to cover liver abscess, pancreatic pseudocysts, jaundice, and biliary disorders — making us Patna\'s most comprehensive surgical centre.' },
-]
-
-const facilities = [
-  { icon: '🔬', name: 'Laparoscopic OT' },
-  { icon: '🩻', name: 'Ultrasound' },
-  { icon: '📷', name: 'Digital X-Ray' },
-  { icon: '🧪', name: 'Pathology Lab' },
-  { icon: '🩺', name: 'OPD Consultation' },
-  { icon: '📱', name: 'Online Booking' },
-]
 
 export default function About() {
-  const [galleryImgs, setGalleryImgs] = useState([])
-  const { specialities } = useSpecialities()
-
-  useEffect(() => {
-    getGallery()
-      .then((imgs) => setGalleryImgs(imgs.slice(0, 4)))
-      .catch(console.error)
-  }, [])
-
   return (
     <>
       <SEO
@@ -58,23 +17,15 @@ export default function About() {
         keywords={['about Patna Lapro Stone Healthcare', 'Dr Sanjeev Kumar Patna', 'laparoscopic surgeon Patna', 'stone specialist Patna Bihar', 'liver specialist Patna', 'pancreas specialist Patna']}
       />
 
-      <main className="flex-1">
+      <main className="flex-1 bg-white">
         {/* ── Hero ──────────────────────────────────────────────── */}
-        <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
+        <section className="relative min-h-[75vh] flex items-center overflow-hidden py-16 md:py-24">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-100/60 rounded-full blur-[120px]"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-100/40 rounded-full blur-[100px]"></div>
           </div>
-          <svg className="absolute inset-0 w-full h-full opacity-[0.025] pointer-events-none">
-            <defs>
-              <pattern id="about-dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1.5" fill="#0e9b42"></circle>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#about-dots)"></rect>
-          </svg>
           
-          <div className="container-max section-padding relative z-10 !pt-24 pb-20">
+          <div className="container-max relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-primary-600 font-bold text-sm tracking-widest uppercase mb-3">
@@ -115,12 +66,12 @@ export default function About() {
               <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="hidden lg:flex items-center justify-center relative">
                 <div className="absolute w-[110%] h-[110%] bg-primary-100/25 rounded-full blur-[90px] -z-10"></div>
                 <div className="relative w-full max-w-md">
-                  <div className="relative rounded-3xl bg-gradient-to-br from-primary-50 via-white to-accent-50/60 border-2 border-primary-100/70 shadow-2xl shadow-primary-200/30 pt-6 pb-0 px-4 mb-20">
+                  <div className="relative rounded-3xl bg-gradient-to-br from-primary-50 via-white to-accent-50/60 border-2 border-primary-100/70 shadow-2xl shadow-primary-200/30 pt-6 pb-0 px-4">
                     <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-primary-400 rounded-tl-lg"></div>
                     <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-primary-400 rounded-tr-lg"></div>
                     <img alt="Dr. Sanjeev Kumar" className="w-full h-auto max-h-[460px] object-contain object-bottom relative z-10" src="/gallery/hospital-2.jpg" />
                     
-                    <div className="absolute -bottom-[4.5rem] left-3 right-3 z-20">
+                    <div className="absolute -bottom-16 left-3 right-3 z-20">
                       <div className="bg-white/90 backdrop-blur-md border border-primary-100 rounded-2xl shadow-xl px-5 py-4">
                         <div className="flex items-start justify-between gap-3 mb-3">
                           <div>
@@ -135,16 +86,16 @@ export default function About() {
                         <div className="h-px bg-gray-100 mb-3"></div>
                         <div className="grid grid-cols-3 divide-x divide-gray-100 text-center">
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">25+</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">20+</p>
                             <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Yrs Exp.</p>
                           </div>
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">220+</p>
-                            <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Treatments</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">15+</p>
+                            <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Specialities</p>
                           </div>
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">1L+</p>
-                            <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Patients</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">5K+</p>
+                            <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Surgeries</p>
                           </div>
                         </div>
                       </div>
@@ -156,40 +107,8 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── Stats ──────────────────────────────────────────────── */}
-        <section className="bg-gradient-to-br from-primary-50 via-white to-accent-50 border-y border-primary-100 py-12">
-          <div className="container-max px-4 md:px-8">
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }} className="text-center bg-white border border-primary-100 rounded-2xl py-5 px-3 shadow-sm">
-                <p className="font-heading text-2xl md:text-3xl font-black text-primary-600">2020</p>
-                <p className="text-gray-500 text-xs mt-1 font-medium">Est. Year</p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-center bg-white border border-primary-100 rounded-2xl py-5 px-3 shadow-sm">
-                <p className="font-heading text-2xl md:text-3xl font-black text-primary-600">1,00,000+</p>
-                <p className="text-gray-500 text-xs mt-1 font-medium">Happy Patients</p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-center bg-white border border-primary-100 rounded-2xl py-5 px-3 shadow-sm">
-                <p className="font-heading text-2xl md:text-3xl font-black text-primary-600">25+</p>
-                <p className="text-gray-500 text-xs mt-1 font-medium">Yrs Experience</p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="text-center bg-white border border-primary-100 rounded-2xl py-5 px-3 shadow-sm">
-                <p className="font-heading text-2xl md:text-3xl font-black text-primary-600">33+</p>
-                <p className="text-gray-500 text-xs mt-1 font-medium">Specialities</p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="text-center bg-white border border-primary-100 rounded-2xl py-5 px-3 shadow-sm">
-                <p className="font-heading text-2xl md:text-3xl font-black text-primary-600">220+</p>
-                <p className="text-gray-500 text-xs mt-1 font-medium">Conditions Treated</p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="text-center bg-white border border-primary-100 rounded-2xl py-5 px-3 shadow-sm">
-                <p className="font-heading text-2xl md:text-3xl font-black text-primary-600">10+</p>
-                <p className="text-gray-500 text-xs mt-1 font-medium">Staff Members</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* ── Story ──────────────────────────────────────────────── */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-slate-50 border-t border-gray-100">
           <div className="container-max grid lg:grid-cols-2 gap-14 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative group">
               <div className="absolute -inset-4 bg-primary-100/50 rounded-[40px] blur-2xl group-hover:bg-primary-200/50 transition-colors duration-500"></div>
@@ -213,7 +132,7 @@ export default function About() {
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>Patna Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care to every patient in Bihar.</p>
                 <p>Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS, DNB — Laparoscopic & Stone Surgeon), the clinic provides advanced laparoscopic surgery, stone treatment (PCNL, URS, Laser), and expert care for liver & pancreas disorders.</p>
-                <p>In just five years, we have grown to become one of Patna's most trusted surgical centres, serving over <strong className="text-navy-800">10,000 patients</strong> across 15+ specialities — from gallbladder surgery and hernia repair to complex kidney stones and jaundice management.</p>
+                <p>In just five years, we have grown to become one of Patna's most trusted surgical centres, serving over <strong className="text-navy-800">5,000 patients</strong> across 15+ specialities — from gallbladder surgery and hernia repair to complex kidney stones and jaundice management.</p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium bg-blue-50 border-blue-200 text-blue-700">
@@ -231,7 +150,7 @@ export default function About() {
         </section>
 
         {/* ── Mission & Vision ─────────────────────────────────── */}
-        <section className="section-padding bg-gradient-to-br from-primary-50 via-white to-accent-50/40">
+        <section className="section-padding bg-white border-t border-gray-100">
           <div className="container-max">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
               <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Our Purpose</span>
@@ -258,75 +177,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── Core Values ──────────────────────────────────────── */}
-        <section className="section-padding bg-white">
-          <div className="container-max">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-              <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">What We Stand For</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">Our Core <span className="text-primary-600">Values</span></h2>
-            </motion.div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {values.map(({ icon: Icon, title, desc, color, bg, border }, i) => (
-                <motion.div key={title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 group">
-                  <div className={`w-12 h-12 ${bg} ${border} border rounded-xl flex items-center justify-center mb-4`}>
-                    <Icon className={`w-5 h-5 ${color}`} />
-                  </div>
-                  <h4 className="font-heading font-bold text-navy-800 text-base mb-2 group-hover:text-primary-700 transition-colors">{title}</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Journey Timeline ─────────────────────────────────── */}
-        <section className="section-padding bg-gradient-to-br from-primary-50 via-white to-accent-50/30 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-primary-200/30 blur-[80px] pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-accent-200/20 blur-[80px] pointer-events-none"></div>
-          <div className="container-max relative z-10">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-              <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Our Journey</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">Growing Since <span className="text-primary-600">2020</span></h2>
-            </motion.div>
-            <div className="relative max-w-3xl mx-auto">
-              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary-200 md:-translate-x-0.5"></div>
-              <div className="space-y-8">
-                {milestones.map(({ year, title, desc }, i) => (
-                  <motion.div key={year} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative flex gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                    <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-white shadow z-10 mt-5"></div>
-                    <div className={`ml-16 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-10' : 'md:pl-10 md:ml-auto'}`}>
-                      <div className="bg-white border border-primary-100 rounded-2xl p-5 shadow-card hover:shadow-card-hover transition-all duration-300">
-                        <span className="inline-block bg-primary-50 text-primary-600 border border-primary-200 text-xs font-bold px-3 py-1 rounded-full mb-3">{year}</span>
-                        <h4 className="font-heading font-bold text-navy-800 mb-2">{title}</h4>
-                        <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Facilities ───────────────────────────────────────── */}
-        <section className="section-padding bg-white">
-          <div className="container-max">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-              <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Infrastructure</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">Our <span className="text-primary-600">Facilities</span></h2>
-              <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">Everything you need for complete, comfortable healthcare — all under one roof at Sri Krishna Nagar Kidwaipuri, Patna.</p>
-            </motion.div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-              {facilities.map(({ icon, name }, i) => (
-                <motion.div key={name} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-primary-50 border border-primary-100 rounded-2xl p-5 text-center hover:bg-primary-100 transition-all duration-200 cursor-default">
-                  <span className="text-3xl block mb-3">{icon}</span>
-                  <p className="text-navy-800 text-xs font-semibold leading-tight">{name}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── CTA ──────────────────────────────────────────────── */}
         <section className="section-padding bg-gradient-to-br from-primary-50 via-white to-accent-50/40 border-t border-primary-100">
           <div className="container-max text-center">
@@ -339,7 +189,7 @@ export default function About() {
                   <FiCalendar /> Book Appointment
                 </Link>
                 <a href={`tel:${siteData.contact.phone}`} className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-primary-50 border-2 border-primary-200 text-primary-700 font-semibold rounded-xl transition-all duration-200 text-base shadow-sm">
-                  <FiPhone /> {siteData.contact.phone}
+                  <FiPhone /> Call Now
                 </a>
                 <Link to="/doctors" className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 border-2 border-gray-200 text-gray-700 font-semibold rounded-xl transition-all duration-200 text-base shadow-sm">
                   Meet Our Doctors <FiArrowRight />
