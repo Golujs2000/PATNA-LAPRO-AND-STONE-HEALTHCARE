@@ -157,7 +157,7 @@ export default function GalleryStrip() {
   const [lightboxIndex, setLightboxIndex] = useState(null)
 
   useEffect(() => {
-    getGalleryByFolderName('home gallery')
+    getGalleryByFolderName('infrastructure')
       .then(setImages)
       .catch(console.error)
       .finally(() => setLoading(false))

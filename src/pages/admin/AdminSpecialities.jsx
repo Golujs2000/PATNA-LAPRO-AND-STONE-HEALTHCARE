@@ -6,12 +6,12 @@
 // Slug is auto-generated from name on add; can be manually edited.
 // ─────────────────────────────────────────────────────────────
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   FiPlus, FiEdit2, FiTrash2, FiX, FiStar,
   FiRefreshCw, FiArrowUp, FiArrowDown, FiActivity, FiEye, FiCheck,
-  FiImage, FiVideo, FiUploadCloud,
+  FiImage, FiVideo, FiUploadCloud, FiGrid,
 } from 'react-icons/fi'
 import toast from 'react-hot-toast'
 import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from 'firebase/storage'
@@ -22,6 +22,7 @@ import {
 import { getDoctors } from '../../services/doctors'
 import { getHospitalServices } from '../../services/hospitalServices'
 import { slugify, compressImage } from '../../utils/helpers'
+import { getGallery, getFolders } from '../../services/gallery'
 
 const CATEGORIES = [
   'General', 'Skin', 'Digestive', 'Respiratory', 'Neuro', 'Musculo', 
@@ -31,7 +32,7 @@ const CATEGORIES = [
 const AVAILABILITY = ['By Appointment', 'OPD Hours', '24 × 7']
 
 const EMPTY_FORM = {
-  name: '', icon: '', category: '', available: '',
+  name: '', icon: '', thumbnail: '', category: '', available: '',
   description: '', features: '', recoveryTime: '', order: 0,
   doctorIds: [],
 }
@@ -39,6 +40,30 @@ const EMPTY_TREATMENT = { name: '', duration: '' }
 
 export default function AdminSpecialities() {
   const [specialities, setSpecialities] = useState([])
+
+  // ── Gallery picker state ────────────────────────────────────────────────
+  const [galleryPickerOpen, setGalleryPickerOpen] = useState(false)
+  const [galleryImages, setGalleryImages] = useState([])
+  const [galleryLoading, setGalleryLoading] = useState(false)
+
+  const openGalleryPicker = useCallback(async () => {
+    setGalleryPickerOpen(true)
+    setGalleryLoading(true)
+    try {
+      const images = await getGallery()
+      setGalleryImages(images.filter(img => img.image))
+    } catch {
+      toast.error('Failed to load gallery images')
+    } finally {
+      setGalleryLoading(false)
+    }
+  }, [])
+
+  const selectGalleryImage = useCallback((imageUrl) => {
+    setForm((prev) => ({ ...prev, icon: imageUrl, thumbnail: '' }))
+    setGalleryPickerOpen(false)
+  }, [])
+
   const [doctors, setDoctors] = useState([])
   const [hospitalServices, setHospitalServices] = useState([])
   const [loading, setLoading] = useState(true)
@@ -55,6 +80,69 @@ export default function AdminSpecialities() {
   const [uploading, setUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState({}) // { filename: 0-100 }
   const fileInputRef = useRef(null)
+  const thumbnailInputRef = useRef(null)
+
+  // ── Thumbnail upload handler ─────────────────────────────────────────────
+  const [thumbnailUploading, setThumbnailUploading] = useState(false)
+  const [thumbnailProgress, setThumbnailProgress] = useState(0)
+
+  const handleThumbnailSelect = useCallback(async (e) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    e.target.value = ''
+
+    if (!file.type.startsWith('image/')) {
+      toast.error('Only image files are allowed for thumbnails')
+      return
+    }
+
+    setThumbnailUploading(true)
+    setThumbnailProgress(0)
+
+    try {
+      const compressed = await compressImage(file)
+      const timestamp = Date.now()
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_')
+      const storagePath = `specialities/thumbnails/${timestamp}_${safeName}`
+      const storageRef = ref(storage, storagePath)
+
+      await new Promise((resolve, reject) => {
+        const task = uploadBytesResumable(storageRef, compressed)
+        task.on(
+          'state_changed',
+          (snap) => {
+            const pct = Math.round((snap.bytesTransferred / snap.totalBytes) * 100)
+            setThumbnailProgress(pct)
+          },
+          reject,
+          async () => {
+            const url = await getDownloadURL(task.snapshot.ref)
+            setForm((prev) => ({ ...prev, icon: url, thumbnail: storagePath }))
+            setThumbnailProgress(0)
+            resolve()
+          }
+        )
+      })
+      toast.success('Thumbnail uploaded!')
+    } catch (err) {
+      console.error(err)
+      toast.error('Failed to upload thumbnail')
+    } finally {
+      setThumbnailUploading(false)
+    }
+  }, [])
+
+  const handleRemoveThumbnail = useCallback(async () => {
+    // Delete from storage if path exists
+    if (form.thumbnail) {
+      try {
+        await deleteObject(ref(storage, form.thumbnail))
+      } catch {
+        // file may already be removed
+      }
+    }
+    setForm((prev) => ({ ...prev, icon: '', thumbnail: '' }))
+  }, [form.thumbnail])
 
   const fetchSpecialities = async () => {
     setLoading(true)
@@ -76,7 +164,7 @@ export default function AdminSpecialities() {
 
   const openAddModal = () => {
     setEditingId(null)
-    setForm({ ...EMPTY_FORM, order: specialities.length + 1 })
+    setForm({ ...EMPTY_FORM, order: specialities.length + 1, icon: '', thumbnail: '' })
     setTreatments([])
     setMedia([])
     setUploadProgress({})
@@ -88,6 +176,7 @@ export default function AdminSpecialities() {
     setForm({
       name: spec.name || '',
       icon: spec.icon || '',
+      thumbnail: spec.thumbnail || '',
       category: spec.category || '',
       available: spec.available || '',
       description: spec.description || '',
@@ -289,7 +378,7 @@ export default function AdminSpecialities() {
           <p className="text-gray-500 text-sm mt-0.5">{specialities.length} specialit{specialities.length !== 1 ? 'ies' : 'y'}</p>
         </div>
         <div className="flex gap-2">
-          <button onClick={fetchSpecialities} className="btn-secondary text-sm py-2 px-4">
+          <button onClick={fetchSpecialities} className="btn-secondary text-sm py-2 px-4" title="Refresh">
             <FiRefreshCw size={14} />
           </button>
           <button onClick={openAddModal} className="btn-primary text-sm py-2 px-4">
@@ -338,10 +427,14 @@ export default function AdminSpecialities() {
                 </button>
               </div>
 
-              {/* Icon */}
+              {/* Thumbnail / Icon */}
               {spec.icon && (
-                <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0 text-xl">
-                  {spec.icon}
+                <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0 text-xl overflow-hidden">
+                  {(spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.')) ? (
+                    <img src={spec.icon} alt={spec.name} className="w-full h-full object-contain" />
+                  ) : (
+                    spec.icon
+                  )}
                 </div>
               )}
 
@@ -452,19 +545,151 @@ export default function AdminSpecialities() {
 
                 <form onSubmit={handleSubmit} className="p-6 space-y-5">
 
-                  {/* Row 1: Name + Icon */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="sm:col-span-2">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
-                      <input name="name" value={form.name} onChange={handleChange} required
-                        className="input-field" placeholder="General Surgery" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Icon (emoji)</label>
-                      <input name="icon" value={form.icon} onChange={handleChange}
-                        className="input-field text-2xl" placeholder="🔪" />
-                    </div>
+                  {/* Row 1: Name */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                    <input name="name" value={form.name} onChange={handleChange} required
+                      className="input-field" placeholder="General Surgery" />
                   </div>
+
+                  {/* Thumbnail Upload / Gallery Picker */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Thumbnail</label>
+                    {form.icon && (form.icon.startsWith('http') || form.icon.startsWith('/') || form.icon.includes('.')) ? (
+                      <div className="flex items-center gap-4">
+                        <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border-2 border-primary-100 flex items-center justify-center">
+                          <img src={form.icon} alt="Thumbnail" className="w-full h-full object-contain" />
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <button
+                            type="button"
+                            onClick={() => thumbnailInputRef.current?.click()}
+                            disabled={thumbnailUploading}
+                            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors font-medium"
+                          >
+                            <FiUploadCloud size={13} /> Upload New
+                          </button>
+                          <button
+                            type="button"
+                            onClick={openGalleryPicker}
+                            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-teal-50 text-teal-700 hover:bg-teal-100 transition-colors font-medium"
+                          >
+                            <FiGrid size={12} /> Choose from Gallery
+                          </button>
+                          <button
+                            type="button"
+                            onClick={handleRemoveThumbnail}
+                            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-colors font-medium"
+                          >
+                            <FiTrash2 size={12} /> Remove
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        {thumbnailUploading ? (
+                          <div className="border-2 border-dashed border-primary-200 rounded-xl p-6 text-center bg-primary-50/30">
+                            <div className="space-y-2">
+                              <FiRefreshCw size={24} className="mx-auto animate-spin text-primary-500" />
+                              <p className="text-sm text-primary-600 font-medium">Uploading… {thumbnailProgress}%</p>
+                              <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden max-w-[200px] mx-auto">
+                                <div className="h-full bg-primary-500 rounded-full transition-all duration-200" style={{ width: `${thumbnailProgress}%` }} />
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-2 gap-3">
+                            {/* Upload option */}
+                            <div
+                              className="border-2 border-dashed border-gray-200 rounded-xl p-5 text-center cursor-pointer hover:border-primary-300 hover:bg-primary-50/30 transition-colors"
+                              onClick={() => thumbnailInputRef.current?.click()}
+                            >
+                              <FiUploadCloud size={26} className="mx-auto mb-2 text-primary-400" />
+                              <p className="text-sm font-medium text-gray-600">Upload Image</p>
+                              <p className="text-xs text-gray-400 mt-1">PNG, JPG, WebP</p>
+                            </div>
+                            {/* Gallery option */}
+                            <div
+                              className="border-2 border-dashed border-gray-200 rounded-xl p-5 text-center cursor-pointer hover:border-teal-300 hover:bg-teal-50/30 transition-colors"
+                              onClick={openGalleryPicker}
+                            >
+                              <FiGrid size={26} className="mx-auto mb-2 text-teal-400" />
+                              <p className="text-sm font-medium text-gray-600">From Gallery</p>
+                              <p className="text-xs text-gray-400 mt-1">Choose existing</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    <input
+                      ref={thumbnailInputRef}
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleThumbnailSelect}
+                    />
+                  </div>
+
+                  {/* ── Gallery Picker Overlay ──────────────────────────── */}
+                  <AnimatePresence>
+                    {galleryPickerOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="border border-gray-200 rounded-xl bg-gray-50 p-4"
+                      >
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-semibold text-navy-800 flex items-center gap-1.5">
+                            <FiGrid size={14} className="text-teal-600" /> Choose from Gallery
+                          </h4>
+                          <button
+                            type="button"
+                            onClick={() => setGalleryPickerOpen(false)}
+                            className="text-gray-400 hover:text-gray-600 p-1 rounded hover:bg-gray-200 transition-colors"
+                          >
+                            <FiX size={16} />
+                          </button>
+                        </div>
+
+                        {galleryLoading ? (
+                          <div className="grid grid-cols-4 sm:grid-cols-5 gap-2">
+                            {[...Array(10)].map((_, i) => (
+                              <div key={i} className="aspect-square bg-gray-200 rounded-lg animate-pulse" />
+                            ))}
+                          </div>
+                        ) : galleryImages.length === 0 ? (
+                          <div className="text-center py-8 text-gray-400">
+                            <FiImage size={28} className="mx-auto mb-2 opacity-50" />
+                            <p className="text-sm">No gallery images found</p>
+                            <p className="text-xs mt-1">Upload images in the Gallery section first</p>
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 max-h-[250px] overflow-y-auto pr-1">
+                            {galleryImages.map((img) => (
+                              <button
+                                key={img.id}
+                                type="button"
+                                onClick={() => selectGalleryImage(img.image)}
+                                className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all hover:scale-[1.03] ${
+                                  form.icon === img.image
+                                    ? 'border-primary-500 ring-2 ring-primary-200'
+                                    : 'border-transparent hover:border-primary-300'
+                                }`}
+                              >
+                                <img src={img.image} alt={img.title || ''} className="w-full h-full object-cover" />
+                                {form.icon === img.image && (
+                                  <div className="absolute inset-0 bg-primary-500/20 flex items-center justify-center">
+                                    <FiCheck size={20} className="text-white drop-shadow-md" />
+                                  </div>
+                                )}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
                   {/* Row 2: Category + Availability + Order */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -756,7 +981,13 @@ export default function AdminSpecialities() {
                 {/* Header */}
                 <div className="flex items-start justify-between gap-4 px-6 py-5 border-b border-gray-100 sticky top-0 bg-white z-10">
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl">{viewItem.icon || '🏥'}</span>
+                    {viewItem.icon && (viewItem.icon.startsWith('http') || viewItem.icon.startsWith('/') || viewItem.icon.includes('.')) ? (
+                      <div className="w-12 h-12 rounded-xl overflow-hidden bg-primary-50 flex items-center justify-center border border-primary-100">
+                        <img src={viewItem.icon} alt={viewItem.name} className="w-full h-full object-contain" />
+                      </div>
+                    ) : (
+                      <span className="text-3xl">{viewItem.icon || '🏥'}</span>
+                    )}
                     <div>
                       <div className="flex items-center gap-2 mb-0.5">
                         {viewItem.category && <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-primary-50 text-primary-700">{viewItem.category}</span>}

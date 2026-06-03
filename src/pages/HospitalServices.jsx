@@ -166,59 +166,76 @@ export default function HospitalServices() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: (i % 3) * 0.07 }}
-                        className={`bg-white rounded-2xl border ${cfg.border} shadow-sm hover:shadow-md transition-all duration-300 p-6 flex flex-col gap-4`}
+                        className={`bg-white rounded-2xl border ${cfg.border} shadow-sm hover:shadow-md transition-all duration-300 p-6 flex flex-col justify-between gap-4`}
                       >
-                        {/* Icon + name */}
-                        <div className="flex items-start gap-4">
-                          <div className={`w-12 h-12 rounded-xl ${cfg.light} flex items-center justify-center text-2xl flex-shrink-0`}>
-                            {svc.icon || '🏥'}
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="font-heading font-bold text-navy-800 text-base leading-tight">{svc.name}</h3>
-                            <div className="flex flex-wrap items-center gap-1.5 mt-1">
-                              {svc.category && (
-                                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${cfg.light} ${cfg.text}`}>
-                                  {svc.category}
-                                </span>
-                              )}
-                              {svc.available && (
-                                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${AVAIL_COLOR[svc.available] || 'bg-gray-100 text-gray-600'}`}>
-                                  {svc.available}
-                                </span>
-                              )}
+                        <div className="flex flex-col gap-4">
+                          {/* Icon + name */}
+                          <div className="flex items-start gap-4">
+                            <div className={`w-12 h-12 rounded-xl ${cfg.light} flex items-center justify-center text-2xl flex-shrink-0`}>
+                              {svc.icon || '🏥'}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="font-heading font-bold text-navy-800 text-base leading-tight hover:text-primary-600 transition-colors">
+                                <Link to={`/hospital-services/${svc.slug || svc.id}`}>
+                                  {svc.name}
+                                </Link>
+                              </h3>
+                              <div className="flex flex-wrap items-center gap-1.5 mt-1">
+                                {svc.category && (
+                                  <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${cfg.light} ${cfg.text}`}>
+                                    {svc.category}
+                                  </span>
+                                )}
+                                {svc.available && (
+                                  <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${AVAIL_COLOR[svc.available] || 'bg-gray-100 text-gray-600'}`}>
+                                    {svc.available}
+                                  </span>
+                                )}
+                              </div>
                             </div>
                           </div>
+
+                          {/* Description */}
+                          {svc.description && (
+                            <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{svc.description}</p>
+                          )}
+
+                          {/* Related specialities */}
+                          {Array.isArray(svc.relatedSpecialties) && svc.relatedSpecialties.length > 0 && (
+                            <div>
+                              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1.5">Related Specialities</p>
+                              <div className="flex flex-wrap gap-1.5">
+                                {svc.relatedSpecialties.map((name) => {
+                                  const slug = slugMap[name]
+                                  return slug ? (
+                                    <Link
+                                      key={name}
+                                      to={`/services/${slug}`}
+                                      className="text-xs px-2.5 py-1 rounded-full bg-primary-50 text-primary-700 hover:bg-primary-100 font-medium transition-colors border border-primary-100"
+                                    >
+                                      {name}
+                                    </Link>
+                                  ) : (
+                                    <span key={name} className="text-xs px-2.5 py-1 rounded-full bg-gray-100 text-gray-500 font-medium">
+                                      {name}
+                                    </span>
+                                  )
+                                })}
+                              </div>
+                            </div>
+                          )}
                         </div>
 
-                        {/* Description */}
-                        {svc.description && (
-                          <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{svc.description}</p>
-                        )}
-
-                        {/* Related specialities */}
-                        {Array.isArray(svc.relatedSpecialties) && svc.relatedSpecialties.length > 0 && (
-                          <div>
-                            <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1.5">Related Specialities</p>
-                            <div className="flex flex-wrap gap-1.5">
-                              {svc.relatedSpecialties.map((name) => {
-                                const slug = slugMap[name]
-                                return slug ? (
-                                  <Link
-                                    key={name}
-                                    to={`/services/${slug}`}
-                                    className="text-xs px-2.5 py-1 rounded-full bg-primary-50 text-primary-700 hover:bg-primary-100 font-medium transition-colors border border-primary-100"
-                                  >
-                                    {name}
-                                  </Link>
-                                ) : (
-                                  <span key={name} className="text-xs px-2.5 py-1 rounded-full bg-gray-100 text-gray-500 font-medium">
-                                    {name}
-                                  </span>
-                                )
-                              })}
-                            </div>
-                          </div>
-                        )}
+                        {/* Footer View Details Link */}
+                        <div className="pt-3 border-t border-gray-50 flex items-center justify-between mt-auto">
+                          <Link
+                            to={`/hospital-services/${svc.slug || svc.id}`}
+                            className="text-xs font-bold text-primary-600 hover:text-primary-750 transition-colors flex items-center gap-1 group/btn"
+                          >
+                            <span>View Service Details</span>
+                            <FiArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                          </Link>
+                        </div>
                       </motion.div>
                     )
                   })}

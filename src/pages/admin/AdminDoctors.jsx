@@ -17,6 +17,7 @@ import toast from 'react-hot-toast'
 import { getDoctors, addDoctor, updateDoctor, deleteDoctor } from '../../services/doctors'
 import { getSpecialities } from '../../services/specialities'
 import GalleryPicker from '../../components/admin/GalleryPicker'
+import { slugify } from '../../utils/helpers'
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
@@ -25,6 +26,7 @@ const EMPTY_FORM = {
   bio: '', email: '', phone: '',
   availableDays: [], availableTime: '', featured: false, image: '',
   linkedTreatments: [],   // composite keys "specId::treatmentSlug"
+  consultationFee: '',
 }
 
 // Build composite key for a treatment
@@ -82,11 +84,12 @@ export default function AdminDoctors() {
       bio: doc.bio || '',
       email: doc.email || '',
       phone: doc.phone || '',
-      availableDays: doc.availableDays || [],
+      availableDays: Array.isArray(doc.availableDays) ? doc.availableDays : [],
       availableTime: doc.availableTime || '',
       featured: doc.featured || false,
       image: doc.image || '',
       linkedTreatments: Array.isArray(doc.linkedTreatments) ? doc.linkedTreatments : [],
+      consultationFee: doc.consultationFee || '',
     })
     setImageFile(null)
     setImagePreview(doc.image || '')
@@ -164,11 +167,15 @@ export default function AdminDoctors() {
     }
     setSaving(true)
     try {
+      const docData = {
+        ...form,
+        slug: slugify(form.name),
+      }
       if (editingId) {
-        await updateDoctor(editingId, form, imageFile)
+        await updateDoctor(editingId, docData, imageFile)
         toast.success('Doctor updated')
       } else {
-        await addDoctor(form, imageFile)
+        await addDoctor(docData, imageFile)
         toast.success('Doctor added')
       }
       await fetchDoctors()
@@ -239,7 +246,7 @@ export default function AdminDoctors() {
             const specialtyList = Array.isArray(doc.specialties) && doc.specialties.length > 0
               ? doc.specialties
               : doc.specialty ? [doc.specialty] : []
-            const days = doc.availableDays || []
+            const days = Array.isArray(doc.availableDays) ? doc.availableDays : []
             return (
               <motion.div
                 key={doc.id}
@@ -313,12 +320,19 @@ export default function AdminDoctors() {
                     )}
 
                     {/* Fee + Time */}
-                    {doc.availableTime && (
+                    {(doc.availableTime || doc.consultationFee) && (
                       <div className="flex items-center gap-3 text-xs text-gray-500">
-                        <span className="flex items-center gap-1">
-                          <FiClock size={11} className="text-gray-400 shrink-0" />
-                          {doc.availableTime}
-                        </span>
+                        {doc.availableTime && (
+                          <span className="flex items-center gap-1">
+                            <FiClock size={11} className="text-gray-400 shrink-0" />
+                            {doc.availableTime}
+                          </span>
+                        )}
+                        {doc.consultationFee && (
+                          <span className="flex items-center gap-1 bg-gray-50 px-2 py-0.5 rounded border border-gray-100 text-gray-600 font-semibold">
+                            Fee: ₹{doc.consultationFee}
+                          </span>
+                        )}
                       </div>
                     )}
 
@@ -482,7 +496,15 @@ export default function AdminDoctors() {
                                   : 'bg-white text-gray-600 border-gray-200 hover:border-primary-300 hover:text-primary-600'
                               }`}
                             >
-                              {spec.icon && <span>{spec.icon}</span>}
+                              {spec.icon && (
+                                <span className="w-4 h-4 inline-flex items-center justify-center shrink-0 overflow-hidden">
+                                  {(spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.')) ? (
+                                    <img src={spec.icon} alt="" className="w-full h-full object-contain" />
+                                  ) : (
+                                    spec.icon
+                                  )}
+                                </span>
+                              )}
                               {spec.name}
                               <span className="text-[10px] opacity-60 ml-0.5">({spec.treatments?.length || 0})</span>
                               {checked && <FiX size={11} />}
@@ -519,6 +541,10 @@ export default function AdminDoctors() {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Available Time</label>
                       <input name="availableTime" value={form.availableTime} onChange={handleChange} className="input-field" placeholder="9:00 AM – 5:00 PM" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Consultation Fee (₹)</label>
+                      <input name="consultationFee" type="number" value={form.consultationFee} onChange={handleChange} className="input-field" placeholder="500" />
                     </div>
                   </div>
 
@@ -575,7 +601,17 @@ export default function AdminDoctors() {
                             <div key={spec.id}>
                               {/* Speciality header */}
                               <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-50">
-                                <span className="text-base leading-none">{spec.icon || '🏥'}</span>
+                                <span className="w-5 h-5 flex items-center justify-center shrink-0 overflow-hidden text-base leading-none">
+                                  {spec.icon ? (
+                                    (spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.')) ? (
+                                      <img src={spec.icon} alt="" className="w-full h-full object-contain" />
+                                    ) : (
+                                      spec.icon
+                                    )
+                                  ) : (
+                                    '🏥'
+                                  )}
+                                </span>
                                 <span className="text-xs font-bold text-gray-600 flex-1">{spec.name}</span>
                                 {specSelected > 0 && (
                                   <span className="text-[10px] font-bold bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full">

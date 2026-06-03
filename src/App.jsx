@@ -1,4 +1,4 @@
-﻿// ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
 // App.jsx
 // Root router configuration for Patna Lapro and Stone Healthcare.
 // Defines all public and admin routes.
@@ -29,6 +29,7 @@ import BlogPost from './pages/BlogPost'
 import Contact from './pages/Contact'
 import ServiceDetail from './pages/ServiceDetail'
 import HospitalServices from './pages/HospitalServices'
+import HospitalServiceDetail from './pages/HospitalServiceDetail'
 import TreatmentDetail from './pages/TreatmentDetail'
 import BookAppointment from './pages/BookAppointment'
 import AppointmentSuccess from './pages/AppointmentSuccess'
@@ -67,8 +68,9 @@ function AppRoutes() {
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/services/:slug/treatment/:treatmentSlug" element={<TreatmentDetail />} />
         <Route path="/hospital-services" element={<HospitalServices />} />
+        <Route path="/hospital-services/:slug" element={<HospitalServiceDetail />} />
         <Route path="/doctors" element={<Doctors />} />
-        <Route path="/doctors/:id" element={<DoctorProfile />} />
+        <Route path="/doctors/:slug" element={<DoctorProfile />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />

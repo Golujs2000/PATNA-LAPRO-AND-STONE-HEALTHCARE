@@ -139,7 +139,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, delay: 0.28 }}
-            className="order-2 flex items-center justify-center relative"
+            className="order-2 flex items-center justify-center relative mb-16 lg:mb-0"
           >
             {/* Decorative bg blob */}
             <div className="absolute w-[110%] h-[110%] bg-primary-100/25 rounded-full blur-[90px] -z-10 animate-pulse-slow" />

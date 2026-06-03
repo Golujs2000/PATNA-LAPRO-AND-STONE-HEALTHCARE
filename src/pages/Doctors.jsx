@@ -88,8 +88,10 @@ export default function Doctors() {
       <section className="section-padding bg-section-gradient">
         <div className="container-max">
           {loading ? (
-            <div className="flex flex-col gap-4 max-w-3xl mx-auto">
-              {[...Array(4)].map((_, i) => <div key={i} className="h-48 bg-gray-100 rounded-2xl animate-pulse" />)}
+            <div className="flex flex-col gap-4 w-full">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="h-96 bg-gray-100 rounded-2xl animate-pulse" />
+              ))}
             </div>
           ) : filtered.length === 0 ? (
             <div className="text-center py-20">
@@ -99,7 +101,7 @@ export default function Doctors() {
               </button>
             </div>
           ) : (
-            <div className="flex flex-col gap-4 max-w-3xl mx-auto">
+            <div className="flex flex-col gap-4 w-full">
               {filtered.map((doc, i) => (
                 <motion.div
                   key={doc.id}

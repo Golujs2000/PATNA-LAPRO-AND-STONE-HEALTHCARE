@@ -16,6 +16,8 @@ import FeaturedDoctors from '../components/home/FeaturedDoctors'
 import Testimonials from '../components/home/Testimonials'
 import BlogPreview from '../components/home/BlogPreview'
 import GalleryStrip from '../components/home/GalleryStrip'
+import TreatmentGallery from '../components/home/TreatmentGallery'
+import AppointmentForm from '../components/home/AppointmentForm'
 import { siteData } from '../data/siteData'
 
 const hospitalSchema = {
@@ -80,10 +82,44 @@ export default function Home() {
       {/* 7. World Class Facility */}
       <GalleryStrip />
 
+      {/* 7b. Treatment Gallery */}
+      <TreatmentGallery />
+
       {/* 8. Patient Testimonials */}
       <Testimonials />
 
-      {/* 9. Blog / Health Tips */}
+      {/* 9. Book Appointment */}
+      <section id="book-appointment" className="section-padding bg-gradient-to-b from-primary-50/60 via-white to-slate-50 border-t border-primary-100">
+        <div className="container-max">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
+              Book Now
+            </span>
+            <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2">
+              Schedule Your <span className="text-primary-600">Appointment</span>
+            </h2>
+            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
+              Fill the form below and our team will confirm your appointment within 30 minutes.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <AppointmentForm />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 10. Blog / Health Tips */}
       <BlogPreview />
 
       {/* 11. Location */}
@@ -131,19 +167,38 @@ export default function Home() {
             >
               {[
                 { icon: FiMapPin, label: 'Address',  value: siteData.contact.address,   href: null,                                    color: 'bg-blue-50 text-blue-600' },
-                { icon: FiPhone,  label: 'Phone',    value: siteData.contact.phone,      href: `tel:${siteData.contact.phone}`,         color: 'bg-green-50 text-green-600' },
+                { 
+                  icon: FiPhone,  
+                  label: 'Phone',    
+                  value: [
+                    siteData.contact.phone,
+                    siteData.contact.phone2,
+                    siteData.contact.phone3,
+                    siteData.contact.phone4
+                  ].filter(Boolean),      
+                  isPhones: true,                                
+                  color: 'bg-green-50 text-green-600' 
+                },
                 { icon: FiMail,   label: 'Email',    value: siteData.contact.email,      href: `mailto:${siteData.contact.email}`,      color: 'bg-purple-50 text-purple-600' },
-              ].map(({ icon: Icon, label, value, href, color }) => (
+              ].map(({ icon: Icon, label, value, href, isPhones, color }) => (
                 <div key={label} className="flex gap-4 p-4 bg-white rounded-[5px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                   <div className={`w-12 h-12 ${color} rounded-[5px] flex items-center justify-center flex-shrink-0`}>
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-navy-800 text-sm mb-0.5">{label}</h4>
-                    {href ? (
+                    {isPhones ? (
+                      <div className="flex flex-col gap-1">
+                        {value.map((ph) => (
+                          <a key={ph} href={`tel:${ph}`} className="text-gray-600 text-sm hover:text-primary-600 transition-colors block">
+                            {ph}
+                          </a>
+                        ))}
+                      </div>
+                    ) : href ? (
                       <a href={href} className="text-gray-600 text-sm hover:text-primary-600 transition-colors">{value}</a>
                     ) : (
-                      <p className="text-gray-600 text-sm">{value}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{value}</p>
                     )}
                   </div>
                 </div>

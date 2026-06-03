@@ -8,7 +8,8 @@
 // ─────────────────────────────────────────────────────────────
 
 import { motion } from 'framer-motion'
-import { FiPhone, FiClock, FiShield } from 'react-icons/fi'
+import { FiPhone, FiClock, FiShield, FiMail } from 'react-icons/fi'
+import { FaWhatsapp } from 'react-icons/fa'
 import SEO from '../components/SEO'
 import AppointmentForm from '../components/home/AppointmentForm'
 import { siteData } from '../data/siteData'
@@ -95,6 +96,71 @@ export default function BookAppointment() {
                 <p className="text-gray-500 text-xs leading-relaxed">
                   Our team calls you within 30 minutes to confirm your appointment slot. Secure & confidential.
                 </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Quick Contacts */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+          >
+            {/* Call Support */}
+            <div className="card p-5 flex gap-4 items-start border-l-4 border-green-500 hover:shadow-md transition-shadow">
+              <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0 text-green-600">
+                <FiPhone className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-navy-800 text-sm mb-2">Emergency / Call Support</h4>
+                <div className="flex flex-col gap-2 text-xs">
+                  <a href={`tel:${siteData.contact.phone}`} className="text-gray-600 hover:text-primary-600 transition-colors font-semibold flex items-center gap-1">
+                    📞 Landline: {siteData.contact.phone}
+                  </a>
+                  <a href={`tel:${siteData.contact.phone2}`} className="text-gray-600 hover:text-primary-600 transition-colors font-semibold flex items-center gap-1">
+                    📱 Mobile 1: {siteData.contact.phone2}
+                  </a>
+                  <a href={`tel:${siteData.contact.phone3}`} className="text-gray-600 hover:text-primary-600 transition-colors font-semibold flex items-center gap-1">
+                    📱 Mobile 2: {siteData.contact.phone3}
+                  </a>
+                  <a href={`tel:${siteData.contact.phone4}`} className="text-gray-600 hover:text-primary-600 transition-colors font-semibold flex items-center gap-1">
+                    📱 Mobile 3: {siteData.contact.phone4}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp Support */}
+            <div className="card p-5 flex gap-4 items-start border-l-4 border-emerald-500 hover:shadow-md transition-shadow">
+              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0 text-emerald-600">
+                <FaWhatsapp className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-navy-800 text-sm mb-1">WhatsApp Chat</h4>
+                <p className="text-gray-500 text-xs mb-2">Message us for quick booking assistance or queries.</p>
+                <a
+                  href={`https://wa.me/91${siteData.contact.phone2}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-emerald-600 hover:text-emerald-700 font-bold"
+                >
+                  💬 Chat on WhatsApp →
+                </a>
+              </div>
+            </div>
+
+            {/* Email Support */}
+            <div className="card p-5 flex gap-4 items-start border-l-4 border-purple-500 hover:shadow-md transition-shadow">
+              <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0 text-purple-600">
+                <FiMail className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-navy-800 text-sm mb-1">Email Support</h4>
+                <p className="text-gray-500 text-xs mb-2">Send us your queries, reports, or scan files.</p>
+                <a href={`mailto:${siteData.contact.email}`} className="text-xs text-purple-600 hover:text-purple-700 font-bold break-all">
+                  ✉️ {siteData.contact.email} →
+                </a>
               </div>
             </div>
           </motion.div>

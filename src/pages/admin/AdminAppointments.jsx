@@ -38,12 +38,13 @@ function ViewModal({ appt, onClose }) {
     ['Patient Name', appt.name],
     ['Age / Sex', [appt.age, appt.sex].filter(Boolean).join(' / ') || '—'],
     ["Parent's Name", appt.parentName || '—'],
+    ['Doctor', appt.doctorName || '—'],
     ['Phone', appt.phone],
     ['Email', appt.email || '—'],
     ['Address', appt.address || '—'],
     ['Department', appt.department || '—'],
     ['Consultation Mode', appt.mode || 'Offline'],
-    ['Appointment Date', appt.date || '—'],
+    ['Appointment Date', appt.date ? formatDate(appt.date) : '—'],
     ['Time Slot', appt.timeSlot || '—'],
     ['Status', appt.status],
     ['Message', appt.message || '—'],
@@ -401,10 +402,19 @@ export default function AdminAppointments() {
                     </td>
                     <td className="px-4 py-3.5 whitespace-nowrap">
                       <p className="font-medium text-gray-800">{appt.name}</p>
-                      {(appt.age || appt.sex || appt.parentName) && (
+                      {(appt.age || appt.sex) && (
                         <p className="text-xs text-gray-400">
                           {[appt.age, appt.sex].filter(Boolean).join(' / ')}
-                          {appt.parentName && ` · Parent: ${appt.parentName}`}
+                        </p>
+                      )}
+                      {appt.parentName && (
+                        <p className="text-[11px] text-gray-400 mt-0.5">
+                          Parent: {appt.parentName}
+                        </p>
+                      )}
+                      {appt.doctorName && (
+                        <p className="text-[11px] text-primary-600 font-semibold mt-0.5">
+                          Doctor: {appt.doctorName}
                         </p>
                       )}
                     </td>
@@ -420,7 +430,7 @@ export default function AdminAppointments() {
                       </div>
                     </td>
                     <td className="px-4 py-3.5 whitespace-nowrap">
-                      <p className="text-gray-700 text-sm">{appt.date || formatDate(appt.createdAt)}</p>
+                      <p className="text-gray-700 text-sm">{formatDate(appt.date || appt.createdAt)}</p>
                       {appt.timeSlot && (
                         <p className="text-xs text-gray-400 flex items-center gap-1 mt-0.5">
                           <FiClock size={11} /> {appt.timeSlot}
@@ -432,7 +442,7 @@ export default function AdminAppointments() {
                         {appt.status}
                       </span>
                     </td>
-                    <td className="px-4 py-3.5">
+                    <td className="px-4 py-3.5 whitespace-nowrap">
                       <div className="flex items-center gap-1.5">
                         {/* View */}
                         <button

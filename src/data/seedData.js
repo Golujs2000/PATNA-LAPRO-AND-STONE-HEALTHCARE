@@ -12,7 +12,7 @@ export const seedDoctors = [
     experience: 27,
     bio: 'Dr. Sanjeev Kumar (MBBS, MS, DNB) is a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients, supported by a staff dedicated to patient comfort and prompt attention.',
     image: 'https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780307021434_DR.%20SANJEEV%20KUMAR%2002.webp?alt=media&token=e3b03b26-9e61-48d6-b9dd-48faa6646d13',
-    email: 'patnalapro@gmail.com',
+    email: 'info@drsanjeevkumar.in',
     phone: '06124502164',
     consultationFee: 500,
     availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -144,13 +144,6 @@ export const seedHospitalServices = [
   },
 ]
 
-export const seedGallery = [
-  { title: 'Patna Lapro and Stone Healthcare', category: 'facility', image: '/gallery/hospital-1.jpg', description: 'Our state-of-the-art clinic at L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna' },
-  { title: 'Laparoscopic Operation Theater', category: 'facility', image: '/gallery/hospital-2.jpg', description: 'Advanced laparoscopic OT with HD camera and energy devices' },
-  { title: 'Consultation Room', category: 'facility', image: '/gallery/hospital-3.jpg', description: 'Private consultation room for detailed surgical evaluation' },
-  { title: 'Diagnostic Center', category: 'facility', image: '/gallery/hospital-4.jpg', description: 'In-house diagnostic support including ultrasound and lab' },
-]
-
 // Clear a collection and re-seed it
 async function clearAndSeed(colName, items) {
   const snap = await getDocs(collection(db, colName))
@@ -171,19 +164,10 @@ export async function seedSpecialitiesAndServices() {
 export async function seedFirestore() {
   try {
     console.log('Seeding doctors...')
-    for (const doc of seedDoctors) {
-      await addDoc(collection(db, 'doctors'), { ...doc, createdAt: serverTimestamp() })
-    }
+    await clearAndSeed('doctors', seedDoctors)
 
     console.log('Seeding blogs...')
-    for (const doc of seedBlogs) {
-      await addDoc(collection(db, 'blogs'), { ...doc, createdAt: serverTimestamp() })
-    }
-
-    console.log('Seeding gallery...')
-    for (const doc of seedGallery) {
-      await addDoc(collection(db, 'gallery'), { ...doc, createdAt: serverTimestamp() })
-    }
+    await clearAndSeed('blogs', seedBlogs)
 
     console.log('✅ Seeding complete!')
   } catch (err) {

@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiArrowRight, FiX, FiChevronLeft, FiChevronRight, FiImage } from 'react-icons/fi'
@@ -60,6 +60,70 @@ function Lightbox({ images, index, onClose }) {
   )
 }
 
+// ── Default Fallback Images ────────────────────────────────────
+const DEFAULT_IMAGES = [
+  {
+    id: 'def-1',
+    image: '/gallery/laparoscopy_in_progress.webp',
+    title: 'Laparoscopic Surgery in Progress'
+  },
+  {
+    id: 'def-2',
+    image: '/gallery/laparoscopic_procedure_monitor.webp',
+    title: 'Laparoscopic Procedure Monitor'
+  },
+  {
+    id: 'def-3',
+    image: '/gallery/operating_room_surgeons.webp',
+    title: 'Operating Room Surgeons'
+  },
+  {
+    id: 'def-4',
+    image: '/gallery/surgeons_performing_procedure.webp',
+    title: 'Surgeons Performing Procedure'
+  },
+  {
+    id: 'def-5',
+    image: '/gallery/surgery_under_ot_lights.webp',
+    title: 'Surgery Under OT Lights'
+  },
+  {
+    id: 'def-6',
+    image: '/gallery/surgery_team_ot.webp',
+    title: 'Surgery Team in OT'
+  },
+  {
+    id: 'def-7',
+    image: '/gallery/hernia_mesh_placement.webp',
+    title: 'Hernia Mesh Placement'
+  },
+  {
+    id: 'def-8',
+    image: '/gallery/surgical_stapler_demonstration.webp',
+    title: 'Surgical Stapler Demonstration'
+  },
+  {
+    id: 'def-9',
+    image: '/gallery/surgical_stapler_presentation.webp',
+    title: 'Surgical Stapler Presentation'
+  },
+  {
+    id: 'def-10',
+    image: '/gallery/hospital_staff.webp',
+    title: 'Hospital Staff & Support'
+  },
+  {
+    id: 'def-11',
+    image: '/gallery/surgical_team_group.webp',
+    title: 'Surgical Team Group'
+  },
+  {
+    id: 'def-12',
+    image: '/gallery/surgery_team_artwork.webp',
+    title: 'Surgery Team Artwork'
+  }
+]
+
 // ── Main ──────────────────────────────────────────────────────
 export default function TreatmentGallery() {
   const [images, setImages] = useState([])
@@ -73,10 +137,10 @@ export default function TreatmentGallery() {
       .finally(() => setLoading(false))
   }, [])
 
-  if (!loading && images.length === 0) return null
+  const displayImages = images && images.length > 0 ? images : DEFAULT_IMAGES
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-gradient-to-b from-slate-50 to-white border-t border-b border-gray-100">
       <div className="container-max">
         {/* Header */}
         <motion.div
@@ -85,7 +149,7 @@ export default function TreatmentGallery() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <span className="inline-block bg-primary-50 border border-primary-200 text-primary-600 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
             Treatment Gallery
           </span>
           <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">
@@ -101,7 +165,7 @@ export default function TreatmentGallery() {
         {loading ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="aspect-[4/3] bg-gray-100 rounded-2xl animate-pulse" />
+              <div key={i} className="aspect-[4/3] bg-gray-100 rounded-[5px] animate-pulse" />
             ))}
           </div>
         ) : (
@@ -111,28 +175,32 @@ export default function TreatmentGallery() {
             viewport={{ once: true }}
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
           >
-            {images.slice(0, 12).map((img, i) => (
+            {displayImages.slice(0, 12).map((img, i) => (
               <motion.div
                 key={img.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i % 4) * 0.07 }}
-                className="aspect-[4/3] rounded-2xl overflow-hidden group relative cursor-pointer shadow-sm hover:shadow-lg transition-shadow duration-300"
+                className="aspect-[4/3] rounded-[5px] overflow-hidden group relative cursor-pointer shadow-sm hover:shadow-lg transition-shadow duration-300"
                 onClick={() => setLightboxIndex(i)}
               >
                 <img
                   src={img.image}
                   alt={img.title || 'Treatment'}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                {img.title && (
-                  <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-white text-sm font-semibold leading-tight">{img.title}</p>
-                  </div>
-                )}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-[5px] flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+                    View
+                  </span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-8">
+                  <span className="text-white text-[11px] font-semibold tracking-wide drop-shadow-md">
+                    {img.title}
+                  </span>
+                </div>
                 <div className="absolute top-2 right-2 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <FiImage className="w-4 h-4 text-white" />
                 </div>
@@ -142,7 +210,7 @@ export default function TreatmentGallery() {
         )}
 
         {/* CTA */}
-        {!loading && images.length > 0 && (
+        {!loading && displayImages.length > 0 && (
           <div className="text-center mt-10">
             <Link to="/gallery" className="btn-primary">
               View Full Gallery <FiArrowRight />
@@ -152,7 +220,7 @@ export default function TreatmentGallery() {
       </div>
 
       {lightboxIndex !== null && (
-        <Lightbox images={images.slice(0, 12)} index={lightboxIndex} onClose={() => setLightboxIndex(null)} />
+        <Lightbox images={displayImages.slice(0, 12)} index={lightboxIndex} onClose={() => setLightboxIndex(null)} />
       )}
     </section>
   )

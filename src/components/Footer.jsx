@@ -147,8 +147,7 @@ export default function Footer() {
                     siteData.contact.phone,
                     siteData.contact.phone2,
                     siteData.contact.phone3,
-                    siteData.contact.phone4,
-                    siteData.contact.phone5
+                    siteData.contact.phone4
                   ]
                     .filter(Boolean)
                     .map((ph) => (
@@ -193,6 +192,7 @@ export default function Footer() {
             {specialities.map((spec) => {
               const color = catColor[spec.category] || defaultCat
               const treatments = Array.isArray(spec.treatments) ? spec.treatments : []
+              const isIconUrl = spec.icon && (spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.'))
               return (
                 <div key={spec.id}>
                   {/* Speciality header */}
@@ -200,7 +200,13 @@ export default function Footer() {
                     to={`/services/${spec.slug}`}
                     className={`inline-flex items-center gap-1.5 font-heading font-bold text-xs uppercase tracking-wider mb-3 border-b pb-2 w-full ${color} hover:opacity-80 transition-opacity`}
                   >
-                    {spec.icon && <span className="text-xl leading-none">{spec.icon}</span>}
+                    {spec.icon && (
+                      isIconUrl ? (
+                        <img src={spec.icon} alt={spec.name} className="w-5 h-5 object-contain shrink-0" />
+                      ) : (
+                        <span className="text-xl leading-none">{spec.icon}</span>
+                      )
+                    )}
                     {spec.name}
                   </Link>
 
@@ -250,7 +256,7 @@ export default function Footer() {
               {doctors.map((doctor) => (
                 <Link
                   key={doctor.id}
-                  to={`/doctors/${doctor.id}`}
+                  to={`/doctors/${doctor.slug || doctor.id}`}
                   className="flex items-center gap-2.5 group p-2 rounded-lg hover:bg-white/5 transition-colors"
                 >
                   {/* Avatar */}

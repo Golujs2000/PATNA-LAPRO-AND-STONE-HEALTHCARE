@@ -12,6 +12,15 @@ const iconMap = {
   ribbon: FiEye,
 }
 
+const specialityImages = {
+  'laparoscopic-surgery': '/speciality/laparoscopic-surgery.png',
+  'kidney-ureteric-stone': '/speciality/kidney-ureteric-stone.png',
+  'liver-disorders': '/speciality/liver-disorders.png',
+  'pancreas-disorders': '/speciality/pancreas-disorders.png',
+  'jaundice-biliary-disorders': '/speciality/jaundice-biliary-disorders.png',
+  'general-gi-surgery': '/speciality/general-gi-surgery.png',
+}
+
 export default function ServicesSection() {
   const { specialities, loading } = useSpecialities()
   const displayed = specialities.slice(0, 9)
@@ -48,10 +57,12 @@ export default function ServicesSection() {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {displayed.map((spec, i) => {
               const Icon = iconMap[spec.icon]
-              const isEmoji = !Icon && spec.icon
+              const isUrl = spec.icon && (spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.'))
+              const local3dIcon = specialityImages[spec.slug || spec.id]
+              const isEmoji = !Icon && spec.icon && !isUrl
 
               return (
                 <motion.div
@@ -63,27 +74,39 @@ export default function ServicesSection() {
                 >
                   <Link
                     to={`/services/${spec.slug || spec.id}`}
-                    className="flex items-start gap-4 bg-white rounded-[5px] p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-primary-100 hover:-translate-y-0.5 transition-all duration-300 group h-full"
+                    className="flex flex-col bg-white rounded-3xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-primary-100 hover:-translate-y-1 transition-all duration-300 group h-full"
                   >
-                    {/* Icon box */}
-                    <div className="w-14 h-14 rounded-[5px] border-2 border-primary-100 bg-primary-50 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-100 transition-colors">
-                      {isEmoji ? (
-                        <span className="text-3xl leading-none">{spec.icon}</span>
+                    {/* Big Image box at the top */}
+                    <div className="w-full h-40 bg-gradient-to-br from-primary-50/40 via-white to-cyan-50/20 rounded-2xl flex items-center justify-center mb-5 border border-primary-50/40 relative overflow-hidden group-hover:from-primary-50 group-hover:to-cyan-50 transition-colors shadow-inner">
+                      {isUrl ? (
+                        <img src={spec.icon} alt={spec.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      ) : local3dIcon ? (
+                        <img src={local3dIcon} alt={spec.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      ) : isEmoji ? (
+                        <span className="text-5xl leading-none group-hover:scale-108 transition-transform duration-500">{spec.icon}</span>
                       ) : Icon ? (
-                        <Icon className="w-6 h-6 text-primary-700" />
+                        <Icon className="w-10 h-10 text-primary-600 group-hover:scale-108 transition-transform duration-500" />
                       ) : (
-                        <FiHeart className="w-6 h-6 text-primary-700" />
+                        <FiHeart className="w-10 h-10 text-primary-600 group-hover:scale-108 transition-transform duration-500" />
                       )}
                     </div>
 
-                    {/* Text */}
-                    <div className="min-w-0">
-                      <h3 className="font-heading font-bold text-navy-800 text-base mb-1.5 group-hover:text-primary-700 transition-colors">
-                        {spec.name}
-                      </h3>
-                      <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
-                        {spec.description || 'Expert laparoscopic & surgical treatment for lasting relief.'}
-                      </p>
+                    {/* Text block below */}
+                    <div className="flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-heading font-black text-navy-800 text-lg mb-2 group-hover:text-primary-700 transition-colors leading-snug">
+                          {spec.name}
+                        </h3>
+                        <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
+                          {spec.description || 'Expert laparoscopic & surgical treatment for lasting relief.'}
+                        </p>
+                      </div>
+
+                      {/* Learn More link */}
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-primary-600 mt-4 group-hover:text-primary-750 transition-colors">
+                        <span>Learn More</span>
+                        <FiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
                   </Link>
                 </motion.div>

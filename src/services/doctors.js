@@ -11,6 +11,7 @@ import {
 } from 'firebase/firestore'
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage'
 import { db, storage } from '../firebase/config'
+import { slugify } from '../utils/helpers'
 
 const COL = 'doctors'
 
@@ -22,14 +23,28 @@ export async function getDoctors(filters = {}) {
     q = query(collection(db, COL), where('specialty', '==', filters.specialty), orderBy('name'))
   }
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
+  return snap.docs.map((d) => {
+    const data = d.data()
+    return {
+      ...data,
+      id: d.id,
+      slug: data.slug || slugify(data.name || ''),
+    }
+  })
 }
 
 // Fetch only doctors marked as featured (shown on homepage)
 export async function getFeaturedDoctors() {
   const q = query(collection(db, COL), where('featured', '==', true))
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
+  return snap.docs.map((d) => {
+    const data = d.data()
+    return {
+      ...data,
+      id: d.id,
+      slug: data.slug || slugify(data.name || ''),
+    }
+  })
 }
 
 // Add a new doctor; uploads profile image to Storage if provided

@@ -364,7 +364,15 @@ export default function AdminServices() {
                                   : 'bg-white text-gray-600 border-gray-200 hover:border-primary-300 hover:text-primary-600'
                               }`}
                             >
-                              {spec.icon && <span>{spec.icon}</span>}
+                              {spec.icon && (
+                                <span className="w-4 h-4 inline-flex items-center justify-center shrink-0 overflow-hidden">
+                                  {(spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.')) ? (
+                                    <img src={spec.icon} alt="" className="w-full h-full object-contain" />
+                                  ) : (
+                                    spec.icon
+                                  )}
+                                </span>
+                              )}
                               {spec.name}
                               {checked && <FiX size={11} />}
                             </button>

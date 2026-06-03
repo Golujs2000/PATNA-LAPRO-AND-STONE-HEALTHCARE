@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -74,15 +74,20 @@ export default function TreatmentDetail() {
   useEffect(() => {
     if (!speciality) return
     getDoctors().then((all) => {
-      const key = `${speciality.id}::${treatmentSlug}`
+      const treatmentsList = Array.isArray(speciality.treatments) ? speciality.treatments : []
+      const foundTreatment = treatmentsList.find((t, i) => (t.slug || String(i)) === treatmentSlug)
+      const resolvedSlug = foundTreatment?.slug || treatmentSlug
+
+      const key = `${speciality.id}::${resolvedSlug}`
       const filtered = all.filter((d) =>
         (d.linkedTreatments || []).includes(key) ||
+        (d.linkedTreatments || []).includes(`${speciality.id}::${treatmentSlug}`) ||
         d.specialty === speciality.name ||
         (Array.isArray(d.specialties) && d.specialties.includes(speciality.name))
       )
       setRelatedDoctors(filtered)
     }).catch(() => {})
-  }, [speciality?.id, treatmentSlug])
+  }, [speciality, treatmentSlug])
 
   if (loading) {
     return (
@@ -99,7 +104,7 @@ export default function TreatmentDetail() {
   if (!speciality) return null
 
   const treatments = Array.isArray(speciality.treatments) ? speciality.treatments : []
-  const treatment = treatments.find((t) => t.slug === treatmentSlug)
+  const treatment = treatments.find((t, i) => (t.slug || String(i)) === treatmentSlug)
 
   if (!treatment) {
     return (
@@ -112,7 +117,7 @@ export default function TreatmentDetail() {
   }
 
   const cfg = CATEGORY_CONFIG[speciality.category] || CATEGORY_CONFIG['Support']
-  const otherTreatments = treatments.filter((t) => t.slug !== treatmentSlug)
+  const otherTreatments = treatments.filter((t, i) => (t.slug || String(i)) !== treatmentSlug)
 
   return (
     <>
@@ -501,7 +506,7 @@ export default function TreatmentDetail() {
                     {relatedDoctors.map((doc) => (
                       <Link
                         key={doc.id}
-                        to={`/doctors/${doc.id}`}
+                        to={`/doctors/${doc.slug || doc.id}`}
                         className="flex items-start gap-4 px-5 py-4 hover:bg-gray-50 transition-colors group"
                       >
                         {/* Photo */}

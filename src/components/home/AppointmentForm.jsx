@@ -13,6 +13,7 @@ import { checkHoneypot, checkRateLimit, setRateLimit, sanitizeInput } from '../.
 import { siteData } from '../../data/siteData'
 import { generateBookingId } from '../../utils/helpers'
 import { useSpecialities } from '../../hooks/useSpecialities'
+import { useDoctors } from '../../hooks/useDoctors'
 
 const TIME_SLOTS = [
   { label: '9:00 AM',  period: 'morning' },
@@ -28,9 +29,17 @@ const PERIOD_LABELS = { morning: '🌤 Morning', afternoon: '☀️ Afternoon', 
 
 const SEX_OPTIONS = ['Male', 'Female', 'Other']
 
+const getDefaultDate = () => {
+  const d = new Date()
+  if (d.getDay() === 0) {
+    d.setDate(d.getDate() + 1)
+  }
+  return d
+}
+
 const initialState = {
-  name: '', parentName: '', phone: '', email: '', age: '', sex: '',
-  address: '', department: '', date: null,
+  name: '', phone: '', email: '', age: '', sex: '',
+  address: '', department: '', doctorId: '', doctorName: '', date: getDefaultDate(),
   timeSlot: '', mode: 'Offline', message: '', _hp: '',
 }
 
@@ -72,6 +81,7 @@ export default function AppointmentForm() {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const { specialities } = useSpecialities()
+  const { doctors } = useDoctors()
   const departments = specialities.length > 0
     ? specialities.map((s) => s.name)
     : siteData.departments
@@ -92,6 +102,7 @@ export default function AppointmentForm() {
     if (!form.age)                                    e.age        = 'Age is required'
     if (!form.sex)                                    e.sex        = 'Please select'
     if (!form.department)                             e.department = 'Select a department'
+    if (!form.doctorId)                               e.doctorId   = 'Select a doctor'
     if (!form.date)                                   e.date       = 'Pick a date'
     if (!form.timeSlot)                               e.timeSlot   = 'Pick a time slot'
     setErrors(e)
@@ -110,13 +121,14 @@ export default function AppointmentForm() {
       await createAppointment({
         bookingId,
         name:       sanitizeInput(form.name),
-        parentName: sanitizeInput(form.parentName),
         phone:      form.phone.trim(),
         email:      form.email.trim(),
         age:        form.age,
         sex:        form.sex,
         address:    sanitizeInput(form.address),
         department: form.department,
+        doctorId:   form.doctorId,
+        doctorName: form.doctorName,
         date:       form.date?.toISOString(),
         timeSlot:   form.timeSlot,
         mode:       form.mode,
@@ -125,7 +137,7 @@ export default function AppointmentForm() {
       setRateLimit('appointment')
       toast.success('Appointment booked!')
       navigate('/appointment-success', {
-        state: { bookingId, name: form.name, parentName: form.parentName, department: form.department, date: form.date, timeSlot: form.timeSlot, mode: form.mode },
+        state: { bookingId, name: form.name, department: form.department, doctorId: form.doctorId, doctorName: form.doctorName, date: form.date, timeSlot: form.timeSlot, mode: form.mode },
       })
       setForm(initialState)
     } catch {
@@ -137,7 +149,37 @@ export default function AppointmentForm() {
 
   const obgyn = isObgynDept(form.department)
 
-  const grouped = TIME_SLOTS.reduce((acc, s) => {
+  const isSlotPassed = (slotLabel) => {
+    if (!form.date) return false
+    const selectedDate = new Date(form.date)
+    const today = new Date()
+    const isToday = 
+      selectedDate.getDate() === today.getDate() &&
+      selectedDate.getMonth() === today.getMonth() &&
+      selectedDate.getFullYear() === today.getFullYear()
+    if (!isToday) return false
+
+    const match = slotLabel.match(/^(\d+):(\d+)\s*(AM|PM)$/i)
+    if (!match) return false
+
+    let [_, hours, minutes, ampm] = match
+    hours = parseInt(hours, 10)
+    minutes = parseInt(minutes, 10)
+    if (ampm.toUpperCase() === 'PM' && hours !== 12) {
+      hours += 12
+    } else if (ampm.toUpperCase() === 'AM' && hours === 12) {
+      hours = 0
+    }
+    const currentHours = today.getHours()
+    const currentMinutes = today.getMinutes()
+    if (hours < currentHours) return true
+    if (hours === currentHours && minutes <= currentMinutes) return true
+    return false
+  }
+
+  const filteredTimeSlots = TIME_SLOTS.filter((s) => !isSlotPassed(s.label))
+
+  const grouped = filteredTimeSlots.reduce((acc, s) => {
     acc[s.period] = acc[s.period] || []
     acc[s.period].push(s.label)
     return acc
@@ -156,8 +198,8 @@ export default function AppointmentForm() {
             <p className="text-gray-400 text-sm mt-0.5">Fields marked <span className="text-primary-500 font-bold">*</span> are required</p>
           </div>
 
-          {/* Name and Parent Name row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Name row */}
+          <div className="grid grid-cols-1 gap-4">
             <Field label="Full Name" required error={errors.name}>
               <div className="relative">
                 <FiUser className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300" />
@@ -166,19 +208,10 @@ export default function AppointmentForm() {
                   className={`${inp(errors.name)} pl-10`} />
               </div>
             </Field>
-
-            <Field label="Parent's Name (Optional)" error={null}>
-              <div className="relative">
-                <FiUser className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300" />
-                <input name="parentName" value={form.parentName} onChange={handleChange}
-                  placeholder="For minors"
-                  className={`${inp(false)} pl-10`} />
-              </div>
-            </Field>
           </div>
 
           {/* Age + Sex row */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Age" required error={errors.age}>
               <input name="age" value={form.age} onChange={handleChange}
                 placeholder="e.g. 32"
@@ -205,24 +238,6 @@ export default function AppointmentForm() {
             </Field>
           </div>
 
-          {/* Mode */}
-          <Field label="Consultation Mode" required error={null}>
-            <div className="flex gap-2">
-              {['Offline', 'Online'].map((m) => (
-                <button
-                  key={m} type="button"
-                  onClick={() => set('mode', m)}
-                  className={`flex-1 py-2.5 rounded-xl text-xs font-bold border-2 transition-all ${
-                    form.mode === m
-                      ? 'bg-primary-600 border-primary-600 text-white shadow-sm'
-                      : 'bg-white border-gray-100 text-gray-400 hover:border-primary-300 hover:text-primary-600'
-                  }`}
-                >
-                  {m === 'Offline' ? '🏥 In-Clinic (Offline)' : '📱 Video/Phone (Online)'}
-                </button>
-              ))}
-            </div>
-          </Field>
 
           {/* Phone */}
           <Field label="Mobile Number" required error={errors.phone}>
@@ -268,6 +283,52 @@ export default function AppointmentForm() {
             </div>
           </Field>
 
+          {/* Doctor Selector */}
+          <Field label="Select Doctor" required error={errors.doctorId}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+              {doctors.length === 0 ? (
+                <div className="text-xs text-gray-400 py-1 sm:col-span-2">Loading doctors...</div>
+              ) : (
+                doctors.map((doc) => {
+                  const isSelected = form.doctorId === doc.id
+                  return (
+                    <button
+                      key={doc.id}
+                      type="button"
+                      onClick={() => {
+                        set('doctorId', doc.id)
+                        set('doctorName', doc.name)
+                      }}
+                      className={`flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all ${
+                        isSelected
+                          ? 'border-primary-600 bg-primary-50/50 ring-2 ring-primary-100'
+                          : 'border-gray-100 bg-white hover:border-primary-200'
+                      }`}
+                    >
+                      {doc.image ? (
+                        <img
+                          src={doc.image}
+                          alt={doc.name}
+                          className="w-10 h-10 rounded-full object-cover shrink-0 border border-gray-100"
+                        />
+                      ) : (
+                        <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-gray-100">
+                          <FiUser className="w-5 h-5 text-gray-400" />
+                        </div>
+                      )}
+                      <div className="min-w-0">
+                        <p className={`text-sm font-bold truncate ${isSelected ? 'text-primary-800' : 'text-gray-800'}`}>
+                          {doc.name}
+                        </p>
+                        <p className="text-xs text-gray-400 truncate">{doc.specialty}</p>
+                      </div>
+                    </button>
+                  )
+                })
+              )}
+            </div>
+          </Field>
+
           {/* Message */}
           <Field label="Message / Symptoms (Optional)" error={null}>
             <div className="relative">
@@ -295,7 +356,10 @@ export default function AppointmentForm() {
             <div className="rounded-2xl overflow-hidden booking-calendar">
               <DatePicker
                 selected={form.date}
-                onChange={(d) => set('date', d)}
+                onChange={(d) => {
+                  set('date', d)
+                  set('timeSlot', '') // Reset timeslot when date changes
+                }}
                 minDate={new Date()}
                 filterDate={(date) => date.getDay() !== 0}
                 inline
@@ -311,26 +375,33 @@ export default function AppointmentForm() {
               {errors.timeSlot && <span className="text-red-500 normal-case font-medium tracking-normal">— {errors.timeSlot}</span>}
             </p>
             <div className="space-y-3">
-              {Object.entries(grouped).map(([period, slots]) => (
-                <div key={period}>
-                  <p className="text-primary-400 text-xs mb-2">{PERIOD_LABELS[period]}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {slots.map((slot) => (
-                      <button
-                        key={slot} type="button"
-                        onClick={() => set('timeSlot', slot)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
-                          form.timeSlot === slot
-                            ? 'bg-primary-600 text-white border-primary-600 shadow-md scale-105'
-                            : 'bg-white text-gray-600 border-primary-200 hover:bg-primary-100 hover:text-primary-700'
-                        }`}
-                      >
-                        {slot}
-                      </button>
-                    ))}
+              {Object.keys(grouped).length === 0 ? (
+                <p className="text-xs text-amber-600 bg-amber-50 border border-amber-200/50 p-3 rounded-xl font-medium flex items-center gap-2">
+                  <FiAlertCircle className="w-4 h-4 shrink-0 text-amber-500" />
+                  No slots available for today. Please select a future date.
+                </p>
+              ) : (
+                Object.entries(grouped).map(([period, slots]) => (
+                  <div key={period}>
+                    <p className="text-primary-400 text-xs mb-2">{PERIOD_LABELS[period]}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {slots.map((slot) => (
+                        <button
+                          key={slot} type="button"
+                          onClick={() => set('timeSlot', slot)}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
+                            form.timeSlot === slot
+                              ? 'bg-primary-600 text-white border-primary-600 shadow-md scale-105'
+                              : 'bg-white text-gray-600 border-primary-200 hover:bg-primary-100 hover:text-primary-700'
+                          }`}
+                        >
+                          {slot}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
 

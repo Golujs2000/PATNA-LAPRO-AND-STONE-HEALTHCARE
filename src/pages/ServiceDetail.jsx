@@ -112,8 +112,16 @@ export default function ServiceDetail() {
             <FiArrowLeft className="w-4 h-4" /> Back to All Services
           </Link>
           <div className="flex flex-col md:flex-row md:items-center gap-6">
-            <div className={`w-20 h-20 ${cfg.bg} rounded-[5px] flex items-center justify-center text-4xl shadow-lg flex-shrink-0`}>
-              {speciality.icon || '🏥'}
+            <div className={`w-20 h-20 ${cfg.bg} rounded-[5px] flex items-center justify-center text-4xl shadow-lg flex-shrink-0 overflow-hidden`}>
+              {speciality.icon ? (
+                (speciality.icon.startsWith('http') || speciality.icon.startsWith('/') || speciality.icon.includes('.')) ? (
+                  <img src={speciality.icon} alt="" className="w-full h-full object-contain p-2.5" />
+                ) : (
+                  speciality.icon
+                )
+              ) : (
+                '🏥'
+              )}
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -250,7 +258,7 @@ export default function ServiceDetail() {
                   <h3 className="font-heading font-semibold text-navy-800 mb-4">Our Specialists</h3>
                   <div className="space-y-3">
                     {relatedDoctors.map((doc) => (
-                      <Link key={doc.id} to={`/doctors/${doc.id}`}
+                      <Link key={doc.id} to={`/doctors/${doc.slug || doc.id}`}
                         className="flex items-center gap-3 hover:bg-primary-50 rounded-[5px] p-2 transition-colors group">
                         {doc.image ? (
                           <img src={doc.image} alt={doc.name} className="w-12 h-12 rounded-full object-cover flex-shrink-0" />

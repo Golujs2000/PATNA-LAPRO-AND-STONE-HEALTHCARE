@@ -1,4 +1,4 @@
-﻿// ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
 // pages/admin/AdminSettings.jsx
 // Site-wide settings editor for the admin panel.
 // Reads/writes the single `settings/siteSettings` Firestore doc.
@@ -41,18 +41,18 @@ const FIELD_GROUPS = [
     title: 'Contact Details',
     icon: FiPhone,
     fields: [
-      { name: 'phone', label: 'Contact Phone', placeholder: '+91 98765 43210', icon: FiPhone },
-      { name: 'emergencyPhone', label: 'Emergency Phone', placeholder: '+91 98765 00000', icon: FiPhone },
-      { name: 'email', label: 'Email Address', placeholder: 'info@caresurgicalclinic.com', icon: FiMail, type: 'email' },
-      { name: 'address', label: 'Address', placeholder: '123 Health St, City, State', icon: FiMapPin },
+      { name: 'phone', label: 'Contact Phone', placeholder: '06124502164', icon: FiPhone },
+      { name: 'emergencyPhone', label: 'Emergency Phone', placeholder: '9942282987', icon: FiPhone },
+      { name: 'email', label: 'Email Address', placeholder: 'info@drsanjeevkumar.in', icon: FiMail, type: 'email' },
+      { name: 'address', label: 'Address', placeholder: 'L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna, 800001', icon: FiMapPin },
     ],
   },
   {
     title: 'Social Media',
     icon: FiGlobe,
     fields: [
-      { name: 'facebookUrl', label: 'Facebook URL', placeholder: 'https://facebook.com/caresurgicalclinic', icon: FiFacebook },
-      { name: 'instagramUrl', label: 'Instagram URL', placeholder: 'https://instagram.com/caresurgicalclinic', icon: FiInstagram },
+      { name: 'facebookUrl', label: 'Facebook URL', placeholder: 'https://facebook.com/patnalaprostonecare', icon: FiFacebook },
+      { name: 'instagramUrl', label: 'Instagram URL', placeholder: 'https://instagram.com/patnalaprostonecare', icon: FiInstagram },
     ],
   },
 ]
@@ -97,11 +97,11 @@ export default function AdminSettings() {
   }
 
   const handleSeedFull = async () => {
-    if (!window.confirm('DANGER: This will append default Doctors, Blogs, and Gallery items to the database. This does NOT clear existing entries but may cause duplicates if run multiple times. Continue?')) return
+    if (!window.confirm('WARNING: This will RESET default Doctors and Blogs to their defaults. Any manual changes to doctor profiles or blog posts will be LOST. Continue?')) return
     setSeedingFull(true)
     try {
       await seedFirestore()
-      toast.success('Full site data appended successfully!')
+      toast.success('Doctor and Blog data reset successfully!')
     } catch (err) {
       toast.error('Full seeding failed: ' + err.message)
     } finally {
@@ -229,7 +229,7 @@ export default function AdminSettings() {
             <h2 className="font-semibold text-navy-800 mb-1">Clinical Database Tools</h2>
             <p className="text-sm text-gray-500 mb-6">
               Use these tools to reset or refresh your clinical content and site defaults. 
-              <span className="text-amber-700 font-medium"> Actions are destructive or may create duplicate entries.</span>
+              <span className="text-amber-700 font-medium"> Actions are destructive and overwrite existing database records.</span>
             </p>
             
             <div className="grid sm:grid-cols-2 gap-4">
@@ -261,12 +261,12 @@ export default function AdminSettings() {
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-navy-600 hover:bg-navy-700 disabled:opacity-60 text-white font-semibold rounded-xl transition-colors text-sm"
                 >
                   {seedingFull ? (
-                    <><FiRefreshCw size={15} className="animate-spin" /> Appending Data…</>
+                    <><FiRefreshCw size={15} className="animate-spin" /> Resetting Data…</>
                   ) : (
-                    <><FiDatabase size={15} /> Full Site Setup</>
+                    <><FiDatabase size={15} /> Seed Doctors & Blogs</>
                   )}
                 </button>
-                <p className="text-[10px] text-gray-400 italic">Appends Doctors, Blogs, and Gallery tags. Does not clear existing.</p>
+                <p className="text-[10px] text-gray-400 italic">Resets Doctor profile and Blog posts. Overwrites existing data.</p>
               </div>
             </div>
           </div>

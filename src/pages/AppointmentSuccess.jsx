@@ -25,7 +25,7 @@ export default function AppointmentSuccess() {
     )
   }
 
-  const { bookingId, name, parentName, department, date, mode } = state
+  const { bookingId, name, parentName, department, doctorName, date, mode } = state
 
   return (
     <>
@@ -72,6 +72,12 @@ export default function AppointmentSuccess() {
               <span className="text-gray-500 text-sm">Department</span>
               <span className="font-semibold text-navy-800 text-sm">{department}</span>
             </div>
+            {doctorName && (
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500 text-sm">Doctor</span>
+                <span className="font-semibold text-navy-800 text-sm">{doctorName}</span>
+              </div>
+            )}
             <div className="flex items-center justify-between">
               <span className="text-gray-500 text-sm">Preferred Date</span>
               <span className="font-semibold text-navy-800 text-sm">

@@ -113,31 +113,46 @@ export default function About() {
 
         {/* ── Story ──────────────────────────────────────────────── */}
         <section className="section-padding bg-slate-50 border-t border-gray-100">
-          <div className="container-max grid lg:grid-cols-2 gap-14 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative group">
-              <div className="absolute -inset-4 bg-primary-100/50 rounded-[40px] blur-2xl group-hover:bg-primary-200/50 transition-colors duration-500"></div>
-              <div className="relative overflow-hidden rounded-[32px] border-4 border-white shadow-2xl">
-                <img 
-                  alt="Patna Lapro and Stone Healthcare Upcoming Building" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-                  src="https://firebasestorage.googleapis.com/v0/b/caresurgicalclinic-e545f.firebasestorage.app/o/gallery%2F1776843139506_care%20homepathic%20clinic%20upcoming%20building.webp?alt=media&token=2299429a-b9fb-41e2-abfe-d66e13703f1e"
-                  style={{ minHeight: '400px' }} 
+          <div className="container-max max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-100 shadow-md relative overflow-hidden"
+            >
+              {/* Vertical accent bar */}
+              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-primary-500 to-primary-700" />
+
+              {/* Hospital Staff Image */}
+              <div className="rounded-2xl overflow-hidden mb-6 -mx-2 sm:-mx-4">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780379448531_hospital_staff.webp?alt=media&token=571ebf7f-59e4-4698-986c-c4802076dfdd"
+                  alt="Patna Lapro and Stone Healthcare — Our Team"
+                  className="w-full h-auto object-contain"
                 />
-                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl border border-primary-100 shadow-lg">
-                  <p className="text-primary-700 font-bold text-xs uppercase tracking-widest">Future Vision</p>
-                  <h4 className="text-navy-900 font-bold text-sm mt-0.5">Our Upcoming Clinic Building</h4>
-                </div>
               </div>
-            </motion.div>
-            
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">Our Story</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-black text-navy-800 leading-tight mb-6">Building Trust, <span className="text-primary-600">One Patient at a Time</span></h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>Patna Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care and gastroenterology treatments to Bihar.</p>
-                <p>Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS, DNB), a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.</p>
-                <p>We are proud to have served over <strong className="text-navy-800">8,000 satisfied patients</strong> and performed more than <strong className="text-navy-800">350 successful operations</strong>, backed by prestigious recognitions including over <strong className="text-navy-800">150 awards</strong>.</p>
+              
+              <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">
+                Our Story
+              </span>
+              
+              <h2 className="font-heading text-3xl md:text-4xl font-black text-navy-800 leading-tight mb-6">
+                Building Trust, <span className="text-primary-600">One Patient at a Time</span>
+              </h2>
+              
+              <div className="space-y-4 text-gray-600 leading-relaxed text-base sm:text-lg">
+                <p>
+                  Patna Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care and gastroenterology treatments to Bihar.
+                </p>
+                <p>
+                  Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS, DNB), a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.
+                </p>
+                <p>
+                  We are proud to have served over <strong className="text-navy-800">8,000 satisfied patients</strong> and performed more than <strong className="text-navy-800">350 successful operations</strong>, backed by prestigious recognitions including over <strong className="text-navy-800">150 awards</strong>.
+                </p>
               </div>
+              
               <div className="mt-8 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium bg-blue-50 border-blue-200 text-blue-700">
                   <FiCheckCircle className="w-4 h-4" /> Laparoscopic Surgery

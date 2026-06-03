@@ -84,9 +84,16 @@ function SpecialityCard({ spec, isOpen, onToggle, colorCfg, doctors = [] }) {
         className="w-full text-left p-5 flex items-start gap-4"
         onClick={onToggle}
       >
-        {/* Icon */}
-        <div className={`w-12 h-12 rounded-xl ${cfg.bg} flex items-center justify-center text-2xl shrink-0 shadow-sm`}>
-          {spec.icon || cfg.emoji}
+        <div className={`w-12 h-12 rounded-xl ${cfg.bg} flex items-center justify-center text-2xl shrink-0 shadow-sm overflow-hidden`}>
+          {spec.icon ? (
+            (spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.')) ? (
+              <img src={spec.icon} alt="" className="w-full h-full object-contain p-1.5" />
+            ) : (
+              spec.icon
+            )
+          ) : (
+            cfg.emoji
+          )}
         </div>
 
         {/* Title block */}
@@ -170,7 +177,7 @@ function SpecialityCard({ spec, isOpen, onToggle, colorCfg, doctors = [] }) {
                     {doctors.map((doc) => (
                       <Link
                         key={doc.id}
-                        to={`/doctors/${doc.id}`}
+                        to={`/doctors/${doc.slug || doc.id}`}
                         onClick={(e) => e.stopPropagation()}
                         className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-gray-50 hover:bg-primary-50 border border-gray-100 hover:border-primary-200 transition-colors group"
                       >

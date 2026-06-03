@@ -73,7 +73,7 @@ export default function Contact() {
           email: siteData.contact.email,
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Radha Krishna Vatika, Sri Krishna Nagar Kidwaipuri, Ward No. 15',
+            streetAddress: 'L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri',
             addressLocality: 'Patna',
             addressRegion: 'Bihar',
             postalCode: '800001',
@@ -82,7 +82,7 @@ export default function Contact() {
           openingHoursSpecification: [
             { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '21:00' },
           ],
-          hasMap: 'https://maps.google.com/?q=Care+surgical+Clinic+Panchvati+Chowk+Patna',
+          hasMap: 'https://maps.google.com/?q=L-35,+Road+No.+12,+Sri+Krishna+Nagar+Kidwaipuri,+Patna,+800001',
         }}
       />
 
@@ -112,8 +112,7 @@ export default function Contact() {
                     siteData.contact.phone,
                     siteData.contact.phone2,
                     siteData.contact.phone3,
-                    siteData.contact.phone4,
-                    siteData.contact.phone5
+                    siteData.contact.phone4
                   ].filter(Boolean),
                   isPhones: true 
                 },

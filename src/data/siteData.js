@@ -21,9 +21,8 @@ export const siteData = {
     phone: '06124502164',
     phone2: '9942282987',
     phone3: '7091145462',
-    phone4: '6207661707',
-    phone5: '9334097925',
-    email: 'patnalapro@gmail.com',
+    phone4: '9334097925',
+    email: 'info@drsanjeevkumar.in',
     hours: 'Mon – Sat: 9:00 AM – 5:00 PM | Sun: Closed',
   },
 
@@ -67,6 +66,19 @@ export const siteData = {
       'Sri Krishna Nagar Patna clinic',
       'DNB surgeon Patna',
       'MS surgeon Patna',
+      'best laparoscopic surgeon in Patna',
+      'gastro specialist Patna',
+      'gallbladder stone surgery cost in Patna',
+      'kidney stone removal Patna',
+      'Dr Sanjeev Kumar Kidwaipuri',
+      'gastrointestinal surgeon Patna',
+      'Patna Lapro and Stone Healthcare contact number',
+      'laparoscopy cost Patna',
+      'kidney stone operation cost Patna',
+      'best hospital for stone surgery Patna',
+      'obstructive jaundice specialist Patna',
+      'hernia treatment in Patna',
+      'appendix surgery in Patna',
     ],
     ogImage: '/og-image.jpg',
   },
@@ -81,7 +93,7 @@ export const siteData = {
 
   // ── Google Maps Embed ────────────────────────────────────────
   mapEmbed:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.6!2d85.1376!3d25.6093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDM2JzMzLjUiTiA4NcKwMDgnMTUuNCJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin',
+    'https://maps.google.com/maps?q=L-35,%20Road%20No.%2012,%20Sri%20Krishna%20Nagar%20Kidwaipuri,%20Patna,%20800001&t=&z=15&ie=UTF8&iwloc=&output=embed',
 
   // ── Departments / Specialties (used in appointment form) ─────
   departments: [

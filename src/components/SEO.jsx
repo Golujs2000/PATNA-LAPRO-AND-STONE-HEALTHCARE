@@ -57,7 +57,7 @@ export default function SEO({ title, description, image, type = 'website', keywo
     email: siteData.contact.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Radha Krishna Vatika, Sri Krishna Nagar Kidwaipuri, Ward No. 15',
+      streetAddress: 'L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri',
       addressLocality: 'Patna',
       addressRegion: 'Bihar',
       postalCode: '800001',
@@ -65,8 +65,8 @@ export default function SEO({ title, description, image, type = 'website', keywo
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '25.8794669',
-      longitude: '86.5946519'
+      latitude: '25.6093',
+      longitude: '85.1376'
     },
     openingHoursSpecification: [
       {

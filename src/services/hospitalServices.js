@@ -11,6 +11,7 @@ import {
   query, orderBy, serverTimestamp,
 } from 'firebase/firestore'
 import { db } from '../firebase/config'
+import { slugify } from '../utils/helpers'
 
 const COL = 'hospitalServices'
 
@@ -18,17 +19,26 @@ const COL = 'hospitalServices'
 export async function getHospitalServices() {
   const q = query(collection(db, COL), orderBy('order'))
   const snap = await getDocs(q)
-  return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
+  return snap.docs.map((d) => {
+    const data = d.data()
+    return {
+      ...data,
+      id: d.id,
+      slug: data.slug || slugify(data.name || ''),
+    }
+  })
 }
 
 // Add a new hospital service
 export async function addHospitalService(data) {
-  return addDoc(collection(db, COL), { ...data, createdAt: serverTimestamp() })
+  const slug = data.slug || slugify(data.name || '')
+  return addDoc(collection(db, COL), { ...data, slug, createdAt: serverTimestamp() })
 }
 
 // Update an existing hospital service
 export async function updateHospitalService(id, data) {
-  return updateDoc(doc(db, COL, id), { ...data, updatedAt: serverTimestamp() })
+  const slug = data.slug || slugify(data.name || '')
+  return updateDoc(doc(db, COL, id), { ...data, slug, updatedAt: serverTimestamp() })
 }
 
 // Delete a hospital service

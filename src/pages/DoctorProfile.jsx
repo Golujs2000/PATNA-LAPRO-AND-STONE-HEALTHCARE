@@ -1,4 +1,4 @@
-﻿// ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
 // pages/DoctorProfile.jsx
 // Individual doctor detail page at /doctors/:id.
 // Fetches the doctor document directly from Firestore by ID.
@@ -8,34 +8,34 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { doc, getDoc } from 'firebase/firestore'
 import { motion } from 'framer-motion'
 import {
   FiPhone, FiMail, FiClock, FiCalendar,
-  FiArrowLeft, FiAward, FiUser, FiActivity, FiChevronRight,
+  FiArrowLeft, FiAward, FiUser, FiActivity, FiChevronRight, FiBriefcase
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
-import { db } from '../firebase/config'
 import { getInitials } from '../utils/helpers'
 import { getSpecialities } from '../services/specialities'
+import { getDoctors } from '../services/doctors'
 import { siteData } from '../data/siteData'
 
 const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 export default function DoctorProfile() {
-  const { id } = useParams()
+  const { slug } = useParams()
   const [doctor, setDoctor]           = useState(null)
   const [loading, setLoading]         = useState(true)
   const [linkedGroups, setLinkedGroups] = useState([])
 
   useEffect(() => {
-    getDoc(doc(db, 'doctors', id))
-      .then((snap) => {
-        if (snap.exists()) setDoctor({ id: snap.id, ...snap.data() })
+    getDoctors()
+      .then((all) => {
+        const found = all.find((d) => d.slug === slug || d.id === slug)
+        setDoctor(found || null)
       })
       .catch(console.error)
       .finally(() => setLoading(false))
-  }, [id])
+  }, [slug])
 
   // Build linked-treatment groups once doctor + specialities are loaded
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function DoctorProfile() {
     )
   }
 
-  const sortedDays = (doctor.availableDays || []).sort(
+  const sortedDays = (Array.isArray(doctor.availableDays) ? doctor.availableDays : []).sort(
     (a, b) => dayOrder.indexOf(a) - dayOrder.indexOf(b)
   )
 
@@ -140,7 +140,7 @@ export default function DoctorProfile() {
             >
               <div className="card p-8 text-center sticky top-24">
                 {/* Avatar */}
-                <div className="w-36 h-36 rounded-full mx-auto mb-5 overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                <div className="w-36 h-36 rounded-2xl mx-auto mb-5 overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center border border-primary-100/50">
                   {doctor.image ? (
                     <img src={doctor.image} alt={doctor.name} className="w-full h-full object-cover" />
                   ) : (
@@ -168,6 +168,12 @@ export default function DoctorProfile() {
                     <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
                       <FiMail className="w-4 h-4 text-primary-500 flex-shrink-0" />
                       <a href={`mailto:${doctor.email}`} className="text-gray-700 hover:text-primary-600 text-xs truncate">{doctor.email}</a>
+                    </div>
+                  )}
+                  {doctor.consultationFee && (
+                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                      <span className="w-4 h-4 text-primary-500 font-extrabold flex items-center justify-center text-xs shrink-0">₹</span>
+                      <span className="text-gray-700">Consultation Fee: <strong className="text-navy-800">₹{doctor.consultationFee}</strong></span>
                     </div>
                   )}
                 </div>
@@ -235,6 +241,57 @@ export default function DoctorProfile() {
                 </div>
               </div>
 
+              {/* Professional Experience / Positions (Ex Services) */}
+              {(doctor.currentPosition || doctor.previousPosition) && (
+                <div className="card p-8">
+                  <h2 className="font-heading font-bold text-navy-800 text-xl mb-5 flex items-center gap-2">
+                    <FiBriefcase className="w-5 h-5 text-primary-500" /> Positions &amp; Clinical Experience
+                  </h2>
+                  <div className="space-y-4">
+                    {doctor.currentPosition && (
+                      <div className="flex items-start gap-4 p-4 rounded-xl bg-primary-50/50 border border-primary-100">
+                        <div className="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center text-white shrink-0 shadow-sm mt-0.5">
+                          <FiBriefcase className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-primary-600 font-bold uppercase tracking-wider">Current Position</p>
+                          <h3 className="text-navy-800 font-bold text-sm sm:text-base mt-1">
+                            {doctor.currentPosition.split(/,\s*(.+)/)[0]}
+                          </h3>
+                          {doctor.currentPosition.split(/,\s*(.+)/)[1] && (
+                            <p className="text-gray-500 text-xs mt-0.5">
+                              {doctor.currentPosition.split(/,\s*(.+)/)[1]}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {doctor.previousPosition && doctor.previousPosition.split('|').map((p, idx) => {
+                      const parts = p.split(/,\s*(.+)/)
+                      return (
+                        <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-gray-150">
+                          <div className="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-white shrink-0 shadow-sm mt-0.5">
+                            <FiBriefcase className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-navy-500 font-bold uppercase tracking-wider">Ex-Service / Previous Position</p>
+                            <h3 className="text-navy-800 font-bold text-sm sm:text-base mt-1">
+                              {parts[0]?.trim()}
+                            </h3>
+                            {parts[1] && (
+                              <p className="text-gray-500 text-xs mt-0.5">
+                                {parts[1]?.trim()}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+
               {/* Linked Treatments */}
               {linkedGroups.length > 0 && (
                 <div className="card p-8">
@@ -245,7 +302,16 @@ export default function DoctorProfile() {
                     {linkedGroups.map(({ spec, treatments }) => (
                       <div key={spec.id}>
                         <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">
-                          {spec.icon && <span className="mr-1">{spec.icon}</span>}{spec.name}
+                          {spec.icon && (
+                            <span className="w-4 h-4 inline-flex items-center justify-center shrink-0 overflow-hidden mr-1.5 align-middle">
+                              {(spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.')) ? (
+                                <img src={spec.icon} alt="" className="w-full h-full object-contain" />
+                              ) : (
+                                spec.icon
+                              )}
+                            </span>
+                          )}
+                          <span className="align-middle">{spec.name}</span>
                         </p>
                         <div className="grid sm:grid-cols-2 gap-2">
                           {treatments.map((t) => (
