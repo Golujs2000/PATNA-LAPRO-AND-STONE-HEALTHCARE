@@ -19,11 +19,22 @@ const specialityImages = {
   'pancreas-disorders': '/speciality/pancreas-disorders.png',
   'jaundice-biliary-disorders': '/speciality/jaundice-biliary-disorders.png',
   'general-gi-surgery': '/speciality/general-gi-surgery.png',
+  'colorectal-surgeon': '/speciality/general-gi-surgery.png',
+  'piles-fissure-fistula': '/speciality/general-gi-surgery.png',
+  'pancreatic-stone': '/speciality/pancreas-disorders.png',
+  'fissure-laser-surgery': '/speciality/general-gi-surgery.png',
+  'gall-bladder-stone': '/speciality/laparoscopic-surgery.png',
+  'liver': '/speciality/liver-disorders.png',
+  'ercp-cbd-stone': '/speciality/jaundice-biliary-disorders.png',
+  'stomach-cancer': '/speciality/general-gi-surgery.png',
+  'hernia': '/speciality/laparoscopic-surgery.png',
+  'jaundice-ascites-biliary': '/speciality/jaundice-biliary-disorders.png',
+  'endoscopy-colonoscopy': '/speciality/general-gi-surgery.png',
 }
 
 export default function ServicesSection() {
   const { specialities, loading } = useSpecialities()
-  const displayed = specialities.slice(0, 9)
+  const displayed = specialities.slice(0, 20)
 
   return (
     <section className="section-padding bg-slate-50/70 border-b border-primary-50">

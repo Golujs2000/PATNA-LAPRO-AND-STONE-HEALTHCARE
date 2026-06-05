@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FiPhone, FiCalendar, FiActivity, FiShield, FiAward, FiCheckCircle } from 'react-icons/fi'
@@ -9,6 +10,99 @@ const features = [
   { icon: FiCheckCircle, label: 'Liver & Pancreas' },
   { icon: FiCalendar, label: 'Easy Booking' },
 ]
+
+function RandomCanvas() {
+  const canvasRef = useRef(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    let animationFrameId
+    
+    const resize = () => {
+      const rect = canvas.getBoundingClientRect()
+      canvas.width = rect.width * window.devicePixelRatio
+      canvas.height = rect.height * window.devicePixelRatio
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio)
+    }
+    resize()
+    window.addEventListener('resize', resize)
+
+    const particleCount = 20
+    const particles = []
+    const colors = ['rgba(0, 113, 217, 0.15)', 'rgba(13, 202, 240, 0.15)', 'rgba(255, 193, 7, 0.1)']
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * 380,
+        y: Math.random() * 450,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        radius: Math.random() * 5 + 1.5,
+        color: colors[Math.floor(Math.random() * colors.length)]
+      })
+    }
+
+    const animate = () => {
+      const width = canvas.width / window.devicePixelRatio
+      const height = canvas.height / window.devicePixelRatio
+      
+      ctx.clearRect(0, 0, width, height)
+      
+      particles.forEach((p) => {
+        p.x += p.vx
+        p.y += p.vy
+
+        if (p.x < 0 || p.x > width) p.vx *= -1
+        if (p.y < 0 || p.y > height) p.vy *= -1
+
+        p.x = Math.max(0, Math.min(width, p.x))
+        p.y = Math.max(0, Math.min(height, p.y))
+
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
+        ctx.fillStyle = p.color
+        ctx.fill()
+      })
+
+      // Connect nearby nodes
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x
+          const dy = particles[i].y - particles[j].y
+          const dist = Math.sqrt(dx * dx + dy * dy)
+
+          if (dist < 90) {
+            ctx.beginPath()
+            ctx.moveTo(particles[i].x, particles[i].y)
+            ctx.lineTo(particles[j].x, particles[j].y)
+            ctx.strokeStyle = `rgba(0, 113, 217, ${0.08 * (1 - dist / 90)})`
+            ctx.lineWidth = 0.6
+            ctx.stroke()
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(animate)
+    }
+    
+    animate()
+
+    return () => {
+      window.removeEventListener('resize', resize)
+      cancelAnimationFrame(animationFrameId)
+    }
+  }, [])
+
+  return (
+    <canvas 
+      ref={canvasRef} 
+      className="absolute inset-0 w-full h-full pointer-events-none rounded-[32px]"
+      style={{ opacity: 0.85 }}
+    />
+  )
+}
 
 export default function HeroSection() {
 
@@ -71,7 +165,7 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.16 }}
               className="text-gray-700 text-base md:text-lg leading-relaxed mb-7 max-w-xl"
             >
-              Dr. Sanjeev Kumar (MBBS, MS, DNB) is a Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi), and Specialist in{' '}
+              Dr. Sanjeev Kumar (MBBS, MS) is a Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi), and Specialist in{' '}
               <strong className="text-navy-800">Jaundice, Stone, Pancreas & Liver</strong>{' '}
               at Patna Lapro & Stone Healthcare.
             </motion.p>
@@ -89,7 +183,7 @@ export default function HeroSection() {
               </div>
               <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white/90 border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
                 <FiShield className="w-3.5 h-3.5 text-primary-500" />
-                MBBS, MS, DNB
+                MBBS, MS
               </div>
               <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white/90 border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
                 <FiActivity className="w-3.5 h-3.5 text-primary-500" />
@@ -134,69 +228,71 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right — Doctor image card */}
+          {/* Right — Big Doctor Image with Morph Shape + Separate Stats Card */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, delay: 0.28 }}
-            className="order-2 flex items-center justify-center relative mb-16 lg:mb-0"
+            className="order-2 flex flex-col items-center justify-center relative mb-16 lg:mb-0"
           >
-            {/* Decorative bg blob */}
-            <div className="absolute w-[110%] h-[110%] bg-primary-100/25 rounded-full blur-[90px] -z-10 animate-pulse-slow" />
+            {/* ── Doctor Image with Morph Shape behind ── */}
+            <div className="relative w-full flex justify-center">
+              {/* Morphing shape behind image — solid flat color, irregular polygon */}
+              <div 
+                className="absolute top-[2%] left-1/2 -translate-x-1/2 w-[88%] h-[88%] bg-primary-200/50 animate-morph pointer-events-none" 
+              />
+              <div 
+                className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[82%] h-[82%] bg-accent-100/40 animate-morph pointer-events-none"
+                style={{ animationDelay: '-5s' }}
+              />
 
-            <div className="relative w-full max-w-md flex flex-col items-center">
-              {/* Doctor image with decorative frame */}
-              <div className="relative">
-                {/* Gradient ring behind image */}
-                <div className="absolute -inset-2 bg-gradient-to-br from-primary-400 via-primary-600 to-accent-500 rounded-[28px] opacity-20 blur-sm" />
-                <div className="relative overflow-hidden rounded-[22px] border-4 border-white shadow-2xl shadow-primary-900/20">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780307021434_DR.%20SANJEEV%20KUMAR%2002.webp?alt=media&token=e3b03b26-9e61-48d6-b9dd-48faa6646d13"
-                    alt="Dr. Sanjeev Kumar"
-                    className="w-full h-auto max-h-[420px] lg:max-h-[480px] object-cover object-top"
-                  />
-                </div>
-                {/* Small decorative accent dots */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 bg-accent-400 rounded-full opacity-60 blur-[2px]" />
-                <div className="absolute -bottom-2 -left-2 w-5 h-5 bg-primary-400 rounded-full opacity-50 blur-[1px]" />
-              </div>
-
-              {/* Floating stats card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="relative z-20 -mt-10 mx-4 w-[calc(100%-2rem)]"
-              >
-                <div className="bg-white/95 backdrop-blur-md border border-primary-100 rounded-2xl shadow-xl px-5 py-4">
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <div>
-                      <h3 className="font-heading font-black text-base text-primary-900 leading-tight">Dr. Sanjeev Kumar</h3>
-                      <p className="text-primary-600 font-bold text-[10px] tracking-wide uppercase mt-0.5">MBBS, MS, DNB</p>
-                      <p className="text-gray-500 text-[11px] font-medium mt-0.5">Laparoscopic & Gastro Specialist</p>
-                    </div>
-                    <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 flex-shrink-0">
-                      <FiAward className="w-4 h-4" />
-                    </div>
-                  </div>
-                  <div className="h-px bg-gray-100 mb-3" />
-                  <div className="grid grid-cols-3 divide-x divide-gray-100 text-center">
-                    <div className="px-2">
-                      <p className="font-heading font-black text-lg text-primary-700 leading-none">27</p>
-                      <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Yrs Exp.</p>
-                    </div>
-                    <div className="px-2">
-                      <p className="font-heading font-black text-lg text-primary-700 leading-none">350+</p>
-                      <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Operations</p>
-                    </div>
-                    <div className="px-2">
-                      <p className="font-heading font-black text-lg text-primary-700 leading-none">8000+</p>
-                      <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Patients</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              {/* Big faded doctor image */}
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780637150378_ChatGPT%20Image%20Jun%205%2C%202026%2C%2010_52_07%20AM.webp?alt=media&token=2757b4ff-274f-4fe7-8700-2668bc751dcc"
+                alt="Dr. Sanjeev Kumar"
+                className="relative z-10 w-full max-w-[400px] md:max-w-[440px] lg:max-w-[480px] h-auto object-cover"
+                style={{
+                  WebkitMaskImage: 'radial-gradient(ellipse at 50% 45%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 92%)',
+                  maskImage: 'radial-gradient(ellipse at 50% 45%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 92%)',
+                }}
+              />
             </div>
+
+            {/* ── Floating Stats Card (separate from image) ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="relative z-20 w-full max-w-sm -mt-14 mx-auto"
+            >
+              <div className="bg-white/95 backdrop-blur-md border border-primary-100 rounded-2xl shadow-xl px-5 py-4">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div>
+                    <h3 className="font-heading font-black text-base text-primary-900 leading-tight">Dr. Sanjeev Kumar</h3>
+                    <p className="text-primary-600 font-bold text-[10px] tracking-wide uppercase mt-0.5">MBBS, MS</p>
+                    <p className="text-gray-500 text-[11px] font-medium mt-0.5">Laparoscopic & Gastro Specialist</p>
+                  </div>
+                  <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 flex-shrink-0">
+                    <FiAward className="w-4 h-4" />
+                  </div>
+                </div>
+                <div className="h-px bg-gray-100 mb-3" />
+                <div className="grid grid-cols-3 divide-x divide-gray-100 text-center">
+                  <div className="px-2">
+                    <p className="font-heading font-black text-lg text-primary-700 leading-none">27</p>
+                    <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Yrs Exp.</p>
+                  </div>
+                  <div className="px-2">
+                    <p className="font-heading font-black text-lg text-primary-700 leading-none">350+</p>
+                    <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Operations</p>
+                  </div>
+                  <div className="px-2">
+                    <p className="font-heading font-black text-lg text-primary-700 leading-none">8000+</p>
+                    <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Patients</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

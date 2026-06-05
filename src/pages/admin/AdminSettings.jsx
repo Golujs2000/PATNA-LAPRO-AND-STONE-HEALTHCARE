@@ -41,7 +41,7 @@ const FIELD_GROUPS = [
     title: 'Contact Details',
     icon: FiPhone,
     fields: [
-      { name: 'phone', label: 'Contact Phone', placeholder: '06124502164', icon: FiPhone },
+      { name: 'phone', label: 'Contact Phone', placeholder: '9334097925', icon: FiPhone },
       { name: 'emergencyPhone', label: 'Emergency Phone', placeholder: '9942282987', icon: FiPhone },
       { name: 'email', label: 'Email Address', placeholder: 'info@drsanjeevkumar.in', icon: FiMail, type: 'email' },
       { name: 'address', label: 'Address', placeholder: 'L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna, 800001', icon: FiMapPin },
@@ -248,7 +248,7 @@ export default function AdminSettings() {
                     <><FiDatabase size={15} /> Refresh Clinical Dataset</>
                   )}
                 </button>
-                <p className="text-[10px] text-gray-400 italic">Resets 28 Specialities & 230 Treatments. Overwrites existing data.</p>
+                <p className="text-[10px] text-gray-400 italic">Resets 18 Specialities & 65 Treatments. Overwrites existing data (preserves custom thumbnails).</p>
               </div>
 
               {/* Full Site Reset Button */}

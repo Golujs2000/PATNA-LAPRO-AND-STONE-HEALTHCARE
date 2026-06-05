@@ -26,6 +26,7 @@ const EMPTY_FORM = {
   duration: '',
   recovery: '',
   description: '',
+  longDescription: '',
   indications: '',
   benefits: '',
   preparation: '',
@@ -98,6 +99,7 @@ export default function AdminTreatments() {
       duration: t.duration || '',
       recovery: t.recovery || '',
       description: t.description || '',
+      longDescription: t.longDescription || '',
       indications: fromLines(t.indications),
       benefits: fromLines(t.benefits),
       preparation: fromLines(t.preparation),
@@ -154,6 +156,7 @@ export default function AdminTreatments() {
       duration:    form.duration.trim(),
       recovery:    form.recovery.trim(),
       description: form.description.trim(),
+      longDescription: form.longDescription.trim(),
       indications: toLines(form.indications),
       benefits:    toLines(form.benefits),
       preparation: toLines(form.preparation),
@@ -390,10 +393,20 @@ export default function AdminTreatments() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Short Description</label>
                       <textarea name="description" value={form.description} onChange={handleChange}
-                        rows={3} className="input-field resize-none"
-                        placeholder="Brief explanation of what this procedure involves…" />
+                        rows={2} className="input-field resize-none"
+                        placeholder="Brief 1-2 line summary of the procedure…" />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Detailed Description <span className="text-gray-400 font-normal">(shown on treatment page)</span>
+                      </label>
+                      <textarea name="longDescription" value={form.longDescription} onChange={handleChange}
+                        rows={6} className="input-field resize-none"
+                        placeholder="Write a detailed, multi-paragraph description of this treatment/procedure. Include what it involves, who it's for, how it's performed, and any important details patients should know…" />
+                      <p className="text-xs text-gray-400 mt-1">This appears as the main content on the public treatment detail page</p>
                     </div>
                   </div>
 
@@ -653,8 +666,16 @@ export default function AdminTreatments() {
                   {/* Description */}
                   {viewItem.description && (
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Description</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Short Description</p>
                       <p className="text-sm text-gray-600 leading-relaxed">{viewItem.description}</p>
+                    </div>
+                  )}
+
+                  {/* Long Description */}
+                  {viewItem.longDescription && (
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Detailed Description</p>
+                      <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{viewItem.longDescription}</p>
                     </div>
                   )}
 

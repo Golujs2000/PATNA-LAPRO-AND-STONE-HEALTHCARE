@@ -72,7 +72,7 @@ export default function About() {
                     <img
                       alt="Dr. Sanjeev Kumar"
                       className="w-full h-auto max-h-[460px] object-cover object-top rounded-2xl relative z-10"
-                      src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780307021434_DR.%20SANJEEV%20KUMAR%2002.webp?alt=media&token=e3b03b26-9e61-48d6-b9dd-48faa6646d13"
+                      src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780637150378_ChatGPT%20Image%20Jun%205%2C%202026%2C%2010_52_07%20AM.webp?alt=media&token=2757b4ff-274f-4fe7-8700-2668bc751dcc"
                     />
                     
                     <div className="absolute -bottom-16 left-3 right-3 z-20">

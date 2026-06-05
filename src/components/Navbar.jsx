@@ -270,17 +270,22 @@ export default function Navbar() {
 
               {/* Services dropdown */}
               <li className="relative" ref={servicesRef}>
-                <button
-                  onClick={() => setServicesOpen((o) => !o)}
-                  className={`nav-link-line flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
+                <div className={`nav-link-line flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
                     isServicesActive || servicesOpen ? 'text-primary-600 active-link' : 'text-gray-600 hover:text-primary-600'
-                  }`}
-                >
-                  Speciality / Treatment
-                  <motion.span animate={{ rotate: servicesOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                    <FiChevronDown size={14} />
-                  </motion.span>
-                </button>
+                  }`}>
+                  <Link to="/services" className="hover:text-primary-600 transition-colors">
+                    Speciality / Treatment
+                  </Link>
+                  <button
+                    onClick={() => setServicesOpen((o) => !o)}
+                    className="p-1 hover:text-primary-600 transition-colors"
+                    aria-label="Toggle specialities dropdown"
+                  >
+                    <motion.span animate={{ rotate: servicesOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                      <FiChevronDown size={14} />
+                    </motion.span>
+                  </button>
+                </div>
                 <AnimatePresence>
                   {servicesOpen && <ServicesMegaMenu specialities={specialities} loading={specLoading} onClose={() => setServicesOpen(false)} />}
                 </AnimatePresence>
@@ -294,9 +299,9 @@ export default function Navbar() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.23 }}
               >
-                <a href={`tel:${siteData.contact.phone2}`} className="inline-flex items-center gap-2 text-sm py-2.5 px-5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-[5px] transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 btn-shimmer">
+                <a href={`tel:${siteData.contact.phone}`} className="inline-flex items-center gap-2 text-sm py-2.5 px-5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-[5px] transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 btn-shimmer">
                   <FiPhone className="w-4 h-4 flex-shrink-0" />
-                  {siteData.contact.phone2}
+                  {siteData.contact.phone}
                 </a>
               </motion.div>
 
@@ -359,17 +364,24 @@ export default function Navbar() {
 
                   {/* Services accordion */}
                   <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.24 }}>
-                    <button
-                      onClick={() => setMobileServicesOpen((o) => !o)}
+                    <div
                       className={`w-full flex items-center justify-between px-4 py-3 rounded-[5px] text-sm font-semibold transition-colors ${
                         isServicesActive ? 'bg-primary-50 text-primary-600 border-l-4 border-primary-500' : 'text-gray-700 hover:bg-primary-50 hover:text-primary-600'
                       }`}
                     >
-                      Speciality / Treatment
-                      <motion.span animate={{ rotate: mobileServicesOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                        <FiChevronDown size={16} />
-                      </motion.span>
-                    </button>
+                      <Link to="/services" onClick={() => setMobileOpen(false)} className="flex-1 text-left">
+                        Speciality / Treatment
+                      </Link>
+                      <button
+                        onClick={() => setMobileServicesOpen((o) => !o)}
+                        className="p-1"
+                        aria-label="Toggle specialities dropdown"
+                      >
+                        <motion.span animate={{ rotate: mobileServicesOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                          <FiChevronDown size={16} />
+                        </motion.span>
+                      </button>
+                    </div>
                     <AnimatePresence>
                       {mobileServicesOpen && (
                         <motion.div
@@ -391,11 +403,11 @@ export default function Navbar() {
                     transition={{ delay: 0.3 }}
                     className="pt-3 border-t border-primary-50 flex flex-col gap-3 pb-8 px-4"
                   >
-                    <a href={`tel:${siteData.contact.phone2}`}
+                    <a href={`tel:${siteData.contact.phone}`}
                       className="inline-flex items-center justify-center gap-2 text-sm py-3 px-5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-[5px] transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 btn-shimmer"
                     >
                       <FiPhone className="w-4 h-4 flex-shrink-0" />
-                      {siteData.contact.phone2}
+                      {siteData.contact.phone}
                     </a>
                     <Link to="/book-appointment" onClick={() => setMobileOpen(false)}
                       className="btn-primary btn-shimmer justify-center text-sm py-3">

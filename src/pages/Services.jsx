@@ -33,6 +33,8 @@ const CATEGORY_CONFIG = {
   'Skin Diseases':    { emoji: '✨', bg: 'bg-teal-600',  light: 'bg-teal-50',  text: 'text-teal-700',  border: 'border-teal-200' },
   "Women's Health":   { emoji: '🌸', bg: 'bg-pink-600',  light: 'bg-pink-50',  text: 'text-pink-700',  border: 'border-pink-200' },
   'Kidney & Urinary': { emoji: '💧', bg: 'bg-cyan-600',  light: 'bg-cyan-50',  text: 'text-cyan-700',  border: 'border-cyan-200' },
+  'Surgery':     { emoji: '🔬', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
+  'Biliary':     { emoji: '🩺', bg: 'bg-green-600',    light: 'bg-green-50',    text: 'text-green-700',    border: 'border-green-200' },
   'Diagnostic':       { emoji: '🔬', bg: 'bg-slate-600', light: 'bg-slate-50', text: 'text-slate-700', border: 'border-slate-200' },
   'Support':          { emoji: '🤝', bg: 'bg-amber-600', light: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200' },
   'Department':       { emoji: '🏥', bg: 'bg-primary-600', light: 'bg-primary-50', text: 'text-primary-700', border: 'border-primary-200' },

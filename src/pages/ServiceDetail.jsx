@@ -166,6 +166,15 @@ export default function ServiceDetail() {
             {/* Left — main content */}
             <div className="lg:col-span-2 space-y-8">
 
+              {/* Department Overview */}
+              {speciality.longDescription && (
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
+                  <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">Department Overview</h2>
+                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{speciality.longDescription}</p>
+                </motion.div>
+              )}
+
               {/* Key Features */}
               {features.length > 0 && (
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

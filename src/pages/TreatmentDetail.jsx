@@ -196,6 +196,18 @@ export default function TreatmentDetail() {
                 </p>
               </div>
             )}
+            {(treatment.recovery || speciality.recoveryTime) && (
+              <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
+                <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Recovery</p>
+                <p className="text-white font-bold text-xl flex items-center gap-2">
+                  <FiActivity className="w-4 h-4" /> {treatment.recovery || speciality.recoveryTime}
+                </p>
+              </div>
+            )}
+            <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
+              <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Cost / Price</p>
+              <p className="text-white font-bold text-xl">As per Consultation</p>
+            </div>
             {speciality.available && (
               <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
                 <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Availability</p>
@@ -224,13 +236,26 @@ export default function TreatmentDetail() {
                     by our experienced medical team. We follow international safety protocols to ensure the best outcomes for every patient.</>
                   )}
                 </p>
-                {speciality.recoveryTime && (
+                {(treatment.recovery || speciality.recoveryTime) && (
                   <div className={`mt-4 inline-flex items-center gap-2 ${cfg.light} ${cfg.text} rounded-[5px] px-4 py-2 text-sm font-medium`}>
                     <FiClock className="w-4 h-4" />
                     Typical recovery: {treatment.recovery || speciality.recoveryTime}
                   </div>
                 )}
               </motion.div>
+
+              {/* Detailed Overview */}
+              {treatment.longDescription && (
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
+                  <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">Detailed Overview</h2>
+                  <div className="text-gray-600 leading-relaxed space-y-4">
+                    {treatment.longDescription.split('\n').filter(p => p.trim()).map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
               {/* Image Gallery */}
               {Array.isArray(treatment.images) && treatment.images.length > 0 && (
@@ -476,7 +501,10 @@ export default function TreatmentDetail() {
               {/* Book CTA */}
               <div className="bg-primary-600 rounded-xl p-5 text-white shadow-lg">
                 <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-1">Ready to proceed?</p>
-                <h3 className="font-heading font-bold text-lg mb-4 leading-tight">Book This Procedure</h3>
+                <h3 className="font-heading font-bold text-lg mb-2 leading-tight">Book This Procedure</h3>
+                <p className="text-white/80 text-sm mb-4 flex items-center gap-1.5">
+                  💰 Cost / Price: <span className="font-bold text-white">As per Consultation</span>
+                </p>
                 <Link
                   to={`/book-appointment?dept=${encodeURIComponent(speciality.name)}&treatment=${encodeURIComponent(treatment.name)}`}
                   className="w-full flex items-center justify-center gap-2 bg-white text-primary-700 font-bold text-sm py-3 rounded-lg hover:bg-primary-50 transition-colors mb-2"
