@@ -8,16 +8,16 @@ export const seedDoctors = [
   {
     name: 'Dr. Sanjeev Kumar',
     specialty: 'Laparoscopic & Gastro Specialist',
-    qualification: 'MBBS, MS, DNB',
+    qualification: 'MBBS, MS',
     experience: 27,
-    bio: 'Dr. Sanjeev Kumar (MBBS, MS, DNB) is a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients, supported by a staff dedicated to patient comfort and prompt attention.',
+    bio: 'Dr. Sanjeev Kumar (MBBS, MS) is a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients, supported by a staff dedicated to patient comfort and prompt attention.',
     image: 'https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780637150378_ChatGPT%20Image%20Jun%205%2C%202026%2C%2010_52_07%20AM.webp?alt=media&token=2757b4ff-274f-4fe7-8700-2668bc751dcc',
     email: 'info@drsanjeevkumar.in',
     phone: '9334097925',
     consultationFee: 500,
     availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     availableTime: '9:00 AM – 6:00 PM',
-    specializations: [
+    specialties: [
       'Laparoscopic Surgery',
       'Kidney Stone & Kidney Cancer',
       'Liver Disorders',
@@ -94,7 +94,7 @@ export const seedHospitalServices = [
     icon: '🩺',
     category: 'Consultation',
     available: 'OPD Hours',
-    description: 'Individual consultation with Dr. Sanjeev Kumar (MBBS, MS, DNB). Detailed surgical evaluation, diagnostic review, and treatment planning for all general and laparoscopic surgical conditions.',
+    description: 'Individual consultation with Dr. Sanjeev Kumar (MBBS, MS). Detailed surgical evaluation, diagnostic review, and treatment planning for all general and laparoscopic surgical conditions.',
     relatedSpecialties: ['Laparoscopic Surgery', 'Stone Treatment', 'Liver & Pancreas', 'General Surgery'],
     order: 1,
   },

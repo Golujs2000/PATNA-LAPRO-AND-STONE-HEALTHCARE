@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        description="Patna Lapro and Stone Healthcare — Advanced Laparoscopic Surgery, Kidney Stone Treatment, Jaundice & Liver Specialist in Patna, Bihar. Dr. Sanjeev Kumar (MBBS, MS, DNB), Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon Safdarjung Hospital. Call: 9334097925."
+        description="Patna Lapro and Stone Healthcare — Advanced Laparoscopic Surgery, Kidney Stone Treatment, Jaundice & Liver Specialist in Patna, Bihar. Dr. Sanjeev Kumar (MBBS, MS), Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon Safdarjung Hospital. Call: 9334097925."
         keywords={['laparoscopic surgery Patna', 'Dr Sanjeev Kumar', 'kidney stone treatment Patna', 'gallbladder stone Patna', 'jaundice specialist Patna', 'liver specialist Patna', 'stone hospital Patna Bihar']}
         jsonLd={{
           ...hospitalSchema,

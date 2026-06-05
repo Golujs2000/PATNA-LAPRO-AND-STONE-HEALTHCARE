@@ -16,11 +16,11 @@ const renderNavbarIcon = (icon, alt = '', className = 'w-5 h-5 object-contain') 
 }
 
 const mainLinks = [
-  { label: 'Home',              to: '/' },
-  { label: 'About Us',          to: '/about' },
-  { label: 'Our Doctors',       to: '/doctors' },
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Our Doctors', to: '/doctors' },
   { label: 'Services', to: '/hospital-services' },
-  { label: 'Contact',           to: '/contact' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 // ── Services Mega Menu ────────────────────────────────────────────────────────
@@ -166,11 +166,11 @@ function ServicesMegaMenu({ specialities, loading, onClose, mobile = false }) {
 }
 
 const NAV_LINKS = [
-  { label: 'Home',              to: '/',                   end: true },
-  { label: 'About Us',          to: '/about' },
-  { label: 'Our Doctors',       to: '/doctors' },
+  { label: 'Home', to: '/', end: true },
+  { label: 'About Us', to: '/about' },
+  { label: 'Our Doctors', to: '/doctors' },
   { label: 'Services', to: '/hospital-services' },
-  { label: 'Contact',           to: '/contact' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 // ── Main Navbar ───────────────────────────────────────────────────────────────
@@ -247,7 +247,7 @@ export default function Navbar() {
               />
               <div className="flex flex-col">
                 <span className="text-navy-900 font-heading font-black text-sm md:text-base leading-tight group-hover:text-primary-600 transition-colors max-w-[200px]">
-                  Patna Lapro & Stone Healthcare
+                  Patna Gastro, Lapro & Stone Healthcare
                 </span>
               </div>
             </Link>
@@ -258,8 +258,7 @@ export default function Navbar() {
                 <li key={to}>
                   <NavLink to={to} end={end}
                     className={({ isActive }) =>
-                      `nav-link-line px-4 py-2 text-sm font-semibold transition-colors duration-200 block ${
-                        isActive ? 'text-primary-600 active-link' : 'text-gray-600 hover:text-primary-600'
+                      `nav-link-line px-4 py-2 text-sm font-semibold transition-colors duration-200 block ${isActive ? 'text-primary-600 active-link' : 'text-gray-600 hover:text-primary-600'
                       }`
                     }
                   >
@@ -270,8 +269,7 @@ export default function Navbar() {
 
               {/* Services dropdown */}
               <li className="relative" ref={servicesRef}>
-                <div className={`nav-link-line flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
-                    isServicesActive || servicesOpen ? 'text-primary-600 active-link' : 'text-gray-600 hover:text-primary-600'
+                <div className={`nav-link-line flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors duration-200 ${isServicesActive || servicesOpen ? 'text-primary-600 active-link' : 'text-gray-600 hover:text-primary-600'
                   }`}>
                   <Link to="/services" className="hover:text-primary-600 transition-colors">
                     Speciality / Treatment
@@ -352,8 +350,7 @@ export default function Navbar() {
                     >
                       <NavLink to={to} end={end} onClick={() => setMobileOpen(false)}
                         className={({ isActive }) =>
-                          `flex items-center gap-2 px-4 py-3 rounded-[5px] text-sm font-semibold transition-colors ${
-                            isActive ? 'bg-primary-50 text-primary-600 border-l-4 border-primary-500' : 'text-gray-700 hover:bg-primary-50 hover:text-primary-600'
+                          `flex items-center gap-2 px-4 py-3 rounded-[5px] text-sm font-semibold transition-colors ${isActive ? 'bg-primary-50 text-primary-600 border-l-4 border-primary-500' : 'text-gray-700 hover:bg-primary-50 hover:text-primary-600'
                           }`
                         }
                       >
@@ -365,9 +362,8 @@ export default function Navbar() {
                   {/* Services accordion */}
                   <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.24 }}>
                     <div
-                      className={`w-full flex items-center justify-between px-4 py-3 rounded-[5px] text-sm font-semibold transition-colors ${
-                        isServicesActive ? 'bg-primary-50 text-primary-600 border-l-4 border-primary-500' : 'text-gray-700 hover:bg-primary-50 hover:text-primary-600'
-                      }`}
+                      className={`w-full flex items-center justify-between px-4 py-3 rounded-[5px] text-sm font-semibold transition-colors ${isServicesActive ? 'bg-primary-50 text-primary-600 border-l-4 border-primary-500' : 'text-gray-700 hover:bg-primary-50 hover:text-primary-600'
+                        }`}
                     >
                       <Link to="/services" onClick={() => setMobileOpen(false)} className="flex-1 text-left">
                         Speciality / Treatment

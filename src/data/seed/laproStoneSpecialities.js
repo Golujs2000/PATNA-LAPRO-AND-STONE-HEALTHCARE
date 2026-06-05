@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // data/seed/laproStoneSpecialities.js
 // Specialities & Treatments for Patna Lapro and Stone Healthcare
-// Led by Dr. Sanjeev Kumar (MBBS, MS, DNB)
+// Led by Dr. Sanjeev Kumar (MBBS, MS)
 // ─────────────────────────────────────────────────────────────
 
 export const laproStoneSpecialities = [
@@ -27,7 +27,7 @@ export const laproStoneSpecialities = [
         duration: '45–90 min',
         recovery: '2–5 days',
         description: 'Minimally invasive removal of the gallbladder through small incisions (4-port, 3-port, or single-port technique). The gold standard treatment for gallstones.',
-        longDescription: `Laparoscopic Cholecystectomy is the gold standard surgical procedure for removing the gallbladder affected by gallstones (पित्ताशय की पथरी). At Patna Lapro and Stone Healthcare, Dr. Sanjeev Kumar (MBBS, MS, DNB) performs this minimally invasive surgery with over 27 years of surgical expertise, making it one of the safest and most reliable gallbladder removal centres in Patna, Bihar.
+        longDescription: `Laparoscopic Cholecystectomy is the gold standard surgical procedure for removing the gallbladder affected by gallstones (पित्ताशय की पथरी). At Patna Lapro and Stone Healthcare, Dr. Sanjeev Kumar (MBBS, MS) performs this minimally invasive surgery with over 27 years of surgical expertise, making it one of the safest and most reliable gallbladder removal centres in Patna, Bihar.
 
 During the procedure, 3–4 tiny incisions (each less than 1 cm) are made in the abdomen. A high-definition laparoscope (camera) is inserted to give the surgeon a magnified view of the gallbladder and surrounding structures. The cystic duct and artery are carefully identified, clipped, and divided before the gallbladder is removed through one of the small incisions. The entire procedure typically takes 45–90 minutes under general anaesthesia.
 
@@ -79,7 +79,7 @@ Patients from Patna City, Danapur, Phulwari Sharif, Hajipur, and other parts of 
         duration: '30 min – 3 hrs',
         recovery: '2–10 days',
         description: 'Comprehensive laparoscopic surgery for all abdominal conditions — gallbladder, appendix, hernia, intestinal, liver, and gynaecological procedures.',
-        longDescription: `Laparoscopic Abdominal Surgery (लैप्रोस्कोपिक पेट की सर्जरी) at Patna Lapro and Stone Healthcare covers the full spectrum of minimally invasive abdominal procedures. Dr. Sanjeev Kumar (MBBS, MS, DNB), with 27+ years of surgical expertise and training at IGIMS Patna and Safdarjung Hospital New Delhi, performs advanced laparoscopic operations for virtually every abdominal condition.
+        longDescription: `Laparoscopic Abdominal Surgery (लैप्रोस्कोपिक पेट की सर्जरी) at Patna Lapro and Stone Healthcare covers the full spectrum of minimally invasive abdominal procedures. Dr. Sanjeev Kumar (MBBS, MS), with 27+ years of surgical expertise and training at IGIMS Patna and Safdarjung Hospital New Delhi, performs advanced laparoscopic operations for virtually every abdominal condition.
 
 Our laparoscopic capabilities include cholecystectomy (gallbladder removal), appendectomy, hernia repair (inguinal, umbilical, incisional), intestinal surgery, liver cyst drainage, splenectomy, ovarian cystectomy, and more. All procedures are performed through 2–4 small keyhole incisions (0.5–1.5 cm), offering patients significantly less pain, faster recovery, shorter hospital stay, and minimal scarring compared to traditional open surgery.
 

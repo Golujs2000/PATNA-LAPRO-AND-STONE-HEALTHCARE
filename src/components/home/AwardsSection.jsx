@@ -29,7 +29,7 @@ const AWARDS = [
   {
     icon: FiShield,
     title: 'Certified Laparoscopic Specialist',
-    desc: "MBBS, MS, DNB certified — Senior Consultant Surgeon.",
+    desc: "MBBS, MS certified — Senior Consultant Surgeon.",
     color: 'bg-teal-50 border-teal-100 text-teal-600'
   },
   {

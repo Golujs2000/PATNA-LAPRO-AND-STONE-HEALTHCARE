@@ -10,7 +10,7 @@ export const siteData = {
   shortName: 'Patna Lapro & Stone',
   tagline: 'Advanced Laparoscopic Surgery & Surgical Gastroenterology — Expertise You Can Trust',
   description:
-    'Patna Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna – advanced laparoscopic surgery, stone treatment, and gastroenterology care by Dr. Sanjeev Kumar (MBBS, MS, DNB). Sr. Consultant Medimax Hospital, Patna, Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi) with 27 years of experience.',
+    'Patna Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna – advanced laparoscopic surgery, stone treatment, and gastroenterology care by Dr. Sanjeev Kumar (MBBS, MS). Sr. Consultant Medimax Hospital, Patna, Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi) with 27 years of experience.',
   founded: '2020',
   url: 'https://patna-lapro-stone-healthcare.web.app',
   logo: '/favicon.png',
@@ -64,7 +64,6 @@ export const siteData = {
       'best surgeon Patna Bihar',
       'Medimax Hospital surgeon',
       'Sri Krishna Nagar Patna clinic',
-      'DNB surgeon Patna',
       'MS surgeon Patna',
       'best laparoscopic surgeon in Patna',
       'gastro specialist Patna',

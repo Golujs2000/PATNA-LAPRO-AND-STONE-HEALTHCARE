@@ -141,7 +141,7 @@ export default function HospitalServiceDetail() {
                   {service.description || 'Dedicated hospital facility and medical service designed to support your treatment and ensure clinical safety.'}
                 </p>
                 <p className="text-sm">
-                  At Patna Lapro and Stone Healthcare, our facilities are equipped to offer highly reliable clinical outcomes. Under the medical guidance of Dr. Sanjeev Kumar (MBBS, MS, DNB), we maintain stringent protocols for patient hygiene, comfort, and care.
+                  At Patna Lapro and Stone Healthcare, our facilities are equipped to offer highly reliable clinical outcomes. Under the medical guidance of Dr. Sanjeev Kumar (MBBS, MS), we maintain stringent protocols for patient hygiene, comfort, and care.
                 </p>
               </div>
 

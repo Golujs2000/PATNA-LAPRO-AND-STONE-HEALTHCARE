@@ -56,7 +56,7 @@ export default function ServicesSection() {
             </h2>
           </div>
           <p className="text-gray-500 text-base leading-relaxed md:text-right">
-            We provide investigation, diagnosis, treatment and prevention of all gastrointestinal (stomach and intestines) and hepatological (liver, gallbladder, biliary tree and pancreas) diseases — advanced laparoscopic surgery and comprehensive care by Dr. Sanjeev Kumar (MBBS, MS, DNB), Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).
+            We provide investigation, diagnosis, treatment and prevention of all gastrointestinal (stomach and intestines) and hepatological (liver, gallbladder, biliary tree and pancreas) diseases — advanced laparoscopic surgery and comprehensive care by Dr. Sanjeev Kumar (MBBS, MS), Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).
           </p>
         </motion.div>
 

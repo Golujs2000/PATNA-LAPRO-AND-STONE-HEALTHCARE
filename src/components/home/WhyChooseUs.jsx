@@ -14,7 +14,7 @@ const reasons = [
   {
     icon: FiUsers,
     title: 'Expert Surgeon — Dr. Sanjeev Kumar',
-    desc: 'MBBS, MS, DNB — 27 Years Experience. Sr. Consultant Medimax Hospital, Patna. Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).',
+    desc: 'MBBS, MS — 27 Years Experience. Sr. Consultant Medimax Hospital, Patna. Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).',
     color: 'from-primary-500 to-indigo-600',
     light: 'bg-primary-500/10 text-primary-500 border-primary-500/10',
   },

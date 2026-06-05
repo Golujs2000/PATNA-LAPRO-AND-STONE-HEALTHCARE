@@ -13,7 +13,7 @@ export default function About() {
     <>
       <SEO
         title={`About Us — ${siteData.name}`}
-        description={`Learn about Patna Lapro and Stone Healthcare, Sri Krishna Nagar, Patna — led by Dr. Sanjeev Kumar (MBBS, MS, DNB), Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon Safdarjung Hospital. Specialist in Laparoscopic Surgery, Stone Treatment, Liver & Pancreas disorders.`}
+        description={`Learn about Patna Lapro and Stone Healthcare, Sri Krishna Nagar, Patna — led by Dr. Sanjeev Kumar (MBBS, MS), Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon Safdarjung Hospital. Specialist in Laparoscopic Surgery, Stone Treatment, Liver & Pancreas disorders.`}
         keywords={['about Patna Lapro Stone Healthcare', 'Dr Sanjeev Kumar Patna', 'laparoscopic surgeon Patna', 'stone specialist Patna Bihar', 'liver specialist Patna', 'pancreas specialist Patna']}
       />
 
@@ -46,7 +46,7 @@ export default function About() {
                     <FiCalendar className="w-3.5 h-3.5 text-primary-500" />Est. 2020
                   </div>
                   <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
-                    <FiShield className="w-3.5 h-3.5 text-primary-500" />MBBS, MS, DNB
+                    <FiShield className="w-3.5 h-3.5 text-primary-500" />MBBS, MS
                   </div>
                   <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
                     <FiStar className="w-3.5 h-3.5 text-primary-500" />Patna's #1 Stone Surgeon
@@ -80,7 +80,7 @@ export default function About() {
                         <div className="flex items-start justify-between gap-3 mb-3">
                           <div>
                             <h3 className="font-heading font-black text-base text-primary-900 leading-tight">Dr. Sanjeev Kumar</h3>
-                            <p className="text-primary-600 font-bold text-[10px] tracking-wide uppercase mt-0.5">MBBS, MS, DNB</p>
+                            <p className="text-primary-600 font-bold text-[10px] tracking-wide uppercase mt-0.5">MBBS, MS</p>
                             <p className="text-gray-500 text-[11px] font-medium mt-0.5">Laparoscopic & Gastro Specialist</p>
                           </div>
                           <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 flex-shrink-0">
@@ -146,7 +146,7 @@ export default function About() {
                   Patna Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care and gastroenterology treatments to Bihar.
                 </p>
                 <p>
-                  Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS, DNB), a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.
+                  Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS), a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.
                 </p>
                 <p>
                   We are proud to have served over <strong className="text-navy-800">8,000 satisfied patients</strong> and performed more than <strong className="text-navy-800">350 successful operations</strong>, backed by prestigious recognitions including over <strong className="text-navy-800">150 awards</strong>.

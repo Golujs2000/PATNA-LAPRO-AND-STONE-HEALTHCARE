@@ -1,4 +1,4 @@
-﻿// ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
 // pages/Gallery.jsx
 // Full gallery page with folder-based filtering, lazy-loaded
 // image grid, and a full-screen lightbox with keyboard navigation.
@@ -16,96 +16,57 @@ export default function Gallery() {
   const [folders, setFolders] = useState([])
   const [activeFolderId, setActiveFolderId] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedTag, setSelectedTag] = useState('All')
   const [lightbox, setLightbox] = useState(null)
   const { images, loading } = useGallery(activeFolderId)
 
-  // Common tags found in image names (can be expanded)
-  const TAGS = ['All', 'Doctor', 'Clinic', 'Happy Patient', 'Awards', 'Reception']
-
   useEffect(() => {
     getFolders().then(data => {
-      const sorted = [...data].sort((a, b) => {
-        const aName = a.name?.toLowerCase() || '';
-        const bName = b.name?.toLowerCase() || '';
-        const aIsDoc = aName.includes('doctor') || aName.includes('dr');
-        const bIsDoc = bName.includes('doctor') || bName.includes('dr');
-        if (aIsDoc && !bIsDoc) return -1;
-        if (!aIsDoc && bIsDoc) return 1;
-        return (a.order ?? 999) - (b.order ?? 999);
-      });
+      const sorted = [...data].sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
       setFolders(sorted);
     }).catch(() => {})
   }, [])
 
-  // Prioritize "Doctor" category images in the "All" view AND apply search filter
+  // Filter folders to only include infrastructure and treatment folders
+  const allowedFolders = useMemo(() => {
+    return folders.filter(f => {
+      const name = f.name?.toLowerCase() || '';
+      return name.includes('infrastructure') || name.includes('treatment');
+    });
+  }, [folders]);
+
+  const allowedFolderIds = useMemo(() => {
+    return allowedFolders.map(f => f.id);
+  }, [allowedFolders]);
+
   const displayImages = useMemo(() => {
     if (!images) return []
 
-    let result = [...images]
+    // Only show images from allowed folders (infrastructure and treatment)
+    let result = images.filter(img => allowedFolderIds.includes(img.folderId))
 
-    // 1. Apply Search Filter
+    // Apply Search Filter (if any)
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim()
       result = result.filter(img => {
         const title = img.title?.toLowerCase() || ''
-        const folder = folders.find(f => f.id === img.folderId)
+        const folder = allowedFolders.find(f => f.id === img.folderId)
         const folderName = folder?.name?.toLowerCase() || ''
         return title.includes(q) || folderName.includes(q)
       })
     }
 
-    // 2. Apply Tag Filter (Subfilter)
-    if (selectedTag !== 'All') {
-      const t = selectedTag.toLowerCase()
-      result = result.filter(img => {
-        const title = img.title?.toLowerCase() || ''
-        const folder = folders.length > 0 ? folders.find(f => f.id === img.folderId) : null
-        const folderName = folder?.name?.toLowerCase() || ''
-
-        // Special case for 'Doctor'
-        if (t === 'doctor') {
-          return title.includes('doctor') || title.includes('dr') || title.includes('staff') || 
-                 folderName.includes('doctor') || folderName.includes('dr') || folderName.includes('staff')
-        }
-
-        // Special case for 'Happy Patient'
-        if (t === 'happy patient') {
-          return title.includes('happy') || title.includes('patient') || title.includes('feedback') ||
-                 folderName.includes('happy') || folderName.includes('patient')
-        }
-
-        // General match for both title and folder name
-        return title.includes(t) || folderName.includes(t)
-      })
-    }
-
-    // 3. Multi-Category Priority Sorting (when in "All" view)
-    const getPriority = (img) => {
-      const folder = folders.find(f => f.id === img.folderId)
-      const folderName = folder?.name?.toLowerCase() || ''
-      
-      if (folderName.includes('doctor') || folderName.includes('dr') || folderName.includes('staff')) return 1
-      if (folderName.includes('clinic')) return 2
-      if (folderName.includes('happy patient') || folderName.includes('patient')) return 3
-      if (folderName.includes('award')) return 4
-      return 10 // Everything else
-    }
-
+    // Sort by order/title
     result.sort((a, b) => {
-      const pA = getPriority(a)
-      const pB = getPriority(b)
-      
-      if (pA !== pB) return pA - pB
-      
-      // If same priority, sort by title
-      const titleA = a.title?.toLowerCase() || ''
-      const titleB = b.title?.toLowerCase() || ''
-      return titleA.localeCompare(titleB)
-    })
+      const orderA = a.order ?? 999;
+      const orderB = b.order ?? 999;
+      if (orderA !== orderB) return orderA - orderB;
+      const titleA = a.title?.toLowerCase() || '';
+      const titleB = b.title?.toLowerCase() || '';
+      return titleA.localeCompare(titleB);
+    });
 
     return result
-  }, [images, folders, activeFolderId, searchQuery, selectedTag])
+  }, [images, allowedFolders, allowedFolderIds, searchQuery])
 
   const openLightbox = (i) => setLightbox(i)
   const closeLightbox = () => setLightbox(null)
@@ -124,7 +85,7 @@ export default function Gallery() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="container-max">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            A visual tour of our world-class facilities and compassionate team.
+            A visual tour of our world-class facilities and treatment capabilities.
           </p>
         </motion.div>
       </section>
@@ -132,24 +93,30 @@ export default function Gallery() {
       {/* Filter tabs */}
       <div className="bg-white border-b border-gray-100 sticky top-[64px] z-30 shadow-sm">
         <div className="container-max px-4 md:px-8 py-4">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          </div>
-
-          {/* Subfilter (Tags based on Name) */}
           <div className="flex items-center gap-4 overflow-x-auto no-scrollbar">
-            <span className="text-gray-400 text-[11px] font-bold tracking-widest uppercase whitespace-nowrap">Filter by Name:</span>
+            <span className="text-gray-400 text-[11px] font-bold tracking-widest uppercase whitespace-nowrap">Category:</span>
             <div className="flex gap-2">
-              {TAGS.map(tag => (
+              <button
+                onClick={() => setActiveFolderId('')}
+                className={`px-4 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all border ${
+                  activeFolderId === ''
+                    ? 'bg-navy-800 text-white border-navy-800 shadow-sm'
+                    : 'bg-white text-gray-500 border-gray-200 hover:border-primary-400 hover:text-primary-600'
+                }`}
+              >
+                All Photos
+              </button>
+              {allowedFolders.map(folder => (
                 <button
-                  key={tag}
-                  onClick={() => setSelectedTag(tag)}
+                  key={folder.id}
+                  onClick={() => setActiveFolderId(folder.id)}
                   className={`px-4 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all border ${
-                    selectedTag === tag
+                    activeFolderId === folder.id
                       ? 'bg-navy-800 text-white border-navy-800 shadow-sm'
                       : 'bg-white text-gray-500 border-gray-200 hover:border-primary-400 hover:text-primary-600'
                   }`}
                 >
-                  {tag}
+                  {folder.name}
                 </button>
               ))}
             </div>

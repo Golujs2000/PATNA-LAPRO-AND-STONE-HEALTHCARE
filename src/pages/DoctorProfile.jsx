@@ -241,6 +241,24 @@ export default function DoctorProfile() {
                 </div>
               </div>
 
+              {/* Specialities & Expertise */}
+              {((Array.isArray(doctor.specialties) && doctor.specialties.length > 0) || 
+                (Array.isArray(doctor.specializations) && doctor.specializations.length > 0)) && (
+                <div className="card p-8">
+                  <h2 className="font-heading font-bold text-navy-800 text-xl mb-4 flex items-center gap-2">
+                    <FiActivity className="w-5 h-5 text-primary-500" /> Specialities &amp; Expertise
+                  </h2>
+                  <div className="flex flex-wrap gap-3">
+                    {((Array.isArray(doctor.specialties) ? doctor.specialties : [])
+                      .concat(Array.isArray(doctor.specializations) ? doctor.specializations : [])
+                      .filter((val, id, self) => self.indexOf(val) === id) // deduplicate
+                    ).map((spec) => (
+                      <span key={spec} className="badge bg-primary-50 text-primary-700 px-3 py-1.5 rounded-lg text-sm font-semibold">{spec}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Professional Experience / Positions (Ex Services) */}
               {(doctor.currentPosition || doctor.previousPosition) && (
                 <div className="card p-8">
