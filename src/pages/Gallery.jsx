@@ -26,11 +26,14 @@ export default function Gallery() {
     }).catch(() => {})
   }, [])
 
-  // Filter folders to only include infrastructure and treatment folders
+  // Filter folders to only include infrastructure, treatment, and awards folders
   const allowedFolders = useMemo(() => {
     return folders.filter(f => {
       const name = f.name?.toLowerCase() || '';
-      return name.includes('infrastructure') || name.includes('treatment');
+      return name.includes('infrastructure') ||
+             name.includes('treatment') ||
+             name.includes('awards') ||
+             name.includes('achievement');
     });
   }, [folders]);
 
@@ -77,7 +80,7 @@ export default function Gallery() {
     <>
       <SEO
         title="Gallery"
-        description="Explore Patna Lapro and Stone Healthcare's welcoming facility, diagnostic equipment, and clinic environment through our photo gallery."
+        description="Explore Patna Gastro, Lapro and Stone Healthcare's welcoming facility, diagnostic equipment, and clinic environment through our photo gallery."
       />
 
       {/* Hero */}
@@ -152,7 +155,23 @@ export default function Gallery() {
                     className="aspect-square rounded-2xl overflow-hidden cursor-pointer group relative"
                     onClick={() => openLightbox(i)}
                   >
-                    {img.image ? (
+                    {img.type === 'video' ? (
+                      <div className="w-full h-full relative">
+                        <video
+                          src={img.image}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          muted
+                          playsInline
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors duration-300">
+                          <span className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/30 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    ) : img.image ? (
                       <img
                         src={img.image}
                         alt={img.title}
@@ -207,7 +226,14 @@ export default function Gallery() {
               className="max-w-4xl max-h-[85vh] w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              {displayImages[lightbox]?.image ? (
+               {displayImages[lightbox]?.type === 'video' ? (
+                <video
+                  src={displayImages[lightbox].image}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain rounded-xl max-h-[80vh]"
+                />
+              ) : displayImages[lightbox]?.image ? (
                 <img
                   src={displayImages[lightbox].image}
                   alt={displayImages[lightbox].title}

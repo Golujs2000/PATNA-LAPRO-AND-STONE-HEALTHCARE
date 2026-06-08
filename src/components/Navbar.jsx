@@ -239,7 +239,7 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap-3 group shrink-0">
               <motion.img
                 src={hospitalLogo}
-                alt="Patna Lapro and Stone Healthcare Logo"
+                alt="Patna Gastro, Lapro and Stone Healthcare Logo"
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}

@@ -18,10 +18,10 @@ import { FiArrowRight, FiImage, FiX, FiChevronLeft, FiChevronRight } from 'react
 import { getGalleryByFolderName } from '../../services/gallery'
 
 const STATS = [
-  { value: '8,000+',    label: 'Satisfied Patients' },
-  { value: '27+',       label: 'Years Experience' },
-  { value: '350+',      label: 'Successful Operations' },
-  { value: '150+',      label: 'Awards Received' },
+  { value: '50,000+',   label: 'Satisfied Patients',    emoji: '😊' },
+  { value: '21+',       label: 'Years Experience',      emoji: '👨‍⚕️' },
+  { value: '10,000+',   label: 'Successful Operations', emoji: '🩺' },
+  { value: '150+',      label: 'Awards Received',       emoji: '🏆' },
 ]
 
 // ── Lightbox ──────────────────────────────────────────────────────────────────
@@ -79,11 +79,20 @@ function Lightbox({ images, index, onClose }) {
           className="max-w-5xl max-h-[85vh] w-full flex flex-col items-center"
           onClick={(e) => e.stopPropagation()}
         >
-          <img
-            src={img.image}
-            alt={img.title || 'Facility'}
-            className="max-h-[78vh] max-w-full object-contain rounded-xl shadow-2xl"
-          />
+          {img.type === 'video' ? (
+            <video
+              src={img.image}
+              controls
+              autoPlay
+              className="max-h-[78vh] max-w-full object-contain rounded-xl shadow-2xl"
+            />
+          ) : (
+            <img
+              src={img.image}
+              alt={img.title || 'Facility'}
+              className="max-h-[78vh] max-w-full object-contain rounded-xl shadow-2xl"
+            />
+          )}
           {img.title && (
             <p className="text-white/70 text-sm mt-3">{img.title}</p>
           )}
@@ -112,9 +121,39 @@ const cleanTitle = (title = '') =>
     .replace(/[-_\s]+\d+$/, '')
     .replace(/[-_]/g, ' ')
     .trim()
-    .replace(/\b\w/g, (c) => c.toUpperCase()) || 'Patna Lapro and Stone Healthcare'
+    .replace(/\b\w/g, (c) => c.toUpperCase()) || 'Patna Gastro, Lapro and Stone Healthcare'
 
 // ── Tiles ─────────────────────────────────────────────────────────────────────
+function MediaRender({ img, className = '', scaleClass = 'group-hover:scale-105' }) {
+  if (img.type === 'video') {
+    return (
+      <div className={`w-full h-full relative overflow-hidden ${className}`}>
+        <video
+          src={img.image}
+          className={`w-full h-full object-cover transition-transform duration-500 ${scaleClass}`}
+          muted
+          playsInline
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/35 transition-colors duration-300">
+          <span className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/20 shadow-md group-hover:scale-110 transition-transform duration-300">
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    )
+  }
+  return (
+    <img
+      src={img.image}
+      alt={img.title || 'Facility'}
+      className={`w-full h-full object-cover transition-transform duration-500 ${scaleClass} ${className}`}
+      loading="lazy"
+    />
+  )
+}
+
 function PlaceholderTile({ className = '' }) {
   return (
     <div className={`bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center rounded-2xl ${className}`}>
@@ -130,11 +169,9 @@ function ImgTile({ img, className = '', large = false, onClick }) {
       className={`overflow-hidden rounded-[5px] group relative cursor-pointer ${className}`}
       onClick={onClick}
     >
-      <img
-        src={img.image}
-        alt={img.title || 'Patna Lapro and Stone Healthcare'}
-        className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${large ? 'duration-1000' : ''}`}
-        loading="lazy"
+      <MediaRender
+        img={img}
+        scaleClass={large ? 'group-hover:scale-105 duration-1000' : 'group-hover:scale-105 duration-700'}
       />
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-[5px] flex items-center justify-center">
         <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -193,7 +230,7 @@ export default function GalleryStrip() {
               Modern Clinic <span className="text-primary-600">Infrastructure</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Patna Lapro and Stone Healthcare provides a calm, welcoming environment designed for your comfort. Our infrastructure is optimized for focused consultation and effective surgical healing.
+              Patna Gastro, Lapro and Stone Healthcare provides a calm, welcoming environment designed for your comfort. Our infrastructure is optimized for focused consultation and effective surgical healing.
             </p>
           </motion.div>
 
@@ -205,7 +242,8 @@ export default function GalleryStrip() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12"
           >
             {STATS.map((s) => (
-              <div key={s.label} className="bg-white border border-primary-100 rounded-[5px] px-6 py-5 text-center shadow-md hover:shadow-lg transition-shadow">
+              <div key={s.label} className="bg-white border border-primary-100 rounded-[5px] px-6 py-5 text-center shadow-md hover:shadow-lg transition-shadow flex flex-col items-center justify-center">
+                <div className="text-3xl mb-2 filter drop-shadow-sm select-none">{s.emoji}</div>
                 <p className="font-heading text-3xl font-bold text-primary-600">{s.value}</p>
                 <p className="text-gray-500 text-sm mt-1 font-medium">{s.label}</p>
               </div>
@@ -236,7 +274,7 @@ export default function GalleryStrip() {
         ) : (
           <>
             {/* Mobile: simple 2-col grid */}
-            <div className="grid grid-cols-2 gap-3 md:hidden">
+             <div className="grid grid-cols-2 gap-3 md:hidden">
               {mosaic.map((img, i) => (
                 <div
                   key={i}
@@ -245,12 +283,7 @@ export default function GalleryStrip() {
                 >
                   {img ? (
                     <>
-                      <img
-                        src={img.image}
-                        alt={img.title || 'Patna Lapro and Stone Healthcare'}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
+                      <MediaRender img={img} />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-8">
                         <span className="text-white text-[11px] font-semibold tracking-wide drop-shadow-md">
@@ -299,12 +332,7 @@ export default function GalleryStrip() {
                 className="aspect-square rounded-[5px] overflow-hidden group relative cursor-pointer"
                 onClick={() => openLightbox(5 + i)}
               >
-                <img
-                  src={img.image}
-                  alt={img.title || 'Facility'}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
+                <MediaRender img={img} scaleClass="group-hover:scale-110" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300 flex items-center justify-center rounded-[5px]">
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
                     View

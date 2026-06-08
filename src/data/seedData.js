@@ -1,16 +1,19 @@
-// Seed data for Patna Lapro and Stone Healthcare — initial Firestore population
+// Seed data for Patna Gastro, Lapro and Stone Healthcare — initial Firestore population
 // Run seedFirestore() in browser console after importing
 
 import { db } from '../firebase/config'
-import { collection, addDoc, getDocs, deleteDoc, serverTimestamp } from 'firebase/firestore'
+import { 
+  collection, addDoc, getDocs, deleteDoc, serverTimestamp,
+  query, where, updateDoc 
+} from 'firebase/firestore'
 
 export const seedDoctors = [
   {
     name: 'Dr. Sanjeev Kumar',
     specialty: 'Laparoscopic & Gastro Specialist',
     qualification: 'MBBS, MS',
-    experience: 27,
-    bio: 'Dr. Sanjeev Kumar (MBBS, MS) is a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients, supported by a staff dedicated to patient comfort and prompt attention.',
+    experience: 21,
+    bio: 'Dr. Sanjeev Kumar (MBBS, MS) is a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 21 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients, supported by a staff dedicated to patient comfort and prompt attention.',
     image: 'https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780637150378_ChatGPT%20Image%20Jun%205%2C%202026%2C%2010_52_07%20AM.webp?alt=media&token=2757b4ff-274f-4fe7-8700-2668bc751dcc',
     email: 'info@drsanjeevkumar.in',
     phone: '9334097925',
@@ -34,8 +37,7 @@ export const seedDoctors = [
       'Liver',
       'ERCP — for CBD stone',
       'Stomach cancer',
-      'Hernia',
-      'Jaundice, Ascites & Biliary Disorder'
+      'Hernia'
     ],
     currentPosition: 'Sr. Consultant, Medimax Hospital, Patna',
     previousPosition: 'Ex-Gastro Surgeon, IGIMS, Patna | Ex-Surgeon, VMMC College & Safdarjung Hospital, New Delhi',
@@ -54,7 +56,7 @@ export const seedBlogs = [
     title: 'Laparoscopic Surgery: What You Need to Know Before Your Procedure',
     slug: 'laparoscopic-surgery-what-to-know',
     excerpt: 'Dr. Sanjeev Kumar explains how laparoscopic (keyhole) surgery works, its advantages over open surgery, and what patients should expect before, during, and after the procedure.',
-    content: `<h2>What is Laparoscopic Surgery?</h2><p>Laparoscopic surgery, also called keyhole surgery or minimally invasive surgery, is a modern surgical technique where operations are performed through small incisions (0.5–1.5 cm) using a camera (laparoscope) and specialized instruments. The surgeon views the operation on a monitor.</p><h2>Advantages Over Open Surgery</h2><ul><li><strong>Smaller incisions</strong> — 3–4 small cuts instead of one large one</li><li><strong>Less pain</strong> after surgery</li><li><strong>Shorter hospital stay</strong> — often go home next day</li><li><strong>Faster recovery</strong> — back to normal in days, not weeks</li><li><strong>Less blood loss</strong> and lower risk of infection</li><li><strong>Better cosmetic result</strong> — minimal scarring</li></ul><h2>Common Laparoscopic Procedures We Perform</h2><ul><li>Gallbladder removal (Cholecystectomy)</li><li>Hernia repair</li><li>Appendix removal (Appendectomy)</li><li>Liver cyst & abscess drainage</li><li>Colectomy (partial bowel removal)</li></ul><h2>What to Expect</h2><p>You will receive general anesthesia. The procedure typically takes 30–90 minutes. Most patients are walking the same evening and discharged the next morning. Full recovery takes 1–2 weeks compared to 4–6 weeks for open surgery.</p><p>Book a consultation at Patna Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna. Call: <strong>9334097925 / 9942282987</strong>.</p>`,
+    content: `<h2>What is Laparoscopic Surgery?</h2><p>Laparoscopic surgery, also called keyhole surgery or minimally invasive surgery, is a modern surgical technique where operations are performed through small incisions (0.5–1.5 cm) using a camera (laparoscope) and specialized instruments. The surgeon views the operation on a monitor.</p><h2>Advantages Over Open Surgery</h2><ul><li><strong>Smaller incisions</strong> — 3–4 small cuts instead of one large one</li><li><strong>Less pain</strong> after surgery</li><li><strong>Shorter hospital stay</strong> — often go home next day</li><li><strong>Faster recovery</strong> — back to normal in days, not weeks</li><li><strong>Less blood loss</strong> and lower risk of infection</li><li><strong>Better cosmetic result</strong> — minimal scarring</li></ul><h2>Common Laparoscopic Procedures We Perform</h2><ul><li>Gallbladder removal (Cholecystectomy)</li><li>Hernia repair</li><li>Appendix removal (Appendectomy)</li><li>Liver cyst & abscess drainage</li><li>Colectomy (partial bowel removal)</li></ul><h2>What to Expect</h2><p>You will receive general anesthesia. The procedure typically takes 30–90 minutes. Most patients are walking the same evening and discharged the next morning. Full recovery takes 1–2 weeks compared to 4–6 weeks for open surgery.</p><p>Book a consultation at Patna Gastro, Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna. Call: <strong>9334097925 / 9942282987</strong>.</p>`,
     author: 'Dr. Sanjeev Kumar',
     category: 'Laparoscopic Surgery',
     image: '',
@@ -66,7 +68,7 @@ export const seedBlogs = [
     title: 'Kidney Stones: When Do You Need Surgery?',
     slug: 'kidney-stones-when-surgery',
     excerpt: 'Dr. Sanjeev Kumar explains different treatment options for kidney stones — from medical therapy to PCNL and ureteroscopy — and when surgery becomes necessary.',
-    content: `<h2>Understanding Kidney Stones</h2><p>Kidney stones (urolithiasis / पथरी) are hard deposits of minerals and salts that form in your kidneys. They can affect any part of the urinary tract — from kidneys to bladder. Passing stones can be extremely painful.</p><h2>When Can Stones Pass Naturally?</h2><p>Stones smaller than 5 mm have a good chance of passing with increased fluids and pain medication. Stones between 5–7 mm may pass with medical expulsive therapy (alpha-blockers). Stones larger than 7–8 mm usually require intervention.</p><h2>Treatment Options</h2><ul><li><strong>Medical Expulsive Therapy</strong> — tablets to relax the ureter and allow stone passage (for small stones)</li><li><strong>ESWL</strong> — Shockwave lithotripsy to break stones externally (for stones 1–2 cm)</li><li><strong>Ureteroscopy + Laser</strong> — telescope passed to break stones in the ureter (gold standard for ureteric stones)</li><li><strong>PCNL</strong> — keyhole surgery for large kidney stones >2 cm</li></ul><h2>When is Surgery Urgently Needed?</h2><ul><li>Stone causing complete kidney obstruction</li><li>Infected blocked kidney (pyelonephritis/urosepsis) — emergency</li><li>Solitary kidney with obstruction</li><li>Severe pain not controlled with medications</li></ul><p>Book a consultation at Patna Lapro and Stone Healthcare. Call: <strong>9334097925</strong>.</p>`,
+    content: `<h2>Understanding Kidney Stones</h2><p>Kidney stones (urolithiasis / पथरी) are hard deposits of minerals and salts that form in your kidneys. They can affect any part of the urinary tract — from kidneys to bladder. Passing stones can be extremely painful.</p><h2>When Can Stones Pass Naturally?</h2><p>Stones smaller than 5 mm have a good chance of passing with increased fluids and pain medication. Stones between 5–7 mm may pass with medical expulsive therapy (alpha-blockers). Stones larger than 7–8 mm usually require intervention.</p><h2>Treatment Options</h2><ul><li><strong>Medical Expulsive Therapy</strong> — tablets to relax the ureter and allow stone passage (for small stones)</li><li><strong>ESWL</strong> — Shockwave lithotripsy to break stones externally (for stones 1–2 cm)</li><li><strong>Ureteroscopy + Laser</strong> — telescope passed to break stones in the ureter (gold standard for ureteric stones)</li><li><strong>PCNL</strong> — keyhole surgery for large kidney stones >2 cm</li></ul><h2>When is Surgery Urgently Needed?</h2><ul><li>Stone causing complete kidney obstruction</li><li>Infected blocked kidney (pyelonephritis/urosepsis) — emergency</li><li>Solitary kidney with obstruction</li><li>Severe pain not controlled with medications</li></ul><p>Book a consultation at Patna Gastro, Lapro and Stone Healthcare. Call: <strong>9334097925</strong>.</p>`,
     author: 'Dr. Sanjeev Kumar',
     category: 'Kidney & Stone',
     image: '',
@@ -213,5 +215,42 @@ export async function seedFirestore() {
     console.log('✅ Seeding complete!')
   } catch (err) {
     console.error('Seeding error:', err)
+  }
+}
+
+export async function seedJaundiceSpecialityOnly() {
+  const specRef = collection(db, 'specialities')
+
+  // Find unified spec in local seedSpecialities
+  const unifiedSpec = seedSpecialities.find((s) => s.slug === 'jaundice-biliary-disorders')
+  if (!unifiedSpec) throw new Error('Could not find jaundice-biliary-disorders in seed data')
+
+  // 1. Update/Add Jaundice & Biliary Disorders
+  const qUpdate = query(specRef, where('slug', '==', 'jaundice-biliary-disorders'))
+  const snapUpdate = await getDocs(qUpdate)
+
+  let docData = { ...unifiedSpec }
+  if (!snapUpdate.empty) {
+    const docSnap = snapUpdate.docs[0]
+    const existingData = docSnap.data()
+    if (existingData.thumbnail) docData.thumbnail = existingData.thumbnail
+    if (existingData.icon && existingData.icon.startsWith('http')) docData.icon = existingData.icon
+
+    await updateDoc(docSnap.ref, {
+      ...docData,
+      updatedAt: serverTimestamp()
+    })
+  } else {
+    await addDoc(specRef, {
+      ...docData,
+      createdAt: serverTimestamp()
+    })
+  }
+
+  // 2. Delete Jaundice, Ascites & Biliary Disorder
+  const qDelete = query(specRef, where('slug', '==', 'jaundice-ascites-biliary'))
+  const snapDelete = await getDocs(qDelete)
+  if (!snapDelete.empty) {
+    await Promise.all(snapDelete.docs.map((d) => deleteDoc(d.ref)))
   }
 }

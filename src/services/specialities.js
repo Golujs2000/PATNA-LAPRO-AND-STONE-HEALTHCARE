@@ -7,11 +7,21 @@
 
 import {
   collection, addDoc, getDocs, doc, getDoc, updateDoc, deleteDoc,
-  query, orderBy, where, limit, serverTimestamp,
+  query, orderBy, where, limit, serverTimestamp, writeBatch,
 } from 'firebase/firestore'
 import { db } from '../firebase/config'
 
 const COL = 'specialities'
+
+// Bulk update display order using a Firestore batch
+export async function updateSpecialitiesOrder(specs) {
+  const batch = writeBatch(db)
+  specs.forEach((spec, index) => {
+    const docRef = doc(db, COL, spec.id)
+    batch.update(docRef, { order: index + 1 })
+  })
+  return batch.commit()
+}
 
 // Fetch all specialities sorted by their display order
 export async function getSpecialities() {

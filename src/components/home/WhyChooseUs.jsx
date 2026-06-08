@@ -14,7 +14,7 @@ const reasons = [
   {
     icon: FiUsers,
     title: 'Expert Surgeon — Dr. Sanjeev Kumar',
-    desc: 'MBBS, MS — 27 Years Experience. Sr. Consultant Medimax Hospital, Patna. Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).',
+    desc: 'MBBS, MS — 21 Years Experience. Sr. Consultant Medimax Hospital, Patna. Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).',
     color: 'from-primary-500 to-indigo-600',
     light: 'bg-primary-500/10 text-primary-500 border-primary-500/10',
   },
@@ -27,15 +27,15 @@ const reasons = [
   },
   {
     icon: FiAward,
-    title: '350+ Successful Operations',
-    desc: 'Over 350 successful laparoscopic and stone operations — including PCNL, ureteroscopy, cholecystectomy, hernia, appendectomy and more.',
+    title: '10,000+ Successful Operations',
+    desc: 'Over 10,000 successful laparoscopic and stone operations — including PCNL, ureteroscopy, cholecystectomy, hernia, appendectomy and more.',
     color: 'from-amber-500 to-orange-600',
     light: 'bg-amber-500/10 text-amber-500 border-amber-500/10',
   },
   {
     icon: FiDroplet,
     title: 'Comprehensive Stone Care',
-    desc: 'Complete stone management — PCNL, ureteroscopy, laser lithotripsy, medical therapy — all under one roof in Patna.',
+    desc: 'Complete stone management — ureteroscopy, laser lithotripsy, RIRS (flexible ureteroscopy), ESWL, medical therapy, bladder stone surgery, and PCNL — all under one roof in Patna.',
     color: 'from-blue-500 to-cyan-600',
     light: 'bg-blue-500/10 text-blue-500 border-blue-500/10',
   },
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
             Healthcare Excellence
           </span>
           <h2 className="font-heading font-black text-navy-800 text-4xl md:text-5xl leading-tight mt-2">
-            Why Patna Lapro &amp; Stone <span className="text-primary-600">Healthcare</span>
+            Why Patna Gastro, Lapro &amp; Stone <span className="text-primary-600">Healthcare</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
             We combine world-class surgical technology, veteran medical leadership, and absolute transparency to ensure your safe, rapid recovery.

@@ -145,7 +145,7 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.08 }}
               className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-black text-navy-800 leading-[1.08] mb-5 tracking-tight"
             >
-              Laparoscopy & Stone{' '}
+              Gastro, Laparoscopy & Stone{' '}
               <span className="text-primary-600">Experts in Patna</span>
             </motion.h1>
 
@@ -167,7 +167,7 @@ export default function HeroSection() {
             >
               Dr. Sanjeev Kumar (MBBS, MS) is a Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi), and Specialist in{' '}
               <strong className="text-navy-800">Jaundice, Stone, Pancreas & Liver</strong>{' '}
-              at Patna Lapro & Stone Healthcare.
+              at Patna Gastro, Lapro & Stone Healthcare.
             </motion.p>
 
             {/* Pill badges below description */}
@@ -179,7 +179,7 @@ export default function HeroSection() {
             >
               <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white/90 border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
                 <FiAward className="w-3.5 h-3.5 text-primary-500" />
-                27 Years Experience
+                21 Years Experience
               </div>
               <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white/90 border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
                 <FiShield className="w-3.5 h-3.5 text-primary-500" />
@@ -187,7 +187,7 @@ export default function HeroSection() {
               </div>
               <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-700 bg-white/90 border border-primary-100 px-3 py-1.5 rounded-full shadow-sm">
                 <FiActivity className="w-3.5 h-3.5 text-primary-500" />
-                350+ Operations
+                10,000+ Operations
               </div>
             </motion.div>
 
@@ -279,15 +279,15 @@ export default function HeroSection() {
                 <div className="h-px bg-gray-100 mb-3" />
                 <div className="grid grid-cols-3 divide-x divide-gray-100 text-center">
                   <div className="px-2">
-                    <p className="font-heading font-black text-lg text-primary-700 leading-none">27</p>
+                    <p className="font-heading font-black text-lg text-primary-700 leading-none">21</p>
                     <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Yrs Exp.</p>
                   </div>
                   <div className="px-2">
-                    <p className="font-heading font-black text-lg text-primary-700 leading-none">350+</p>
+                    <p className="font-heading font-black text-lg text-primary-700 leading-none">10K+</p>
                     <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Operations</p>
                   </div>
                   <div className="px-2">
-                    <p className="font-heading font-black text-lg text-primary-700 leading-none">8000+</p>
+                    <p className="font-heading font-black text-lg text-primary-700 leading-none">50K+</p>
                     <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Patients</p>
                   </div>
                 </div>

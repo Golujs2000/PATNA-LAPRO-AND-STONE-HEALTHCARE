@@ -68,22 +68,25 @@ export async function getGalleryByFolderName(folderName) {
   return getGallery(folder.id)
 }
 
-// Upload a new image to Storage and save its metadata to Firestore
-// `order` is set to current image count within the folder
-export async function addGalleryImage(data, imageFile) {
+// Upload a new image/video to Storage and save its metadata to Firestore
+// `order` is set to current media count within the folder
+export async function addGalleryImage(data, mediaFile) {
   const { folderId = '' } = data
   const countSnap = await getDocs(
     folderId
       ? query(collection(db, COL), where('folderId', '==', folderId))
       : query(collection(db, COL))
   )
-  const storageRef = ref(storage, `gallery/${Date.now()}_${imageFile.name}`)
-  await uploadBytes(storageRef, imageFile)
-  const imageUrl = await getDownloadURL(storageRef)
+  const isVideo = mediaFile.type?.startsWith('video/')
+  const type = isVideo ? 'video' : 'image'
+  const storageRef = ref(storage, `gallery/${Date.now()}_${mediaFile.name}`)
+  await uploadBytes(storageRef, mediaFile)
+  const mediaUrl = await getDownloadURL(storageRef)
   return addDoc(collection(db, COL), {
     title: data.title,
     folderId,
-    image: imageUrl,
+    image: mediaUrl,
+    type,
     storagePath: storageRef.fullPath,  // stored so we can delete from Storage later
     order: countSnap.size,
     createdAt: serverTimestamp(),

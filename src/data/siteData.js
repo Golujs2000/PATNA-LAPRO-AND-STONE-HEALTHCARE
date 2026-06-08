@@ -1,16 +1,16 @@
 // ─────────────────────────────────────────────────────────────
 // data/siteData.js
-// Central configuration for Patna Lapro and Stone Healthcare.
+// Central configuration for Patna Gastro, Lapro and Stone Healthcare.
 // Update this file when clinic details change rather than
 // hunting through components.
 // ─────────────────────────────────────────────────────────────
 
 export const siteData = {
-  name: 'Patna Lapro and Stone Healthcare',
-  shortName: 'Patna Lapro & Stone',
+  name: 'Patna Gastro, Lapro and Stone Healthcare',
+  shortName: 'Patna Gastro, Lapro & Stone',
   tagline: 'Advanced Laparoscopic Surgery & Surgical Gastroenterology — Expertise You Can Trust',
   description:
-    'Patna Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna – advanced laparoscopic surgery, stone treatment, and gastroenterology care by Dr. Sanjeev Kumar (MBBS, MS). Sr. Consultant Medimax Hospital, Patna, Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi) with 27 years of experience.',
+    'Patna Gastro, Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna – advanced laparoscopic surgery, stone treatment, and gastroenterology care by Dr. Sanjeev Kumar (MBBS, MS). Sr. Consultant Medimax Hospital, Patna, Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi) with 21 years of experience.',
   founded: '2020',
   url: 'https://patna-lapro-stone-healthcare.web.app',
   logo: '/favicon.png',
@@ -49,7 +49,7 @@ export const siteData = {
   // ── SEO Configuration ────────────────────────────────────────
   seo: {
     keywords: [
-      'Patna Lapro and Stone Healthcare',
+      'Patna Gastro, Lapro and Stone Healthcare',
       'laparoscopic surgery Patna',
       'Dr Sanjeev Kumar surgeon Patna',
       'kidney stone treatment Patna',
@@ -71,7 +71,7 @@ export const siteData = {
       'kidney stone removal Patna',
       'Dr Sanjeev Kumar Kidwaipuri',
       'gastrointestinal surgeon Patna',
-      'Patna Lapro and Stone Healthcare contact number',
+      'Patna Gastro, Lapro and Stone Healthcare contact number',
       'laparoscopy cost Patna',
       'kidney stone operation cost Patna',
       'best hospital for stone surgery Patna',
@@ -88,16 +88,63 @@ export const siteData = {
       'hepatitis B treatment Patna',
       'hepatitis C treatment Patna',
       'biliary disorder specialist Patna',
+      'patients from Nepal',
+      'patients from Jharkhand',
+      'patients from Uttar Pradesh',
+      'patients from UP',
+      'laparoscopy specialist Nepal',
+      'best stone surgeon Jharkhand',
+      'gastro specialist Bihar districts',
     ],
     ogImage: '/og-image.jpg',
   },
 
+  // ── Regional Reach ───────────────────────────────────────────
+  reach: [
+    {
+      region: 'Nepal',
+      title: 'International Care',
+      description: 'Trusted by international patients from border cities and major hubs including Birgunj, Biratnagar, Janakpur, and Kathmandu seeking advanced laparoscopic surgery & liver care.',
+      stat: 'Nepal Reach',
+      highlight: 'Cross-Border Care',
+      color: 'from-sky-500 to-blue-600',
+      light: 'bg-sky-500/10 text-sky-600 border-sky-500/10'
+    },
+    {
+      region: 'Jharkhand',
+      title: 'Interstate Trust',
+      description: 'Serving patients traveling from Ranchi, Dhanbad, Bokaro, Jamshedpur, and Hazaribagh for high-success laparoscopic stone surgeries and specialized gastroenterology.',
+      stat: 'Jharkhand Reach',
+      highlight: 'Interstate Hub',
+      color: 'from-emerald-500 to-teal-600',
+      light: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/10'
+    },
+    {
+      region: 'Uttar Pradesh (UP)',
+      title: 'Eastern UP Care',
+      description: 'Eastern Uttar Pradesh cities like Gorakhpur, Varanasi, Deoria, Ghazipur, and Ballia rely on our clinic for expert surgical consultations under Dr. Sanjeev Kumar.',
+      stat: 'UP Reach',
+      highlight: 'Preferred Referral',
+      color: 'from-amber-500 to-orange-600',
+      light: 'bg-amber-500/10 text-amber-600 border-amber-500/10'
+    },
+    {
+      region: 'Bihar Districts',
+      title: 'Statewide Coverage',
+      description: 'Deeply integrated across all 38 districts of Bihar (Patna, Gaya, Muzaffarpur, Bhagalpur, Darbhanga, Saharsa, Purnia, etc.) for secondary and tertiary laparoscopic care.',
+      stat: '38 Districts',
+      highlight: 'Statewide Reach',
+      color: 'from-rose-500 to-pink-600',
+      light: 'bg-rose-500/10 text-rose-600 border-rose-500/10'
+    }
+  ],
+
   // ── Homepage Stats Counter ───────────────────────────────────
   stats: [
-    { label: 'Satisfied Patients', value: 8000, suffix: '+' },
-    { label: 'Years Experience', value: 27, suffix: '+' },
-    { label: 'Successful Operations', value: 350, suffix: '+' },
-    { label: 'Awards Received', value: 150, suffix: '+' },
+    { label: 'Satisfied Patients', value: 50000, suffix: '+', emoji: '😊' },
+    { label: 'Years Experience', value: 21, suffix: '+', emoji: '👨‍⚕️' },
+    { label: 'Successful Operations', value: 10000, suffix: '+', emoji: '🩺' },
+    { label: 'Awards Received', value: 150, suffix: '+', emoji: '🏆' },
   ],
 
   // ── Google Maps Embed ────────────────────────────────────────
@@ -123,7 +170,6 @@ export const siteData = {
     'ERCP — for CBD stone',
     'Stomach cancer',
     'Hernia',
-    'Jaundice, Ascites & Biliary Disorder',
   ],
 
   // ── Facilities ───────────────────────────────────────────────

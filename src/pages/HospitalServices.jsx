@@ -66,8 +66,8 @@ export default function HospitalServices() {
     <>
       <SEO
         title="Clinic Services & Facilities"
-        description="Explore Patna Lapro and Stone Healthcare's medical facilities & services, including advanced laparoscopic OT, diagnostic partnerships, pharmacy, and expert consultations in Patna."
-        keywords={['laparoscopic OT Patna', 'surgery services Patna', 'stone clinic Patna', 'diagnostic services Patna', 'Patna Lapro and Stone Healthcare facilities']}
+        description="Explore Patna Gastro, Lapro and Stone Healthcare's medical facilities & services, including advanced laparoscopic OT, diagnostic partnerships, pharmacy, and expert consultations in Patna."
+        keywords={['laparoscopic OT Patna', 'surgery services Patna', 'stone clinic Patna', 'diagnostic services Patna', 'Patna Gastro, Lapro and Stone Healthcare facilities']}
       />
 
       {/* ── Hero ── */}

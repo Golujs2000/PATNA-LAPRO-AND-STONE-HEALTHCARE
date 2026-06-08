@@ -77,7 +77,7 @@ export default function DoctorProfile() {
     <>
       <SEO
         title={doctor.name}
-        description={`${doctor.name} – ${doctor.specialty} specialist at Patna Lapro and Stone Healthcare, Patna. ${doctor.experience} years of experience. ${doctor.qualification}. Book an appointment today.`}
+        description={`${doctor.name} – ${doctor.specialty} specialist at Patna Gastro, Lapro and Stone Healthcare, Patna. ${doctor.experience} years of experience. ${doctor.qualification}. Book an appointment today.`}
         keywords={[doctor.name, doctor.specialty, `${doctor.specialty} doctor Patna`, `${doctor.specialty} specialist Bihar`]}
         jsonLd={[
           {

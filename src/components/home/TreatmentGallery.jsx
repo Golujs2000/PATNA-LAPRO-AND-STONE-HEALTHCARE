@@ -157,7 +157,7 @@ export default function TreatmentGallery() {
             <span className="text-primary-600">Procedures</span>
           </h2>
           <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
-            A glimpse into the healing environment, diagnostics, and treatments at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna.
+            A glimpse into the healing environment, diagnostics, and treatments at Patna Gastro, Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna.
           </p>
         </motion.div>
 

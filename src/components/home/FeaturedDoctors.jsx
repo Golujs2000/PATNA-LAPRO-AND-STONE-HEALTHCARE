@@ -117,15 +117,15 @@ export default function FeaturedDoctors() {
                     {/* Quick Info Grid below portrait */}
                     <div className="grid grid-cols-3 divide-x divide-gray-100 w-full max-w-[320px] bg-slate-50/70 border border-gray-100 rounded-2xl p-4 mt-5 text-center">
                       <div>
-                        <p className="font-heading font-black text-lg text-primary-700 leading-none">27+</p>
+                        <p className="font-heading font-black text-lg text-primary-700 leading-none">21+</p>
                         <p className="text-[9px] text-gray-400 font-semibold mt-1">Yrs Exp.</p>
                       </div>
                       <div>
-                        <p className="font-heading font-black text-lg text-primary-700 leading-none">350+</p>
+                        <p className="font-heading font-black text-lg text-primary-700 leading-none">10K+</p>
                         <p className="text-[9px] text-gray-400 font-semibold mt-1">Surgeries</p>
                       </div>
                       <div>
-                        <p className="font-heading font-black text-lg text-primary-700 leading-none">8K+</p>
+                        <p className="font-heading font-black text-lg text-primary-700 leading-none">50K+</p>
                         <p className="text-[9px] text-gray-400 font-semibold mt-1">Patients</p>
                       </div>
                     </div>
@@ -171,7 +171,7 @@ export default function FeaturedDoctors() {
 
                     {/* Bio / Description */}
                     <p className="text-gray-650 text-base leading-relaxed">
-                      {doc.bio || 'Dr. Sanjeev Kumar is a senior surgeon with 27 years of clinical experience specializing in laparoscopic surgery, stone treatment, and hepatobiliary care.'}
+                      {doc.bio || 'Dr. Sanjeev Kumar is a senior surgeon with 21 years of clinical experience specializing in laparoscopic surgery, stone treatment, and hepatobiliary care.'}
                     </p>
 
                     {/* Qualifications Grid */}

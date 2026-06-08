@@ -259,7 +259,7 @@ export default function Services() {
     <>
       <SEO
         title="Services, Specialities & Treatments"
-        description="Explore Patna Lapro and Stone Healthcare's surgical specialities — advanced laparoscopy, kidney stones, gallbladder stone surgery, hernia repair, appendix, liver & pancreas care, and general surgical treatments in Patna, Bihar."
+        description="Explore Patna Gastro, Lapro and Stone Healthcare's surgical specialities — advanced laparoscopy, kidney stones, gallbladder stone surgery, hernia repair, appendix, liver & pancreas care, and general surgical treatments in Patna, Bihar."
         keywords={['laparoscopic surgery Patna', 'kidney stone treatment Patna', 'gallbladder stone surgery Patna', 'hernia repair Patna', 'appendix surgery Patna', 'general surgeon Patna']}
       />
 

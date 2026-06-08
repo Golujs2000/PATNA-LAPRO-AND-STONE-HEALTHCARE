@@ -7,17 +7,17 @@
 // ─────────────────────────────────────────────────────────────
 
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Reorder, useDragControls } from 'framer-motion'
 import {
   FiPlus, FiEdit2, FiTrash2, FiX, FiStar,
   FiRefreshCw, FiArrowUp, FiArrowDown, FiActivity, FiEye, FiCheck,
-  FiImage, FiVideo, FiUploadCloud, FiGrid,
+  FiImage, FiVideo, FiUploadCloud, FiGrid, FiMenu,
 } from 'react-icons/fi'
 import toast from 'react-hot-toast'
 import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from 'firebase/storage'
 import { storage } from '../../firebase/config'
 import {
-  getSpecialities, addSpeciality, updateSpeciality, deleteSpeciality,
+  getSpecialities, addSpeciality, updateSpeciality, deleteSpeciality, updateSpecialitiesOrder,
 } from '../../services/specialities'
 import { getDoctors } from '../../services/doctors'
 import { getHospitalServices } from '../../services/hospitalServices'
@@ -37,6 +37,121 @@ const EMPTY_FORM = {
   doctorIds: [],
 }
 const EMPTY_TREATMENT = { name: '', duration: '' }
+
+function SpecialityItem({ spec, idx, doctors, hospitalServices, catColor, deletingId, onEdit, onDelete, onView, handleDragEnd }) {
+  const dragControls = useDragControls()
+
+  return (
+    <Reorder.Item
+      value={spec}
+      dragListener={false}
+      dragControls={dragControls}
+      onDragEnd={handleDragEnd}
+      className="card p-4 flex items-start gap-4 bg-white border border-gray-100 hover:shadow-md transition-shadow relative select-none"
+    >
+      {/* Drag handle */}
+      <div 
+        onPointerDown={(e) => dragControls.start(e)}
+        className="flex flex-col items-center gap-1.5 shrink-0 pt-1.5 cursor-grab active:cursor-grabbing select-none text-gray-300 hover:text-gray-500"
+        title="Drag to reorder"
+      >
+        <FiMenu size={16} />
+        <span className="text-[10px] text-gray-400 font-mono font-bold">#{idx + 1}</span>
+      </div>
+
+      {/* Thumbnail / Icon */}
+      {spec.icon && (
+        <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0 text-xl overflow-hidden pointer-events-none">
+          {(spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.')) ? (
+            <img src={spec.icon} alt={spec.name} className="w-full h-full object-contain" />
+          ) : (
+            spec.icon
+          )}
+        </div>
+      )}
+
+      {/* Info */}
+      <div className="flex-1 min-w-0">
+        <div className="flex flex-wrap items-center gap-2 mb-0.5">
+          <h3 className="font-semibold text-navy-800">{spec.name}</h3>
+          {spec.category && (
+            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${catColor[spec.category] || 'bg-gray-100 text-gray-600'}`}>
+              {spec.category}
+            </span>
+          )}
+          {spec.available && (
+            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${spec.available === '24 × 7' ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+              {spec.available}
+            </span>
+          )}
+        </div>
+        {spec.description && (
+          <p className="text-sm text-gray-500 line-clamp-1">{spec.description}</p>
+        )}
+        <div className="flex flex-wrap gap-3 mt-1.5 text-xs text-gray-400">
+          {spec.recoveryTime && <span>Recovery: {spec.recoveryTime}</span>}
+          {Array.isArray(spec.treatments) && spec.treatments.length > 0 && (
+            <span className="text-primary-500 font-medium flex items-center gap-1">
+              <FiActivity size={11} /> {spec.treatments.length} treatment{spec.treatments.length !== 1 ? 's' : ''}
+            </span>
+          )}
+          {Array.isArray(spec.doctorIds) && spec.doctorIds.length > 0 && (
+            <span className="text-teal-600 font-medium flex items-center gap-1">
+              👨‍⚕️ {spec.doctorIds.length} doctor{spec.doctorIds.length !== 1 ? 's' : ''}
+            </span>
+          )}
+          {(() => {
+            const linked = hospitalServices.filter(s =>
+              Array.isArray(s.relatedSpecialties) && s.relatedSpecialties.includes(spec.name)
+            )
+            return linked.length > 0 ? (
+              <span className="text-amber-600 font-medium flex items-center gap-1">
+                🏥 {linked.length} service{linked.length !== 1 ? 's' : ''}
+              </span>
+            ) : null
+          })()}
+        </div>
+        {/* Linked doctor avatars */}
+        {Array.isArray(spec.doctorIds) && spec.doctorIds.length > 0 && (
+          <div className="flex items-center gap-1 mt-2">
+            {spec.doctorIds.slice(0, 5).map((did) => {
+              const doc = doctors.find(d => d.id === did)
+              if (!doc) return null
+              return doc.image ? (
+                <img key={did} src={doc.image} alt={doc.name} title={doc.name}
+                  className="w-6 h-6 rounded-full object-cover border border-white shadow-sm" />
+              ) : (
+                <div key={did} title={doc.name}
+                  className="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center border border-white shadow-sm">
+                  <span className="text-primary-700 text-[9px] font-bold">{doc.name?.[0]}</span>
+                </div>
+              )
+            })}
+            {spec.doctorIds.length > 5 && (
+              <span className="text-xs text-gray-400 ml-1">+{spec.doctorIds.length - 5}</span>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Actions */}
+      <div className="flex items-center gap-2 shrink-0">
+        <button onClick={() => onView(spec)}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100 transition-colors text-xs font-semibold">
+          <FiEye size={13} /> View
+        </button>
+        <button onClick={() => onEdit(spec)}
+          className="p-2 rounded-lg text-primary-500 hover:text-primary-700 hover:bg-primary-50 transition-colors" title="Edit">
+          <FiEdit2 size={15} />
+        </button>
+        <button onClick={() => onDelete(spec.id)} disabled={deletingId === spec.id}
+          className="p-2 rounded-lg text-red-400 hover:text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50" title="Delete">
+          <FiTrash2 size={15} />
+        </button>
+      </div>
+    </Reorder.Item>
+  )
+}
 
 export default function AdminSpecialities() {
   const [specialities, setSpecialities] = useState([])
@@ -343,19 +458,12 @@ export default function AdminSpecialities() {
     }
   }
 
-  const handleReorder = async (spec, direction) => {
-    const idx = specialities.findIndex((s) => s.id === spec.id)
-    const swapIdx = direction === 'up' ? idx - 1 : idx + 1
-    if (swapIdx < 0 || swapIdx >= specialities.length) return
-    const swapSpec = specialities[swapIdx]
+  const handleDragEnd = async () => {
     try {
-      await Promise.all([
-        updateSpeciality(spec.id, { ...spec, order: swapSpec.order }),
-        updateSpeciality(swapSpec.id, { ...swapSpec, order: spec.order }),
-      ])
-      await fetchSpecialities()
+      await updateSpecialitiesOrder(specialities)
+      toast.success('Display order saved')
     } catch {
-      toast.error('Failed to reorder')
+      toast.error('Failed to save display order')
     }
   }
 
@@ -406,120 +514,23 @@ export default function AdminSpecialities() {
           </button>
         </div>
       ) : (
-        <div className="space-y-3">
+        <Reorder.Group axis="y" values={specialities} onReorder={setSpecialities} className="space-y-3">
           {specialities.map((spec, idx) => (
-            <motion.div
+            <SpecialityItem
               key={spec.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="card p-4 flex items-start gap-4"
-            >
-              {/* Order Controls */}
-              <div className="flex flex-col gap-1 shrink-0 pt-1">
-                <button onClick={() => handleReorder(spec, 'up')} disabled={idx === 0}
-                  className="text-gray-300 hover:text-gray-500 disabled:opacity-20">
-                  <FiArrowUp size={15} />
-                </button>
-                <span className="text-xs text-gray-400 text-center font-mono">{spec.order}</span>
-                <button onClick={() => handleReorder(spec, 'down')} disabled={idx === specialities.length - 1}
-                  className="text-gray-300 hover:text-gray-500 disabled:opacity-20">
-                  <FiArrowDown size={15} />
-                </button>
-              </div>
-
-              {/* Thumbnail / Icon */}
-              {spec.icon && (
-                <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0 text-xl overflow-hidden">
-                  {(spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.')) ? (
-                    <img src={spec.icon} alt={spec.name} className="w-full h-full object-contain" />
-                  ) : (
-                    spec.icon
-                  )}
-                </div>
-              )}
-
-              {/* Info */}
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-center gap-2 mb-0.5">
-                  <h3 className="font-semibold text-navy-800">{spec.name}</h3>
-                  {spec.category && (
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${catColor[spec.category] || 'bg-gray-100 text-gray-600'}`}>
-                      {spec.category}
-                    </span>
-                  )}
-                  {spec.available && (
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${spec.available === '24 × 7' ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
-                      {spec.available}
-                    </span>
-                  )}
-                </div>
-                {spec.description && (
-                  <p className="text-sm text-gray-500 line-clamp-1">{spec.description}</p>
-                )}
-                <div className="flex flex-wrap gap-3 mt-1.5 text-xs text-gray-400">
-                  {spec.recoveryTime && <span>Recovery: {spec.recoveryTime}</span>}
-                  {Array.isArray(spec.treatments) && spec.treatments.length > 0 && (
-                    <span className="text-primary-500 font-medium flex items-center gap-1">
-                      <FiActivity size={11} /> {spec.treatments.length} treatment{spec.treatments.length !== 1 ? 's' : ''}
-                    </span>
-                  )}
-                  {Array.isArray(spec.doctorIds) && spec.doctorIds.length > 0 && (
-                    <span className="text-teal-600 font-medium flex items-center gap-1">
-                      👨‍⚕️ {spec.doctorIds.length} doctor{spec.doctorIds.length !== 1 ? 's' : ''}
-                    </span>
-                  )}
-                  {(() => {
-                    const linked = hospitalServices.filter(s =>
-                      Array.isArray(s.relatedSpecialties) && s.relatedSpecialties.includes(spec.name)
-                    )
-                    return linked.length > 0 ? (
-                      <span className="text-amber-600 font-medium flex items-center gap-1">
-                        🏥 {linked.length} service{linked.length !== 1 ? 's' : ''}
-                      </span>
-                    ) : null
-                  })()}
-                </div>
-                {/* Linked doctor avatars */}
-                {Array.isArray(spec.doctorIds) && spec.doctorIds.length > 0 && (
-                  <div className="flex items-center gap-1 mt-2">
-                    {spec.doctorIds.slice(0, 5).map((did) => {
-                      const doc = doctors.find(d => d.id === did)
-                      if (!doc) return null
-                      return doc.image ? (
-                        <img key={did} src={doc.image} alt={doc.name} title={doc.name}
-                          className="w-6 h-6 rounded-full object-cover border border-white shadow-sm" />
-                      ) : (
-                        <div key={did} title={doc.name}
-                          className="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center border border-white shadow-sm">
-                          <span className="text-primary-700 text-[9px] font-bold">{doc.name?.[0]}</span>
-                        </div>
-                      )
-                    })}
-                    {spec.doctorIds.length > 5 && (
-                      <span className="text-xs text-gray-400 ml-1">+{spec.doctorIds.length - 5}</span>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Actions */}
-              <div className="flex items-center gap-2 shrink-0">
-                <button onClick={() => setViewItem(spec)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100 transition-colors text-xs font-semibold">
-                  <FiEye size={13} /> View
-                </button>
-                <button onClick={() => openEditModal(spec)}
-                  className="p-2 rounded-lg text-primary-500 hover:text-primary-700 hover:bg-primary-50 transition-colors" title="Edit">
-                  <FiEdit2 size={15} />
-                </button>
-                <button onClick={() => handleDelete(spec.id)} disabled={deletingId === spec.id}
-                  className="p-2 rounded-lg text-red-400 hover:text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50" title="Delete">
-                  <FiTrash2 size={15} />
-                </button>
-              </div>
-            </motion.div>
+              spec={spec}
+              idx={idx}
+              doctors={doctors}
+              hospitalServices={hospitalServices}
+              catColor={catColor}
+              deletingId={deletingId}
+              onEdit={openEditModal}
+              onDelete={handleDelete}
+              onView={setViewItem}
+              handleDragEnd={handleDragEnd}
+            />
           ))}
-        </div>
+        </Reorder.Group>
       )}
 
       {/* ── Modal ──────────────────────────────────────────────────────────── */}

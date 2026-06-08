@@ -62,11 +62,11 @@ export default function AdminLayout() {
       <div className="flex items-center gap-3 px-6 py-5 border-b border-gray-100">
         <img
           src="/patna-lapro-logo.png"
-          alt="Patna Lapro and Stone Healthcare Logo"
+          alt="Patna Gastro, Lapro and Stone Healthcare Logo"
           className="w-10 h-10 object-contain shrink-0"
         />
         <div>
-          <p className="font-bold text-navy-800 text-sm leading-tight">Patna Lapro & Stone</p>
+          <p className="font-bold text-navy-800 text-sm leading-tight">Patna Gastro, Lapro & Stone</p>
           <p className="text-xs text-gray-400">Admin Panel</p>
         </div>
       </div>
@@ -178,10 +178,10 @@ export default function AdminLayout() {
                 <div className="hidden sm:flex items-center gap-2">
                   <img
                     src="/patna-lapro-logo.png"
-                    alt="Patna Lapro and Stone Healthcare Logo"
+                    alt="Patna Gastro, Lapro and Stone Healthcare Logo"
                     className="w-8 h-8 object-contain shrink-0"
                   />
-                  <span className="font-semibold text-navy-800 text-sm">Patna Lapro & Stone</span>
+                  <span className="font-semibold text-navy-800 text-sm">Patna Gastro, Lapro & Stone</span>
                 </div>
               </div>
 

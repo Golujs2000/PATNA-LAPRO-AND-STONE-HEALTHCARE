@@ -124,7 +124,7 @@ export default function TreatmentDetail() {
       <SEO
         title={`${treatment.name} — ${speciality.name}`}
         description={
-          `${treatment.name} at Patna Lapro and Stone Healthcare, Patna. ` +
+          `${treatment.name} at Patna Gastro, Lapro and Stone Healthcare, Patna. ` +
           (treatment.description ? treatment.description.slice(0, 120) + '… ' : '') +
           `Recovery: ${treatment.recovery || 'Varies'}.`
         }
@@ -140,7 +140,7 @@ export default function TreatmentDetail() {
             status: 'https://schema.org/ActiveActionStatus',
             preparation: Array.isArray(treatment.preparation) ? treatment.preparation.join(' ') : '',
             followup: `Recovery time: ${treatment.recovery || 'Varies'}. Follow-up as advised by your doctor.`,
-            recognizingAuthority: { '@type': 'Organization', name: 'Patna Lapro and Stone Healthcare', url: siteData.url },
+            recognizingAuthority: { '@type': 'Organization', name: 'Patna Gastro, Lapro and Stone Healthcare', url: siteData.url },
           },
           ...(treatment.faqs?.length ? [{
             '@context': 'https://schema.org',
@@ -231,7 +231,7 @@ export default function TreatmentDetail() {
                 <h2 className="font-heading font-bold text-navy-800 text-xl mb-3">About This Procedure</h2>
                 <p className="text-gray-600 leading-relaxed">
                   {treatment.description || (
-                    <><span className="font-semibold">{treatment.name}</span> is treated at Patna Lapro and Stone Healthcare under the{' '}
+                    <><span className="font-semibold">{treatment.name}</span> is treated at Patna Gastro, Lapro and Stone Healthcare under the{' '}
                     <Link to={`/services/${slug}`} className="text-primary-600 hover:underline">{speciality.name}</Link> department
                     by our experienced medical team. We follow international safety protocols to ensure the best outcomes for every patient.</>
                   )}
@@ -454,7 +454,7 @@ export default function TreatmentDetail() {
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
                   <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">
-                    Why Choose Patna Lapro and Stone Healthcare for {speciality.name}
+                    Why Choose Patna Gastro, Lapro and Stone Healthcare for {speciality.name}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {speciality.features.map((f, i) => (

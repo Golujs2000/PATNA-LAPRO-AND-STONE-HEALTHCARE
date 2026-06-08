@@ -74,7 +74,7 @@ const testimonials = [
     dept: 'Laparoscopic Gallbladder Surgery',
     rating: 5,
     date: 'April 2026',
-    text: 'I had severe gallstone pain for over a year. Dr. Sanjeev Kumar performed my laparoscopic cholecystectomy and I was discharged the very next morning. Absolutely no large scar, very little pain and I was back to work in a week. Excellent surgeon and wonderful team at Patna Lapro and Stone Healthcare.',
+    text: 'I had severe gallstone pain for over a year. Dr. Sanjeev Kumar performed my laparoscopic cholecystectomy and I was discharged the very next morning. Absolutely no large scar, very little pain and I was back to work in a week. Excellent surgeon and wonderful team at Patna Gastro, Lapro and Stone Healthcare.',
     initials: 'RP',
     verified: true,
   },

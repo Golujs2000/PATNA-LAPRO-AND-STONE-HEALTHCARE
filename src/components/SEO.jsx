@@ -18,7 +18,7 @@ import { siteData } from '../data/siteData'
 /**
  * SEO head manager.
  * Props:
- *   title        — page title (appended with " | Patna Lapro and Stone Healthcare")
+ *   title        — page title (appended with " | Patna Gastro, Lapro and Stone Healthcare")
  *   description  — meta description
  *   image        — absolute OG image URL
  *   type         — OG type: 'website' | 'article'

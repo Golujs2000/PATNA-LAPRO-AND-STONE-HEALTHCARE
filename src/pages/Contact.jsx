@@ -62,8 +62,8 @@ export default function Contact() {
     <>
       <SEO
         title={`Contact Us — ${siteData.name}`}
-        description={`Contact Patna Lapro and Stone Healthcare, Patna at ${siteData.contact.phone}. Located at ${siteData.contact.address}. Book appointments online.`}
-        keywords={['contact Patna Lapro and Stone Healthcare', 'clinic address Patna', 'Patna Lapro and Stone Healthcare phone number', 'book surgery appointment Patna', 'Dr Sanjeev Kumar contact']}
+        description={`Contact Patna Gastro, Lapro and Stone Healthcare, Patna at ${siteData.contact.phone}. Located at ${siteData.contact.address}. Book appointments online.`}
+        keywords={['contact Patna Gastro, Lapro and Stone Healthcare', 'clinic address Patna', 'Patna Gastro, Lapro and Stone Healthcare phone number', 'book surgery appointment Patna', 'Dr Sanjeev Kumar contact']}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'MedicalClinic',
@@ -172,7 +172,7 @@ export default function Contact() {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                title="Patna Lapro and Stone Healthcare Map"
+                title="Patna Gastro, Lapro and Stone Healthcare Map"
               />
             </div>
           </motion.div>

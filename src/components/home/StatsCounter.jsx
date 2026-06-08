@@ -46,8 +46,9 @@ export default function StatsCounter() {
         viewport={{ once: true }}
         className="bg-navy-800 rounded-3xl py-8 md:py-10 px-6 md:px-10 shadow-2xl shadow-navy-950/45 border border-navy-700/50 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x divide-white/10 text-center"
       >
-        {siteData.stats.map(({ label, value, suffix }, i) => (
+        {siteData.stats.map(({ label, value, suffix, emoji }, i) => (
           <div key={label} className="px-4">
+            <div className="text-3xl md:text-4xl mb-2.5 filter drop-shadow-sm select-none">{emoji}</div>
             <h3 className="font-heading font-bold text-4xl lg:text-5xl text-white mb-2">
               <Counter value={value} suffix={suffix} />
             </h3>

@@ -74,7 +74,7 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3 mb-5">
               <img
                 src="/patna-lapro-logo.png"
-                alt="Patna Lapro and Stone Healthcare Logo"
+                alt="Patna Gastro, Lapro and Stone Healthcare Logo"
                 className="w-14 h-14 object-contain shrink-0"
               />
               <div>

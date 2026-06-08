@@ -174,6 +174,18 @@ export default function AdminGallery() {
       files.map(async (file) => {
         const id = Math.random().toString(36).slice(2)
         const rawTitle = file.name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ')
+        const isVideo = file.type?.startsWith('video/')
+        if (isVideo) {
+          return {
+            id,
+            file,
+            preview: URL.createObjectURL(file),
+            title: rawTitle,
+            originalMB: (file.size / 1024 / 1024).toFixed(1),
+            compressedKB: null,
+            isVideo: true,
+          }
+        }
         try {
           const compressed = await compressImage(file)
           return {
@@ -183,6 +195,7 @@ export default function AdminGallery() {
             title: rawTitle,
             originalMB: (file.size / 1024 / 1024).toFixed(1),
             compressedKB: (compressed.size / 1024).toFixed(0),
+            isVideo: false,
           }
         } catch {
           return {
@@ -192,6 +205,7 @@ export default function AdminGallery() {
             title: rawTitle,
             originalMB: (file.size / 1024 / 1024).toFixed(1),
             compressedKB: null,
+            isVideo: false,
           }
         }
       })
@@ -550,12 +564,12 @@ export default function AdminGallery() {
                             {selectedImages.length > 0 ? 'Click to add more images' : 'Click to select images'}
                           </p>
                           {selectedImages.length === 0 && (
-                            <p className="text-xs text-gray-400 mt-1">PNG, JPG, WEBP · multiple allowed · auto-compressed</p>
+                            <p className="text-xs text-gray-400 mt-1">PNG, JPG, WEBP, MP4, WEBM · multiple allowed</p>
                           )}
                         </>
                       )}
                     </div>
-                    <input ref={fileRef} type="file" accept="image/*" multiple onChange={handleImageChange} className="hidden" />
+                    <input ref={fileRef} type="file" accept="image/*,video/*" multiple onChange={handleImageChange} className="hidden" />
 
                     {/* Selected images grid */}
                     {selectedImages.length > 0 && (
@@ -563,13 +577,22 @@ export default function AdminGallery() {
                         {selectedImages.map((img) => (
                           <div key={img.id} className="group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-50">
                             {/* Thumbnail */}
-                            <div className="aspect-square">
-                              <img src={img.preview} alt={img.title} className="w-full h-full object-cover" />
+                            <div className="aspect-square relative">
+                              {img.isVideo ? (
+                                <video src={img.preview} className="w-full h-full object-cover" muted playsInline />
+                              ) : (
+                                <img src={img.preview} alt={img.title} className="w-full h-full object-cover" />
+                              )}
+                              {img.isVideo && (
+                                <span className="absolute bottom-1.5 right-1.5 bg-black/60 text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">
+                                  Video
+                                </span>
+                              )}
                             </div>
                             {/* Size badge */}
-                            {img.compressedKB && (
+                            {(img.compressedKB || img.originalMB) && (
                               <span className="absolute top-1.5 left-1.5 bg-green-500/90 text-white text-[10px] font-medium px-1.5 py-0.5 rounded-full">
-                                {img.originalMB}MB → {img.compressedKB}KB
+                                {img.compressedKB ? `${img.originalMB}MB → ${img.compressedKB}KB` : `${img.originalMB}MB`}
                               </span>
                             )}
                             {/* Remove button */}
@@ -781,12 +804,30 @@ export default function AdminGallery() {
                   : ''
               }`}
             >
-              <img
-                src={img.image}
-                alt={img.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 pointer-events-none"
-                draggable={false}
-              />
+              {img.type === 'video' ? (
+                <div className="w-full h-full relative">
+                  <video
+                    src={img.image}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 pointer-events-none"
+                    muted
+                    playsInline
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="w-8 h-8 rounded-full bg-black/60 flex items-center justify-center text-white">
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src={img.image}
+                  alt={img.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 pointer-events-none"
+                  draggable={false}
+                />
+              )}
 
               {/* Drag handle dots */}
               <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity bg-black/50 rounded-lg p-1.5 text-white pointer-events-none">

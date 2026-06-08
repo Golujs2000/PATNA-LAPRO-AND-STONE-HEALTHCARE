@@ -15,10 +15,10 @@ import {
 } from 'react-icons/fi'
 import toast from 'react-hot-toast'
 import { getSettings, updateSettings } from '../../services/settings'
-import { seedSpecialitiesAndServices, seedFirestore } from '../../data/seedData'
+import { seedSpecialitiesAndServices, seedFirestore, seedJaundiceSpecialityOnly } from '../../data/seedData'
 
 const EMPTY_FORM = {
-  siteName: 'Patna Lapro and Stone Healthcare',
+  siteName: 'Patna Gastro, Lapro and Stone Healthcare',
   tagline: 'Your Health, Our Priority',
   phone: '',
   emergencyPhone: '',
@@ -33,7 +33,7 @@ const FIELD_GROUPS = [
     title: 'Site Identity',
     icon: FiGlobe,
     fields: [
-      { name: 'siteName', label: 'Site Name', placeholder: 'Patna Lapro and Stone Healthcare', icon: FiGlobe },
+      { name: 'siteName', label: 'Site Name', placeholder: 'Patna Gastro, Lapro and Stone Healthcare', icon: FiGlobe },
       { name: 'tagline', label: 'Tagline', placeholder: 'Your Health, Our Priority', icon: FiGlobe },
     ],
   },
@@ -63,6 +63,7 @@ export default function AdminSettings() {
   const [saving, setSaving] = useState(false)
   const [seedingClinical, setSeedingClinical] = useState(false)
   const [seedingFull, setSeedingFull] = useState(false)
+  const [mergingJaundice, setMergingJaundice] = useState(false)
   const [savedAt, setSavedAt] = useState(null)
 
   const fetchSettings = async () => {
@@ -106,6 +107,19 @@ export default function AdminSettings() {
       toast.error('Full seeding failed: ' + err.message)
     } finally {
       setSeedingFull(false)
+    }
+  }
+
+  const handleMergeJaundice = async () => {
+    if (!window.confirm('This will update/merge the "Jaundice & Biliary Disorders" specialty in Firestore and delete the redundant "Jaundice, Ascites & Biliary Disorder" specialty. Other specialties will NOT be affected. Continue?')) return
+    setMergingJaundice(true)
+    try {
+      await seedJaundiceSpecialityOnly()
+      toast.success('Jaundice specialties successfully merged and updated!')
+    } catch (err) {
+      toast.error('Merge failed: ' + err.message)
+    } finally {
+      setMergingJaundice(false)
     }
   }
 
@@ -268,6 +282,28 @@ export default function AdminSettings() {
                 </button>
                 <p className="text-[10px] text-gray-400 italic">Resets Doctor profile and Blog posts. Overwrites existing data.</p>
               </div>
+            </div>
+
+            <div className="h-px bg-amber-200/50 my-6" />
+
+            {/* Specialty Merge Tool */}
+            <div className="space-y-3">
+              <p className="text-xs font-semibold text-navy-800 uppercase tracking-wider font-bold">One-Time Specialty Merging</p>
+              <button
+                type="button"
+                onClick={handleMergeJaundice}
+                disabled={mergingJaundice}
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white font-semibold rounded-xl transition-colors text-sm"
+              >
+                {mergingJaundice ? (
+                  <><FiRefreshCw size={15} className="animate-spin" /> Merging Jaundice Specialties…</>
+                ) : (
+                  <><FiDatabase size={15} /> Merge Jaundice Specialties</>
+                )}
+              </button>
+              <p className="text-[10px] text-gray-400 italic">
+                Only updates "Jaundice & Biliary Disorders" (and deletes "Jaundice, Ascites & Biliary Disorder") in Firestore. Will NOT affect other specialties.
+              </p>
             </div>
           </div>
         </div>

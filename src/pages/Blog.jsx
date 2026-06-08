@@ -35,7 +35,7 @@ export default function Blog() {
     <>
       <SEO
         title="Health Blog"
-        description="Read expert health tips, medical guides, and patient stories from Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare."
+        description="Read expert health tips, medical guides, and patient stories from Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare."
       />
 
       {/* Hero */}

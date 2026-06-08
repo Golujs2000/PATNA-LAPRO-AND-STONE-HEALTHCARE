@@ -46,7 +46,7 @@ export default function DataDeletion() {
 
   return (
     <>
-      <SEO title="Data Deletion Request" description="Submit a request to delete your personal data from Patna Lapro and Stone Healthcare's systems." />
+      <SEO title="Data Deletion Request" description="Submit a request to delete your personal data from Patna Gastro, Lapro and Stone Healthcare's systems." />
 
       <section className="page-hero text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="container-max">

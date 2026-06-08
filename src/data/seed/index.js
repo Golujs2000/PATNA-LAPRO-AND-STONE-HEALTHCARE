@@ -1,4 +1,4 @@
 import { laproStoneSpecialities } from './laproStoneSpecialities.js'
 
-// Export the Patna Lapro and Stone Healthcare speciality list
+// Export the Patna Gastro, Lapro and Stone Healthcare speciality list
 export const allSpecialities = laproStoneSpecialities

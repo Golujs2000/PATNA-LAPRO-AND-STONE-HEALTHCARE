@@ -13,8 +13,19 @@ export default function About() {
     <>
       <SEO
         title={`About Us — ${siteData.name}`}
-        description={`Learn about Patna Lapro and Stone Healthcare, Sri Krishna Nagar, Patna — led by Dr. Sanjeev Kumar (MBBS, MS), Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon Safdarjung Hospital. Specialist in Laparoscopic Surgery, Stone Treatment, Liver & Pancreas disorders.`}
-        keywords={['about Patna Lapro Stone Healthcare', 'Dr Sanjeev Kumar Patna', 'laparoscopic surgeon Patna', 'stone specialist Patna Bihar', 'liver specialist Patna', 'pancreas specialist Patna']}
+        description={`Learn about Patna Gastro, Lapro and Stone Healthcare — led by Dr. Sanjeev Kumar (MBBS, MS). Serving patients from Patna, Nepal, Jharkhand, UP, and all districts of Bihar with advanced laparoscopic & stone care.`}
+        keywords={[
+          'about Patna Lapro Stone Healthcare',
+          'Dr Sanjeev Kumar Patna',
+          'laparoscopic surgeon Patna',
+          'stone specialist Patna Bihar',
+          'liver specialist Patna',
+          'pancreas specialist Patna',
+          'outstation patient care Patna',
+          'patients from Nepal',
+          'patients from Jharkhand',
+          'patients from UP'
+        ]}
       />
 
       <main className="flex-1 bg-white">
@@ -38,7 +49,7 @@ export default function About() {
                   <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse flex-shrink-0"></span>Serving Patna — Expert Laparoscopic & Stone Care
                 </motion.div>
                 <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-gray-600 text-base md:text-lg leading-relaxed mb-7 max-w-xl">
-                  Patna Lapro and Stone Healthcare is Patna's trusted surgical centre, offering advanced laparoscopic surgery and comprehensive stone treatment — from kidney stones to gallbladder, hernia, liver, and pancreas care.
+                  Patna Gastro, Lapro and Stone Healthcare is Patna's trusted surgical centre, offering advanced laparoscopic surgery and comprehensive stone treatment — from kidney stones to gallbladder, hernia, liver, and pancreas care.
                 </motion.p>
                 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="flex flex-wrap gap-2.5 mb-8">
@@ -90,15 +101,15 @@ export default function About() {
                         <div className="h-px bg-gray-100 mb-3"></div>
                         <div className="grid grid-cols-3 divide-x divide-gray-100 text-center">
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">27</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">21</p>
                             <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Yrs Exp.</p>
                           </div>
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">8K+</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">50K+</p>
                             <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Patients</p>
                           </div>
                           <div className="px-2">
-                            <p className="font-heading font-black text-lg text-primary-700 leading-none">350+</p>
+                            <p className="font-heading font-black text-lg text-primary-700 leading-none">10K+</p>
                             <p className="text-[10px] text-gray-400 font-semibold mt-0.5">Operations</p>
                           </div>
                         </div>
@@ -128,7 +139,7 @@ export default function About() {
               <div className="rounded-2xl overflow-hidden mb-6 -mx-2 sm:-mx-4">
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780379448531_hospital_staff.webp?alt=media&token=571ebf7f-59e4-4698-986c-c4802076dfdd"
-                  alt="Patna Lapro and Stone Healthcare — Our Team"
+                  alt="Patna Gastro, Lapro and Stone Healthcare — Our Team"
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -143,13 +154,16 @@ export default function About() {
               
               <div className="space-y-4 text-gray-600 leading-relaxed text-base sm:text-lg">
                 <p>
-                  Patna Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care and gastroenterology treatments to Bihar.
+                  Patna Gastro, Lapro and Stone Healthcare was established in <strong className="text-navy-800">2020</strong> at Sri Krishna Nagar Kidwaipuri, Patna with a focused mission — to bring world-class minimally invasive surgical care and gastroenterology treatments to Bihar.
                 </p>
                 <p>
-                  Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS), a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 27 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.
+                  Led by <strong className="text-navy-800">Dr. Sanjeev Kumar</strong> (MBBS, MS), a senior Laparoscopic & Gastro Specialist, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (VMMC College & Safdarjung Hospital, New Delhi), and Jaundice, Stone, Pancreas & Liver Specialist with 21 years of clinical experience. His medical expertise is coupled with a genuine concern for his patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.
                 </p>
                 <p>
-                  We are proud to have served over <strong className="text-navy-800">8,000 satisfied patients</strong> and performed more than <strong className="text-navy-800">350 successful operations</strong>, backed by prestigious recognitions including over <strong className="text-navy-800">150 awards</strong>.
+                  We are proud to have served over <strong className="text-navy-800">50,000 satisfied patients</strong> and performed more than <strong className="text-navy-800">10,000 successful operations</strong>, backed by prestigious recognitions including over <strong className="text-navy-800">150 awards</strong>.
+                </p>
+                <p>
+                  Today, our reputation extends far beyond Patna. We are the preferred healthcare destination for patients traveling from <strong className="text-navy-800">Nepal</strong>, neighboring states like <strong className="text-navy-800">Jharkhand</strong> and <strong className="text-navy-800">Uttar Pradesh (UP)</strong>, as well as all <strong className="text-navy-800">38 districts of Bihar</strong>, seeking trusted laparoscopic surgeries and liver, pancreas, and stone treatments.
                 </p>
               </div>
               

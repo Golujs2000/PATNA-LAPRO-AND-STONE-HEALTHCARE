@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────
 // data/seed/laproStoneSpecialities.js
-// Specialities & Treatments for Patna Lapro and Stone Healthcare
+// Specialities & Treatments for Patna Gastro, Lapro and Stone Healthcare
 // Led by Dr. Sanjeev Kumar (MBBS, MS)
 // ─────────────────────────────────────────────────────────────
 
@@ -14,7 +14,7 @@ export const laproStoneSpecialities = [
     category: 'Surgery',
     available: 'OPD & Emergency',
     description: 'Advanced minimally invasive laparoscopic surgeries by Dr. Sanjeev Kumar. Smaller cuts, faster recovery, and less pain compared to open surgery.',
-    longDescription: `Patna Lapro and Stone Healthcare is a premier centre for advanced laparoscopic (keyhole) surgery in Patna, Bihar. Led by Dr. Sanjeev Kumar, a senior consultant with over 27 years of experience, we perform minimally invasive procedures for gallbladder stones, hernias, appendicitis, and bariatric weight loss. Using high-definition laparoscopes and specialized instruments, our keyhole surgeries ensure smaller cuts, minimal pain, shorter hospital stays (usually 24–48 hours), and a rapid return to daily activities.`,
+    longDescription: `Patna Gastro, Lapro and Stone Healthcare is a premier centre for advanced laparoscopic (keyhole) surgery in Patna, Bihar. Led by Dr. Sanjeev Kumar, a senior consultant with over 21 years of experience, we perform minimally invasive procedures for gallbladder stones, hernias, appendicitis, and bariatric weight loss. Using high-definition laparoscopes and specialized instruments, our keyhole surgeries ensure smaller cuts, minimal pain, shorter hospital stays (usually 24–48 hours), and a rapid return to daily activities.`,
     features: ['Gallbladder Removal', 'Hernia Repair', 'Appendix Removal', 'Ovarian Cystectomy', 'Bariatric Weight Loss', 'Minimal Scarring'],
     costEstimate: '₹20,000 – ₹1,80,000',
     recoveryTime: '1 – 7 days',
@@ -27,13 +27,13 @@ export const laproStoneSpecialities = [
         duration: '45–90 min',
         recovery: '2–5 days',
         description: 'Minimally invasive removal of the gallbladder through small incisions (4-port, 3-port, or single-port technique). The gold standard treatment for gallstones.',
-        longDescription: `Laparoscopic Cholecystectomy is the gold standard surgical procedure for removing the gallbladder affected by gallstones (पित्ताशय की पथरी). At Patna Lapro and Stone Healthcare, Dr. Sanjeev Kumar (MBBS, MS) performs this minimally invasive surgery with over 27 years of surgical expertise, making it one of the safest and most reliable gallbladder removal centres in Patna, Bihar.
+        longDescription: `Laparoscopic Cholecystectomy is the gold standard surgical procedure for removing the gallbladder affected by gallstones (पित्ताशय की पथरी). At Patna Gastro, Lapro and Stone Healthcare, Dr. Sanjeev Kumar (MBBS, MS) performs this minimally invasive surgery with over 21 years of surgical expertise, making it one of the safest and most reliable gallbladder removal centres in Patna, Bihar.
 
 During the procedure, 3–4 tiny incisions (each less than 1 cm) are made in the abdomen. A high-definition laparoscope (camera) is inserted to give the surgeon a magnified view of the gallbladder and surrounding structures. The cystic duct and artery are carefully identified, clipped, and divided before the gallbladder is removed through one of the small incisions. The entire procedure typically takes 45–90 minutes under general anaesthesia.
 
 Patients benefit from significantly less post-operative pain, smaller scars, shorter hospital stay (usually 24–48 hours), and a much faster return to normal daily activities compared to traditional open surgery. Most patients in Patna and surrounding areas of Bihar — including Gaya, Nalanda, Vaishali, and Muzaffarpur — travel to our centre for this procedure due to Dr. Sanjeev Kumar's expertise as a former gastro surgeon at IGIMS Patna and Safdarjung Hospital, New Delhi.
 
-If you are experiencing symptoms like upper abdominal pain after meals, bloating, nausea, or have been diagnosed with gallstones on ultrasound, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna 800001. Call 9334097925 or 9942282987 to book your appointment.`,
+If you are experiencing symptoms like upper abdominal pain after meals, bloating, nausea, or have been diagnosed with gallstones on ultrasound, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare, L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna 800001. Call 9334097925 or 9942282987 to book your appointment.`,
         indications: ['Symptomatic gallstones', 'Acute cholecystitis', 'Biliary colic'],
         benefits: ['Small cuts', 'Hospital stay 1–2 days', 'Less pain & blood loss'],
         preparation: ['Ultrasound abdomen', 'LFT, CBC tests', 'Fast 6–8 hrs'],
@@ -53,13 +53,13 @@ If you are experiencing symptoms like upper abdominal pain after meals, bloating
         duration: '30–60 min',
         recovery: '2–4 days',
         description: 'Emergency or elective removal of the inflamed appendix through laparoscopy.',
-        longDescription: `Laparoscopic Appendectomy is the preferred surgical method for treating acute appendicitis (अपेंडिक्स की सूजन) at Patna Lapro and Stone Healthcare. Dr. Sanjeev Kumar, a senior laparoscopic surgeon in Patna with extensive experience at IGIMS and Safdarjung Hospital, performs this minimally invasive procedure to safely remove the inflamed appendix through 2–3 tiny keyhole incisions.
+        longDescription: `Laparoscopic Appendectomy is the preferred surgical method for treating acute appendicitis (अपेंडिक्स की सूजन) at Patna Gastro, Lapro and Stone Healthcare. Dr. Sanjeev Kumar, a senior laparoscopic surgeon in Patna with extensive experience at IGIMS and Safdarjung Hospital, performs this minimally invasive procedure to safely remove the inflamed appendix through 2–3 tiny keyhole incisions.
 
 Appendicitis is a medical emergency — the inflamed appendix can rupture if not treated promptly, leading to peritonitis and life-threatening infection. Recognising the urgency, our hospital provides 24-hour emergency surgical services for acute appendicitis cases across Patna and Bihar.
 
 The laparoscopic approach offers significant advantages over traditional open appendectomy: smaller incisions mean less pain, lower risk of wound infection, quicker recovery, and better cosmetic results. Most patients are able to walk the same evening and are discharged within 24–48 hours. Full recovery typically takes just 1–2 weeks, compared to 4–6 weeks with open surgery.
 
-Patients from Patna City, Danapur, Phulwari Sharif, Hajipur, and other parts of Bihar trust our team for emergency appendicitis surgery. If you or a family member is experiencing sudden severe pain in the lower right abdomen, fever, nausea, or vomiting, seek immediate medical attention. Contact Patna Lapro and Stone Healthcare at 9334097925 for emergency consultation.`,
+Patients from Patna City, Danapur, Phulwari Sharif, Hajipur, and other parts of Bihar trust our team for emergency appendicitis surgery. If you or a family member is experiencing sudden severe pain in the lower right abdomen, fever, nausea, or vomiting, seek immediate medical attention. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925 for emergency consultation.`,
         indications: ['Acute appendicitis', 'Recurrent appendicitis'],
         benefits: ['Same-day discharge', 'Less pain', 'Faster return to normal life'],
         preparation: ['Ultrasound or CT scan', 'CBC, CRP blood tests'],
@@ -79,7 +79,7 @@ Patients from Patna City, Danapur, Phulwari Sharif, Hajipur, and other parts of 
         duration: '30 min – 3 hrs',
         recovery: '2–10 days',
         description: 'Comprehensive laparoscopic surgery for all abdominal conditions — gallbladder, appendix, hernia, intestinal, liver, and gynaecological procedures.',
-        longDescription: `Laparoscopic Abdominal Surgery (लैप्रोस्कोपिक पेट की सर्जरी) at Patna Lapro and Stone Healthcare covers the full spectrum of minimally invasive abdominal procedures. Dr. Sanjeev Kumar (MBBS, MS), with 27+ years of surgical expertise and training at IGIMS Patna and Safdarjung Hospital New Delhi, performs advanced laparoscopic operations for virtually every abdominal condition.
+        longDescription: `Laparoscopic Abdominal Surgery (लैप्रोस्कोपिक पेट की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare covers the full spectrum of minimally invasive abdominal procedures. Dr. Sanjeev Kumar (MBBS, MS), with 21+ years of surgical expertise and training at IGIMS Patna and Safdarjung Hospital New Delhi, performs advanced laparoscopic operations for virtually every abdominal condition.
 
 Our laparoscopic capabilities include cholecystectomy (gallbladder removal), appendectomy, hernia repair (inguinal, umbilical, incisional), intestinal surgery, liver cyst drainage, splenectomy, ovarian cystectomy, and more. All procedures are performed through 2–4 small keyhole incisions (0.5–1.5 cm), offering patients significantly less pain, faster recovery, shorter hospital stay, and minimal scarring compared to traditional open surgery.
 
@@ -103,13 +103,13 @@ Patients from across Patna, Bihar — including Gaya, Muzaffarpur, Bhagalpur, Da
         duration: '45–90 min',
         recovery: '3–7 days',
         description: 'Advanced laparoscopic hernia repair using TEP or TAPP technique with mesh placement for inguinal, umbilical, and incisional hernias.',
-        longDescription: `Laparoscopic Hernia Repair (लैप्रोस्कोपिक हर्निया सर्जरी) at Patna Lapro and Stone Healthcare is performed using the TEP (Totally Extra-Peritoneal) or TAPP (Trans-Abdominal Pre-Peritoneal) technique. Dr. Sanjeev Kumar specialises in tension-free mesh repair through 3 small keyhole incisions, offering a superior alternative to traditional open hernia surgery.
+        longDescription: `Laparoscopic Hernia Repair (लैप्रोस्कोपिक हर्निया सर्जरी) at Patna Gastro, Lapro and Stone Healthcare is performed using the TEP (Totally Extra-Peritoneal) or TAPP (Trans-Abdominal Pre-Peritoneal) technique. Dr. Sanjeev Kumar specialises in tension-free mesh repair through 3 small keyhole incisions, offering a superior alternative to traditional open hernia surgery.
 
 The laparoscopic approach is particularly advantageous for bilateral (both-sided) inguinal hernias and recurrent hernias, as both sides can be repaired through the same three incisions. A lightweight mesh is placed behind the abdominal wall muscles to reinforce the weak area, providing a durable repair with very low recurrence rates (less than 1–2%).
 
 Patients experience significantly less post-operative pain, can walk within hours of surgery, and return to normal activities within 1–2 weeks — compared to 4–6 weeks with open surgery. This is especially beneficial for working professionals and labourers in Patna and Bihar who cannot afford prolonged rest.
 
-If you have a swelling in the groin, around the navel, or at a previous surgical scar that increases on standing or coughing, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare. Call 9334097925 for an appointment.`,
+If you have a swelling in the groin, around the navel, or at a previous surgical scar that increases on standing or coughing, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare. Call 9334097925 for an appointment.`,
         indications: ['Inguinal hernia (one or both sides)', 'Umbilical hernia', 'Incisional hernia', 'Recurrent hernia'],
         benefits: ['Tension-free mesh repair', 'Both sides repaired in one surgery', 'Less pain', 'Faster return to work'],
         preparation: ['Ultrasound abdomen', 'Blood tests (CBC, PT/INR)', 'ECG & anaesthesia fitness'],
@@ -129,7 +129,7 @@ If you have a swelling in the groin, around the navel, or at a previous surgical
         duration: '2–3 hrs',
         recovery: '7–14 days',
         description: 'Laparoscopic bariatric surgery for morbid obesity — sleeve gastrectomy and gastric bypass for sustainable weight loss.',
-        longDescription: `Bariatric Surgery (मोटापा कम करने की सर्जरी) at Patna Lapro and Stone Healthcare offers a life-changing solution for patients suffering from morbid obesity (BMI > 35) and obesity-related health conditions such as type 2 diabetes, hypertension, sleep apnoea, and joint problems. Dr. Sanjeev Kumar performs laparoscopic sleeve gastrectomy and Roux-en-Y gastric bypass — the two most effective and globally proven bariatric procedures.
+        longDescription: `Bariatric Surgery (मोटापा कम करने की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare offers a life-changing solution for patients suffering from morbid obesity (BMI > 35) and obesity-related health conditions such as type 2 diabetes, hypertension, sleep apnoea, and joint problems. Dr. Sanjeev Kumar performs laparoscopic sleeve gastrectomy and Roux-en-Y gastric bypass — the two most effective and globally proven bariatric procedures.
 
 Laparoscopic Sleeve Gastrectomy involves removing approximately 75–80% of the stomach, creating a narrow tube-shaped stomach that limits food intake and reduces hunger hormones. Patients typically lose 60–70% of their excess weight within 12–18 months.
 
@@ -137,7 +137,7 @@ Gastric Bypass additionally reroutes the small intestine to reduce calorie absor
 
 Obesity is a growing health concern in Bihar, with sedentary lifestyles and dietary changes contributing to rising BMI levels across Patna, Gaya, Muzaffarpur, and other cities. Bariatric surgery is not cosmetic — it is a medically necessary procedure that can reverse diabetes, normalise blood pressure, and add years to life.
 
-Consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna 800001. Call 9334097925 for a bariatric surgery evaluation.`,
+Consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna 800001. Call 9334097925 for a bariatric surgery evaluation.`,
         indications: ['BMI > 35 (morbid obesity)', 'BMI > 30 with diabetes/hypertension', 'Failed diet and exercise programs'],
         benefits: ['60–70% excess weight loss', 'Diabetes remission', 'Improved heart health', 'Better quality of life'],
         preparation: ['Endocrinology evaluation', 'Psychiatric counselling', 'Endoscopy', 'Blood tests & ECG'],
@@ -174,11 +174,11 @@ Consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, Sri Krishna Nagar
         duration: '60–180 min',
         recovery: '3–5 days',
         description: 'Minimally invasive surgical procedure to remove large kidney stones (>2 cm) through a small puncture in the back.',
-        longDescription: `PCNL (Percutaneous Nephrolithotomy) is the most effective surgical procedure for removing large kidney stones (गुर्दे की बड़ी पथरी) greater than 2 cm in size, including complex staghorn calculi. At Patna Lapro and Stone Healthcare, Dr. Sanjeev Kumar — a renowned stone and laparoscopic specialist in Patna — performs PCNL with a high success rate and minimal complications.
+        longDescription: `PCNL (Percutaneous Nephrolithotomy) is the most effective surgical procedure for removing large kidney stones (गुर्दे की बड़ी पथरी) greater than 2 cm in size, including complex staghorn calculi. At Patna Gastro, Lapro and Stone Healthcare, Dr. Sanjeev Kumar — a renowned stone and laparoscopic specialist in Patna — performs PCNL with a high success rate and minimal complications.
 
 During PCNL, a small puncture (approximately 1 cm) is made in the patient's back under fluoroscopic (X-ray) and ultrasound guidance. Through this tract, a nephroscope is inserted directly into the kidney. The stone is then fragmented using pneumatic or ultrasonic lithotripsy and the fragments are extracted. For very large or hard stones, laser energy may also be used. A DJ stent is typically placed to ensure smooth urine drainage and is removed after 2–4 weeks.
 
-Bihar has one of the highest incidences of kidney stones in India due to climatic conditions, hard water, and dietary habits. Patients from across Bihar — Patna, Gaya, Bhagalpur, Muzaffarpur, Chapra, Darbhanga, and Purnea — visit Patna Lapro and Stone Healthcare for expert stone management. Dr. Sanjeev Kumar's extensive training at IGIMS Patna and Safdarjung Hospital New Delhi ensures internationally standardised surgical protocols for every patient.
+Bihar has one of the highest incidences of kidney stones in India due to climatic conditions, hard water, and dietary habits. Patients from across Bihar — Patna, Gaya, Bhagalpur, Muzaffarpur, Chapra, Darbhanga, and Purnea — visit Patna Gastro, Lapro and Stone Healthcare for expert stone management. Dr. Sanjeev Kumar's extensive training at IGIMS Patna and Safdarjung Hospital New Delhi ensures internationally standardised surgical protocols for every patient.
 
 The advantages of PCNL over open surgery include a much smaller incision, significantly less blood loss, shorter hospital stay (3–5 days), and faster recovery. Most patients can return to light work within a week. If you have been diagnosed with a large kidney stone or are experiencing severe flank pain, blood in urine, or recurrent urinary infections, schedule a consultation today. Call 9334097925 or visit us at L-35, Road No. 12, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
         indications: ['Large kidney stones >2 cm', 'Staghorn calculi'],
@@ -200,13 +200,13 @@ The advantages of PCNL over open surgery include a much smaller incision, signif
         duration: '90–180 min',
         recovery: '4–7 days',
         description: 'Surgical removal of the entire kidney or part containing the tumor for kidney cancer.',
-        longDescription: `Kidney Cancer Surgery (गुर्दे के कैंसर की सर्जरी) at Patna Lapro and Stone Healthcare includes both Radical Nephrectomy (complete kidney removal) and Partial Nephrectomy (tumour-only removal preserving the healthy kidney). Dr. Sanjeev Kumar, a senior surgeon in Patna with 27+ years of experience, carefully evaluates each case to determine the most appropriate surgical approach.
+        longDescription: `Kidney Cancer Surgery (गुर्दे के कैंसर की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare includes both Radical Nephrectomy (complete kidney removal) and Partial Nephrectomy (tumour-only removal preserving the healthy kidney). Dr. Sanjeev Kumar, a senior surgeon in Patna with 21+ years of experience, carefully evaluates each case to determine the most appropriate surgical approach.
 
 Renal Cell Carcinoma (RCC) is the most common form of kidney cancer in adults. When detected early, surgical resection offers the best chance of complete cure. For smaller tumours (< 4 cm), partial nephrectomy is preferred as it preserves maximum kidney function. For larger masses or those involving major vessels, radical nephrectomy with regional lymph node dissection is performed.
 
 At our centre in Patna, we utilise advanced imaging (Contrast CT/MRI) for precise preoperative staging and surgical planning. Our fully equipped ICU and anaesthesia team provide round-the-clock postoperative monitoring to ensure safe recovery.
 
-Patients across Bihar and eastern India choose Patna Lapro and Stone Healthcare for kidney cancer surgery due to Dr. Sanjeev Kumar's expertise, affordable treatment costs, and personalised care. If you have been diagnosed with a renal mass or kidney cancer, early consultation is critical. Contact us at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna.`,
+Patients across Bihar and eastern India choose Patna Gastro, Lapro and Stone Healthcare for kidney cancer surgery due to Dr. Sanjeev Kumar's expertise, affordable treatment costs, and personalised care. If you have been diagnosed with a renal mass or kidney cancer, early consultation is critical. Contact us at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna.`,
         indications: ['Renal cell carcinoma', 'Large renal mass'],
         benefits: ['Complete tumor clearance', 'Laparoscopic options available'],
         preparation: ['CT/MRI', 'Renal function tests'],
@@ -224,13 +224,13 @@ Patients across Bihar and eastern India choose Patna Lapro and Stone Healthcare 
         duration: '1–2 hrs',
         recovery: '5–10 days',
         description: 'Surgical management of bladder stones and benign prostate enlargement (BPH) through TURP or open prostatectomy.',
-        longDescription: `Bladder Stone and Prostate Surgery (मूत्राशय की पथरी और प्रोस्टेट सर्जरी) at Patna Lapro and Stone Healthcare addresses two common urological conditions — bladder calculi and benign prostatic hyperplasia (BPH). Dr. Sanjeev Kumar offers both TURP (Transurethral Resection of the Prostate) and open prostatectomy based on the size of the prostate and severity of symptoms.
+        longDescription: `Bladder Stone and Prostate Surgery (मूत्राशय की पथरी और प्रोस्टेट सर्जरी) at Patna Gastro, Lapro and Stone Healthcare addresses two common urological conditions — bladder calculi and benign prostatic hyperplasia (BPH). Dr. Sanjeev Kumar offers both TURP (Transurethral Resection of the Prostate) and open prostatectomy based on the size of the prostate and severity of symptoms.
 
 Bladder stones form when urine stagnates in the bladder, often due to an enlarged prostate obstructing the urinary outflow. Symptoms include painful urination, blood in urine, frequent urination, and difficulty passing urine. TURP is a minimally invasive endoscopic procedure where the enlarged prostate tissue is shaved from inside using a resectoscope — no external incision is needed.
 
 For very large prostates (> 80–100 grams), open prostatectomy may be recommended. Both procedures relieve urinary obstruction, improve urine flow, and allow simultaneous removal of bladder stones.
 
-BPH and bladder stones are extremely common in men above 50 years across Bihar. Patients from Patna, Gaya, Bhagalpur, Muzaffarpur, and Darbhanga visit Patna Lapro and Stone Healthcare for expert urological surgery. Contact us at L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001. Call 9334097925.`,
+BPH and bladder stones are extremely common in men above 50 years across Bihar. Patients from Patna, Gaya, Bhagalpur, Muzaffarpur, and Darbhanga visit Patna Gastro, Lapro and Stone Healthcare for expert urological surgery. Contact us at L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001. Call 9334097925.`,
         indications: ['Bladder stones', 'BPH with urinary retention', 'Recurrent UTI due to prostate enlargement'],
         benefits: ['No external incision (TURP)', 'Immediate relief of urinary symptoms', 'Short hospital stay'],
         preparation: ['Urine culture', 'PSA blood test', 'Ultrasound KUB', 'Uroflowmetry'],
@@ -254,7 +254,7 @@ BPH and bladder stones are extremely common in men above 50 years across Bihar. 
     category: 'Digestive',
     available: 'OPD Hours',
     description: 'Expert surgical and medical management of liver conditions, including cyst drainages, trauma repair, and resections.',
-    longDescription: `The Liver Disorders department at Patna Lapro and Stone Healthcare provides specialized medical and surgical care for hepatological diseases. Our services include percutaneous drainage of liver abscesses, surgical management of benign and malignant liver tumors (hepatectomy), and emergency treatment for liver trauma. Under the guidance of Dr. Sanjeev Kumar, patients receive comprehensive care supported by our fully equipped ICU and round-the-clock anaesthesia team.`,
+    longDescription: `The Liver Disorders department at Patna Gastro, Lapro and Stone Healthcare provides specialized medical and surgical care for hepatological diseases. Our services include percutaneous drainage of liver abscesses, surgical management of benign and malignant liver tumors (hepatectomy), and emergency treatment for liver trauma. Under the guidance of Dr. Sanjeev Kumar, patients receive comprehensive care supported by our fully equipped ICU and round-the-clock anaesthesia team.`,
     features: ['Abscess Drainage', 'Cyst Drainage', 'Trauma Repair', 'Splenectomy', 'Portal Shunts'],
     costEstimate: '₹10,000 – ₹3,00,000',
     recoveryTime: '3 – 14 days',
@@ -267,13 +267,13 @@ BPH and bladder stones are extremely common in men above 50 years across Bihar. 
         duration: '30–60 min',
         recovery: '5–10 days',
         description: 'Percutaneous or laparoscopic drainage of liver abscesses and symptomatic cysts.',
-        longDescription: `Liver Cyst and Abscess Drainage (लिवर फोड़ा / सिस्ट ड्रेनेज) is a critical procedure for patients suffering from pyogenic or amoebic liver abscesses and large symptomatic hepatic cysts. At Patna Lapro and Stone Healthcare, Dr. Sanjeev Kumar provides both percutaneous (needle/pigtail catheter) and laparoscopic drainage options, selecting the best approach based on abscess size, location, and patient condition.
+        longDescription: `Liver Cyst and Abscess Drainage (लिवर फोड़ा / सिस्ट ड्रेनेज) is a critical procedure for patients suffering from pyogenic or amoebic liver abscesses and large symptomatic hepatic cysts. At Patna Gastro, Lapro and Stone Healthcare, Dr. Sanjeev Kumar provides both percutaneous (needle/pigtail catheter) and laparoscopic drainage options, selecting the best approach based on abscess size, location, and patient condition.
 
 Liver abscesses are common in Bihar and eastern India, often caused by amoebic infections or secondary bacterial spread. Left untreated, they can rupture into the abdominal or chest cavity causing life-threatening complications. Our hospital provides emergency evaluation with ultrasound-guided diagnostic aspiration followed by definitive drainage.
 
 The percutaneous approach involves placing a pigtail catheter under ultrasound or CT guidance, allowing the pus to drain continuously. For large, complex, or multiloculated abscesses, Dr. Sanjeev Kumar may perform laparoscopic drainage for more complete evacuation. Both methods avoid the need for major open surgery and offer rapid symptom relief — fever, pain, and toxaemia improve within 24–48 hours in most cases.
 
-If you are experiencing high fever with right upper abdominal pain, tenderness, and jaundice, seek urgent evaluation at Patna Lapro and Stone Healthcare. Our ICU and indoor care facilities at Sri Krishna Nagar, Patna ensure comprehensive round-the-clock monitoring. Call 9334097925 for emergency consultation.`,
+If you are experiencing high fever with right upper abdominal pain, tenderness, and jaundice, seek urgent evaluation at Patna Gastro, Lapro and Stone Healthcare. Our ICU and indoor care facilities at Sri Krishna Nagar, Patna ensure comprehensive round-the-clock monitoring. Call 9334097925 for emergency consultation.`,
         indications: ['Pyogenic liver abscess', 'Amoebic abscess', 'Symptomatic liver cysts'],
         benefits: ['Avoids major open surgery', 'Immediate relief from pain and fever'],
         preparation: ['USG/CT Abdomen', 'Coagulation profile'],
@@ -291,7 +291,7 @@ If you are experiencing high fever with right upper abdominal pain, tenderness, 
         duration: '2–5 hrs',
         recovery: '10–21 days',
         description: 'Major liver surgery including hepatectomy for liver cancer, liver trauma repair, and jaundice-related liver procedures.',
-        longDescription: `Liver Surgery (लिवर सर्जरी) at Patna Lapro and Stone Healthcare encompasses a wide range of complex hepatic procedures — from emergency liver trauma repair to planned hepatectomy for liver cancer and surgical management of obstructive jaundice. Dr. Sanjeev Kumar, with specialized training at IGIMS Patna and Safdarjung Hospital New Delhi, performs both open and laparoscopic liver surgeries with high precision.
+        longDescription: `Liver Surgery (लिवर सर्जरी) at Patna Gastro, Lapro and Stone Healthcare encompasses a wide range of complex hepatic procedures — from emergency liver trauma repair to planned hepatectomy for liver cancer and surgical management of obstructive jaundice. Dr. Sanjeev Kumar, with specialized training at IGIMS Patna and Safdarjung Hospital New Delhi, performs both open and laparoscopic liver surgeries with high precision.
 
 Liver Trauma Surgery: Road accidents and blunt abdominal injuries can cause liver lacerations and haemorrhage. Our hospital provides emergency surgical intervention including perihepatic packing, hepatorrhaphy (liver suturing), and segmental resection when needed.
 
@@ -299,7 +299,7 @@ Liver Cancer Surgery: Hepatocellular carcinoma (HCC) and metastatic liver tumour
 
 Jaundice-related Liver Surgery: Obstructive jaundice caused by bile duct tumours, hilar cholangiocarcinoma (Klatskin tumour), or benign strictures may require biliary bypass surgery or liver resection.
 
-Patients from across Bihar — Patna, Gaya, Bhagalpur, Muzaffarpur, Darbhanga, and Purnea — trust Patna Lapro and Stone Healthcare for complex liver surgery. Early diagnosis is critical for liver cancer. Contact us at L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001. Call 9334097925.`,
+Patients from across Bihar — Patna, Gaya, Bhagalpur, Muzaffarpur, Darbhanga, and Purnea — trust Patna Gastro, Lapro and Stone Healthcare for complex liver surgery. Early diagnosis is critical for liver cancer. Contact us at L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001. Call 9334097925.`,
         indications: ['Liver cancer (HCC)', 'Liver trauma', 'Obstructive jaundice', 'Liver abscess (complex)', 'Liver metastasis'],
         benefits: ['Expert hepatobiliary surgeon', 'Emergency trauma services', 'Both open and laparoscopic options'],
         preparation: ['CT scan triple-phase', 'Liver function tests', 'Tumour markers (AFP)', 'Anaesthesia fitness'],
@@ -319,7 +319,7 @@ Patients from across Bihar — Patna, Gaya, Bhagalpur, Muzaffarpur, Darbhanga, a
         duration: '15–30 min',
         recovery: '1–2 days',
         description: 'A needle is inserted under ultrasound guidance to take a tiny cylinder of liver tissue.',
-        longDescription: `Percutaneous Liver Biopsy (लिवर बायोप्सी) is a minimally invasive diagnostic procedure performed at Patna Lapro and Stone Healthcare under ultrasound guidance to obtain a small sample of liver tissue for microscopic analysis. Dr. Sanjeev Kumar, an experienced liver and gastro specialist in Patna, uses this procedure to accurately diagnose and stage various liver conditions.
+        longDescription: `Percutaneous Liver Biopsy (लिवर बायोप्सी) is a minimally invasive diagnostic procedure performed at Patna Gastro, Lapro and Stone Healthcare under ultrasound guidance to obtain a small sample of liver tissue for microscopic analysis. Dr. Sanjeev Kumar, an experienced liver and gastro specialist in Patna, uses this procedure to accurately diagnose and stage various liver conditions.
 
 Liver biopsy is the gold standard for diagnosing unexplained hepatomegaly, staging chronic hepatitis (Hepatitis B and C), grading liver fibrosis and cirrhosis, evaluating fatty liver disease (NASH/NAFLD), and investigating abnormal liver function tests. The histopathological analysis provides definitive information that blood tests and imaging alone cannot reveal.
 
@@ -327,7 +327,7 @@ The procedure is performed under local anaesthesia with real-time ultrasound gui
 
 Pre-procedure requirements include checking PT/INR (coagulation profile), platelet count, and fasting for 6 hours. Patients on blood thinners need to stop them as advised by the doctor.
 
-For accurate liver disease diagnosis in Patna and Bihar, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri. Call 9334097925.`,
+For accurate liver disease diagnosis in Patna and Bihar, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri. Call 9334097925.`,
         indications: ['Unexplained hepatomegaly', 'Chronic Hepatitis grading', 'Fatty liver staging'],
         benefits: ['Definitive tissue diagnosis', 'Highly accurate staging'],
         preparation: ['PT/INR test', 'Platelet count', 'Fast for 6 hours'],
@@ -362,7 +362,7 @@ For accurate liver disease diagnosis in Patna and Bihar, consult Dr. Sanjeev Kum
         duration: 'Varies',
         recovery: 'Ongoing',
         description: 'Long-term medical and enzyme replacement therapy for chronic pancreatic inflammation.',
-        longDescription: `Chronic Pancreatitis Management (पुरानी अग्नाशयशोथ का इलाज) requires a comprehensive, long-term approach combining pain management, enzyme supplementation, nutritional support, and surgical intervention when needed. At Patna Lapro and Stone Healthcare, Dr. Sanjeev Kumar specialises in the complete spectrum of chronic pancreatitis care — from medical therapy to complex surgical drainage procedures.
+        longDescription: `Chronic Pancreatitis Management (पुरानी अग्नाशयशोथ का इलाज) requires a comprehensive, long-term approach combining pain management, enzyme supplementation, nutritional support, and surgical intervention when needed. At Patna Gastro, Lapro and Stone Healthcare, Dr. Sanjeev Kumar specialises in the complete spectrum of chronic pancreatitis care — from medical therapy to complex surgical drainage procedures.
 
 Chronic pancreatitis is characterised by progressive inflammation and fibrosis of the pancreas, leading to severe abdominal pain, maldigestion, and diabetes. In Bihar, alcohol consumption and gallstone-related pancreatitis are the leading causes. Our approach begins with thorough evaluation including serum amylase/lipase levels, stool elastase testing, CT scan, and MRCP imaging to assess the degree of pancreatic damage, ductal dilatation, and calcifications.
 
@@ -385,13 +385,13 @@ Our centre in Patna provides ongoing follow-up care including nutritional counse
         duration: '4–7 hrs',
         recovery: '14–28 days',
         description: 'Complex surgery for pancreatic cancer including Whipple procedure (pancreaticoduodenectomy) and distal pancreatectomy.',
-        longDescription: `Pancreatic Cancer Surgery (अग्नाशय कैंसर सर्जरी) at Patna Lapro and Stone Healthcare includes the Whipple Procedure (Pancreaticoduodenectomy) for head-of-pancreas tumours and Distal Pancreatectomy for body/tail tumours. Dr. Sanjeev Kumar has extensive experience in complex pancreatic surgery, trained at premier institutions including IGIMS Patna and Safdarjung Hospital New Delhi.
+        longDescription: `Pancreatic Cancer Surgery (अग्नाशय कैंसर सर्जरी) at Patna Gastro, Lapro and Stone Healthcare includes the Whipple Procedure (Pancreaticoduodenectomy) for head-of-pancreas tumours and Distal Pancreatectomy for body/tail tumours. Dr. Sanjeev Kumar has extensive experience in complex pancreatic surgery, trained at premier institutions including IGIMS Patna and Safdarjung Hospital New Delhi.
 
 The Whipple Procedure is one of the most complex abdominal operations — it involves removing the head of the pancreas, the duodenum, part of the bile duct, the gallbladder, and sometimes part of the stomach. The remaining organs are then reconnected to restore digestive function. This surgery is the only curative option for pancreatic head cancer and ampullary carcinoma.
 
 Distal Pancreatectomy removes the body and tail of the pancreas, often along with the spleen, for tumours in these regions. Both procedures require meticulous surgical technique and comprehensive post-operative care.
 
-Pancreatic cancer often presents late with painless jaundice, weight loss, and back pain. Early diagnosis and surgery by an experienced surgeon significantly improve survival. Patients from Bihar and eastern India consult Dr. Sanjeev Kumar for pancreatic cancer evaluation. Contact Patna Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna.`,
+Pancreatic cancer often presents late with painless jaundice, weight loss, and back pain. Early diagnosis and surgery by an experienced surgeon significantly improve survival. Patients from Bihar and eastern India consult Dr. Sanjeev Kumar for pancreatic cancer evaluation. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna.`,
         indications: ['Pancreatic head cancer', 'Ampullary carcinoma', 'Pancreatic body/tail tumour', 'Chronic pancreatitis with mass'],
         benefits: ['Only curative option for pancreatic cancer', 'Expert surgical team', 'Comprehensive post-operative care'],
         preparation: ['CT pancreas protocol', 'CA 19-9 tumour marker', 'EUS (Endoscopic Ultrasound)', 'Nutritional optimisation'],
@@ -414,9 +414,9 @@ Pancreatic cancer often presents late with painless jaundice, weight loss, and b
     icon: '🩺',
     category: 'Digestive',
     available: 'OPD & Emergency',
-    description: 'Expert evaluation and treatment of obstructive jaundice, common bile duct stones, and biliary strictures.',
-    longDescription: `Our biliary department specializes in diagnosing and treating obstructive/surgical jaundice caused by common bile duct (CBD) stones, strictures, and biliary tract cancers. We offer advanced endoscopic interventions such as ERCP for stone extraction and biliary stenting, alongside surgical options like laparoscopic CBD exploration and hepaticojejunostomy reconstructions. We serve patients across Bihar with high-success biliary clearance protocols.`,
-    features: ['Jaundice care', 'ERCP', 'CBD Exploration', 'Hepaticojejunostomy'],
+    description: 'Expert evaluation and treatment of obstructive jaundice, common bile duct stones, abdominal fluid collection (ascites), and complex biliary strictures, cysts, and disorders.',
+    longDescription: `Our hepatobiliary department specializes in diagnosing and treating obstructive/surgical jaundice, common bile duct (CBD) stones, ascites (abdominal fluid accumulation), and complex biliary cysts or strictures. We offer advanced endoscopic interventions like ERCP for stone extraction and biliary stenting, therapeutic paracentesis (abdominal tapping) for ascites, alongside surgical options like laparoscopic CBD exploration, choledochal cyst excision, and hepaticojejunostomy reconstructions. We serve patients across Bihar with high-success biliary clearance and liver support protocols.`,
+    features: ['Jaundice care', 'ERCP', 'CBD Exploration', 'Hepaticojejunostomy', 'Ascites fluid tapping', 'Choledochal cyst surgery'],
     costEstimate: '₹20,000 – ₹1,80,000',
     recoveryTime: '3 – 10 days',
     order: 5,
@@ -428,7 +428,7 @@ Pancreatic cancer often presents late with painless jaundice, weight loss, and b
         duration: '120–240 min',
         recovery: '7–14 days',
         description: 'Surgical repair (Hepaticojejunostomy) of the narrowed bile duct to restore normal bile flow into the intestine.',
-        longDescription: `Biliary Stricture Reconstruction (पित्त नली की सिकुड़न का ऑपरेशन) is an advanced hepatobiliary surgery performed at Patna Lapro and Stone Healthcare to repair narrowed or damaged bile ducts. Dr. Sanjeev Kumar, with his extensive training in hepatobiliary surgery at IGIMS Patna and Safdarjung Hospital New Delhi, is one of the most experienced biliary surgeons in Patna, Bihar.
+        longDescription: `Biliary Stricture Reconstruction (पित्त नली की सिकुड़न का ऑपरेशन) is an advanced hepatobiliary surgery performed at Patna Gastro, Lapro and Stone Healthcare to repair narrowed or damaged bile ducts. Dr. Sanjeev Kumar, with his extensive training in hepatobiliary surgery at IGIMS Patna and Safdarjung Hospital New Delhi, is one of the most experienced biliary surgeons in Patna, Bihar.
 
 Biliary strictures can develop after gallbladder surgery (post-cholecystectomy bile duct injury), chronic inflammation, or as a result of previous infections. The narrowing blocks the normal flow of bile from the liver to the intestine, causing progressive jaundice, itching, recurrent cholangitis, and eventually liver damage if untreated.
 
@@ -436,7 +436,7 @@ The definitive surgical repair is Hepaticojejunostomy — a procedure where the 
 
 Pre-operative workup includes MRCP (Magnetic Resonance Cholangiopancreatography), liver function tests, and coagulation studies. The surgery is performed under general anaesthesia and patients typically stay in hospital for 7–14 days with careful monitoring of biliary output and liver function.
 
-For expert biliary surgery in Patna, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna. Call 9334097925 or 9942282987.`,
+For expert biliary surgery in Patna, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna. Call 9334097925 or 9942282987.`,
         indications: ['Benign biliary stricture', 'Post-cholecystectomy bile duct injury'],
         benefits: ['Definitive bypass of obstruction', 'Prevents biliary cirrhosis'],
         preparation: ['MRCP', 'Liver function tests'],
@@ -454,7 +454,7 @@ For expert biliary surgery in Patna, consult Dr. Sanjeev Kumar at Patna Lapro an
         duration: '2–4 hrs',
         recovery: '7–14 days',
         description: 'Surgery for CBD stone, CBD cancer, and CBD stricture — open and laparoscopic common bile duct exploration.',
-        longDescription: `Common Bile Duct Surgery (सामान्य पित्त नली की सर्जरी) at Patna Lapro and Stone Healthcare covers the entire spectrum of CBD pathologies — CBD stones (choledocholithiasis), CBD cancer (cholangiocarcinoma), and CBD stricture (narrowing of the bile duct). Dr. Sanjeev Kumar provides both open and laparoscopic CBD exploration based on the patient's condition.
+        longDescription: `Common Bile Duct Surgery (सामान्य पित्त नली की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare covers the entire spectrum of CBD pathologies — CBD stones (choledocholithiasis), CBD cancer (cholangiocarcinoma), and CBD stricture (narrowing of the bile duct). Dr. Sanjeev Kumar provides both open and laparoscopic CBD exploration based on the patient's condition.
 
 CBD Stones: When gallstones migrate into the common bile duct, they cause obstructive jaundice, cholangitis (bile duct infection), and pancreatitis. Treatment options include ERCP (endoscopic stone removal) and laparoscopic/open CBD exploration with stone extraction.
 
@@ -462,7 +462,7 @@ CBD Cancer (Cholangiocarcinoma): This is a serious malignancy of the bile duct t
 
 CBD Stricture: Post-surgical or inflammatory narrowing of the bile duct requires reconstructive surgery — hepaticojejunostomy — to bypass the strictured segment and restore bile flow.
 
-Patients from Patna, Bihar, and neighbouring states trust our centre for complex biliary surgery. Contact Patna Lapro and Stone Healthcare at 9334097925, L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+Patients from Patna, Bihar, and neighbouring states trust our centre for complex biliary surgery. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925, L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
         indications: ['CBD stones (choledocholithiasis)', 'CBD cancer (cholangiocarcinoma)', 'CBD stricture', 'Failed ERCP'],
         benefits: ['Complete stone clearance', 'Curative surgery for cancer', 'Reconstruction for strictures'],
         preparation: ['MRCP (MR Cholangiopancreatography)', 'LFT, PT/INR', 'CT scan', 'ERCP if indicated'],
@@ -482,13 +482,13 @@ Patients from Patna, Bihar, and neighbouring states trust our centre for complex
         duration: '2–3 hrs',
         recovery: '5–10 days',
         description: 'Minimally invasive laparoscopic exploration and clearance of common bile duct stones, often combined with cholecystectomy.',
-        longDescription: `Laparoscopic Common Bile Duct Exploration (लैप्रोस्कोपिक CBD एक्सप्लोरेशन) at Patna Lapro and Stone Healthcare is an advanced minimally invasive procedure to remove CBD stones without the need for open surgery. Dr. Sanjeev Kumar performs this technically demanding procedure using a combination of choledochoscopy (bile duct camera) and stone extraction through laparoscopic ports.
+        longDescription: `Laparoscopic Common Bile Duct Exploration (लैप्रोस्कोपिक CBD एक्सप्लोरेशन) at Patna Gastro, Lapro and Stone Healthcare is an advanced minimally invasive procedure to remove CBD stones without the need for open surgery. Dr. Sanjeev Kumar performs this technically demanding procedure using a combination of choledochoscopy (bile duct camera) and stone extraction through laparoscopic ports.
 
 This procedure is typically performed in combination with laparoscopic cholecystectomy — removing both the gallbladder and CBD stones in a single sitting. A small opening is made in the CBD, a choledochoscope is inserted to visualise and extract stones using a Dormia basket or balloon catheter, and the CBD is then closed primarily or over a T-tube.
 
 The laparoscopic approach offers all the advantages of minimally invasive surgery — less pain, faster recovery, shorter hospital stay, and minimal scarring. It is particularly useful when ERCP has failed to clear CBD stones or when combined surgery is needed.
 
-Patients from Patna and Bihar benefit from this single-stage procedure that avoids the need for multiple interventions. Contact Patna Lapro and Stone Healthcare at 9334097925 for consultation.`,
+Patients from Patna and Bihar benefit from this single-stage procedure that avoids the need for multiple interventions. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925 for consultation.`,
         indications: ['CBD stones with gallstones', 'Failed ERCP stone extraction', 'Large CBD stones'],
         benefits: ['Single-stage surgery', 'No open incision', 'Faster recovery', 'Combined with cholecystectomy'],
         preparation: ['MRCP', 'LFT', 'Coagulation profile', 'Anaesthesia fitness'],
@@ -500,6 +500,72 @@ Patients from Patna and Bihar benefit from this single-stage procedure that avoi
         faqs: [
           { question: 'Can CBD stones be removed laparoscopically?', answer: 'Yes, Dr. Sanjeev Kumar performs laparoscopic CBD exploration for stone removal, avoiding the need for open surgery.' },
         ],
+      },
+      {
+        name: 'Jaundice Management',
+        slug: 'jaundice-management-new',
+        cost: '₹5,000 – ₹40,000',
+        duration: 'Medical & Diagnostic',
+        recovery: 'Varies',
+        description: 'Detailed clinical assessment to differentiate medical vs. surgical jaundice, followed by targeted biliary decompression.',
+        longDescription: `Jaundice Management (पीलिया का इलाज) at Patna Gastro, Lapro and Stone Healthcare provides comprehensive evaluation and treatment for all causes of jaundice — from common medical hepatitis to complex surgical obstructive jaundice. Dr. Sanjeev Kumar, a Jaundice and Stone Specialist in Patna, differentiates between medical and surgical causes through systematic clinical assessment and targeted investigations.
+
+Jaundice (पीलिया) — the yellowing of skin and eyes due to elevated bilirubin levels — can be caused by liver diseases (medical jaundice), gallstones blocking the bile duct, tumours, or bile duct strictures (surgical/obstructive jaundice). Accurate diagnosis is essential because treatment approaches are fundamentally different.
+
+Our diagnostic workup includes complete liver function tests, hepatitis viral markers, ultrasound abdomen, MRCP, and CT scan as needed. For obstructive jaundice, Dr. Sanjeev Kumar provides definitive treatment through ERCP stenting, laparoscopic CBD exploration, or surgical hepaticojejunostomy bypass depending on the underlying cause.
+
+Red-flag symptoms requiring urgent evaluation include jaundice with high fever and rigors (cholangitis — a medical emergency), rapidly worsening jaundice, painless progressive jaundice (possible cancer), and severe itching with pale stools and dark urine. If you or a family member develops jaundice, seek prompt medical evaluation at Patna Gastro, Lapro and Stone Healthcare. Call 9334097925 or visit Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+        indications: ['Raised bilirubin levels', 'Pale stools, dark urine'],
+        benefits: ['Prevent hepatorenal syndrome', 'Relieves severe biliary symptoms'],
+        steps: [
+          { step: '01', title: 'Workup', desc: 'Review LFT, MRCP, and coagulation profile.' },
+          { step: '02', title: 'Biliary drainage', desc: 'Perform ERCP stenting or surgical bypass.' },
+        ],
+        faqs: [],
+      },
+      {
+        name: 'Ascites Care',
+        slug: 'ascites-care',
+        cost: '₹4,000 – ₹15,000',
+        duration: '30–60 min',
+        recovery: 'Immediate',
+        description: 'Therapeutic and diagnostic paracentesis (abdominal tap) to drain fluid from the peritoneal cavity for relief of bloating and respiratory discomfort.',
+        longDescription: `Ascites Care (पेट में पानी भरने का इलाज) at Patna Gastro, Lapro and Stone Healthcare includes diagnostic and therapeutic paracentesis — a procedure to drain excess fluid from the abdominal cavity. Dr. Sanjeev Kumar evaluates the underlying cause of ascites through comprehensive clinical assessment and fluid analysis.
+
+Ascites (abdominal fluid accumulation) can be caused by liver cirrhosis (most common), heart failure, kidney disease, peritoneal tuberculosis, or abdominal cancer. Patients experience progressive abdominal distension, weight gain, difficulty breathing, reduced appetite, and discomfort. Large-volume ascites can compress the diaphragm, causing significant respiratory compromise.
+
+Therapeutic paracentesis involves inserting a needle or catheter into the abdominal cavity under sterile precautions to drain the accumulated fluid, providing immediate symptom relief. The drained fluid is sent for analysis including cytology, cell count, protein, albumin, ADA (for TB), and culture to identify the underlying cause.
+
+Treatment of the underlying cause is then initiated — diuretics and salt restriction for liver-related ascites, antitubercular therapy for TB ascites, or oncological evaluation for malignant ascites. Regular follow-up ensures optimal fluid management and prevention of complications.
+
+For ascites evaluation and management in Patna, Bihar, consult Dr. Sanjeev Kumar at 9334097925.`,
+        indications: ['Tense ascites', 'Abdominal distension with breathlessness'],
+        benefits: ['Instant relief from pressure', 'Fluid analysis confirms cause (cardiac, liver, peritoneal TB)'],
+        steps: [
+          { step: '01', title: 'Paracentesis', desc: 'Needle inserted under sterile precautions; fluid drained and sent for cytology/ADA.' },
+        ],
+        faqs: [],
+      },
+      {
+        name: 'Biliary Disorder (Choledochal Cyst / Cholangitis)',
+        slug: 'biliary-disorder-cysts',
+        cost: '₹60,000 – ₹1,80,000',
+        duration: '120–240 min',
+        recovery: '7–12 days',
+        description: 'Advanced surgeries for congenital choledochal cysts (excision and reconstruction) and emergency drainage for severe biliary tract sepsis (cholangitis).',
+        longDescription: `Biliary Disorder Surgery — including Choledochal Cyst Excision and Cholangitis Emergency Management — at Patna Gastro, Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar, one of the most experienced hepatobiliary surgeons in Patna, Bihar.
+
+Choledochal cysts are congenital dilations of the bile ducts that carry a significant risk of developing biliary cancer (cholangiocarcinoma) if left untreated. The definitive treatment is complete surgical excision of the cyst followed by Roux-en-Y hepaticojejunostomy to reconstruct the biliary drainage. This complex surgery requires expertise in hepatobiliary anatomy and meticulous surgical technique, which Dr. Sanjeev Kumar provides based on his extensive training at IGIMS Patna and Safdarjung Hospital New Delhi.
+
+Cholangitis is an acute, life-threatening infection of the bile duct system, typically caused by bile duct stones or strictures. Patients present with Charcot's triad — jaundice, fever with rigors, and right upper abdominal pain. Severe cholangitis (Reynolds' pentad) includes confusion and hypotension, requiring emergency biliary drainage via ERCP or surgical decompression along with IV antibiotics and ICU care.
+
+Our hospital provides round-the-clock emergency care for acute cholangitis and elective surgery for choledochal cysts. For complex biliary disorder management in Patna, Bihar, contact Patna Gastro, Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+        indications: ['Choledochal cyst', 'Acute suppurative cholangitis'],
+        benefits: ['Eliminates risk of biliary cancer in cysts', 'Life-saving drainage in acute sepsis'],
+        steps: [
+          { step: '01', title: 'Excision', desc: 'Completely excise the cyst and reconstruct via hepaticojejunostomy.' },
+        ],
+        faqs: [],
       },
     ],
   },
@@ -525,7 +591,7 @@ Patients from Patna and Bihar benefit from this single-stage procedure that avoi
         duration: '60–120 min',
         recovery: '3–5 days',
         description: 'Surgical removal of the thyroid gland (total or partial) for nodules, goiter, or cancer.',
-        longDescription: `Thyroid Surgery or Thyroidectomy (थायरॉइड ऑपरेशन) is performed at Patna Lapro and Stone Healthcare by Dr. Sanjeev Kumar for patients with thyroid nodules, multinodular goitre, thyroid cancer, or compressive thyroid swelling. With over 27 years of surgical experience, Dr. Kumar ensures safe surgery with careful preservation of the recurrent laryngeal nerves and parathyroid glands.
+        longDescription: `Thyroid Surgery or Thyroidectomy (थायरॉइड ऑपरेशन) is performed at Patna Gastro, Lapro and Stone Healthcare by Dr. Sanjeev Kumar for patients with thyroid nodules, multinodular goitre, thyroid cancer, or compressive thyroid swelling. With over 21 years of surgical experience, Dr. Kumar ensures safe surgery with careful preservation of the recurrent laryngeal nerves and parathyroid glands.
 
 The procedure can be a Total Thyroidectomy (removal of the entire gland) for cancer or large goitres, or a Hemithyroidectomy (removal of one lobe) for benign nodules. The incision is made in a natural skin crease in the neck (collar incision) for an excellent cosmetic result, with the scar becoming nearly invisible over time.
 
@@ -549,13 +615,13 @@ Patients from Patna, Gaya, Jehanabad, Aurangabad, Nawada, and other districts of
         duration: '45–90 min',
         recovery: '1–2 days',
         description: 'Surgical creation of an arteriovenous anastomosis in the arm to establish hemodialysis access.',
-        longDescription: `AV Fistula Surgery (एवी फिस्टुला सर्जरी) is a life-sustaining vascular procedure performed at Patna Lapro and Stone Healthcare for patients with end-stage renal disease (ESRD) who require long-term hemodialysis. Dr. Sanjeev Kumar creates durable arteriovenous fistulas in the forearm or upper arm to provide reliable dialysis access.
+        longDescription: `AV Fistula Surgery (एवी फिस्टुला सर्जरी) is a life-sustaining vascular procedure performed at Patna Gastro, Lapro and Stone Healthcare for patients with end-stage renal disease (ESRD) who require long-term hemodialysis. Dr. Sanjeev Kumar creates durable arteriovenous fistulas in the forearm or upper arm to provide reliable dialysis access.
 
 An AV fistula is created by surgically connecting an artery to a vein, usually in the non-dominant arm. Over 6–8 weeks, the increased blood flow causes the vein to enlarge and strengthen (maturation), creating a robust access point for repeated dialysis needle insertions. Compared to temporary dialysis catheters, a well-functioning AV fistula has lower infection rates, longer lifespan, and better dialysis outcomes.
 
 Pre-operative assessment includes Doppler venous mapping of the arm to identify the best artery-vein combination. The procedure is performed under local or regional anaesthesia and takes 45–90 minutes. Patients are discharged the same day or next morning and begin using the fistula for dialysis after 6 weeks of maturation.
 
-For kidney disease patients in Patna and Bihar requiring dialysis access surgery, Patna Lapro and Stone Healthcare offers expert AV fistula creation at affordable costs. Contact us at 9334097925, L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+For kidney disease patients in Patna and Bihar requiring dialysis access surgery, Patna Gastro, Lapro and Stone Healthcare offers expert AV fistula creation at affordable costs. Contact us at 9334097925, L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
         indications: ['End-stage renal disease (ESRD)', 'Requirement of hemodialysis'],
         benefits: ['Long-lasting access', 'Low infection rates compared to lines'],
         preparation: ['Venous mapping doppler'],
@@ -573,13 +639,13 @@ For kidney disease patients in Patna and Bihar requiring dialysis access surgery
         duration: 'Variable',
         recovery: 'Depends on condition',
         description: 'Fully equipped ICU managed by highly qualified anaesthetic doctors for post-surgical and critical care management.',
-        longDescription: `ICU & Critical Care Management (आईसीयू और क्रिटिकल केयर) at Patna Lapro and Stone Healthcare provides round-the-clock intensive care managed by highly qualified anaesthetic doctors and trained nursing staff. Our ICU is equipped with modern ventilators, multi-parameter monitors, infusion pumps, central oxygen supply, and emergency resuscitation equipment.
+        longDescription: `ICU & Critical Care Management (आईसीयू और क्रिटिकल केयर) at Patna Gastro, Lapro and Stone Healthcare provides round-the-clock intensive care managed by highly qualified anaesthetic doctors and trained nursing staff. Our ICU is equipped with modern ventilators, multi-parameter monitors, infusion pumps, central oxygen supply, and emergency resuscitation equipment.
 
 Post-surgical ICU care is critical for patients undergoing major operations such as Whipple procedure, liver resection, complex abdominal trauma repair, and pancreatic surgery. Our anaesthesia team ensures optimal pain management, haemodynamic monitoring, fluid balance, and early detection of complications.
 
 The ICU also manages medical emergencies including sepsis, multi-organ failure, severe pancreatitis, GI bleeding, and post-operative complications. Every patient receives personalised attention with continuous monitoring and family counselling.
 
-Patients from across Patna, Bihar — including referrals from Gaya, Muzaffarpur, Bhagalpur, and Darbhanga — benefit from our ICU facilities. Contact Patna Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+Patients from across Patna, Bihar — including referrals from Gaya, Muzaffarpur, Bhagalpur, and Darbhanga — benefit from our ICU facilities. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
         indications: ['Post-major surgery care', 'Sepsis', 'Multi-organ failure', 'Severe pancreatitis', 'GI bleeding'],
         benefits: ['24/7 anaesthetist coverage', 'Modern ICU equipment', 'Personalised critical care'],
         preparation: ['Referral from treating surgeon', 'Previous medical records'],
@@ -599,13 +665,13 @@ Patients from across Patna, Bihar — including referrals from Gaya, Muzaffarpur
         duration: '1–4 hrs',
         recovery: '5–14 days',
         description: 'Surgical correction of congenital abnormalities in children — including hernias, undescended testis, hypospadias, and intestinal malformations.',
-        longDescription: `Paediatric Congenital Disease Surgery (बच्चों की जन्मजात बीमारी सर्जरी) at Patna Lapro and Stone Healthcare addresses a range of congenital (birth-related) surgical conditions in infants and children. Dr. Sanjeev Kumar provides expert surgical care for congenital inguinal hernia, umbilical hernia, undescended testis (cryptorchidism), hypospadias, intestinal atresia, Hirschsprung's disease, and anorectal malformations.
+        longDescription: `Paediatric Congenital Disease Surgery (बच्चों की जन्मजात बीमारी सर्जरी) at Patna Gastro, Lapro and Stone Healthcare addresses a range of congenital (birth-related) surgical conditions in infants and children. Dr. Sanjeev Kumar provides expert surgical care for congenital inguinal hernia, umbilical hernia, undescended testis (cryptorchidism), hypospadias, intestinal atresia, Hirschsprung's disease, and anorectal malformations.
 
 Congenital hernias are one of the most common surgical conditions in children, especially premature babies. Undescended testis requires orchidopexy (surgical fixation of the testis into the scrotum) ideally before 1–2 years of age to preserve fertility and reduce cancer risk.
 
 Intestinal malformations such as duodenal atresia, jejunal atresia, and Hirschsprung's disease require specialised neonatal surgery. Our team provides safe anaesthesia and age-appropriate surgical techniques for the smallest patients.
 
-Parents from across Patna and Bihar trust our centre for paediatric surgical care. Contact Patna Lapro and Stone Healthcare at 9334097925, L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+Parents from across Patna and Bihar trust our centre for paediatric surgical care. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925, L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
         indications: ['Congenital hernia', 'Undescended testis', 'Hypospadias', 'Intestinal atresia', 'Anorectal malformation'],
         benefits: ['Age-appropriate surgical techniques', 'Safe paediatric anaesthesia', 'Short hospital stay'],
         preparation: ['Paediatric blood tests', 'Ultrasound', 'Anaesthesia fitness assessment'],
@@ -625,7 +691,7 @@ Parents from across Patna and Bihar trust our centre for paediatric surgical car
         duration: '2–4 hrs',
         recovery: '7–14 days',
         description: 'Splenectomy for splenic trauma, splenic disorders, and splenorenal shunt surgery for portal hypertension.',
-        longDescription: `Splenic Surgery (तिल्ली की सर्जरी) at Patna Lapro and Stone Healthcare includes emergency splenectomy for splenic trauma, elective splenectomy for haematological disorders, and Splenorenal Shunt surgery for portal hypertension with variceal bleeding.
+        longDescription: `Splenic Surgery (तिल्ली की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare includes emergency splenectomy for splenic trauma, elective splenectomy for haematological disorders, and Splenorenal Shunt surgery for portal hypertension with variceal bleeding.
 
 Splenic Trauma: The spleen is the most commonly injured abdominal organ in blunt trauma (road accidents, falls). While minor injuries can be managed conservatively, severe splenic lacerations with haemodynamic instability require emergency splenectomy. Dr. Sanjeev Kumar provides 24-hour emergency surgical services for splenic trauma.
 
@@ -653,13 +719,13 @@ Patients from Patna, Bihar trust our centre for complex splenic surgery. Contact
         duration: '30–60 min',
         recovery: 'Depends on condition',
         description: 'Neurology services managed by highly qualified neurosurgeon and neurophysician for brain, spine, and nerve disorders.',
-        longDescription: `Neurology & Neurosurgery Consultation (न्यूरोलॉजी और न्यूरोसर्जरी) at Patna Lapro and Stone Healthcare is managed by highly qualified neurosurgeons and neurophysicians. Our neurology services cover diagnosis and management of a wide range of brain, spine, and peripheral nerve disorders.
+        longDescription: `Neurology & Neurosurgery Consultation (न्यूरोलॉजी और न्यूरोसर्जरी) at Patna Gastro, Lapro and Stone Healthcare is managed by highly qualified neurosurgeons and neurophysicians. Our neurology services cover diagnosis and management of a wide range of brain, spine, and peripheral nerve disorders.
 
 Services include evaluation and management of headaches, epilepsy, stroke, Parkinson's disease, neuropathy, vertigo, disc prolapse, spinal cord compression, brain tumours, and head injuries. Our neurophysician provides detailed neurological examinations, nerve conduction studies, and treatment planning.
 
 Neurosurgical services include craniotomy for brain tumours, spinal decompression surgery, disc surgery, and management of traumatic brain injuries. Complex cases are managed in collaboration with our ICU team for comprehensive post-operative care.
 
-Patients from Patna, Bihar and surrounding districts benefit from specialist neurological care without travelling to metro cities. Contact Patna Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+Patients from Patna, Bihar and surrounding districts benefit from specialist neurological care without travelling to metro cities. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
         indications: ['Headaches & migraines', 'Epilepsy', 'Stroke', 'Disc prolapse', 'Brain tumours', 'Head injury'],
         benefits: ['Expert neurosurgeon & neurophysician', 'Comprehensive neurological workup', 'ICU backup for complex cases'],
         preparation: ['Previous MRI/CT reports', 'Medication list', 'Referral letter if available'],
@@ -696,13 +762,13 @@ Patients from Patna, Bihar and surrounding districts benefit from specialist neu
         duration: 'OPD consultation',
         recovery: 'Varies',
         description: 'Comprehensive medical assessment and therapeutic planning for general GI problems.',
-        longDescription: `Gastrointestinal Disorder Evaluation and Treatment (पेट की बीमारी का इलाज) at Patna Lapro and Stone Healthcare covers the full range of digestive problems — from common conditions like acidity, bloating, and IBS to more complex issues like inflammatory bowel disease and functional GI disorders. Dr. Sanjeev Kumar, a senior Gastro Specialist in Patna, provides thorough diagnostic workups and personalised treatment plans.
+        longDescription: `Gastrointestinal Disorder Evaluation and Treatment (पेट की बीमारी का इलाज) at Patna Gastro, Lapro and Stone Healthcare covers the full range of digestive problems — from common conditions like acidity, bloating, and IBS to more complex issues like inflammatory bowel disease and functional GI disorders. Dr. Sanjeev Kumar, a senior Gastro Specialist in Patna, provides thorough diagnostic workups and personalised treatment plans.
 
 Many patients in Patna and Bihar suffer from chronic digestive complaints such as acid reflux (GERD), persistent indigestion, irregular bowel habits, abdominal pain, and unexplained weight loss. Our approach begins with a detailed clinical history and physical examination, followed by targeted investigations including blood tests, stool analysis, ultrasound abdomen, and endoscopy when indicated.
 
 Treatment is tailored to the underlying cause — this may include dietary modification, medical therapy (proton pump inhibitors, antispasmodics, probiotics), lifestyle counselling, or referral for endoscopic/surgical intervention when necessary. Dr. Sanjeev Kumar's dual expertise in gastroenterology and surgery allows him to provide seamless care from diagnosis through to surgery if needed, all under one roof.
 
-Whether you are dealing with persistent stomach pain, chronic constipation, blood in stools, or unexplained digestive issues, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna. OPD consultation fee: ₹500. Call 9334097925 to book your appointment.`,
+Whether you are dealing with persistent stomach pain, chronic constipation, blood in stools, or unexplained digestive issues, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri, Patna. OPD consultation fee: ₹500. Call 9334097925 to book your appointment.`,
         indications: ['Chronic abdominal pain', 'Bloating', 'Indigestion'],
         benefits: ['Expert diagnostic workup', 'Dietary and medical management'],
         preparation: ['Bring previous records'],
@@ -719,13 +785,13 @@ Whether you are dealing with persistent stomach pain, chronic constipation, bloo
         duration: 'Variable',
         recovery: '1–7 days',
         description: 'Comprehensive management of GERD including medical therapy, lifestyle modification, and anti-reflux surgery (fundoplication).',
-        longDescription: `GERD Management (गैस्ट्रो-इसोफेगल रिफ्लक्स डिजीज का इलाज) at Patna Lapro and Stone Healthcare provides complete care for acid reflux — from medical management to laparoscopic anti-reflux surgery. Dr. Sanjeev Kumar evaluates each patient with upper GI endoscopy, pH monitoring, and manometry to determine the best treatment approach.
+        longDescription: `GERD Management (गैस्ट्रो-इसोफेगल रिफ्लक्स डिजीज का इलाज) at Patna Gastro, Lapro and Stone Healthcare provides complete care for acid reflux — from medical management to laparoscopic anti-reflux surgery. Dr. Sanjeev Kumar evaluates each patient with upper GI endoscopy, pH monitoring, and manometry to determine the best treatment approach.
 
 GERD occurs when stomach acid repeatedly flows back into the oesophagus, causing heartburn, chest pain, regurgitation, chronic cough, and difficulty swallowing. Long-standing GERD can lead to Barrett's oesophagus and oesophageal cancer.
 
 Treatment begins with lifestyle modifications (diet changes, weight loss, elevation of head during sleep) and medications (PPIs — proton pump inhibitors). When medical therapy fails or complications develop, laparoscopic Nissen Fundoplication is performed — the upper part of the stomach is wrapped around the lower oesophagus to create a new valve mechanism preventing reflux.
 
-GERD is increasingly common across Patna and Bihar due to changing dietary habits, stress, and obesity. Contact Patna Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+GERD is increasingly common across Patna and Bihar due to changing dietary habits, stress, and obesity. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
         indications: ['Chronic heartburn', 'Acid regurgitation', 'Barrett\'s oesophagus', 'Failed medical therapy'],
         benefits: ['Complete GERD workup', 'Medical and surgical options', 'Laparoscopic fundoplication'],
         preparation: ['Upper GI endoscopy', 'pH monitoring', 'Oesophageal manometry'],
@@ -745,7 +811,7 @@ GERD is increasingly common across Patna and Bihar due to changing dietary habit
         duration: '2–5 hrs',
         recovery: '10–21 days',
         description: 'Surgical management of complications of ulcerative colitis and Crohn\'s disease — colectomy, strictureplasty, and abscess drainage.',
-        longDescription: `Ulcerative Colitis & Crohn's Disease Surgery (अल्सरेटिव कोलाइटिस और क्रोन रोग सर्जरी) at Patna Lapro and Stone Healthcare provides surgical management for patients with inflammatory bowel disease (IBD) who have failed medical therapy or developed complications.
+        longDescription: `Ulcerative Colitis & Crohn's Disease Surgery (अल्सरेटिव कोलाइटिस और क्रोन रोग सर्जरी) at Patna Gastro, Lapro and Stone Healthcare provides surgical management for patients with inflammatory bowel disease (IBD) who have failed medical therapy or developed complications.
 
 Ulcerative Colitis complications requiring surgery include toxic megacolon, perforation, massive bleeding, and dysplasia/cancer. Surgery involves total colectomy with ileal pouch-anal anastomosis (J-pouch) or permanent ileostomy.
 
@@ -753,7 +819,7 @@ Crohn's Disease complications include intestinal strictures causing obstruction,
 
 Dr. Sanjeev Kumar takes a conservative surgical approach — removing only the minimum bowel necessary to treat the complication while preserving as much intestine as possible.
 
-IBD is increasingly diagnosed in Bihar and eastern India. Patients from Patna and surrounding districts trust our centre for IBD surgery. Contact Patna Lapro and Stone Healthcare at 9334097925.`,
+IBD is increasingly diagnosed in Bihar and eastern India. Patients from Patna and surrounding districts trust our centre for IBD surgery. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925.`,
         indications: ['Toxic megacolon', 'Intestinal stricture', 'Fistula', 'Abscess', 'Failed medical therapy'],
         benefits: ['Bowel-preserving surgery when possible', 'Expert IBD surgical management', 'Multidisciplinary care'],
         preparation: ['Colonoscopy', 'CT enterography', 'Nutritional optimization', 'Stoma marking if needed'],
@@ -773,13 +839,13 @@ IBD is increasingly diagnosed in Bihar and eastern India. Patients from Patna an
         duration: '1–3 hrs',
         recovery: '5–14 days',
         description: 'Emergency and elective management of trichobezoar (hair ball in stomach) and upper gastrointestinal bleeding.',
-        longDescription: `Trichobezoar & Upper GI Bleeding Management (ट्राइकोबेज़ोर और ऊपरी जीआई ब्लीडिंग) at Patna Lapro and Stone Healthcare provides expert surgical care for two important upper GI conditions.
+        longDescription: `Trichobezoar & Upper GI Bleeding Management (ट्राइकोबेज़ोर और ऊपरी जीआई ब्लीडिंग) at Patna Gastro, Lapro and Stone Healthcare provides expert surgical care for two important upper GI conditions.
 
 Trichobezoar: A trichobezoar is a mass of ingested hair that accumulates in the stomach, most commonly seen in young females with trichotillomania (hair-pulling disorder). It can cause abdominal pain, vomiting, weight loss, and gastric obstruction. Large trichobezoars extending into the small intestine (Rapunzel syndrome) require surgical removal through gastrotomy (opening the stomach).
 
 Upper GI Bleeding: Causes include peptic ulcers, oesophageal varices (in liver cirrhosis), Mallory-Weiss tears, and gastric erosions. Management begins with resuscitation, blood transfusion, and emergency upper GI endoscopy for diagnosis and therapeutic intervention (adrenaline injection, band ligation, or clipping). When endoscopic therapy fails, emergency surgery is performed — oversewing of bleeding ulcers, gastrectomy, or devascularisation procedures for variceal bleeding.
 
-Dr. Sanjeev Kumar provides 24-hour emergency surgical services for upper GI bleeding at Patna Lapro and Stone Healthcare. Call 9334097925 for emergency consultation.`,
+Dr. Sanjeev Kumar provides 24-hour emergency surgical services for upper GI bleeding at Patna Gastro, Lapro and Stone Healthcare. Call 9334097925 for emergency consultation.`,
         indications: ['Trichobezoar (hair ball)', 'Peptic ulcer bleeding', 'Variceal bleeding', 'Mallory-Weiss tear'],
         benefits: ['24-hour emergency services', 'Endoscopic and surgical options', 'Expert GI surgeon'],
         preparation: ['Emergency resuscitation', 'Blood grouping & cross-match', 'Upper GI endoscopy'],
@@ -816,7 +882,7 @@ Dr. Sanjeev Kumar provides 24-hour emergency surgical services for upper GI blee
         duration: '15–30 min',
         recovery: 'Same day',
         description: 'A flexible endoscope is passed through the mouth to visualize the food pipe, stomach, and duodenum.',
-        longDescription: `Upper GI Endoscopy (ऊपरी एंडोस्कोपी) is a quick, safe, and highly accurate diagnostic and therapeutic procedure performed at Patna Lapro and Stone Healthcare. Dr. Sanjeev Kumar uses a flexible high-definition endoscope to directly visualise the oesophagus (food pipe), stomach, and duodenum, enabling precise diagnosis of conditions that X-rays and ultrasound may miss.
+        longDescription: `Upper GI Endoscopy (ऊपरी एंडोस्कोपी) is a quick, safe, and highly accurate diagnostic and therapeutic procedure performed at Patna Gastro, Lapro and Stone Healthcare. Dr. Sanjeev Kumar uses a flexible high-definition endoscope to directly visualise the oesophagus (food pipe), stomach, and duodenum, enabling precise diagnosis of conditions that X-rays and ultrasound may miss.
 
 This procedure is essential for patients experiencing persistent acidity, difficulty swallowing (dysphagia), chronic stomach pain, vomiting blood (hematemesis), unexplained weight loss, or anaemia. During the endoscopy, Dr. Kumar can also perform therapeutic interventions such as biopsy collection from suspicious lesions, polyp removal, bleeding control using cauterisation or clipping, and stricture dilation.
 
@@ -840,7 +906,7 @@ As a senior gastro surgeon in Patna with training at IGIMS and Safdarjung Hospit
         duration: '30–60 min',
         recovery: 'Same day',
         description: 'Endoscopic examination of the entire large intestine (colon) and rectum using a flexible colonoscope.',
-        longDescription: `Colonoscopy (कोलोनोस्कोपी) at Patna Lapro and Stone Healthcare is a comprehensive examination of the entire large intestine using a high-definition flexible colonoscope. Dr. Sanjeev Kumar, a senior colorectal and gastro surgeon in Patna, performs both diagnostic and therapeutic colonoscopies for patients across Bihar.
+        longDescription: `Colonoscopy (कोलोनोस्कोपी) at Patna Gastro, Lapro and Stone Healthcare is a comprehensive examination of the entire large intestine using a high-definition flexible colonoscope. Dr. Sanjeev Kumar, a senior colorectal and gastro surgeon in Patna, performs both diagnostic and therapeutic colonoscopies for patients across Bihar.
 
 Colonoscopy is recommended for patients with rectal bleeding, chronic diarrhoea, unexplained abdominal pain, iron-deficiency anaemia, abnormal CT findings, family history of colon cancer, and as a routine screening tool for colorectal cancer in patients over 45 years of age. During the procedure, the entire colon from rectum to caecum is carefully inspected.
 
@@ -884,13 +950,13 @@ For colonoscopy and colon cancer screening in Patna, Bihar, schedule an appointm
         duration: '120–240 min',
         recovery: '7–14 days',
         description: 'Surgical resection of colon or rectal cancer (Colectomy, Anterior Resection) to achieve complete oncological clearance with lymph node dissection.',
-        longDescription: `Colorectal Cancer Surgery (आंत के कैंसर की सर्जरी) at Patna Lapro and Stone Healthcare provides curative surgical treatment for colon and rectal cancers. Dr. Sanjeev Kumar, a senior surgeon with colorectal expertise in Patna, performs comprehensive cancer resections including right hemicolectomy, left hemicolectomy, sigmoid colectomy, and anterior resection with D2/D3 lymph node dissection.
+        longDescription: `Colorectal Cancer Surgery (आंत के कैंसर की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare provides curative surgical treatment for colon and rectal cancers. Dr. Sanjeev Kumar, a senior surgeon with colorectal expertise in Patna, performs comprehensive cancer resections including right hemicolectomy, left hemicolectomy, sigmoid colectomy, and anterior resection with D2/D3 lymph node dissection.
 
 Colorectal cancer is one of the most treatable cancers when detected early through screening colonoscopy. Surgical resection is the primary treatment and offers the best chance of cure. The affected segment of the bowel is removed with adequate margins along with its blood supply and draining lymph nodes. The healthy bowel ends are then reconnected (anastomosis) to restore intestinal continuity.
 
 For rectal cancers, total mesorectal excision (TME) is performed to minimise local recurrence. In some cases, a temporary stoma (colostomy or ileostomy) may be created and reversed after 3–6 months. Dr. Sanjeev Kumar's extensive training ensures meticulous surgical technique that maximises oncological outcomes while preserving bowel and sphincter function whenever possible.
 
-Patients from Patna, Bihar, and eastern India seeking expert colorectal cancer surgery at an affordable cost trust Patna Lapro and Stone Healthcare. Our comprehensive care includes pre-operative staging (CT scan, colonoscopy, tumour markers), ICU support, and post-operative follow-up. Call 9334097925 for consultation.`,
+Patients from Patna, Bihar, and eastern India seeking expert colorectal cancer surgery at an affordable cost trust Patna Gastro, Lapro and Stone Healthcare. Our comprehensive care includes pre-operative staging (CT scan, colonoscopy, tumour markers), ICU support, and post-operative follow-up. Call 9334097925 for consultation.`,
         indications: ['Colon adenocarcinoma', 'Rectal cancer', 'Large precancerous colonic polyps'],
         benefits: ['Oncological cure', 'Restoration of bowel continuity', 'Minimally invasive options'],
         preparation: ['Full colonoscopy', 'Contrast CT scan', 'Bowel prep', 'Nutritional check'],
@@ -908,13 +974,13 @@ Patients from Patna, Bihar, and eastern India seeking expert colorectal cancer s
         duration: '90–180 min',
         recovery: '5–10 days',
         description: 'Removal of benign or stromal tumors (GIST, lipomas) of the small and large bowel.',
-        longDescription: `Intestinal Tumor Excision (आंत के ट्यूमर का ऑपरेशन) is performed at Patna Lapro and Stone Healthcare for patients diagnosed with benign bowel tumours, Gastrointestinal Stromal Tumours (GIST), lipomas, and other growths of the small and large intestine. Dr. Sanjeev Kumar performs precise wedge resections or segmental bowel resections to remove the tumour-bearing segment while preserving maximum bowel length.
+        longDescription: `Intestinal Tumor Excision (आंत के ट्यूमर का ऑपरेशन) is performed at Patna Gastro, Lapro and Stone Healthcare for patients diagnosed with benign bowel tumours, Gastrointestinal Stromal Tumours (GIST), lipomas, and other growths of the small and large intestine. Dr. Sanjeev Kumar performs precise wedge resections or segmental bowel resections to remove the tumour-bearing segment while preserving maximum bowel length.
 
 Early surgical removal of intestinal tumours is important to prevent complications such as bleeding, bowel obstruction, intussusception, and potential malignant transformation. The surgical approach depends on the tumour size, location, and type — smaller tumours may be amenable to laparoscopic or limited resection, while larger or complex tumours require formal bowel resection with primary anastomosis.
 
 Pre-operative evaluation includes CT enterography, endoscopic biopsy (if the tumour is reachable), and nutritional assessment. Post-operatively, patients are carefully monitored for return of bowel function before starting oral feeding.
 
-For intestinal tumour evaluation and surgery in Patna and Bihar, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare. Call 9334097925.`,
+For intestinal tumour evaluation and surgery in Patna and Bihar, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare. Call 9334097925.`,
         indications: ['Symptomatic benign bowel tumors', 'Gastrointestinal Stromal Tumor (GIST)'],
         benefits: ['Prevents malignant conversion', 'Resolves local symptoms (bleeding, pain)'],
         preparation: ['CT Enterography', 'Endoscopic biopsy if reachable'],
@@ -931,7 +997,7 @@ For intestinal tumour evaluation and surgery in Patna and Bihar, consult Dr. San
         duration: '60–150 min',
         recovery: '7–12 days',
         description: 'Emergency decompression and relief of acute bowel blockage due to bands, adhesions, strictures, or tumors.',
-        longDescription: `Intestinal Obstruction Surgery (आंत में रुकावट का ऑपरेशन) is an emergency surgical procedure performed at Patna Lapro and Stone Healthcare for patients with acute bowel blockage. Dr. Sanjeev Kumar provides 24-hour emergency surgical care for all types of intestinal obstruction — including adhesive obstruction, strangulated hernias, volvulus, tumour-related blockage, and strictures.
+        longDescription: `Intestinal Obstruction Surgery (आंत में रुकावट का ऑपरेशन) is an emergency surgical procedure performed at Patna Gastro, Lapro and Stone Healthcare for patients with acute bowel blockage. Dr. Sanjeev Kumar provides 24-hour emergency surgical care for all types of intestinal obstruction — including adhesive obstruction, strangulated hernias, volvulus, tumour-related blockage, and strictures.
 
 Acute intestinal obstruction is a surgical emergency characterised by severe colicky abdominal pain, vomiting, abdominal distension, and inability to pass gas or stool. If not treated promptly, the blocked bowel can lose its blood supply (strangulation), leading to gangrene, perforation, and life-threatening peritonitis.
 
@@ -954,7 +1020,7 @@ As a former surgeon at IGIMS Patna and Safdarjung Hospital New Delhi, Dr. Sanjee
         duration: '3–5 hrs',
         recovery: '10–21 days',
         description: 'Radical surgery for colon and rectal cancer including hemicolectomy, anterior resection, and abdominoperineal resection.',
-        longDescription: `Large Bowel Cancer Surgery (बड़ी आंत के कैंसर की सर्जरी) at Patna Lapro and Stone Healthcare provides comprehensive surgical treatment for cancers of the colon and rectum. Dr. Sanjeev Kumar performs right hemicolectomy, left hemicolectomy, sigmoid colectomy, anterior resection, and abdominoperineal resection (APR) based on the tumour location and stage.
+        longDescription: `Large Bowel Cancer Surgery (बड़ी आंत के कैंसर की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare provides comprehensive surgical treatment for cancers of the colon and rectum. Dr. Sanjeev Kumar performs right hemicolectomy, left hemicolectomy, sigmoid colectomy, anterior resection, and abdominoperineal resection (APR) based on the tumour location and stage.
 
 Colorectal cancer is the third most common cancer worldwide and is increasingly diagnosed in Bihar due to dietary changes (high processed food, low fibre), sedentary lifestyle, and delayed screening. Symptoms include change in bowel habits, blood in stool, unexplained weight loss, and abdominal pain.
 
@@ -980,13 +1046,13 @@ Early-stage colorectal cancers have excellent cure rates with surgery alone. Adv
         duration: '2–4 hrs',
         recovery: '10–21 days',
         description: 'Emergency surgery for intestinal perforation and elective surgery for intestinal strictures causing obstruction.',
-        longDescription: `Intestinal Perforation & Stricture Surgery (आंत में छेद और सिकुड़न की सर्जरी) at Patna Lapro and Stone Healthcare provides both emergency and planned surgical management for bowel perforations and strictures.
+        longDescription: `Intestinal Perforation & Stricture Surgery (आंत में छेद और सिकुड़न की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare provides both emergency and planned surgical management for bowel perforations and strictures.
 
 Intestinal Perforation: A hole in the intestinal wall is a surgical emergency that causes peritonitis (infection of the abdominal cavity). Common causes include typhoid fever, tuberculosis (Koch's), peptic ulcer, trauma, and Crohn's disease. Surgery involves closure of the perforation (primary repair), resection of the damaged segment, or creation of a stoma (temporary colostomy/ileostomy) depending on the severity of contamination.
 
 Intestinal Stricture: Narrowing of the intestine causes recurrent abdominal pain, bloating, vomiting, and eventually complete bowel obstruction. Common causes include TB (tuberculosis of the intestine — very common in Bihar), Crohn's disease, post-surgical adhesions, and radiation. Surgery involves strictureplasty (widening the narrowed segment) or resection with anastomosis.
 
-Dr. Sanjeev Kumar provides 24-hour emergency surgical services for intestinal perforation. Our ICU facilities ensure comprehensive post-operative care. Contact Patna Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna.`,
+Dr. Sanjeev Kumar provides 24-hour emergency surgical services for intestinal perforation. Our ICU facilities ensure comprehensive post-operative care. Contact Patna Gastro, Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna.`,
         indications: ['Intestinal perforation (typhoid, TB, trauma)', 'Intestinal stricture (TB, Crohn\'s)', 'Post-surgical adhesive obstruction'],
         benefits: ['24-hour emergency surgery', 'ICU backup', 'Bowel-preserving techniques when possible'],
         preparation: ['Emergency X-ray erect abdomen', 'Blood tests', 'IV resuscitation'],
@@ -1024,7 +1090,7 @@ Dr. Sanjeev Kumar provides 24-hour emergency surgical services for intestinal pe
         duration: '30–60 min',
         recovery: '3–5 days',
         description: 'Modern surgical correction of bleeding and prolapsing piles using Stapler Haemorrhoidectomy (PPH) or open/laser methods.',
-        longDescription: `Piles (Haemorrhoids) Surgery (बवासीर का ऑपरेशन) at Patna Lapro and Stone Healthcare offers modern, painless treatment options for patients suffering from bleeding or prolapsing piles. Dr. Sanjeev Kumar performs Stapler Haemorrhoidectomy (PPH — Procedure for Prolapse and Haemorrhoids), the most advanced and least painful method available for piles treatment in Patna.
+        longDescription: `Piles (Haemorrhoids) Surgery (बवासीर का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare offers modern, painless treatment options for patients suffering from bleeding or prolapsing piles. Dr. Sanjeev Kumar performs Stapler Haemorrhoidectomy (PPH — Procedure for Prolapse and Haemorrhoids), the most advanced and least painful method available for piles treatment in Patna.
 
 Piles or haemorrhoids are swollen blood vessels in the anal canal that can cause painless bleeding during bowel movements, itching, mucus discharge, and prolapse (piles coming out). While Grade I and II piles can often be managed conservatively with dietary fibre, sitz baths, and medications, Grade III and IV piles with persistent bleeding or prolapse require surgical treatment.
 
@@ -1047,7 +1113,7 @@ Dr. Sanjeev Kumar also offers conventional haemorrhoidectomy and laser treatment
         duration: '30–45 min',
         recovery: '2–4 days',
         description: 'Lateral Internal Sphincterotomy (LIS) to relieve sphincter spasm and heal chronic painful anal tears.',
-        longDescription: `Fissure in Ano Repair (गुदा की दरार का इलाज) at Patna Lapro and Stone Healthcare provides effective surgical treatment for chronic anal fissures that have not responded to conservative medical management. Dr. Sanjeev Kumar performs Lateral Internal Sphincterotomy (LIS), the gold standard surgical procedure for chronic fissures, with excellent cure rates and minimal complications.
+        longDescription: `Fissure in Ano Repair (गुदा की दरार का इलाज) at Patna Gastro, Lapro and Stone Healthcare provides effective surgical treatment for chronic anal fissures that have not responded to conservative medical management. Dr. Sanjeev Kumar performs Lateral Internal Sphincterotomy (LIS), the gold standard surgical procedure for chronic fissures, with excellent cure rates and minimal complications.
 
 An anal fissure is a small tear in the lining of the anal canal that causes intense, sharp pain during and after bowel movements, often accompanied by a small amount of bright red blood. Chronic fissures develop when the internal anal sphincter goes into spasm, reducing blood supply to the tear and preventing natural healing.
 
@@ -1070,7 +1136,7 @@ If you have been suffering from severe pain during bowel movements, bleeding, or
         duration: '45–90 min',
         recovery: '2–6 weeks',
         description: 'Surgical closure of abnormal tracts connecting the anal canal to the perianal skin using Fistulotomy, LIFT, or Seton.',
-        longDescription: `Fistula-in-Ano Surgery (भगन्दर / फिस्टुला का ऑपरेशन) at Patna Lapro and Stone Healthcare provides definitive surgical treatment for anal fistulas — abnormal tunnels connecting the anal canal to the skin near the anus. Dr. Sanjeev Kumar is one of the most experienced fistula surgeons in Patna, offering multiple surgical techniques including Fistulotomy, LIFT (Ligation of Intersphincteric Fistula Tract), and Seton placement.
+        longDescription: `Fistula-in-Ano Surgery (भगन्दर / फिस्टुला का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare provides definitive surgical treatment for anal fistulas — abnormal tunnels connecting the anal canal to the skin near the anus. Dr. Sanjeev Kumar is one of the most experienced fistula surgeons in Patna, offering multiple surgical techniques including Fistulotomy, LIFT (Ligation of Intersphincteric Fistula Tract), and Seton placement.
 
 An anal fistula typically develops after a perianal abscess that doesn't heal completely. Patients experience persistent discharge of pus or blood from a small opening near the anus, recurrent swelling, pain, and discomfort. Without surgical treatment, fistulas do not heal on their own and often lead to recurrent painful abscesses.
 
@@ -1093,13 +1159,13 @@ Pre-operative assessment includes MRI pelvis or fistulogram to accurately map th
         duration: '30–45 min',
         recovery: '3–7 days',
         description: 'Minimally invasive stapler haemorrhoidectomy (MIPH) for grade 3–4 piles with less pain and faster recovery than conventional surgery.',
-        longDescription: `Stapler Haemorrhoidectomy — also known as MIPH (Minimally Invasive Procedure for Haemorrhoids) or PPH (Procedure for Prolapse and Haemorrhoids) — is an advanced surgical technique for treating grade 3 and 4 internal haemorrhoids (बवासीर) at Patna Lapro and Stone Healthcare.
+        longDescription: `Stapler Haemorrhoidectomy — also known as MIPH (Minimally Invasive Procedure for Haemorrhoids) or PPH (Procedure for Prolapse and Haemorrhoids) — is an advanced surgical technique for treating grade 3 and 4 internal haemorrhoids (बवासीर) at Patna Gastro, Lapro and Stone Healthcare.
 
 Unlike conventional haemorrhoidectomy which cuts and removes the piles tissue (causing significant post-operative pain), the stapler technique uses a circular stapling device to remove a ring of excess mucosa above the pile mass. This lifts the prolapsed piles back to their normal position and cuts off the blood supply, causing them to shrink. The staple line is placed in an area with fewer pain nerves, resulting in significantly less pain compared to traditional surgery.
 
 Advantages of MIPH include: minimal post-operative pain, faster recovery (return to work in 3–5 days vs 2–3 weeks), less bleeding, and no external wounds. It is particularly effective for circumferential (all-around) prolapsing piles.
 
-Piles are extremely common in Bihar due to dietary habits (low fibre, high spice), sedentary jobs, and chronic constipation. Patients from Patna, Gaya, Muzaffarpur, Bhagalpur, and across Bihar choose Patna Lapro and Stone Healthcare for expert pile treatment. Contact us at 9334097925, L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
+Piles are extremely common in Bihar due to dietary habits (low fibre, high spice), sedentary jobs, and chronic constipation. Patients from Patna, Gaya, Muzaffarpur, Bhagalpur, and across Bihar choose Patna Gastro, Lapro and Stone Healthcare for expert pile treatment. Contact us at 9334097925, L-35, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
         indications: ['Grade 3–4 internal haemorrhoids', 'Circumferential prolapsing piles', 'Recurrent piles after banding'],
         benefits: ['Minimal pain', 'Faster recovery', 'No external wounds', 'Day-care or overnight stay'],
         preparation: ['Proctoscopy', 'Blood tests (CBC, PT/INR)', 'Bowel preparation'],
@@ -1137,13 +1203,13 @@ Piles are extremely common in Bihar due to dietary habits (low fibre, high spice
         duration: '120–210 min',
         recovery: '7–14 days',
         description: 'Surgical extraction of calculi from the main pancreatic duct (Frey\'s procedure or Lateral Pancreaticojejunostomy) to relieve severe pain of chronic pancreatitis.',
-        longDescription: `Pancreatic Stone Surgery (अग्नाशय की पथरी का ऑपरेशन) at Patna Lapro and Stone Healthcare is a specialised procedure performed by Dr. Sanjeev Kumar for patients with chronic pancreatitis complicated by large pancreatic duct stones causing severe, debilitating abdominal pain. The surgery involves Frey's procedure or Lateral Pancreaticojejunostomy (LPJ) to decompress the obstructed pancreatic duct.
+        longDescription: `Pancreatic Stone Surgery (अग्नाशय की पथरी का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare is a specialised procedure performed by Dr. Sanjeev Kumar for patients with chronic pancreatitis complicated by large pancreatic duct stones causing severe, debilitating abdominal pain. The surgery involves Frey's procedure or Lateral Pancreaticojejunostomy (LPJ) to decompress the obstructed pancreatic duct.
 
 Pancreatic duct stones form as a consequence of long-standing chronic pancreatitis, often related to alcohol use or idiopathic causes. These calcified stones block the normal flow of pancreatic juice, causing duct dilatation, parenchymal damage, and excruciating pain that significantly impairs quality of life. Medical management alone is often insufficient for large ductal stones.
 
 During the Frey's/LPJ procedure, the main pancreatic duct is opened longitudinally, all stones and debris are carefully cleared, and the opened duct is anastomosed (connected) to a Roux-en-Y loop of the jejunum. This creates a permanent wide drainage pathway, providing long-term pain relief in over 80% of patients.
 
-Pre-operative MRCP and CT scan are essential to map the duct dilatation, stone load, and pancreatic parenchymal changes. Dr. Sanjeev Kumar's experience in complex hepatopancreaticobiliary surgery makes Patna Lapro and Stone Healthcare a trusted centre for pancreatic stone surgery in Bihar. Contact us at 9334097925.`,
+Pre-operative MRCP and CT scan are essential to map the duct dilatation, stone load, and pancreatic parenchymal changes. Dr. Sanjeev Kumar's experience in complex hepatopancreaticobiliary surgery makes Patna Gastro, Lapro and Stone Healthcare a trusted centre for pancreatic stone surgery in Bihar. Contact us at 9334097925.`,
         indications: ['Large stones in main pancreatic duct', 'Intractable pain in chronic pancreatitis'],
         benefits: ['Long-term pain relief', 'Decompression of pancreatic duct'],
         preparation: ['MRCP / CT Scan', 'Endocrine status evaluation'],
@@ -1160,7 +1226,7 @@ Pre-operative MRCP and CT scan are essential to map the duct dilatation, stone l
         duration: '90–180 min',
         recovery: '7–12 days',
         description: 'Reconstructive surgery to bypass narrowing (strictures) in the main pancreatic duct.',
-        longDescription: `Pancreatic Stricture Surgery at Patna Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar for patients with narrowing of the main pancreatic duct causing recurrent pancreatitis attacks and chronic abdominal pain. The surgery creates a bypass anastomosis to restore drainage of pancreatic secretions.
+        longDescription: `Pancreatic Stricture Surgery at Patna Gastro, Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar for patients with narrowing of the main pancreatic duct causing recurrent pancreatitis attacks and chronic abdominal pain. The surgery creates a bypass anastomosis to restore drainage of pancreatic secretions.
 
 Pancreatic duct strictures develop due to chronic inflammation, fibrosis, or previous pancreatic necrosis. The resulting obstruction causes backup of pancreatic enzymes, leading to recurring inflammation, pain, and progressive pancreatic damage. When endoscopic treatment is insufficient or unsuitable, surgical bypass provides definitive relief.
 
@@ -1183,13 +1249,13 @@ For expert pancreatic surgery in Patna and Bihar, consult Dr. Sanjeev Kumar at S
         duration: '60–120 min',
         recovery: '3–7 days',
         description: 'Laparoscopic or internal surgical drainage (Cystogastrostomy) of mature fluid collections following acute pancreatitis.',
-        longDescription: `Pancreatic Pseudocyst Drainage (अग्नाशय सिस्ट ड्रेनेज) at Patna Lapro and Stone Healthcare provides surgical relief for patients with large, symptomatic pancreatic pseudocysts that develop after acute pancreatitis. Dr. Sanjeev Kumar performs internal drainage via Cystogastrostomy — connecting the cyst cavity to the stomach — for complete, permanent resolution without external drainage bags.
+        longDescription: `Pancreatic Pseudocyst Drainage (अग्नाशय सिस्ट ड्रेनेज) at Patna Gastro, Lapro and Stone Healthcare provides surgical relief for patients with large, symptomatic pancreatic pseudocysts that develop after acute pancreatitis. Dr. Sanjeev Kumar performs internal drainage via Cystogastrostomy — connecting the cyst cavity to the stomach — for complete, permanent resolution without external drainage bags.
 
 Pancreatic pseudocysts are encapsulated collections of pancreatic fluid that form 4–6 weeks after an episode of acute pancreatitis. While small cysts may resolve spontaneously, large cysts (>6 cm) or those causing symptoms such as pain, early satiety, nausea, or biliary obstruction require intervention. Infected pseudocysts are a surgical emergency.
 
 The Cystogastrostomy procedure creates a wide opening between the posterior wall of the stomach and the anterior wall of the pseudocyst, allowing the contents to drain internally into the GI tract. This can be performed laparoscopically for a minimally invasive approach. Dr. Sanjeev Kumar's expertise ensures safe drainage with low recurrence rates.
 
-For pancreatic pseudocyst management in Patna, Bihar, contact Patna Lapro and Stone Healthcare at 9334097925.`,
+For pancreatic pseudocyst management in Patna, Bihar, contact Patna Gastro, Lapro and Stone Healthcare at 9334097925.`,
         indications: ['Symptomatic pseudocyst >6 cm', 'Infected pseudocyst'],
         benefits: ['Internal drainage without external bags', 'Rapid symptom relief'],
         preparation: ['CT scan confirming mature cyst wall'],
@@ -1206,13 +1272,13 @@ For pancreatic pseudocyst management in Patna, Bihar, contact Patna Lapro and St
         duration: 'ICU / Surgery',
         recovery: '14–30 days',
         description: 'Intensive ICU support and necrosectomy (surgical/laparoscopic cleanup of dead pancreatic tissue) for necrotizing pancreatitis.',
-        longDescription: `Pancreatic Necrosis Management at Patna Lapro and Stone Healthcare provides intensive, multidisciplinary critical care for patients with severe necrotizing pancreatitis — one of the most life-threatening abdominal emergencies. Dr. Sanjeev Kumar and our ICU team manage these complex cases with a step-up approach combining intensive care, percutaneous drainage, and surgical necrosectomy when required.
+        longDescription: `Pancreatic Necrosis Management at Patna Gastro, Lapro and Stone Healthcare provides intensive, multidisciplinary critical care for patients with severe necrotizing pancreatitis — one of the most life-threatening abdominal emergencies. Dr. Sanjeev Kumar and our ICU team manage these complex cases with a step-up approach combining intensive care, percutaneous drainage, and surgical necrosectomy when required.
 
 Necrotizing pancreatitis occurs when severe inflammation causes death of pancreatic tissue, which can become infected leading to sepsis and multi-organ failure. Management begins with aggressive ICU support including IV fluid resuscitation, pain control, nutritional support (enteral feeding), and organ function monitoring.
 
 When infected pancreatic necrosis is confirmed (by CT-guided aspiration or clinical deterioration despite antibiotics), surgical necrosectomy is performed. Dr. Sanjeev Kumar carefully removes all dead and infected tissue while preserving viable pancreas, followed by placement of large drainage tubes for continuous lavage. The step-up approach — starting with percutaneous drainage and escalating to surgery only when needed — has significantly improved survival rates.
 
-Our fully equipped ICU with 24/7 anaesthesia support makes Patna Lapro and Stone Healthcare one of the few centres in Patna capable of managing severe necrotizing pancreatitis. For emergency pancreatic care, call 9334097925.`,
+Our fully equipped ICU with 24/7 anaesthesia support makes Patna Gastro, Lapro and Stone Healthcare one of the few centres in Patna capable of managing severe necrotizing pancreatitis. For emergency pancreatic care, call 9334097925.`,
         indications: ['Infected pancreatic necrosis', 'Sepsis from severe pancreatitis'],
         benefits: ['Controls severe abdominal infection', 'Life-saving critical care'],
         preparation: ['Contrast CT scan', 'Organ support stabilization'],
@@ -1247,13 +1313,13 @@ Our fully equipped ICU with 24/7 anaesthesia support makes Patna Lapro and Stone
         duration: '20–30 min',
         recovery: '1–2 days',
         description: 'Painless laser vaporization of sentinel pile and sphincterotomy to heal anal tears quickly without open wounds.',
-        longDescription: `Fissure Laser Surgery (लेजर से फिशर का इलाज) at Patna Lapro and Stone Healthcare is the most advanced, painless method for treating chronic anal fissures. Dr. Sanjeev Kumar uses precision laser energy to vaporise the sentinel skin tag, relax the internal sphincter muscle, and promote healing of the fissure — all without any cuts, stitches, or open wounds.
+        longDescription: `Fissure Laser Surgery (लेजर से फिशर का इलाज) at Patna Gastro, Lapro and Stone Healthcare is the most advanced, painless method for treating chronic anal fissures. Dr. Sanjeev Kumar uses precision laser energy to vaporise the sentinel skin tag, relax the internal sphincter muscle, and promote healing of the fissure — all without any cuts, stitches, or open wounds.
 
 This procedure is ideal for patients who are anxious about traditional surgery or have a low pain threshold. The laser fiber is applied directly to the fissure area under short general or spinal anaesthesia. The controlled thermal energy seals nerve endings and blood vessels simultaneously, resulting in virtually no bleeding and minimal post-operative pain.
 
 The entire procedure takes just 20–30 minutes, and patients can return home the same day. Recovery is remarkably fast — most patients resume normal bowel movements within 24–48 hours with minimal discomfort. There are no open wounds to care for, reducing the risk of infection and the need for frequent dressings.
 
-Patna Lapro and Stone Healthcare is one of the few centres in Patna offering advanced laser treatment for anal fissures. Patients from across Bihar — including Patna, Gaya, Nalanda, Muzaffarpur, and Bhagalpur — choose laser fissure surgery for its painless, quick-recovery approach. Consult Dr. Sanjeev Kumar today. Call 9334097925.`,
+Patna Gastro, Lapro and Stone Healthcare is one of the few centres in Patna offering advanced laser treatment for anal fissures. Patients from across Bihar — including Patna, Gaya, Nalanda, Muzaffarpur, and Bhagalpur — choose laser fissure surgery for its painless, quick-recovery approach. Consult Dr. Sanjeev Kumar today. Call 9334097925.`,
         indications: ['Chronic anal fissure', 'Intense spasm', 'Fear of pain after bowel movement'],
         benefits: ['No cuts, no blood', 'Return home same day', 'Instant relief from sphincter spasm'],
         preparation: ['Enema morning of surgery'],
@@ -1269,13 +1335,13 @@ Patna Lapro and Stone Healthcare is one of the few centres in Patna offering adv
         duration: '45–90 min',
         recovery: '5–10 days',
         description: 'Surgical or laparoscopic drainage of large, complicated liver abscesses (pus collections) that fail needle aspiration.',
-        longDescription: `Liver Abscess Surgery (लिवर फोड़े का ऑपरेशन) at Patna Lapro and Stone Healthcare provides definitive surgical treatment for large, complicated liver abscesses that fail to respond to percutaneous needle aspiration or pigtail catheter drainage. Dr. Sanjeev Kumar performs both open and laparoscopic surgical drainage to ensure complete evacuation of the abscess cavity.
+        longDescription: `Liver Abscess Surgery (लिवर फोड़े का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare provides definitive surgical treatment for large, complicated liver abscesses that fail to respond to percutaneous needle aspiration or pigtail catheter drainage. Dr. Sanjeev Kumar performs both open and laparoscopic surgical drainage to ensure complete evacuation of the abscess cavity.
 
 Large liver abscesses (>5 cm), multiloculated collections, thick walled abscesses with solid debris, and cases with impending rupture into the chest or abdominal cavity require surgical intervention. The laparoscopic approach allows excellent visualization and thorough drainage with the benefits of minimal invasiveness — less pain, smaller scars, and faster recovery.
 
 Liver abscesses are particularly common in Bihar and eastern India due to the prevalence of amoebic dysentery and enteric infections. Prompt treatment is critical to prevent life-threatening complications including rupture, septicemia, and respiratory compromise. Our hospital provides emergency evaluation, ultrasound-guided diagnosis, and same-day surgical intervention when needed.
 
-For liver abscess treatment in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri. Call 9334097925 for emergency and OPD appointments.`,
+For liver abscess treatment in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri. Call 9334097925 for emergency and OPD appointments.`,
         indications: ['Large abscess >5 cm with risk of rupture', 'Failed percutaneous pigtail drainage'],
         benefits: ['Complete evacuation of pus', 'Prevents life-threatening rupture into lung or abdomen'],
         preparation: ['Ultrasound / CT Abdomen', 'LFT & PT/INR'],
@@ -1292,13 +1358,13 @@ For liver abscess treatment in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna 
         duration: '90–150 min',
         recovery: '7–12 days',
         description: 'Surgical excision or marsupialization of parasitic hydatid cysts in the liver using strict scolicidal agents to prevent recurrence.',
-        longDescription: `Hydatid Cyst of Liver surgery (लिवर हाइडैटिड सिस्ट का ऑपरेशन) at Patna Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar for patients with Echinococcus granulosus parasitic cysts in the liver. This complex surgery requires meticulous technique using scolicidal agents to prevent spillage and recurrence.
+        longDescription: `Hydatid Cyst of Liver surgery (लिवर हाइडैटिड सिस्ट का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar for patients with Echinococcus granulosus parasitic cysts in the liver. This complex surgery requires meticulous technique using scolicidal agents to prevent spillage and recurrence.
 
 Hydatid disease is caused by the tapeworm Echinococcus, transmitted through contact with infected dogs or contaminated food/water. The liver is the most common site of cyst formation. While small, asymptomatic cysts can be managed with Albendazole medication, large or complicated cysts require surgical excision.
 
 The surgical approach involves careful isolation of the cyst with hypertonic saline-soaked packs to prevent spillage, aspiration of cyst fluid, injection of scolicidal agent, and then excision of the germinal membrane and cyst wall. Care is taken to avoid anaphylactic reactions that can occur from cyst fluid spillage. Pre-operative Albendazole therapy is given for 2–4 weeks to reduce cyst viability.
 
-For hydatid cyst treatment and liver surgery in Patna, Bihar, trust Dr. Sanjeev Kumar's expertise at Patna Lapro and Stone Healthcare. Contact us at 9334097925.`,
+For hydatid cyst treatment and liver surgery in Patna, Bihar, trust Dr. Sanjeev Kumar's expertise at Patna Gastro, Lapro and Stone Healthcare. Contact us at 9334097925.`,
         indications: ['Hepatic Hydatid Cyst (Echinococcus)'],
         benefits: ['Complete removal of parasite', 'Prevents anaphylactic shock from rupture'],
         preparation: ['Echinococcus serology', 'CT Scan Abdomen', 'Albendazole therapy'],
@@ -1333,7 +1399,7 @@ For hydatid cyst treatment and liver surgery in Patna, Bihar, trust Dr. Sanjeev 
         duration: '45–90 min',
         recovery: '2–4 days',
         description: 'Laparoscopic removal of the gallbladder (Cholecystectomy) containing stones to treat biliary pain and prevent complications.',
-        longDescription: `Gallbladder Stone Surgery (पित्ताशय की पथरी का ऑपरेशन) at Patna Lapro and Stone Healthcare is performed laparoscopically by Dr. Sanjeev Kumar, one of the most experienced laparoscopic surgeons in Patna, Bihar. The procedure removes the entire gallbladder containing stones, providing permanent relief from biliary pain and preventing serious complications like cholecystitis, pancreatitis, and jaundice.
+        longDescription: `Gallbladder Stone Surgery (पित्ताशय की पथरी का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare is performed laparoscopically by Dr. Sanjeev Kumar, one of the most experienced laparoscopic surgeons in Patna, Bihar. The procedure removes the entire gallbladder containing stones, providing permanent relief from biliary pain and preventing serious complications like cholecystitis, pancreatitis, and jaundice.
 
 Gallbladder stones (Cholelithiasis) are extremely common in India, particularly among women. Symptoms include recurrent right upper abdominal pain after meals, nausea, bloating, and sometimes radiating pain to the back or right shoulder. Once stones become symptomatic, surgery is the definitive treatment — gallstones do not dissolve with medicines.
 
@@ -1354,13 +1420,13 @@ Benefits include minimal scarring, significantly less pain, hospital discharge w
         duration: '60–120 min',
         recovery: '3–5 days',
         description: 'Laparoscopic Common Bile Duct Exploration (LCBDE) or surgical extraction of stones lodged in the main bile duct.',
-        longDescription: `CBD Stone Removal (पित्त नली की पथरी निकालना) at Patna Lapro and Stone Healthcare is a specialised surgical procedure to extract stones from the Common Bile Duct (CBD). Dr. Sanjeev Kumar performs Laparoscopic Common Bile Duct Exploration (LCBDE) — a technique that allows simultaneous removal of CBD stones and the gallbladder in a single operation.
+        longDescription: `CBD Stone Removal (पित्त नली की पथरी निकालना) at Patna Gastro, Lapro and Stone Healthcare is a specialised surgical procedure to extract stones from the Common Bile Duct (CBD). Dr. Sanjeev Kumar performs Laparoscopic Common Bile Duct Exploration (LCBDE) — a technique that allows simultaneous removal of CBD stones and the gallbladder in a single operation.
 
 CBD stones can cause obstructive jaundice, cholangitis (life-threatening bile duct infection), and acute pancreatitis. They are often discovered during evaluation for gallbladder stones when liver function tests are deranged or when MRCP/ultrasound shows a dilated bile duct with stones.
 
 During LCBDE, the common bile duct is carefully opened (choledochotomy), and stones are flushed out or retrieved using balloon catheters or wire baskets. A T-tube or primary closure of the duct is performed based on the duct size. This laparoscopic approach avoids the need for a separate ERCP procedure and offers faster recovery than open surgery.
 
-For CBD stone treatment in Patna, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare. Our centre handles complex biliary stone cases with expertise refined over decades of practice. Call 9334097925.`,
+For CBD stone treatment in Patna, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare. Our centre handles complex biliary stone cases with expertise refined over decades of practice. Call 9334097925.`,
         indications: ['CBD stones on USG/MRCP causing blockage'],
         benefits: ['Clears duct blockage', 'Can be done alongside gallbladder removal'],
         steps: [
@@ -1375,7 +1441,7 @@ For CBD stone treatment in Patna, consult Dr. Sanjeev Kumar at Patna Lapro and S
         duration: '120–240 min',
         recovery: '7–12 days',
         description: 'Radical Cholecystectomy (excision of gallbladder with adjacent liver wedge and regional lymph nodes) for early gallbladder cancer.',
-        longDescription: `Gallbladder Cancer Surgery (पित्ताशय के कैंसर की सर्जरी) at Patna Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar for patients diagnosed with gallbladder carcinoma. The procedure involves Radical Cholecystectomy — removal of the gallbladder along with a wedge of adjacent liver tissue (segments IVb and V) and regional portal lymph node dissection for complete oncological clearance.
+        longDescription: `Gallbladder Cancer Surgery (पित्ताशय के कैंसर की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar for patients diagnosed with gallbladder carcinoma. The procedure involves Radical Cholecystectomy — removal of the gallbladder along with a wedge of adjacent liver tissue (segments IVb and V) and regional portal lymph node dissection for complete oncological clearance.
 
 Gallbladder cancer is often discovered incidentally after routine cholecystectomy for gallstones, or presents with painless jaundice and a gallbladder mass on imaging. Early-stage cancers (T1b and T2) are potentially curable with radical surgery. The extent of resection depends on the stage of disease determined by contrast CT scan, PET-CT, and intraoperative findings.
 
@@ -1396,7 +1462,7 @@ For gallbladder cancer evaluation and surgery in Patna, consult Dr. Sanjeev Kuma
         duration: 'Palliative / Resection',
         recovery: 'Varies',
         description: 'Surgical bypass, stenting, or palliative debulking to relieve obstructive jaundice and pain in late-stage gallbladder cancer.',
-        longDescription: `Advanced Gallbladder Cancer Care at Patna Lapro and Stone Healthcare provides palliative surgical and endoscopic interventions for patients with late-stage, inoperable gallbladder cancer. Dr. Sanjeev Kumar focuses on relieving obstructive jaundice, managing pain, and improving quality of life through hepaticojejunostomy bypass surgery, ERCP biliary stenting, and supportive care.
+        longDescription: `Advanced Gallbladder Cancer Care at Patna Gastro, Lapro and Stone Healthcare provides palliative surgical and endoscopic interventions for patients with late-stage, inoperable gallbladder cancer. Dr. Sanjeev Kumar focuses on relieving obstructive jaundice, managing pain, and improving quality of life through hepaticojejunostomy bypass surgery, ERCP biliary stenting, and supportive care.
 
 In advanced stages, gallbladder cancer can block the bile ducts causing deep jaundice, severe itching, poor appetite, and liver dysfunction. While curative surgery may not be possible, palliative biliary drainage provides significant symptomatic relief and allows patients to receive chemotherapy.
 
@@ -1435,7 +1501,7 @@ For advanced gallbladder cancer care in Patna, Bihar, consult our team at 933409
         duration: 'Long term medical',
         recovery: 'Ongoing control',
         description: 'Detailed counseling, viral load testing, and prescription of long-term antiviral suppressive medications (Tenofovir/Entecavir) for chronic Hepatitis B.',
-        longDescription: `Hepatitis B Management (हेपेटाइटिस बी का इलाज) at Patna Lapro and Stone Healthcare provides comprehensive, long-term antiviral therapy for patients with chronic Hepatitis B virus infection. Dr. Sanjeev Kumar, a liver and gastro specialist in Patna, offers expert evaluation, counselling, and treatment planning to suppress the virus and prevent liver cirrhosis and cancer.
+        longDescription: `Hepatitis B Management (हेपेटाइटिस बी का इलाज) at Patna Gastro, Lapro and Stone Healthcare provides comprehensive, long-term antiviral therapy for patients with chronic Hepatitis B virus infection. Dr. Sanjeev Kumar, a liver and gastro specialist in Patna, offers expert evaluation, counselling, and treatment planning to suppress the virus and prevent liver cirrhosis and cancer.
 
 Chronic Hepatitis B is a major health concern in Bihar and India, with millions of carriers often unaware of their infection status. The virus can silently damage the liver over years, progressing to cirrhosis and hepatocellular carcinoma (liver cancer) if left untreated. Early detection through HBsAg screening and subsequent viral load testing (HBV DNA quantitative PCR) is critical.
 
@@ -1458,7 +1524,7 @@ Patient education about transmission prevention, family screening, Hepatitis B v
         duration: '12 weeks course',
         recovery: '95%+ cure rate',
         description: 'Curative short-course medical therapy using Direct-Acting Antivirals (DAA) (Sofosbuvir + Velpatasvir/Ledipasvir).',
-        longDescription: `Hepatitis C Treatment (हेपेटाइटिस सी का इलाज) at Patna Lapro and Stone Healthcare offers a complete cure for chronic Hepatitis C virus infection using the latest Direct-Acting Antiviral (DAA) medications. Dr. Sanjeev Kumar provides expert diagnosis, treatment, and follow-up care to achieve Sustained Virological Response (SVR) — meaning the virus is completely eradicated from the body.
+        longDescription: `Hepatitis C Treatment (हेपेटाइटिस सी का इलाज) at Patna Gastro, Lapro and Stone Healthcare offers a complete cure for chronic Hepatitis C virus infection using the latest Direct-Acting Antiviral (DAA) medications. Dr. Sanjeev Kumar provides expert diagnosis, treatment, and follow-up care to achieve Sustained Virological Response (SVR) — meaning the virus is completely eradicated from the body.
 
 Modern DAA therapy using Sofosbuvir combined with Velpatasvir or Ledipasvir has revolutionised Hepatitis C treatment. A simple 12-week course of daily oral tablets achieves cure rates exceeding 95% across all genotypes, with minimal side effects. This is a dramatic improvement over the older interferon-based treatments that were painful, prolonged, and had low success rates.
 
@@ -1466,7 +1532,7 @@ Before starting treatment, baseline evaluation includes HCV RNA quantitative PCR
 
 Cure is confirmed by checking HCV RNA 12 weeks after completing the course (SVR12). A negative result means the virus has been permanently eliminated. Early treatment also reverses early-stage liver fibrosis and dramatically reduces the risk of developing cirrhosis and liver cancer.
 
-For affordable, curative Hepatitis C treatment in Patna and Bihar, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare. Call 9334097925.`,
+For affordable, curative Hepatitis C treatment in Patna and Bihar, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare. Call 9334097925.`,
         indications: ['Chronic Hepatitis C virus infection'],
         benefits: ['Complete viral eradication (SVR12)', 'Reverses early liver fibrosis'],
         preparation: ['HCV RNA load', 'Genotype mapping if required'],
@@ -1502,13 +1568,13 @@ For affordable, curative Hepatitis C treatment in Patna and Bihar, consult Dr. S
         duration: '30–60 min',
         recovery: '1–2 days',
         description: 'Endoscopic side-view scoping to cannulate the ampulla, perform sphincterotomy, and pull stones out using balloon/basket.',
-        longDescription: `ERCP for CBD Stone Extraction (ईआरसीपी से पित्त नली की पथरी निकालना) at Patna Lapro and Stone Healthcare is an advanced endoscopic procedure that removes stones from the Common Bile Duct without any surgical incision. Dr. Sanjeev Kumar performs ERCP using a specialised side-viewing duodenoscope to access the bile duct opening (ampulla of Vater) in the duodenum.
+        longDescription: `ERCP for CBD Stone Extraction (ईआरसीपी से पित्त नली की पथरी निकालना) at Patna Gastro, Lapro and Stone Healthcare is an advanced endoscopic procedure that removes stones from the Common Bile Duct without any surgical incision. Dr. Sanjeev Kumar performs ERCP using a specialised side-viewing duodenoscope to access the bile duct opening (ampulla of Vater) in the duodenum.
 
 During the procedure, the ampulla is cannulated with a fine catheter under fluoroscopic (X-ray) guidance. A sphincterotomy (small cut at the bile duct opening) is performed to widen the opening, and stones are then extracted using a balloon catheter or wire basket. The entire procedure takes 30–60 minutes under sedation and most patients can go home the next day.
 
 ERCP is indicated for CBD stones causing obstructive jaundice, cholangitis (infected bile duct — a medical emergency), or biliary pancreatitis. It is also performed before or after laparoscopic cholecystectomy when CBD stones are identified on MRCP or intraoperative cholangiogram.
 
-As one of the few centres in Patna offering expert ERCP services, Patna Lapro and Stone Healthcare serves patients from across Bihar for complex biliary stone disease. Dr. Sanjeev Kumar's expertise ensures high stone clearance rates with minimal complications. Call 9334097925 for urgent ERCP consultation.`,
+As one of the few centres in Patna offering expert ERCP services, Patna Gastro, Lapro and Stone Healthcare serves patients from across Bihar for complex biliary stone disease. Dr. Sanjeev Kumar's expertise ensures high stone clearance rates with minimal complications. Call 9334097925 for urgent ERCP consultation.`,
         indications: ['CBD stones', 'Cholangitis', 'Biliary colic with raised LFT'],
         benefits: ['No surgical incision', 'Rapid relief from jaundice and infection'],
         steps: [
@@ -1524,13 +1590,13 @@ As one of the few centres in Patna offering expert ERCP services, Patna Lapro an
         duration: '30–60 min',
         recovery: '1–2 days',
         description: 'Placement of plastic or self-expanding metal stents across benign or malignant bile duct strictures.',
-        longDescription: `Jaundice / Stricture Stenting at Patna Lapro and Stone Healthcare involves endoscopic placement of biliary stents to relieve bile duct obstruction and jaundice. Dr. Sanjeev Kumar performs this procedure via ERCP, inserting plastic or self-expanding metal stents across narrowed (strictured) segments of the bile duct.
+        longDescription: `Jaundice / Stricture Stenting at Patna Gastro, Lapro and Stone Healthcare involves endoscopic placement of biliary stents to relieve bile duct obstruction and jaundice. Dr. Sanjeev Kumar performs this procedure via ERCP, inserting plastic or self-expanding metal stents across narrowed (strictured) segments of the bile duct.
 
 Biliary strictures can be caused by benign conditions (post-surgical injury, chronic pancreatitis) or malignant tumours (cholangiocarcinoma, pancreatic head cancer, gallbladder cancer). The resulting obstruction of bile flow causes progressive jaundice, itching, dark urine, and pale stools. Without drainage, biliary obstruction leads to cholangitis and liver damage.
 
 The stenting procedure is performed under sedation with fluoroscopic guidance. A guidewire is passed across the stricture, and the appropriate stent is deployed over the wire. Plastic stents are used for benign conditions and typically need replacement every 3 months, while self-expanding metal stents (SEMS) are used for malignant strictures and provide longer patency.
 
-For biliary stenting and jaundice management in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare. Call 9334097925.`,
+For biliary stenting and jaundice management in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare. Call 9334097925.`,
         indications: ['Obstructive jaundice due to biliary narrowing', 'Bile leak post-cholecystectomy'],
         benefits: ['Immediate drainage of bile', 'Relieves itching and jaundice'],
         steps: [
@@ -1545,7 +1611,7 @@ For biliary stenting and jaundice management in Patna, Bihar, consult Dr. Sanjee
         duration: '45–90 min',
         recovery: '1–2 days',
         description: 'Endoscopic placement of Metallic Stents (SEMS) for palliation of inoperable cancers.',
-        longDescription: `Malignant Biliary Stricture Care at Patna Lapro and Stone Healthcare provides palliative biliary drainage for patients with inoperable cancers causing bile duct obstruction. Dr. Sanjeev Kumar performs ERCP-guided placement of Self-Expanding Metal Stents (SEMS) to restore bile flow and relieve jaundice in patients with cholangiocarcinoma, pancreatic head cancer, and advanced gallbladder cancer.
+        longDescription: `Malignant Biliary Stricture Care at Patna Gastro, Lapro and Stone Healthcare provides palliative biliary drainage for patients with inoperable cancers causing bile duct obstruction. Dr. Sanjeev Kumar performs ERCP-guided placement of Self-Expanding Metal Stents (SEMS) to restore bile flow and relieve jaundice in patients with cholangiocarcinoma, pancreatic head cancer, and advanced gallbladder cancer.
 
 Metal stents offer several advantages over plastic stents for malignant strictures — larger internal diameter for better drainage, longer patency (6–12 months vs 3 months), and reduced need for repeat procedures. Both covered and uncovered SEMS options are available depending on the clinical scenario.
 
@@ -1566,7 +1632,7 @@ For palliative cancer care and biliary interventions in Patna, consult Dr. Sanje
         duration: '180–300 min',
         recovery: '10–21 days',
         description: 'Pancreaticoduodenectomy (Whipple Procedure) to remove the head of the pancreas, duodenum, gallbladder, and part of the bile duct for cancer.',
-        longDescription: `The Whipple Procedure (Pancreaticoduodenectomy) is one of the most complex abdominal surgeries, performed at Patna Lapro and Stone Healthcare by Dr. Sanjeev Kumar for resectable pancreatic head cancer and periampullary carcinomas. This major operation involves removal of the head of the pancreas, the duodenum, the gallbladder, the distal common bile duct, and sometimes a portion of the stomach.
+        longDescription: `The Whipple Procedure (Pancreaticoduodenectomy) is one of the most complex abdominal surgeries, performed at Patna Gastro, Lapro and Stone Healthcare by Dr. Sanjeev Kumar for resectable pancreatic head cancer and periampullary carcinomas. This major operation involves removal of the head of the pancreas, the duodenum, the gallbladder, the distal common bile duct, and sometimes a portion of the stomach.
 
 The Whipple procedure is the only potentially curative surgical option for pancreatic head cancer — one of the most challenging cancers to treat. After the resection phase, a complex reconstruction is performed creating three new connections (anastomoses): pancreaticojejunostomy, hepaticojejunostomy, and gastrojejunostomy to restore the continuity of the digestive system.
 
@@ -1588,7 +1654,7 @@ Pre-operative workup includes contrast-enhanced CT scan, tumour markers (CA 19-9
         duration: 'Palliative',
         recovery: '1–3 days',
         description: 'Endoscopic stenting (ERCP) or bypass surgery to treat biliary obstruction in late-stage gallbladder cancer.',
-        longDescription: `Advanced Gallbladder Cancer (Ca GB) Care at Patna Lapro and Stone Healthcare provides palliative interventions for patients with late-stage, inoperable gallbladder carcinoma. Dr. Sanjeev Kumar offers ERCP biliary stenting and surgical hepaticojejunostomy bypass to relieve obstructive jaundice and improve quality of life.
+        longDescription: `Advanced Gallbladder Cancer (Ca GB) Care at Patna Gastro, Lapro and Stone Healthcare provides palliative interventions for patients with late-stage, inoperable gallbladder carcinoma. Dr. Sanjeev Kumar offers ERCP biliary stenting and surgical hepaticojejunostomy bypass to relieve obstructive jaundice and improve quality of life.
 
 Advanced gallbladder cancer often presents with progressive jaundice, weight loss, and abdominal pain due to tumour invasion of the bile ducts and surrounding structures. While curative surgery may not be feasible, palliative biliary drainage provides significant symptomatic relief and enables patients to pursue chemotherapy.
 
@@ -1609,7 +1675,7 @@ For advanced gallbladder cancer care in Patna and Bihar, consult our team at 933
         duration: 'Medical Course',
         recovery: '6 months medical',
         description: 'Diagnosis and medical antitubercular therapy (ATT) for abdominal tuberculosis involving the lymph nodes or intestines.',
-        longDescription: `Koch's Abdomen and Intestinal Tuberculosis Treatment (पेट की टीबी का इलाज) at Patna Lapro and Stone Healthcare provides expert diagnosis and management of abdominal tuberculosis — a condition particularly prevalent in Bihar and eastern India. Dr. Sanjeev Kumar, a senior gastro surgeon in Patna, evaluates patients with suspected abdominal TB through comprehensive diagnostic workup including colonoscopic biopsy, ascitic fluid analysis (ADA/PCR), and contrast CT scan.
+        longDescription: `Koch's Abdomen and Intestinal Tuberculosis Treatment (पेट की टीबी का इलाज) at Patna Gastro, Lapro and Stone Healthcare provides expert diagnosis and management of abdominal tuberculosis — a condition particularly prevalent in Bihar and eastern India. Dr. Sanjeev Kumar, a senior gastro surgeon in Patna, evaluates patients with suspected abdominal TB through comprehensive diagnostic workup including colonoscopic biopsy, ascitic fluid analysis (ADA/PCR), and contrast CT scan.
 
 Abdominal TB can affect the intestines (most commonly the ileocaecal region), peritoneum (tuberculous ascites), mesenteric lymph nodes, liver, and spleen. Symptoms include chronic abdominal pain, diarrhoea alternating with constipation, weight loss, low-grade fever, and abdominal distension from ascites. Intestinal TB can cause strictures leading to subacute intestinal obstruction.
 
@@ -1650,7 +1716,7 @@ Dr. Sanjeev Kumar's combined expertise in gastroenterology and surgery ensures a
         duration: '120–240 min',
         recovery: '7–14 days',
         description: 'Surgical excision of all or part of the stomach (Total or Subtotal Gastrectomy) along with D2 lymph node clearance for gastric adenocarcinoma.',
-        longDescription: `Stomach Cancer Surgery — Radical Gastrectomy (पेट के कैंसर की सर्जरी) at Patna Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar for patients diagnosed with gastric adenocarcinoma and gastroesophageal junction tumours. The procedure involves surgical removal of all or part of the stomach along with systematic D2 lymph node dissection for optimal oncological outcomes.
+        longDescription: `Stomach Cancer Surgery — Radical Gastrectomy (पेट के कैंसर की सर्जरी) at Patna Gastro, Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar for patients diagnosed with gastric adenocarcinoma and gastroesophageal junction tumours. The procedure involves surgical removal of all or part of the stomach along with systematic D2 lymph node dissection for optimal oncological outcomes.
 
 Stomach cancer is a significant health burden in India, often presenting at an advanced stage due to late diagnosis. Common symptoms include persistent indigestion, early satiety, unintentional weight loss, vomiting, black stools (melena), and upper abdominal pain. Endoscopic biopsy followed by contrast CT scan staging determines the extent of disease and surgical planning.
 
@@ -1672,7 +1738,7 @@ Dr. Sanjeev Kumar's extensive surgical training ensures meticulous technique for
         duration: '45–90 min',
         recovery: '2–4 days',
         description: 'Minimally invasive removal of ovarian cysts (dermoid, endometrioma, simple cyst) while preserving healthy ovarian tissue.',
-        longDescription: `Ovarian Cyst Removal by Laparoscopy (लैप्रोस्कोपी से ओवेरियन सिस्ट निकालना) at Patna Lapro and Stone Healthcare is a minimally invasive surgical procedure performed by Dr. Sanjeev Kumar to remove ovarian cysts while preserving healthy ovarian tissue and fertility. This keyhole approach offers smaller incisions, less pain, and faster recovery compared to open surgery.
+        longDescription: `Ovarian Cyst Removal by Laparoscopy (लैप्रोस्कोपी से ओवेरियन सिस्ट निकालना) at Patna Gastro, Lapro and Stone Healthcare is a minimally invasive surgical procedure performed by Dr. Sanjeev Kumar to remove ovarian cysts while preserving healthy ovarian tissue and fertility. This keyhole approach offers smaller incisions, less pain, and faster recovery compared to open surgery.
 
 Ovarian cysts are fluid-filled sacs that develop on or within the ovaries. While many small cysts resolve on their own, large cysts (>5 cm), symptomatic cysts causing pelvic pain, and those with suspicious features on ultrasound require surgical removal. Common types include dermoid cysts, endometriomas (chocolate cysts), and cystadenomas.
 
@@ -1693,13 +1759,13 @@ Women from Patna, Gaya, Muzaffarpur, and across Bihar trust Dr. Sanjeev Kumar fo
         duration: '120–210 min',
         recovery: '5–10 days',
         description: 'Staging laparotomic debulking surgery (Hysterectomy, Bilateral Salpingo-Oophorectomy, Omentectomy) for ovarian malignancies.',
-        longDescription: `Ovarian Cancer Surgery (ओवेरियन कैंसर सर्जरी) at Patna Lapro and Stone Healthcare involves comprehensive staging and debulking surgery for ovarian malignancies. Dr. Sanjeev Kumar performs Total Abdominal Hysterectomy with Bilateral Salpingo-Oophorectomy (TAH-BSO), Omentectomy, and peritoneal staging biopsies to achieve maximum tumour reduction.
+        longDescription: `Ovarian Cancer Surgery (ओवेरियन कैंसर सर्जरी) at Patna Gastro, Lapro and Stone Healthcare involves comprehensive staging and debulking surgery for ovarian malignancies. Dr. Sanjeev Kumar performs Total Abdominal Hysterectomy with Bilateral Salpingo-Oophorectomy (TAH-BSO), Omentectomy, and peritoneal staging biopsies to achieve maximum tumour reduction.
 
 Ovarian cancer often presents late with vague symptoms like abdominal bloating, early satiety, pelvic pain, and changes in bowel habits. By the time of diagnosis, the cancer has frequently spread within the abdominal cavity. Surgical debulking — removing as much tumour as possible — is the cornerstone of treatment and is followed by platinum-based chemotherapy.
 
 The goal of surgery is to achieve optimal cytoreduction (minimal residual disease), which significantly improves response to chemotherapy and overall survival. Dr. Sanjeev Kumar's surgical expertise ensures thorough staging and maximum tumour removal with acceptable surgical morbidity.
 
-For ovarian cancer evaluation and surgery in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri. Call 9334097925.`,
+For ovarian cancer evaluation and surgery in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri. Call 9334097925.`,
         indications: ['Ovarian cancer / Malignant ovarian mass'],
         benefits: ['Accurate staging', 'Reduces tumor mass before chemotherapy'],
         steps: [
@@ -1732,7 +1798,7 @@ For ovarian cancer evaluation and surgery in Patna, Bihar, consult Dr. Sanjeev K
         duration: '60–120 min',
         recovery: '3–7 days',
         description: 'Laparoscopic (IPOM) or open sublay repair of hernias arising at previous surgical scar sites.',
-        longDescription: `Incisional Hernia Repair (इंसिजनल हर्निया का ऑपरेशन) at Patna Lapro and Stone Healthcare involves laparoscopic (IPOM — Intraperitoneal Onlay Mesh) or open sublay mesh repair for hernias developing at previous surgical incision sites. Dr. Sanjeev Kumar, a hernia surgery specialist in Patna, uses premium composite meshes for durable, long-lasting repair with low recurrence rates.
+        longDescription: `Incisional Hernia Repair (इंसिजनल हर्निया का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare involves laparoscopic (IPOM — Intraperitoneal Onlay Mesh) or open sublay mesh repair for hernias developing at previous surgical incision sites. Dr. Sanjeev Kumar, a hernia surgery specialist in Patna, uses premium composite meshes for durable, long-lasting repair with low recurrence rates.
 
 Incisional hernias occur when the abdominal wall fails to heal properly after a previous surgery, creating a defect through which abdominal contents can bulge. They are particularly common after midline laparotomies, emergency surgeries, and in patients with wound infections, obesity, or diabetes. Without repair, incisional hernias progressively enlarge and carry the risk of bowel obstruction and strangulation.
 
@@ -1753,13 +1819,13 @@ Patients from across Patna, Bihar, and eastern India choose our centre for herni
         duration: '45–90 min',
         recovery: '2–5 days',
         description: 'Laparoscopic or open repair of hernias at the navel (belly button) with prosthetic mesh placement.',
-        longDescription: `Umbilical Hernia Repair (नाभि हर्निया का ऑपरेशन) at Patna Lapro and Stone Healthcare corrects hernias at or near the belly button using laparoscopic or open mesh reinforcement. Dr. Sanjeev Kumar performs this common procedure with excellent cosmetic outcomes and low recurrence rates.
+        longDescription: `Umbilical Hernia Repair (नाभि हर्निया का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare corrects hernias at or near the belly button using laparoscopic or open mesh reinforcement. Dr. Sanjeev Kumar performs this common procedure with excellent cosmetic outcomes and low recurrence rates.
 
 Umbilical hernias present as a bulge at the navel that becomes more prominent during coughing, straining, or standing. They are common in adults with obesity, pregnancy, chronic liver disease with ascites, or heavy physical labour. While small asymptomatic hernias can be monitored, hernias that are enlarging, symptomatic, or contain bowel should be surgically repaired to prevent strangulation.
 
 The repair involves reducing the hernia contents, closing the fascial defect, and reinforcing the area with a prosthetic mesh. The laparoscopic approach offers smaller incisions, less wound pain, and preserves the natural cosmetic appearance of the navel. Most patients are discharged within 24–48 hours and resume normal activities within a week.
 
-For umbilical hernia repair in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri. Call 9334097925.`,
+For umbilical hernia repair in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna Gastro, Lapro and Stone Healthcare, Sri Krishna Nagar Kidwaipuri. Call 9334097925.`,
         indications: ['Umbilical / Paraumbilical hernia'],
         benefits: ['Painless recovery', 'Restores natural cosmetic navel appearance'],
         steps: [
@@ -1774,7 +1840,7 @@ For umbilical hernia repair in Patna, Bihar, consult Dr. Sanjeev Kumar at Patna 
         duration: '60–90 min',
         recovery: '3–5 days',
         description: 'Minimally invasive keyhole repair of groin hernias (TAPP/TEP techniques) with mesh reinforcement.',
-        longDescription: `Inguinal Hernia Repair (इनगुइनल हर्निया का ऑपरेशन) at Patna Lapro and Stone Healthcare uses advanced laparoscopic techniques — TAPP (Transabdominal Preperitoneal) and TEP (Totally Extraperitoneal) — to repair groin hernias with minimal pain and rapid recovery. Dr. Sanjeev Kumar, one of the leading laparoscopic hernia surgeons in Patna, has performed thousands of successful inguinal hernia repairs.
+        longDescription: `Inguinal Hernia Repair (इनगुइनल हर्निया का ऑपरेशन) at Patna Gastro, Lapro and Stone Healthcare uses advanced laparoscopic techniques — TAPP (Transabdominal Preperitoneal) and TEP (Totally Extraperitoneal) — to repair groin hernias with minimal pain and rapid recovery. Dr. Sanjeev Kumar, one of the leading laparoscopic hernia surgeons in Patna, has performed thousands of successful inguinal hernia repairs.
 
 Inguinal hernias are the most common type of hernia, presenting as a bulge in the groin that may extend into the scrotum. They occur when a portion of the intestine or fatty tissue protrudes through a weak spot in the inguinal canal. Inguinal hernias do not heal on their own and carry the risk of bowel obstruction and strangulation if left untreated.
 
@@ -1791,89 +1857,6 @@ Patients from Patna, Bihar, Jharkhand, and eastern UP seek inguinal hernia repai
     ],
   },
 
-  // ── 18. Jaundice, Ascites & Biliary Disorder ────────
-  {
-    name: 'Jaundice, Ascites & Biliary Disorder',
-    slug: 'jaundice-ascites-biliary',
-    icon: '💛',
-    category: 'Digestive',
-    available: 'OPD & Emergency',
-    description: 'Comprehensive assessment and treatment of abdominal fluid collection (ascites) and complex biliary structures, strictures, and cysts.',
-    longDescription: `We provide clinical diagnosis, medical management, and palliative support for patients suffering from liver failure, advanced cirrhosis, ascites (fluid in the abdomen), and complex biliary cysts. Services include therapeutic paracentesis (abdominal tapping), dietary salt restriction guidelines, and surgical referrals for portosystemic shunts.`,
-    features: ['Ascites fluid tapping', 'Biliary stricture bypass', 'Choledochal cyst surgery', 'Obstructive Jaundice management'],
-    costEstimate: '₹5,000 – ₹1,80,000',
-    recoveryTime: '3 – 10 days',
-    order: 18,
-    isNew: true,
-    treatments: [
-      {
-        name: 'Jaundice Management',
-        slug: 'jaundice-management-new',
-        cost: '₹5,000 – ₹40,000',
-        duration: 'Medical & Diagnostic',
-        recovery: 'Varies',
-        description: 'Detailed clinical assessment to differentiate medical vs. surgical jaundice, followed by targeted biliary decompression.',
-        longDescription: `Jaundice Management (पीलिया का इलाज) at Patna Lapro and Stone Healthcare provides comprehensive evaluation and treatment for all causes of jaundice — from common medical hepatitis to complex surgical obstructive jaundice. Dr. Sanjeev Kumar, a Jaundice and Stone Specialist in Patna, differentiates between medical and surgical causes through systematic clinical assessment and targeted investigations.
-
-Jaundice (पीलिया) — the yellowing of skin and eyes due to elevated bilirubin levels — can be caused by liver diseases (medical jaundice), gallstones blocking the bile duct, tumours, or bile duct strictures (surgical/obstructive jaundice). Accurate diagnosis is essential because treatment approaches are fundamentally different.
-
-Our diagnostic workup includes complete liver function tests, hepatitis viral markers, ultrasound abdomen, MRCP, and CT scan as needed. For obstructive jaundice, Dr. Sanjeev Kumar provides definitive treatment through ERCP stenting, laparoscopic CBD exploration, or surgical hepaticojejunostomy bypass depending on the underlying cause.
-
-Red-flag symptoms requiring urgent evaluation include jaundice with high fever and rigors (cholangitis — a medical emergency), rapidly worsening jaundice, painless progressive jaundice (possible cancer), and severe itching with pale stools and dark urine. If you or a family member develops jaundice, seek prompt medical evaluation at Patna Lapro and Stone Healthcare. Call 9334097925 or visit Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
-        indications: ['Raised bilirubin levels', 'Pale stools, dark urine'],
-        benefits: ['Prevent hepatorenal syndrome', 'Relieves severe biliary symptoms'],
-        steps: [
-          { step: '01', title: 'Workup', desc: 'Review LFT, MRCP, and coagulation profile.' },
-          { step: '02', title: 'Biliary drainage', desc: 'Perform ERCP stenting or surgical bypass.' },
-        ],
-        faqs: [],
-      },
-      {
-        name: 'Ascites Care',
-        slug: 'ascites-care',
-        cost: '₹4,000 – ₹15,000',
-        duration: '30–60 min',
-        recovery: 'Immediate',
-        description: 'Therapeutic and diagnostic paracentesis (abdominal tap) to drain fluid from the peritoneal cavity for relief of bloating and respiratory discomfort.',
-        longDescription: `Ascites Care (पेट में पानी भरने का इलाज) at Patna Lapro and Stone Healthcare includes diagnostic and therapeutic paracentesis — a procedure to drain excess fluid from the abdominal cavity. Dr. Sanjeev Kumar evaluates the underlying cause of ascites through comprehensive clinical assessment and fluid analysis.
-
-Ascites (abdominal fluid accumulation) can be caused by liver cirrhosis (most common), heart failure, kidney disease, peritoneal tuberculosis, or abdominal cancer. Patients experience progressive abdominal distension, weight gain, difficulty breathing, reduced appetite, and discomfort. Large-volume ascites can compress the diaphragm, causing significant respiratory compromise.
-
-Therapeutic paracentesis involves inserting a needle or catheter into the abdominal cavity under sterile precautions to drain the accumulated fluid, providing immediate symptom relief. The drained fluid is sent for analysis including cytology, cell count, protein, albumin, ADA (for TB), and culture to identify the underlying cause.
-
-Treatment of the underlying cause is then initiated — diuretics and salt restriction for liver-related ascites, antitubercular therapy for TB ascites, or oncological evaluation for malignant ascites. Regular follow-up ensures optimal fluid management and prevention of complications.
-
-For ascites evaluation and management in Patna, Bihar, consult Dr. Sanjeev Kumar at 9334097925.`,
-        indications: ['Tense ascites', 'Abdominal distension with breathlessness'],
-        benefits: ['Instant relief from pressure', 'Fluid analysis confirms cause (cardiac, liver, peritoneal TB)'],
-        steps: [
-          { step: '01', title: 'Paracentesis', desc: 'Needle inserted under sterile precautions; fluid drained and sent for cytology/ADA.' },
-        ],
-        faqs: [],
-      },
-      {
-        name: 'Biliary Disorder (Choledochal Cyst / Cholangitis)',
-        slug: 'biliary-disorder-cysts',
-        cost: '₹60,000 – ₹1,80,000',
-        duration: '120–240 min',
-        recovery: '7–12 days',
-        description: 'Advanced surgeries for congenital choledochal cysts (excision and reconstruction) and emergency drainage for severe biliary tract sepsis (cholangitis).',
-        longDescription: `Biliary Disorder Surgery — including Choledochal Cyst Excision and Cholangitis Emergency Management — at Patna Lapro and Stone Healthcare is performed by Dr. Sanjeev Kumar, one of the most experienced hepatobiliary surgeons in Patna, Bihar.
-
-Choledochal cysts are congenital dilations of the bile ducts that carry a significant risk of developing biliary cancer (cholangiocarcinoma) if left untreated. The definitive treatment is complete surgical excision of the cyst followed by Roux-en-Y hepaticojejunostomy to reconstruct the biliary drainage. This complex surgery requires expertise in hepatobiliary anatomy and meticulous surgical technique, which Dr. Sanjeev Kumar provides based on his extensive training at IGIMS Patna and Safdarjung Hospital New Delhi.
-
-Cholangitis is an acute, life-threatening infection of the bile duct system, typically caused by bile duct stones or strictures. Patients present with Charcot's triad — jaundice, fever with rigors, and right upper abdominal pain. Severe cholangitis (Reynolds' pentad) includes confusion and hypotension, requiring emergency biliary drainage via ERCP or surgical decompression along with IV antibiotics and ICU care.
-
-Our hospital provides round-the-clock emergency care for acute cholangitis and elective surgery for choledochal cysts. For complex biliary disorder management in Patna, Bihar, contact Patna Lapro and Stone Healthcare at 9334097925, Sri Krishna Nagar Kidwaipuri, Patna 800001.`,
-        indications: ['Choledochal cyst', 'Acute suppurative cholangitis'],
-        benefits: ['Eliminates risk of biliary cancer in cysts', 'Life-saving drainage in acute sepsis'],
-        steps: [
-          { step: '01', title: 'Excision', desc: 'Completely excise the cyst and reconstruct via hepaticojejunostomy.' },
-        ],
-        faqs: [],
-      },
-    ],
-  },
 ]
 
 export default laproStoneSpecialities

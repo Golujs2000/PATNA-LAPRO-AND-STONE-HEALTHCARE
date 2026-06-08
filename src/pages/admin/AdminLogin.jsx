@@ -101,7 +101,7 @@ export default function AdminLogin() {
             <h1 className="text-2xl font-bold text-navy-800">
               {resetMode ? 'Reset Password' : 'Admin Login'}
             </h1>
-            <p className="text-gray-500 text-sm mt-1">Patna Lapro and Stone Healthcare Admin</p>
+            <p className="text-gray-500 text-sm mt-1">Patna Gastro, Lapro and Stone Healthcare Admin</p>
           </div>
 
           {/* Error */}
@@ -219,7 +219,7 @@ export default function AdminLogin() {
         </div>
 
         <p className="text-center text-white/50 text-xs mt-6">
-          © {new Date().getFullYear()} Patna Lapro and Stone Healthcare. All rights reserved.
+          © {new Date().getFullYear()} Patna Gastro, Lapro and Stone Healthcare. All rights reserved.
         </p>
       </motion.div>
     </div>

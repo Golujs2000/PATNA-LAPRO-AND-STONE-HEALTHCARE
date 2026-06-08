@@ -18,6 +18,8 @@ import BlogPreview from '../components/home/BlogPreview'
 import GalleryStrip from '../components/home/GalleryStrip'
 import TreatmentGallery from '../components/home/TreatmentGallery'
 import AppointmentForm from '../components/home/AppointmentForm'
+import PatientReach from '../components/home/PatientReach'
+import AwardsSection from '../components/home/AwardsSection'
 import { siteData } from '../data/siteData'
 
 const hospitalSchema = {
@@ -52,8 +54,20 @@ export default function Home() {
   return (
     <>
       <SEO
-        description="Patna Lapro and Stone Healthcare — Advanced Laparoscopic Surgery, Kidney Stone Treatment, Jaundice & Liver Specialist in Patna, Bihar. Dr. Sanjeev Kumar (MBBS, MS), Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon Safdarjung Hospital. Call: 9334097925."
-        keywords={['laparoscopic surgery Patna', 'Dr Sanjeev Kumar', 'kidney stone treatment Patna', 'gallbladder stone Patna', 'jaundice specialist Patna', 'liver specialist Patna', 'stone hospital Patna Bihar']}
+        description="Patna Gastro, Lapro and Stone Healthcare — Advanced Laparoscopic Surgery, Kidney Stone Treatment, Jaundice & Liver Specialist. Leading referral center for patients from Nepal, Jharkhand, UP, and all 38 districts of Bihar."
+        keywords={[
+          'laparoscopic surgery Patna',
+          'Dr Sanjeev Kumar',
+          'kidney stone treatment Patna',
+          'gallbladder stone Patna',
+          'jaundice specialist Patna',
+          'liver specialist Patna',
+          'stone hospital Patna Bihar',
+          'laparoscopy clinic Nepal',
+          'stone specialist Jharkhand',
+          'laparoscopic surgeon UP',
+          'gastro surgeon Bihar'
+        ]}
         jsonLd={{
           ...hospitalSchema,
           medicalSpecialty: specNames.length > 0 ? specNames : ['Laparoscopic Surgery', 'Urology', 'General Surgery', 'Gastroenterology'],
@@ -75,6 +89,12 @@ export default function Home() {
 
       {/* 4. Why Choose Us */}
       <WhyChooseUs />
+
+      {/* 4b. Awards & Achievements */}
+      <AwardsSection />
+
+      {/* 5. Regional Patient Reach */}
+      <PatientReach />
 
       {/* 6. Featured Doctors */}
       <FeaturedDoctors />
@@ -154,7 +174,7 @@ export default function Home() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Patna Lapro & Stone Healthcare Location"
+                title="Patna Gastro, Lapro & Stone Healthcare Location"
               />
             </motion.div>
 
