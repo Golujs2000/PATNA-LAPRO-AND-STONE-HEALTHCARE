@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiArrowRight, FiX, FiChevronLeft, FiChevronRight, FiImage } from 'react-icons/fi'
+import { FiArrowRight, FiX, FiChevronLeft, FiChevronRight, FiImage, FiVideo } from 'react-icons/fi'
 import { getGalleryByFolderName } from '../../services/gallery'
 
 // ── Lightbox ──────────────────────────────────────────────────
@@ -46,7 +46,11 @@ function Lightbox({ images, index, onClose }) {
           className="max-w-5xl max-h-[85vh] w-full flex flex-col items-center"
           onClick={(e) => e.stopPropagation()}
         >
-          <img src={img.image} alt={img.title || 'Treatment'} className="max-h-[78vh] max-w-full object-contain rounded-xl shadow-2xl" />
+          {img.type === 'video' ? (
+            <video src={img.image} controls autoPlay className="max-h-[78vh] max-w-full object-contain rounded-xl shadow-2xl" />
+          ) : (
+            <img src={img.image} alt={img.title || 'Treatment'} className="max-h-[78vh] max-w-full object-contain rounded-xl shadow-2xl" />
+          )}
           {img.title && <p className="text-white/70 text-sm mt-3">{img.title}</p>}
           {images.length > 1 && <p className="text-white/40 text-xs mt-1">{current + 1} / {images.length}</p>}
         </motion.div>
@@ -124,6 +128,37 @@ const DEFAULT_IMAGES = [
   }
 ]
 
+// ── Media Render Helper ────────────────────────────────────────
+function MediaRender({ img, className = '', scaleClass = 'group-hover:scale-105' }) {
+  if (img.type === 'video') {
+    return (
+      <div className={`w-full h-full relative overflow-hidden ${className}`}>
+        <video
+          src={img.image}
+          className={`w-full h-full object-cover transition-transform duration-500 ${scaleClass}`}
+          muted
+          playsInline
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/35 transition-colors duration-300">
+          <span className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/20 shadow-md group-hover:scale-110 transition-transform duration-300">
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    )
+  }
+  return (
+    <img
+      src={img.image}
+      alt={img.title || 'Treatment'}
+      className={`w-full h-full object-cover transition-transform duration-500 ${scaleClass} ${className}`}
+      loading="lazy"
+    />
+  )
+}
+
 // ── Main ──────────────────────────────────────────────────────
 export default function TreatmentGallery() {
   const [images, setImages] = useState([])
@@ -185,12 +220,7 @@ export default function TreatmentGallery() {
                 className="aspect-[4/3] rounded-[5px] overflow-hidden group relative cursor-pointer shadow-sm hover:shadow-lg transition-shadow duration-300"
                 onClick={() => setLightboxIndex(i)}
               >
-                <img
-                  src={img.image}
-                  alt={img.title || 'Treatment'}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <MediaRender img={img} />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-[5px] flex items-center justify-center">
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
                     View
@@ -202,7 +232,11 @@ export default function TreatmentGallery() {
                   </span>
                 </div>
                 <div className="absolute top-2 right-2 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <FiImage className="w-4 h-4 text-white" />
+                  {img.type === 'video' ? (
+                    <FiVideo className="w-4 h-4 text-white" />
+                  ) : (
+                    <FiImage className="w-4 h-4 text-white" />
+                  )}
                 </div>
               </motion.div>
             ))}

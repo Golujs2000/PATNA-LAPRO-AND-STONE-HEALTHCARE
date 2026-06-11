@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FiAward, FiStar, FiUsers, FiHeart, FiShield, FiTrendingUp } from 'react-icons/fi'
-import { ref, listAll, getDownloadURL } from 'firebase/storage'
-import { storage } from '../../firebase/config'
+import { getGalleryByFolderName } from '../../services/gallery'
 
 const AWARDS = [
   {
@@ -43,41 +42,16 @@ const AWARDS = [
   }
 ]
 
-const FALLBACK_1_IMAGES = [
-  "/gallery/employee_of_the_month_presentation.jpeg",
-  "/gallery/patient_discharge_bouquet.jpeg",
-  "/gallery/hospital_staff_group_photo.jpeg",
-  "/gallery/employee_of_the_month_award.jpeg",
-  "/gallery/patient_recovery_victory_staff_group.jpeg",
-  "/gallery/doctor_sanjeev_kumar_with_visitors.jpeg"
-]
-
-const FALLBACK_2_IMAGES = [
-  "/gallery/nurses_day_celebration_01.jpeg",
-  "/gallery/nurses_day_celebration_02.jpeg",
-  "/gallery/nurses_day_celebration_03.jpeg",
-  "/gallery/nurses_day_celebration_04.jpeg",
-  "/gallery/nurses_day_celebration_05.jpeg",
-  "/gallery/nurses_day_celebration_06.jpeg",
-  "/gallery/nurses_day_celebration_07.jpeg",
-  "/gallery/newspaper_clipping_successful_surgery.jpeg",
-  "/gallery/newspaper_clipping_gist_cancer_01.jpeg",
-  "/gallery/newspaper_clipping_small_intestine_surgery_01.jpeg"
-]
-
 export default function AwardsSection() {
-  const [marquee1, setMarquee1] = useState(FALLBACK_1_IMAGES)
-  const [marquee2, setMarquee2] = useState(FALLBACK_2_IMAGES)
+  const [marquee1, setMarquee1] = useState([])
+  const [marquee2, setMarquee2] = useState([])
 
   useEffect(() => {
     async function fetchAwardsImages() {
       try {
-        const listRef = ref(storage, 'awards/')
-        const res = await listAll(listRef)
-        if (res.items.length > 0) {
-          const urls = await Promise.all(
-            res.items.map((itemRef) => getDownloadURL(itemRef))
-          )
+        const items = await getGalleryByFolderName('awards')
+        if (items.length > 0) {
+          const urls = items.map((item) => item.image)
           const row1 = []
           const row2 = []
           urls.forEach((url, i) => {
@@ -96,7 +70,7 @@ export default function AwardsSection() {
           }
         }
       } catch (err) {
-        console.error("Failed to fetch awards images from Firebase, using fallbacks:", err)
+        console.error("Failed to fetch awards images from Firestore:", err)
       }
     }
     fetchAwardsImages()
@@ -144,39 +118,45 @@ export default function AwardsSection() {
       </div>
 
       {/* Marquees */}
-      <div className="flex flex-col gap-4 max-w-[100vw] overflow-hidden py-4 bg-gray-50">
-        {/* Marquee 1 */}
-        <div className="marquee-row overflow-hidden">
-          <div className="flex gap-4" style={{ animation: '80s linear 0s infinite normal none running marquee-scroll', width: 'max-content' }}>
-            {[...marquee1, ...marquee1, ...marquee1].map((src, i) => (
-              <div key={`m1-${i}`} className="w-64 h-44 flex-shrink-0 rounded-[5px] overflow-hidden shadow-md border border-gray-100 group">
-                <img
-                  src={src}
-                  alt="Award Ceremony"
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+      {(marquee1.length > 0 || marquee2.length > 0) && (
+        <div className="flex flex-col gap-4 max-w-[100vw] overflow-hidden py-4 bg-gray-50">
+          {/* Marquee 1 */}
+          {marquee1.length > 0 && (
+            <div className="marquee-row overflow-hidden">
+              <div className="flex gap-4" style={{ animation: '80s linear 0s infinite normal none running marquee-scroll', width: 'max-content' }}>
+                {[...marquee1, ...marquee1, ...marquee1].map((src, i) => (
+                  <div key={`m1-${i}`} className="w-64 h-44 flex-shrink-0 rounded-[5px] overflow-hidden shadow-md border border-gray-100 group">
+                    <img
+                      src={src}
+                      alt="Award Ceremony"
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          )}
 
-        {/* Marquee 2 */}
-        <div className="marquee-row overflow-hidden">
-          <div className="flex gap-4" style={{ animation: '80s linear 0s infinite reverse none running marquee-scroll', width: 'max-content' }}>
-            {[...marquee2, ...marquee2, ...marquee2].map((src, i) => (
-              <div key={`m2-${i}`} className="w-64 h-44 flex-shrink-0 rounded-[5px] overflow-hidden shadow-md border border-gray-100 group">
-                <img
-                  src={src}
-                  alt="Conference Event"
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+          {/* Marquee 2 */}
+          {marquee2.length > 0 && (
+            <div className="marquee-row overflow-hidden">
+              <div className="flex gap-4" style={{ animation: '80s linear 0s infinite reverse none running marquee-scroll', width: 'max-content' }}>
+                {[...marquee2, ...marquee2, ...marquee2].map((src, i) => (
+                  <div key={`m2-${i}`} className="w-64 h-44 flex-shrink-0 rounded-[5px] overflow-hidden shadow-md border border-gray-100 group">
+                    <img
+                      src={src}
+                      alt="Conference Event"
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
-      </div>
+      )}
     </section>
   )
 }
