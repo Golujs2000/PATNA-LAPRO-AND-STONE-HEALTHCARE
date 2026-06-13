@@ -104,7 +104,7 @@ export default function FeaturedDoctors() {
                           <div className="flex items-center gap-1 mt-0.5">
                             <FiStar className="text-amber-500 fill-amber-500 w-3.5 h-3.5" />
                             <span className="text-xs font-black text-navy-800">{doc.rating || '4.9'}</span>
-                            <span className="text-[10px] text-gray-400">({doc.reviewCount || '350'}+ reviews)</span>
+                            <span className="text-[10px] text-gray-400">({doc.reviewCount || '202'}+ reviews)</span>
                           </div>
                         </div>
                         <div className="text-right">
