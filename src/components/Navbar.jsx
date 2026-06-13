@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiPhone, FiMenu, FiX, FiChevronDown, FiArrowRight, FiActivity } from 'react-icons/fi'
+import { FiPhone, FiMenu, FiX, FiChevronDown, FiArrowRight, FiActivity, FiMail } from 'react-icons/fi'
 import { siteData } from '../data/siteData'
 import { useSpecialities } from '../hooks/useSpecialities'
 import hospitalLogo from '../assets/patna-lapro-logo.png'
@@ -221,7 +221,11 @@ export default function Navbar() {
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-2 opacity-80">
               <FiPhone className="w-3 h-3" />
-              Call Us: <strong>{siteData.contact.phone}</strong>
+              Call Us: <strong>{siteData.contact.phone}, {siteData.contact.phone2}</strong>
+            </span>
+            <span className="flex items-center gap-1.5 opacity-80">
+              <FiMail className="w-3 h-3" />
+              <a href={`mailto:${siteData.contact.email.toLowerCase()}`} className="lowercase hover:text-primary-300 transition-colors">{siteData.contact.email.toLowerCase()}</a>
             </span>
             <span className="flex items-center gap-1.5 opacity-70">
               <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 flex-shrink-0" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -308,7 +312,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.26 }}
               >
-                <Link to="/book-appointment" className="btn-primary btn-shimmer text-sm py-2.5 px-5">
+                <Link to="/book-appointment" className="btn-primary btn-shimmer text-sm py-2.5 px-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
                   Book Appointment
                 </Link>
               </motion.div>
@@ -406,7 +410,7 @@ export default function Navbar() {
                       {siteData.contact.phone}
                     </a>
                     <Link to="/book-appointment" onClick={() => setMobileOpen(false)}
-                      className="btn-primary btn-shimmer justify-center text-sm py-3">
+                      className="btn-primary btn-shimmer justify-center text-sm py-3 hover:scale-105 hover:shadow-lg transition-all duration-300">
                       Book Appointment
                     </Link>
                   </motion.div>
