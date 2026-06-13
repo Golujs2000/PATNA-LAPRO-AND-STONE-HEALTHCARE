@@ -140,9 +140,15 @@ export default function HospitalServiceDetail() {
                 <p className="text-base sm:text-lg text-gray-700 font-semibold">
                   {service.description || 'Dedicated hospital facility and medical service designed to support your treatment and ensure clinical safety.'}
                 </p>
-                <p className="text-sm">
-                  At Patna Gastro, Lapro and Stone Healthcare, our facilities are equipped to offer highly reliable clinical outcomes. Under the medical guidance of Dr. Sanjeev Kumar (MBBS, MS), we maintain stringent protocols for patient hygiene, comfort, and care.
-                </p>
+                {service.longDescription ? (
+                  <p className="text-sm whitespace-pre-line text-gray-600">
+                    {service.longDescription}
+                  </p>
+                ) : (
+                  <p className="text-sm">
+                    At Patna Gastro, Lapro and Stone Healthcare, our facilities are equipped to offer highly reliable clinical outcomes. Under the medical guidance of Dr. Sanjeev Kumar (MBBS, MS), we maintain stringent protocols for patient hygiene, comfort, and care.
+                  </p>
+                )}
               </div>
 
               {/* Related Specialities */}

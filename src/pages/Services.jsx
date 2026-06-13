@@ -143,6 +143,16 @@ function SpecialityCard({ spec, isOpen, onToggle, colorCfg, doctors = [] }) {
           >
             <div className={`px-5 pb-5 border-t ${cfg.border}`}>
 
+              {/* Long Description */}
+              {spec.longDescription && (
+                <div className="pt-4 mb-4">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Overview</p>
+                  <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+                    {spec.longDescription}
+                  </p>
+                </div>
+              )}
+
               {/* Key features */}
               {hasFeatures && (
                 <div className="pt-4 mb-4">

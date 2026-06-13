@@ -26,7 +26,7 @@ const AVAILABILITY = ['By Appointment', 'OPD Hours', '24 × 7']
 
 const EMPTY_FORM = {
   name: '', icon: '', category: '', available: '',
-  description: '', relatedSpecialties: [], order: 0,
+  description: '', longDescription: '', relatedSpecialties: [], order: 0,
 }
 
 export default function AdminServices() {
@@ -68,6 +68,7 @@ export default function AdminServices() {
       category: svc.category || '',
       available: svc.available || '',
       description: svc.description || '',
+      longDescription: svc.longDescription || '',
       relatedSpecialties: Array.isArray(svc.relatedSpecialties) ? svc.relatedSpecialties : [],
       order: svc.order ?? 0,
     })
@@ -337,10 +338,18 @@ export default function AdminServices() {
 
                   {/* Description */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Short Description</label>
                     <textarea name="description" value={form.description} onChange={handleChange}
                       rows={2} className="input-field resize-none"
                       placeholder="Brief overview of this hospital service…" />
+                  </div>
+
+                  {/* Long Description */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Long Description</label>
+                    <textarea name="longDescription" value={form.longDescription} onChange={handleChange}
+                      rows={4} className="input-field resize-none"
+                      placeholder="Detailed description of the service…" />
                   </div>
 
                   {/* Related Specialities */}

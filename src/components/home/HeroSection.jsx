@@ -248,7 +248,7 @@ export default function HeroSection() {
 
               {/* Big faded doctor image */}
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780637150378_ChatGPT%20Image%20Jun%205%2C%202026%2C%2010_52_07%20AM.webp?alt=media&token=2757b4ff-274f-4fe7-8700-2668bc751dcc"
+                src="https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1781310616974_dr.%20sanjeev%20kumar.webp?alt=media&token=34c47a06-b2a9-4e64-a6db-3cfde5d18ec1"
                 alt="Dr. Sanjeev Kumar"
                 className="relative z-10 w-full max-w-[400px] md:max-w-[440px] lg:max-w-[480px] h-auto object-cover"
                 style={{

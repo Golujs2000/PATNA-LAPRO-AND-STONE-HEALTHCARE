@@ -23,6 +23,7 @@ import { getDoctors } from '../../services/doctors'
 import { getHospitalServices } from '../../services/hospitalServices'
 import { slugify, compressImage } from '../../utils/helpers'
 import { getGallery, getFolders } from '../../services/gallery'
+import { laproStoneSpecialities } from '../../data/seed/laproStoneSpecialities'
 
 const CATEGORIES = [
   'General', 'Skin', 'Digestive', 'Respiratory', 'Neuro', 'Musculo', 
@@ -33,7 +34,7 @@ const AVAILABILITY = ['By Appointment', 'OPD Hours', '24 × 7']
 
 const EMPTY_FORM = {
   name: '', icon: '', thumbnail: '', category: '', available: '',
-  description: '', features: '', recoveryTime: '', order: 0,
+  description: '', longDescription: '', features: '', recoveryTime: '', order: 0,
   doctorIds: [],
 }
 const EMPTY_TREATMENT = { name: '', duration: '' }
@@ -295,6 +296,7 @@ export default function AdminSpecialities() {
       category: spec.category || '',
       available: spec.available || '',
       description: spec.description || '',
+      longDescription: spec.longDescription || '',
       features: Array.isArray(spec.features) ? spec.features.join('\n') : spec.features || '',
       recoveryTime: spec.recoveryTime || '',
       order: spec.order ?? 0,
@@ -467,6 +469,37 @@ export default function AdminSpecialities() {
     }
   }
 
+  // ── Migrate Seed Data ─────────────────────────────────────────────────────
+  const handleMigrateSeed = async () => {
+    if (!window.confirm('This will update your database with missing descriptions from the seed file. Continue?')) return
+    setLoading(true)
+    try {
+      let updated = 0
+      for (const seed of laproStoneSpecialities) {
+        const existing = specialities.find(s => s.slug === seed.slug || s.name === seed.name)
+        if (existing && !existing.longDescription && seed.longDescription) {
+          // Update it
+          await updateSpeciality(existing.id, {
+            ...existing,
+            longDescription: seed.longDescription,
+          })
+          updated++
+        }
+      }
+      if (updated > 0) {
+        toast.success(`Updated ${updated} specialities with long descriptions`)
+        await fetchSpecialities()
+      } else {
+        toast.success('All specialities are already up to date.')
+      }
+    } catch (err) {
+      console.error(err)
+      toast.error('Failed to migrate seed data')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   // ── Category badge colors ─────────────────────────────────────────────────
   const catColor = {
     'Surgical':      'bg-blue-50 text-blue-700',
@@ -486,11 +519,14 @@ export default function AdminSpecialities() {
           <p className="text-gray-500 text-sm mt-0.5">{specialities.length} specialit{specialities.length !== 1 ? 'ies' : 'y'}</p>
         </div>
         <div className="flex gap-2">
+          <button onClick={handleMigrateSeed} className="btn-secondary text-sm py-2 px-4 whitespace-nowrap bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border-indigo-200" title="Load descriptions from code">
+            <FiRefreshCw size={14} className="inline mr-1" /> Sync Missing Descriptions
+          </button>
           <button onClick={fetchSpecialities} className="btn-secondary text-sm py-2 px-4" title="Refresh">
             <FiRefreshCw size={14} />
           </button>
-          <button onClick={openAddModal} className="btn-primary text-sm py-2 px-4">
-            <FiPlus size={16} /> Add Speciality
+          <button onClick={openAddModal} className="btn-primary text-sm py-2 px-4 whitespace-nowrap">
+            <FiPlus size={16} className="inline mr-1" /> Add Speciality
           </button>
         </div>
       </div>
@@ -733,10 +769,18 @@ export default function AdminSpecialities() {
 
                   {/* Description */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Short Description</label>
                     <textarea name="description" value={form.description} onChange={handleChange}
                       rows={2} className="input-field resize-none"
                       placeholder="Brief overview of this speciality…" />
+                  </div>
+
+                  {/* Long Description */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Long Description</label>
+                    <textarea name="longDescription" value={form.longDescription} onChange={handleChange}
+                      rows={4} className="input-field resize-none"
+                      placeholder="Detailed overview of the department…" />
                   </div>
 
                   {/* Key Features */}
